@@ -1,0 +1,68 @@
+.main {
+    height: 80vh;
+    overflow: hidden;
+    margin-top: 100px;
+    width: 100%;
+    color: white;
+    background-image: url(../../../static/images/home/bgrm.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.mainHeading1 {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 60px;
+    margin-top: 40px;
+    /* identical to box height */
+    text-transform: uppercase;
+    text-align: left;
+    margin-left: 17%;
+    color: #FFFFFF;
+}
+.mainHeading2 {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 60px;
+    /* identical to box height */
+    text-transform: uppercase;
+    position: absolute;
+    right: 7%;
+    top: 60vh;
+    color: #FFFFFF;
+}
+@media only screen and (max-width:768px) {
+    .mainHeading1 {
+        font-size: 35px;
+    }
+    .mainHeading2 {
+        font-size: 35px;
+    }
+    .mainHeading3 {
+        font-size: 35px;
+    }
+}
+@media only screen and (max-width:400px) {
+    .mainHeading1 {
+        font-size: 25px;
+    }
+    .mainHeading2 {
+        font-size: 25px;
+    }
+    .mainHeading3 {
+        font-size: 25px;
+    }
+}

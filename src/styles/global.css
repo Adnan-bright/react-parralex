@@ -1,0 +1,97 @@
+
+
+@font-face {
+    font-family: graphik-black;
+    src: url(../../static/fonts/Graphik/GraphikBlack.otf);
+}
+@font-face {
+    font-family: graphik-black-italic;
+    src: url(../../static/fonts/Graphik/GraphikBlackItalic.otf);
+}
+@font-face {
+    font-family: graphik-bold;
+    src: url(../../static/fonts/Graphik/GraphikBold.otf);
+}
+
+@font-face {
+    font-family: graphik-bold-italic;
+    src: url(../../static/fonts/Graphik/GraphikBoldItalic.otf);
+}
+
+@font-face {
+    font-family: graphik-extraLight;
+    src: url(../../static/fonts/Graphik/GraphikExtralight.otf);
+}
+
+@font-face {
+    font-family: graphik-extraLight-italic;
+    src: url(../../static/fonts/Graphik/GraphikExtralightItalic.otf);
+}
+
+@font-face {
+    font-family: graphik-light;
+    src: url(../../static/fonts/Graphik/GraphikLight.otf);
+}
+
+@font-face {
+    font-family: graphik-light-italic;
+    src: url(../../static/fonts/Graphik/GraphikLightItalic.otf);
+}
+
+@font-face {
+    font-family: graphik-medium;
+    src: url(../../static/fonts/Graphik/GraphikMedium.otf);
+}
+
+@font-face {
+    font-family: graphik-medium-italic;
+    src: url(../../static/fonts/Graphik/GraphikMediumItalic.otf);
+}
+
+@font-face {
+    font-family: graphik-regular;
+    src: url(../../static/fonts/Graphik/GraphikRegular.otf);
+}
+
+@font-face {
+    font-family: graphik-regular-italic;
+    src: url(../../static/fonts/Graphik/GraphikRegularItalic.otf);
+}
+
+@font-face {
+    font-family: graphik-semi-bold;
+    src: url(../../static/fonts/Graphik/GraphikSemibold.otf);
+}
+
+@font-face {
+    font-family: graphik-semi-bold-italic;
+    src: url(../../static/fonts/Graphik/GraphikSemiboldItalic.otf);
+}
+
+@font-face {
+    font-family: graphik-super;
+    src: url(../../static/fonts/Graphik/GraphikSuper.otf);
+}
+
+@font-face {
+    font-family: graphik-super-italic;
+    src: url(../../static/fonts/Graphik/GraphikSuperItalic.otf);
+}
+
+@font-face {
+    font-family: graphik-thin;
+    src: url(../../static/fonts/Graphik/GraphikThin.otf);
+}
+
+@font-face {
+    font-family: graphik-thin-italic;
+    src: url(../../static/fonts/Graphik/GraphikThinItalic.otf);
+}
+html, 
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}

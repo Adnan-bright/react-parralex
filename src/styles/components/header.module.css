@@ -1,0 +1,74 @@
+.main {
+    font-family: graphik-thin;
+    color: white;
+    font-size: 30px;
+}
+
+
+.headerBar {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    padding-right: 20px;
+}
+
+.tabsContainer {
+    display: flex ;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    filter: grayscale(1) invert(1);
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    display: none;
+}
+
+@media only screen and (max-width:768px) {
+    .icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        filter: grayscale(1) invert(1);
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+
+    .tabsContainer {
+        display: block;
+        margin-top: 40px;
+        margin-right: 10px;
+        max-height: 10px;
+        overflow: hidden;
+
+        transition: ease-in-out .5s;
+    }
+
+    .tabsContainerHide {
+        display: block;
+        margin-top: 40px;
+        margin-right: 10px;
+        max-height: 10px;
+        max-height: 300px;
+        overflow: hidden;
+        transition: ease-in-out .5s;
+    }
+}
+
+.logo {
+    margin-left: 40px;
+}
+
+.tab {
+    margin-right: 30px;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    text-align: right;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
