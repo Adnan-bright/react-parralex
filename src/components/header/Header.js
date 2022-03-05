@@ -5,7 +5,9 @@ import * as style from '../../styles/components/header.module.css'
 function Header() {
   const [toggle, setToggle] = useState(false)
   const [isSmall, setIsSmall] = useState(false)
+  if (typeof window !== 'undefined') {
  var width = window.matchMedia("(max-width: 768px)").matches
+  }
  useEffect(() => {
  if (width) {
       setToggle(true)
