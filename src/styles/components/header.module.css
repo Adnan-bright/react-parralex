@@ -2,6 +2,7 @@
     font-family: graphik-thin;
     color: white;
     font-size: 30px;
+    background-color: transparent;
 }
 
 
@@ -14,6 +15,7 @@
 
 .tabsContainer {
     display: flex ;
+    cursor: pointer;
 }
 
 .icon {
@@ -51,7 +53,6 @@
         display: block;
         margin-top: 40px;
         margin-right: 10px;
-        max-height: 10px;
         max-height: 300px;
         overflow: hidden;
         transition: ease-in-out .5s;
@@ -71,4 +72,5 @@
     text-align: right;
     text-transform: uppercase;
     color: #FFFFFF;
+    text-decoration: none;
 }

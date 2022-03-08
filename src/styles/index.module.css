@@ -1,10 +1,3 @@
-.main {
-    height: auto;
-    overflow-y: hidden;
-    height: 100vh;
-    width: 100%;
-    background-color: #0e0e0e;
-}
 
 .sMain{
     display: flex;
@@ -12,15 +5,42 @@
     scroll-behavior: smooth;
 }
 .item{
-    margin-top: -40px;
     min-width: 100vw;
     user-select: none;
 }
 @media only screen and (max-width:768px) {
     .sMain{
-        padding-top: 30px;
         display: flex;
         overflow-x: scroll;
         scroll-behavior: smooth;
     }
 }
+/* .container {
+    background: #171720;
+  }
+  
+  .main {
+    height: 400px;
+    width: 100%;
+  }
+  
+  .content {
+    width: 100%;
+    height: 100%;
+    padding: 70px 100px;
+  }
+  
+  .marker {
+    color: white;
+    position: absolute;
+    top: 0px;
+    left: 140px;
+    font-family: monospace;
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+  } */

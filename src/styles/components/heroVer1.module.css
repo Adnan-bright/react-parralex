@@ -1,3 +1,8 @@
+.container{
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+}
 .main {
     height: 100vh;
     overflow: hidden;
@@ -7,23 +12,20 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-
 }
-
 .content {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 .mainHeading1 {
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
     font-size: 85px;
     line-height: 90px;
-    margin-top: -40px;
+    /* margin-top: -40px; */
     /* identical to box height */
     text-transform: uppercase;
     text-align: center;
@@ -75,4 +77,42 @@
     .mainHeading3 {
         font-size: 25px;
     }
+}
+.playIconContainer{
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+}
+.playIcon{
+    cursor: pointer;  
+}
+.videoContainer{
+    width: 100%;
+    height: 100vh; 
+}
+.video{
+    width: 100%;
+    height: 100vh;
+}
+.videoCloseIcon{
+   position: absolute; 
+   right: 0;
+   margin-right: 17%;
+   margin-top: 60px;
+   cursor: pointer;
+}
+.bottomTextContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.bottomText{
+    font-family: graphik-regular;
+    font-weight: 400;
+    font-size: 14px;
+    margin-right: 20px;
+}
+.rightArrow{
+    margin-right: 38px;
 }

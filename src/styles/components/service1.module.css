@@ -1,0 +1,119 @@
+.main {
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    color: white;
+    background-image: url(../../../static/images/services/bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: left;
+}
+
+.heading {
+    margin-top: 100px;
+    margin-left: 45px;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 53px;
+    /* identical to box height */
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.imagesContainer {
+    margin-top: 40px;
+    margin-left: 45px;
+    margin-right: 45px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.imgItem {
+    height: 30vw;
+    width: 25vw;
+}
+
+.imgCont {
+    position: relative;
+    transition: ease-in-out .3s;
+}
+
+.imagesContainer:hover .imgCont:not(:hover) {
+    position: relative;
+    filter: blur(4px);
+    transition: ease-in-out .5s;
+}
+
+.imagesContainer:hover .imgCont:hover {
+    transform: scale(1.04);
+    transition: ease-in-out .5s;
+}
+
+.imgText {
+    position: absolute;
+    top: 0px;
+    left: 25px;
+
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 53px;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+}
+
+.imglowerText {
+    position: absolute;
+    top: 50px;
+    left: 25px;
+    opacity: 0;
+    transition: ease-in-out .5s;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 26px;
+    color: #FFFFFF;
+}
+
+.imgCont:hover>.imglowerText {
+    position: absolute;
+    top: 80px;
+    left: 25px;
+    opacity: 1;
+    transition: ease-in-out .5s;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 26px;
+    color: #FFFFFF;
+}
+
+.playIcon {
+    position: absolute;
+    width: 67.88px;
+    height: 67.88px;
+    bottom: 25px;
+    left: 45px;
+    transition: ease-in-out .5s;
+    opacity: 0;
+}
+.playIcon:hover {
+    cursor: pointer;
+}
+
+.imgCont:hover>.playIcon {
+    position: absolute;
+    width: 67.88px;
+    height: 67.88px;
+    bottom: 55px;
+    left: 45px;
+    transition: ease-in-out .5s;
+    opacity: 1;
+}

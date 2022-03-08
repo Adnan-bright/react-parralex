@@ -1,0 +1,68 @@
+.main {
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    color: white;
+    background-image: url(../../../static/images/about-us/boxes.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+@media only screen and (max-width: 1280px){
+    .main {
+        background-size:contain;
+    }
+}
+.body{
+    padding-left: 10%;
+    margin-top: 120px;
+}
+.titleContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.title{
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    /* identical to box height */
+    
+    text-transform: uppercase;
+    
+    color: #FFFFFF;
+}
+.paragraph{
+    padding-top: 2%;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 46px;
+    /* identical to box height */
+    
+    text-transform: uppercase;
+    
+    color: #FFFFFF;
+}
+.button{
+    width: 168px;
+    height: 54px;
+    background-image: url(../../../static//icons/buttonBg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.buttonTitle{
+    font-family: graphik-regular;
+    font-weight: 700;
+    font-size: 14px;
+    color: white;  
+
+}
+

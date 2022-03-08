@@ -1,0 +1,176 @@
+.main {
+    margin-top: 10vh;
+    height: 80vh;
+    overflow: hidden;
+    width: 100%;
+    color: white;
+    background-image: url(../../../static/images/contact/bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.midContainer {
+    width: 100%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.heading {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 44px;
+    /* identical to box height */
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.topRow {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topRow>input {
+    height: 35px;
+    width: 47%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #C0C0C0;
+    background-color: transparent;
+
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    /* identical to box height, or 24px */
+    color: #808080;
+}
+
+.midRow {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.midRow>input {
+    height: 35px;
+    width: 47%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #C0C0C0;
+    background-color: transparent;
+
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    /* identical to box height, or 24px */
+    color: #808080;
+}
+
+.lowerRow {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lowerRow>input {
+    height: 100px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #C0C0C0;
+    background-color: transparent;
+
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    /* identical to box height, or 24px */
+    color: #808080;
+}
+
+.btn {
+    width: 168px;
+    height: 54px;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../../../static/images/common/btnBg.png);
+}
+
+.btnContainer {
+    margin-top: 45px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.copyrightContainer {
+    position: absolute;
+    bottom: 0px;
+    right: 80px;
+}
+
+.copyRight {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+    /* identical to box height, or 21px */
+    color: #7A858D;
+}
+
+.followContainer {
+    position: absolute;
+    bottom: 0px;
+    left: 80px;
+}
+
+.follow {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 22px;
+    /* identical to box height */
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+}
+.tabs{
+    display: flex;
+}
+.tab {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #7A858D;
+    cursor: pointer;
+}
