@@ -1,41 +1,52 @@
-import React, {useRef, useState, useEffect} from "react"
-import { ParallaxProvider } from 'react-scroll-parallax';
+import React, { useRef, useState, useEffect } from "react"
 import * as style from '../../styles/components/layout.module.css'
 import Header from "../header/Header";
-import { Parallax} from '@react-spring/parallax'
-import { useWheel } from '@use-gesture/react'
-import useHorizontalScroll from "../../hooks/useHorizontalScroll";
+import { Parallax } from '@react-spring/parallax'
+
 export default function Layout({ children }) {
-    const [isWheel, setIsWheel] = useState(0)
-    const [oldIsWheel, setOldIsWheel] = useState(0)
-    const [offSet, setOffSet] = useState(0)
+
     const ref = useRef(null)
     const onClick = (num) => {
         ref?.current?.scrollTo(num)
-
     }
-    useEffect(() => {
-        ref?.current?.scrollTo(isWheel)
 
-        console.log('num', ref?.current.offset)
-    }, [isWheel])
-    
-    const onWheel = (e) => {
-        if (e.deltaY > 0) {
-            setIsWheel(isWheel+1)
+    if (typeof window !== 'undefined') {
+        var thisEvent ;
+        function createWheelStopListener(element, callback, timeout) {
+            var handle = null;
+            var onScroll = function (e) {
+                
+            if (handle) {
+            thisEvent=e
+            clearTimeout(handle);
+                }
+                handle = setTimeout(callback, timeout || 200); // default 200 ms
+            };
+            element.addEventListener('wheel', onScroll);
+            return function () {
+                element.removeEventListener('wheel', onScroll);
+            };
         }
-        if (e.deltaY < 0) {
-            setIsWheel(isWheel-1)
-        }
-    console.log('isWheel')
-        
+
+        // Example usage:
+
+        createWheelStopListener(window, function (e) {
+            console.log('onwheelstop', thisEvent);
+            if (thisEvent?.deltaY > 0) {
+                ref?.current?.scrollTo(ref?.current?.offset +1)
+            }
+            if (thisEvent?.deltaY < 0) {
+                ref?.current?.scrollTo(ref?.current?.offset -1)
+            }
+        });
     }
     return (
-        <div  className={style.main}>
+        <div className={style.main}>
             <div className={style.headerContainer}><div className={style.header}><Header navClick={onClick} /></div></div>
             <Parallax
-            onWheelCapture={(e)=> onWheel(e)}
-            ref={ref} horizontal={true} pages={5} style={{ top: '0', left: '0' }} scrollAxis="horizontal">
+                className={style.mainContainer}
+                ref={ref}
+                horizontal={true} pages={5} style={{ top: '0', left: '0' }} >
                 {children}
             </Parallax>
         </div>

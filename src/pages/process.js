@@ -4,9 +4,9 @@ import Process from '../components/process/Process';
 
 function ProcessSection() {
     return (
-        <Layout>
+            <div draggable={true} onDrag={()=> alert('kjkhj')} >
             <Process />
-        </Layout>
+                </div>
     )
 }
 export default ProcessSection

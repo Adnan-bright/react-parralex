@@ -20,6 +20,7 @@
     justify-content: center;
 }
 .mainHeading1 {
+    margin-top: 30vh;
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
@@ -32,12 +33,12 @@
     color: #FFFFFF;
 }
 .mainHeading2 {
+    margin-top: 42vh;
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
     font-size: 85px;
     line-height: 90px;
-    margin-top: -40px;
     text-align: left;
     padding-left: 7%;
     /* identical to box height */
@@ -45,12 +46,12 @@
     color: #FFFFFF;
 }
 .mainHeading3 {
+    margin-top: 55vh;
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
     font-size: 85px;
     line-height: 90px;
-    margin-top: -40px;
     /* identical to box height */
     text-align: center;
     text-transform: uppercase;
@@ -81,7 +82,7 @@
 .playIconContainer{
     display: flex;
     justify-content: center;
-    padding-top: 6px;
+    padding-top: 76vh;
 }
 .playIcon{
     cursor: pointer;  

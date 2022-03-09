@@ -15,16 +15,14 @@ function Service1() {
             </ParallaxLayer>
             <div className={style.imagesContainer}>
                 <ParallaxLayer
-                    offset={2}
+                    offset={2.06}
                     speed={.6}
                     style={{ marginTop: "180px", marginLeft:"50px" }}
                 >
                     <div className={style.imgCont}> <img className={style.imgItem} src='/images/services/img1.png' />
                         <h2 className={style.imgText}>film</h2>
                         <p className={style.imglowerText}>
-                            Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit,
-                            sed do eiusmod.</p>
+                            Lorem ipsum dolor </p>
                         <img className={style.playIcon} src='/icons/playIcon.png' />
                     </div>
                 </ParallaxLayer>
@@ -36,9 +34,7 @@ function Service1() {
                     <div className={style.imgCont}> <img className={style.imgItem} src='/images/services/img2.png' />
                         <h2 className={style.imgText}>Design</h2>
                         <p className={style.imglowerText}>
-                            Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit,
-                            sed do eiusmod.</p>
+                            Lorem ipsum dolor.</p>
                         <img className={style.playIcon} src='/icons/playIcon.png' />
                     </div>
                 </ParallaxLayer>
@@ -50,9 +46,7 @@ function Service1() {
                     <div className={style.imgCont}> <img className={style.imgItem} src='/images/services/img3.png' />
                         <h2 className={style.imgText}>Tech</h2>
                         <p className={style.imglowerText}>
-                            Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit,
-                            sed do eiusmod.</p>
+                            Lorem ipsum dolor </p>
                         <img className={style.playIcon} src='/icons/playIcon.png' />
                     </div>
                 </ParallaxLayer>

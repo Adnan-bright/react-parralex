@@ -14,3 +14,11 @@
     position: absolute;
     z-index: 20;
 }
+.mainContainer::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .mainContainer {
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+  }
