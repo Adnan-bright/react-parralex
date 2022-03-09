@@ -80,6 +80,7 @@ const IndexPage = () => {
         <Slider ref={ref} {...settings}>
           <HeroVer1 newClick={onClick} />
           <AboutUS />
+          
           <Service1 />
           <Stories1 />
           <Process />
