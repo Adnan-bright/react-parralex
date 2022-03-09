@@ -7,11 +7,8 @@ import Service1 from '../components/service1/Service1';
 function Services() {
     const scrollRef = useHorizontalScroll();
     return (
-        <Layout >
-                <div className={style.main}>
-                    <Service1 />
-                </div>
-            {/* <Parallax  horizontal={true} pages={2} style={{ top: '0', left: '0' }}>
+              
+            <Parallax  horizontal={true} pages={2} style={{ top: '0', left: '0' }}>
                 <ParallaxLayer
                     offset={0}
                     speed={2.5}
@@ -32,8 +29,7 @@ function Services() {
                     }}>
                     <p>Scroll up</p>
                 </ParallaxLayer>
-            </Parallax> */}
-        </Layout>
+            </Parallax>
 
     )
 }

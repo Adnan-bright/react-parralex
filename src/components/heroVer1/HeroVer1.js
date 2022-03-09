@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import * as style from '../../styles/components/heroVer1.module.css'
 import PlayIcon from '../../../static/icons/playIcon.png'
 import Video from '../../../static/videos/dummyVideo.mp4'
 import RightArrow from '../../../static/icons/rightArrow.png'
 import VideoCloseIcon from '../../../static/icons/videoClose.png'
-import { useParallax } from 'react-scroll-parallax';
+import {ParallaxLayer } from "@react-spring/parallax";
 
 
 function HeroVer1() {
@@ -29,15 +29,28 @@ function HeroVer1() {
                 </div>
                 :
                 <div className={style.main}>
-                    <div className={style.content}>
-                            <h1 className={style.mainHeading1}  >Creative support</h1>
-                            <h1 className={style.mainHeading2} >for your business</h1>
+                    <div
+                    className={style.content}>
+                            <ParallaxLayer
+                            speed={1}
+                            style={{marginTop:"100px"}}
+                            className={style.mainHeading1}  >Creative support</ParallaxLayer>
+                            <ParallaxLayer
+                            speed={.3}
+                            style={{marginTop:"200px"}} className={style.mainHeading2} >
+                                for your business</ParallaxLayer>
 
-                            <h1 className={style.mainHeading3}>at an affordable cost.</h1>
-                            <div className={style.playIconContainer}>
-                                <img className={style.playIcon} onClick={() => setVideo(true)} src={PlayIcon} alt='PlayIcon' />
+                            <ParallaxLayer
+                            speed={.5}
+                            style={{marginTop:"300px"}} className={style.mainHeading3}>at an affordable cost.</ParallaxLayer>
+                            <div style={{marginTop:"350px", 
+                        marginBottom:"100px"}} className={style.playIconContainer}>
+                                <img
+                                
+                                className={style.playIcon} onClick={() => setVideo(true)} src={PlayIcon} alt='PlayIcon' />
                             </div>
-                        <div className={style.bottomTextContainer}>
+                        <div
+                        className={style.bottomTextContainer}>
                             <p className={style.bottomText}>Scroll</p>
                             <img className={style.rightArrow} src={RightArrow} alt='PlayIcon' />
                         </div>

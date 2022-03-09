@@ -7,6 +7,13 @@ import HeroVer2 from "../components/heroVer2/HeroVer2";
 import Layout from "../components/layout/Layout";
 import { Slider } from "../components/slider/Slider";
 import { a } from '@react-spring/web'
+import AboutUS from "../components/aboutUs/AboutUs";
+import Service1 from "../components/service1/Service1";
+import Stories1 from "../components/stories1/Stories1";
+import Process from "../components/process/Process";
+import Contact1 from "../components/contact/Contact1";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+
 
 // markup
 const IndexPage = () => {
@@ -27,7 +34,11 @@ const IndexPage = () => {
 
   const items = [
     <HeroVer1 />,
-    // <HeroVer2 />,
+    <AboutUS />,
+    <Service1 />,
+    <Stories1 />,
+    // <Process />,
+    <Contact1 />
   ]
   //  const items = [
   //   {

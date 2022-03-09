@@ -3,7 +3,7 @@ import * as style from '../../styles/components/header.module.css'
 import { Link } from 'gatsby'
 // import { StaticImage } from "gatsby-plugin-image"
 
-function Header() {
+function Header({navClick}) {
   const [toggle, setToggle] = useState(false)
   const [isSmall, setIsSmall] = useState(false)
   if (typeof window !== 'undefined') {
@@ -20,25 +20,25 @@ function Header() {
     <div className={style.main}>
       <div className={style.headerBar}>
         <div className={style.logoContainer}>
-         <Link to='/'> <img className={style.logo} src="/images/common/logo.png" alt="Logo" /></Link>
+         <Link > <img onClick={()=> navClick(0)} className={style.logo} src="/images/common/logo.png" alt="Logo" /></Link>
         </div>
         <div className={toggle ? style.tabsContainerHide : style.tabsContainer}>
           {toggle ? <img onClick={() => setToggle(false)} className={style.icon} src="/icons/close.png" /> :
             <img onClick={() => setToggle(true)} className={style.icon} src="/icons/menu.png" />}
-          <Link className={style.tab} to='/aboutus'>
-            <p>About</p>
+          <Link className={style.tab} >
+            <p onClick={()=> navClick(1)}>About</p>
           </Link>
-          <Link to='/services'>
-            <p className={style.tab}>Services</p>
+          <Link >
+            <p onClick={()=> navClick(2)} className={style.tab}>Services</p>
           </Link>
-          <Link to='/stories'>
-            <p className={style.tab}>Stories</p>
+          <Link >
+            <p  onClick={()=> navClick(3)}className={style.tab}>Stories</p>
           </Link>
-          <Link to='/process' >
-            <p className={style.tab}>Process</p>
+          <Link >
+            <p onClick={()=> navClick(4)} className={style.tab}>Process</p>
           </Link>
-          <Link to='/contact' >
-            <p className={style.tab}>Contact us</p>
+          <Link >
+            <p onClick={()=> navClick(5)} className={style.tab}>Contact us</p>
           </Link>
         </div>
       </div>
