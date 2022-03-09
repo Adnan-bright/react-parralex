@@ -18,27 +18,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 70px;
 }
 .mainHeading1 {
-    margin-top: 30vh;
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
     font-size: 85px;
     line-height: 90px;
-    /* margin-top: -40px; */
+    margin-top: 20px;
     /* identical to box height */
     text-transform: uppercase;
     text-align: center;
     color: #FFFFFF;
 }
 .mainHeading2 {
-    margin-top: 42vh;
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
     font-size: 85px;
     line-height: 90px;
+    margin-top: 20px;
     text-align: left;
     padding-left: 7%;
     /* identical to box height */
@@ -46,12 +46,12 @@
     color: #FFFFFF;
 }
 .mainHeading3 {
-    margin-top: 55vh;
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
     font-size: 85px;
     line-height: 90px;
+    margin-top: 20px;
     /* identical to box height */
     text-align: center;
     text-transform: uppercase;
@@ -82,7 +82,7 @@
 .playIconContainer{
     display: flex;
     justify-content: center;
-    padding-top: 76vh;
+    padding-top: 68px;
 }
 .playIcon{
     cursor: pointer;  
@@ -109,6 +109,7 @@
     align-items: center;
 }
 .bottomText{
+    cursor: pointer;
     font-family: graphik-regular;
     font-weight: 400;
     font-size: 14px;
@@ -116,4 +117,5 @@
 }
 .rightArrow{
     margin-right: 38px;
+    cursor: pointer;
 }

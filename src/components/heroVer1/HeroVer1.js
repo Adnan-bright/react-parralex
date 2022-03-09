@@ -4,11 +4,12 @@ import PlayIcon from '../../../static/icons/playIcon.png'
 import Video from '../../../static/videos/dummyVideo.mp4'
 import RightArrow from '../../../static/icons/rightArrow.png'
 import VideoCloseIcon from '../../../static/icons/videoClose.png'
-import { ParallaxLayer } from "@react-spring/parallax";
 
 
-function HeroVer1() {
+function HeroVer1({newClick}) {
     const [video, setVideo] = useState(false)
+
+    
     return (
         <div>
             {video ?
@@ -28,28 +29,22 @@ function HeroVer1() {
                 :
                 <div className={style.main}>
                     <div
-                        className={style.content}>
-                        <ParallaxLayer
-                            speed={1}
-                            className={style.mainHeading1}  >Creative support</ParallaxLayer>
-                        <ParallaxLayer
-                            speed={.3}
-                            className={style.mainHeading2} >
-                            for your business</ParallaxLayer>
+                    className={style.content}>
+                            <div
+                            className={style.mainHeading1}  >Creative support</div>
+                            <div className={style.mainHeading2} >
+                                for your business</div>
 
-                        <ParallaxLayer
-                            speed={.5}
-                            className={style.mainHeading3}>at an affordable cost.</ParallaxLayer>
-                        <div style={{
-                        }} className={style.playIconContainer}>
-                            <img
-
+                            <div className={style.mainHeading3}>at an affordable cost.</div>
+                            <div className={style.playIconContainer}>
+                                <img
+                                
                                 className={style.playIcon} onClick={() => setVideo(true)} src={PlayIcon} alt='PlayIcon' />
-                        </div>
+                            </div>
                         <div
-                            className={style.bottomTextContainer}>
-                            <p className={style.bottomText}>Scroll</p>
-                            <img className={style.rightArrow} src={RightArrow} alt='PlayIcon' />
+                        className={style.bottomTextContainer}>
+                            <p className={style.bottomText} onClick={()=> newClick(1)}>Scroll</p>
+                            <img className={style.rightArrow} onClick={()=> newClick(1)} src={RightArrow} alt='PlayIcon' />
                         </div>
 
                     </div>

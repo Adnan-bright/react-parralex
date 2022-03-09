@@ -1,19 +1,18 @@
-
-.sMain{
+.sMain {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+.item {
+  min-width: 100vw;
+  user-select: none;
+}
+@media only screen and (max-width: 768px) {
+  .sMain {
     display: flex;
     overflow-x: scroll;
     scroll-behavior: smooth;
-}
-.item{
-    min-width: 100vw;
-    user-select: none;
-}
-@media only screen and (max-width:768px) {
-    .sMain{
-        display: flex;
-        overflow-x: scroll;
-        scroll-behavior: smooth;
-    }
+  }
 }
 /* .container {
     background: #171720;
