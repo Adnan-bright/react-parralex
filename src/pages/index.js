@@ -74,7 +74,7 @@ const IndexPage = () => {
   }
   return (
     <Layout onClick={onClick}>
-      {(value) => (<div
+      {() => (<div
         style={{ width: "100vw", height: "100vh", backgroundColor: "black", overflow: "hidden" }}
       >
         <Slider ref={ref} {...settings}>
@@ -82,9 +82,7 @@ const IndexPage = () => {
           <AboutUS />
           <Service1 />
           <Stories1 />
-
           <Process />
-          
           <Contact1 />
         </Slider>
       </div>)}
