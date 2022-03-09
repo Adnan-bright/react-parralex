@@ -68,21 +68,23 @@ const IndexPage = () => {
   useEffect(() => {
 
   }, [])
-  
+
   const onClick = (num) => {
     ref.current.slickGoTo(num)
   }
   return (
     <Layout onClick={onClick}>
-     {(value) =>( <div
+      {(value) => (<div
         style={{ width: "100vw", height: "100vh", backgroundColor: "black", overflow: "hidden" }}
       >
-        <Slider  ref={ref} {...settings}>
+        <Slider ref={ref} {...settings}>
           <HeroVer1 newClick={onClick} />
           <AboutUS />
           <Service1 />
           <Stories1 />
+
           <Process />
+          
           <Contact1 />
         </Slider>
       </div>)}
