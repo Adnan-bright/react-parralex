@@ -23,6 +23,7 @@ const IndexPage = () => {
   const [goto, setGoto] = useState(0)
   const [slideState, setSlideState] = useState(0)
   const [updateCount, setUpdateCount] = useState(0)
+  console.log('', )
   useEffect(() => {
     window.addEventListener("wheel", scroll, true);
 
@@ -76,13 +77,13 @@ const IndexPage = () => {
         style={{ width: "100vw", height: "100vh", backgroundColor: "black", overflow: "hidden" }}
       >
         <Slider ref={ref} {...settings}>
-          <HeroVer1 count={updateCount} newClick={onClick} />
-          <AboutUS />
+          <HeroVer1 count={goto} newClick={onClick} />
+          <AboutUS count={goto} />
           
-          <Service1 />
-          <Stories1 />
-          <Process />
-          <Contact1 />
+          <Service1 count={goto}  />
+          <Stories1 count={goto}  />
+          <Process count={goto}  />
+          <Contact1 count={goto}  />
         </Slider>
       </div>)}
     </Layout>

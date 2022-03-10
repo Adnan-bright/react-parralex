@@ -1,48 +1,76 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import * as style from '../../styles/components/service1.module.css'
+import { motion } from 'framer-motion'
 
-function Service1() {
+function Service1({ count }) {
+    const [index, setIndex] = useState(0)
+    useEffect(() => {
+        setIndex(count)
+    }, [count])
     return (
         <div
             className={style.main}
         >
             <div
             >
-                <h1 className={style.heading}>services</h1>
+                <motion.h1 key={index}
+                    animate={{
+                        marginLeft: ['200px', '60px']
+                    }}
+                    transition={{ duration: 1.5, easings: "easeInOut" }}
+                    className={style.heading}>services</motion.h1>
             </div>
             <div className={style.imagesContainer}>
-                <div
+                <motion.div
                 >
-                    <div className={style.imgCont}> <img className={style.imgItem} src='/images/services/img1.png' />
+                    <motion.div
+                        key={index}
+                        animate={{
+                            left: ["100px", '0px']
+                        }}
+                        transition={{ duration: .8, easings: "easeInOut" }}
+                        className={style.imgCont}> <img className={style.imgItem} src='/images/services/img1.png' />
                         <h2 className={style.imgText}>film</h2>
                         <p className={style.imglowerText}>
                             Lorem ipsum dolor sit amet,
                             consectetur adipiscing elit,
                             sed do eiusmod.</p>
                         <img className={style.playIcon} src='/icons/playIcon.png' />
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
                 <div
                 >
-                    <div className={style.imgCont}> <img className={style.imgItem} src='/images/services/img2.png' />
+                    <motion.div
+                        key={index}
+                        animate={{
+                            left: ["100px", '0px']
+                        }}
+                        transition={{ duration: 1, easings: "easeInOut" }}
+                        className={style.imgCont}> <img className={style.imgItem} src='/images/services/img2.png' />
                         <h2 className={style.imgText}>Design</h2>
                         <p className={style.imglowerText}>
                             Lorem ipsum dolor sit amet,
                             consectetur adipiscing elit,
                             sed do eiusmod.</p>
                         <img className={style.playIcon} src='/icons/playIcon.png' />
-                    </div>
+                    </motion.div>
                 </div>
                 <div
                 >
-                    <div className={style.imgCont}> <img className={style.imgItem} src='/images/services/img3.png' />
+                    <motion.div
+                    key={index}
+                        animate={{
+                            left: ["100px", '0px']
+                        }}
+                        transition={{ duration: 1.2, easings: "easeIn" }}
+                        className={style.imgCont}> <img className={style.imgItem} src='/images/services/img3.png' />
                         <h2 className={style.imgText}>Tech</h2>
                         <p className={style.imglowerText}>
                             Lorem ipsum dolor sit amet,
                             consectetur adipiscing elit,
                             sed do eiusmod.</p>
                         <img className={style.playIcon} src='/icons/playIcon.png' />
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </div>

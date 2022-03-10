@@ -5,17 +5,14 @@ import Video from '../../../static/videos/dummyVideo.mp4'
 import RightArrow from '../../../static/icons/rightArrow.png'
 import VideoCloseIcon from '../../../static/icons/videoClose.png'
 import ReactPlayer from 'react-player'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 function HeroVer1({ newClick, count }) {
     const [video, setVideo] = useState(false)
-    const [index, setIndex] = useState(0)
     const ref = useRef(null)
+    const [index, setIndex] = useState(0)
     useEffect(() => {
-        setTimeout(() => {
             setIndex(count)
-          }, 1000);
-        
     }, [count])
 
     return (
@@ -27,7 +24,6 @@ function HeroVer1({ newClick, count }) {
                         animate={{
                             scale: [0.5, 1],
                             opacity: [0, 3, 1],
-                            // rotate: [0, 0, 270, 270, 0],
                         }}
                         transition={{ duration: 0.3, easings: "easeInOut" }}
 
@@ -53,9 +49,9 @@ function HeroVer1({ newClick, count }) {
                     animate={{
                         backgroundPositionX: ['0vw', '15vw']
                     }}
-                    // transition={{ duration: 0.7, easings: "easeInOut" }}
+                    transition={{ duration: 0.7, easings: "easeInOut" }}
                     className={style.main}>
-                    <motion.div
+                    <motion.div  key={index}
                         animate={{
                             marginRight: ['-100px', '100px']
                         }}
