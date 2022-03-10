@@ -41,7 +41,7 @@ const IndexPage = () => {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    afterChange: () => setUpdateCount(updateCount + 1),
+    afterChange: () => {setUpdateCount(updateCount + 1)},
     beforeChange: (current, next) => setGoto(next)
   };
 
@@ -65,9 +65,7 @@ const IndexPage = () => {
     <Stories1 />,
     <Contact1 />,
   ];
-  useEffect(() => {
 
-  }, [])
 
   const onClick = (num) => {
     ref.current.slickGoTo(num)
@@ -78,7 +76,7 @@ const IndexPage = () => {
         style={{ width: "100vw", height: "100vh", backgroundColor: "black", overflow: "hidden" }}
       >
         <Slider ref={ref} {...settings}>
-          <HeroVer1 newClick={onClick} />
+          <HeroVer1 count={updateCount} newClick={onClick} />
           <AboutUS />
           
           <Service1 />

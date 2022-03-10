@@ -1,54 +1,86 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect, useMemo } from 'react'
 import * as style from '../../styles/components/heroVer1.module.css'
 import PlayIcon from '../../../static/icons/playIcon.png'
 import Video from '../../../static/videos/dummyVideo.mp4'
 import RightArrow from '../../../static/icons/rightArrow.png'
 import VideoCloseIcon from '../../../static/icons/videoClose.png'
+import ReactPlayer from 'react-player'
+import { motion, AnimatePresence } from 'framer-motion'
 
-
-function HeroVer1({newClick}) {
+function HeroVer1({ newClick, count }) {
     const [video, setVideo] = useState(false)
+    const [index, setIndex] = useState(0)
+    const ref = useRef(null)
+    useEffect(() => {
+        setTimeout(() => {
+            setIndex(count)
+          }, 1000);
+        
+    }, [count])
 
-    
     return (
         <div>
             {video ?
                 <div className={style.videoContainer}>
-                    <img onClick={() => setVideo(false)} className={style.videoCloseIcon} src={VideoCloseIcon} alt='VideoCloseIcon' />
-                    <iframe
-                        className={style.video}
-                        src={Video}
-                        title={Video}
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        frameBorder="0"
-                        webkitallowfullscreen="true"
-                        mozallowfullscreen="true"
-                        allowFullScreen
-                    />
+                    <motion.div
+
+                        animate={{
+                            scale: [0.5, 1],
+                            opacity: [0, 3, 1],
+                            // rotate: [0, 0, 270, 270, 0],
+                        }}
+                        transition={{ duration: 0.3, easings: "easeInOut" }}
+
+                        className={style.videoBox}
+                    >
+                        <img onClick={() => setVideo(false)}
+                            className={style.videoCloseIcon} src={VideoCloseIcon} alt='VideoCloseIcon' />
+                        <ReactPlayer
+                            ref={ref}
+                            playing={true}
+                            loop={false}
+                            height='100%'
+                            width={'100%'}
+                            className={style.video}
+                            url={Video}
+                            title={Video}
+                            controls={false}
+                        />
+                    </motion.div>
                 </div>
                 :
-                <div className={style.main}>
-                    <div
-                    className={style.content}>
-                            <div
-                            className={style.mainHeading1}  >Creative support</div>
-                            <div className={style.mainHeading2} >
-                                for your business</div>
+                <motion.div key={index}
+                    animate={{
+                        backgroundPositionX: ['0vw', '15vw']
+                    }}
+                    // transition={{ duration: 0.7, easings: "easeInOut" }}
+                    className={style.main}>
+                    <motion.div
+                        animate={{
+                            marginRight: ['-100px', '100px']
+                        }}
+                        transition={{ duration: 0.7, easings: "easeInOut" }}
+                        className={style.content}>
+                        <motion.div
 
-                            <div className={style.mainHeading3}>at an affordable cost.</div>
-                            <div className={style.playIconContainer}>
-                                <img
-                                
+                            className={style.mainHeading1}  >Creative support</motion.div>
+                        <div className={style.mainHeading2} >
+                            for your business</div>
+
+                        <div className={style.mainHeading3}>at an affordable cost.</div>
+                        <div className={style.playIconContainer}>
+                            <img
+
                                 className={style.playIcon} onClick={() => setVideo(true)} src={PlayIcon} alt='PlayIcon' />
-                            </div>
+                        </div>
                         <div
-                        className={style.bottomTextContainer}>
-                            <p className={style.bottomText} onClick={()=> newClick(1)}>Scroll</p>
-                            <img className={style.rightArrow} onClick={()=> newClick(1)} src={RightArrow} alt='PlayIcon' />
+                            className={style.bottomTextContainer}>
+                            <p className={style.bottomText} onClick={() => newClick(1)}>Scroll</p>
+                            <img className={style.rightArrow} onClick={() => newClick(1)} src={RightArrow} alt='PlayIcon' />
                         </div>
 
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             }
         </div>
     )
