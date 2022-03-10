@@ -22,9 +22,9 @@ function AboutUS() {
                         design, and creative technology.<br />
                         Our goal is your success.
                     </p>
-                    <div className={style.button}>
+                    {/* <div className={style.button}>
                         <p className={style.buttonTitle}>Read more</p>
-                    </div>
+                    </div> */}
             </ParallaxLayer>
 
         </div>

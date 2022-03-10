@@ -5,26 +5,42 @@ import Video from '../../../static/videos/dummyVideo.mp4'
 import RightArrow from '../../../static/icons/rightArrow.png'
 import VideoCloseIcon from '../../../static/icons/videoClose.png'
 import { ParallaxLayer } from "@react-spring/parallax";
-
+import { motion } from 'framer-motion'
+import ReactPlayer from 'react-player'
 
 function HeroVer1() {
+    const ref = useRef(null)
+
     const [video, setVideo] = useState(false)
     return (
         <div>
             {video ?
                 <div className={style.videoContainer}>
-                    <img onClick={() => setVideo(false)} className={style.videoCloseIcon} src={VideoCloseIcon} alt='VideoCloseIcon' />
-                    <iframe
+                <motion.div
+
+                    animate={{
+                        scale: [0.5, 1],
+                        opacity: [0, 3, 1],
+                    }}
+                    transition={{ duration: 0.3, easings: "easeInOut" }}
+
+                    className={style.videoBox}
+                >
+                    <img onClick={() => setVideo(false)}
+                        className={style.videoCloseIcon} src={VideoCloseIcon} alt='VideoCloseIcon' />
+                    <ReactPlayer
+                        ref={ref}
+                        playing={true}
+                        loop={false}
+                        height='100%'
+                        width={'100%'}
                         className={style.video}
-                        src={Video}
+                        url={Video}
                         title={Video}
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        frameBorder="0"
-                        webkitallowfullscreen="true"
-                        mozallowfullscreen="true"
-                        allowFullScreen
+                        controls={false}
                     />
-                </div>
+                </motion.div>
+            </div>
                 :
                 <div className={style.main}>
                     <div

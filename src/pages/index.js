@@ -6,8 +6,7 @@ import AboutUS from "../components/aboutUs/AboutUs";
 import Service1 from "../components/service1/Service1";
 import Stories1 from "../components/stories1/Stories1";
 import Contact1 from "../components/contact/Contact1";
-
-
+import Process from "../components/process/Process";
 // markup
 const IndexPage = () => {
 
@@ -16,7 +15,7 @@ const IndexPage = () => {
     <AboutUS />,
     <Service1 />,
     <Stories1 />,
-    // <Process />,
+    <Process />,
     <Contact1 />
   ]
 

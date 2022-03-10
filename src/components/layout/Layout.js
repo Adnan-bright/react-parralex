@@ -46,7 +46,7 @@ export default function Layout({ children }) {
             <Parallax
                 className={style.mainContainer}
                 ref={ref}
-                horizontal={true} pages={5} style={{ top: '0', left: '0' }} >
+                horizontal={true} pages={6} style={{ top: '0', left: '0' }} >
                 {children}
             </Parallax>
         </div>
