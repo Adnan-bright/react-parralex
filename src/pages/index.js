@@ -40,105 +40,50 @@ const IndexPage = () => {
   //   }
   // }, []);
 
-
-  // useEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
-
-  //   let sections = gsap.utils.toArray(".panel");
-
-  //   gsap.to(sections, {
-  //     xPercent: -100 * (sections.length - 1),
-  //     ease: "none",
+  // function GSAPHorizontalScroll() {
+  //   let Sections = gsap.utils.toArray(".panel");
+  
+  //   let GSAPHorizontalScrollTL = gsap.timeline({
   //     scrollTrigger: {
-  //       trigger: ".container",
+  //       trigger: "#PageWrap",
   //       pin: true,
+  //       start: "0% 0%",
+  //       end:
+  //         "+=" +
+  //         (document.querySelector("#PageWrap").scrollWidth - window.innerWidth),
   //       scrub: 1,
-
-  //       // base vertical scrolling on how wide the container is so it feels more natural.
-  //       end: () => "+=" + document.querySelector(".container").offsetWidth
+  //       snap: {
+  //         snapTo: 1 / (Sections.length - 1),
+  //         duration: { min: 0.22, max: 0.31 },
+  //         delay: 0,
+  //         ease: "sine.inOut"
+  //       }
+  //       // markers: "true",
   //     }
   //   });
-
-
-
-  // sections.forEach((sct, i) => {
-  //   ScrollTrigger.create({
-  //     trigger: sct,
-  //     start: 'top top-=' + (sct.offsetLeft - window.innerWidth/2) * (document.querySelector(".container").offsetWidth/(sct.offsetWidth * (sections.length - 1))),
-  //     end: '+=' + sct.offsetWidth * (document.querySelector(".container").offsetWidth/(sct.offsetWidth * (sections.length - 1))),
-  //     toggleClass: {targets: sct, className: "active"},
-
-  //   })
-
-  // });
-
-  // document.querySelectorAll(".anchor").forEach(element => {
-  //   element.addEventListener('click', function() {
-  //     const element = ref.current;
-
-  // let arrow = element.querySelector(".container");
-  //     const id = this.getAttribute('href').split('#')[1];
-  //     console.log('valueTest', (document.querySelector(".container").offsetWidth - window.innerWidth) )
-  //     gsap.to(window, {
-  //       scrollTo: ( document.getElementById(id).offsetLeft * (document.querySelector(".container").offsetWidth / (document.querySelector(".container").offsetWidth - window.innerWidth)) ),
-  //       duration: 2
-  //     })
-
+  //   GSAPHorizontalScrollTL.to(Sections, {
+  //     xPercent: -100 * (Sections.length - 1),
+  //     ease: "none"
   //   });
-  // });
+  // }
 
-  // }, [])
-  function GSAPHorizontalScroll() {
-    let Sections = gsap.utils.toArray(".panel");
-  
-    let GSAPHorizontalScrollTL = gsap.timeline({
+  useEffect(() => {
+    // GSAPHorizontalScroll();
+
+    gsap.registerPlugin(ScrollTrigger);
+    let sections = gsap.utils.toArray(".panel");
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
       scrollTrigger: {
         trigger: ".container",
         pin: true,
-        start: "0% 0%",
-        end:
-          "+=" +
-          (document.querySelector(".container").scrollWidth - window.innerWidth),
         scrub: 1,
-        snap: {
-          snapTo: 1 / (Sections.length - 1),
-          duration: { min: 0.22, max: 0.31 },
-          delay: 0,
-          ease: "sine.inOut"
-        }
-        // markers: "true",
-      }
+        snap: 1 / (sections.length - 1),
+        // base vertical scrolling on how wide the container is so it feels more natural.
+        end: () => "+=3500"
+      },
     });
-    GSAPHorizontalScrollTL.to(Sections, {
-      xPercent: -100 * (Sections.length - 1),
-      ease: "none"
-    });
-  }
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    //GSAPHorizontalScroll
-
-    //GSAPHorizontalScroll
-    
-    //SectionB
-    
-      GSAPHorizontalScroll();
-    
-
-    // gsap.registerPlugin(ScrollTrigger);
-    // let sections = gsap.utils.toArray(".panel");
-    // gsap.to(sections, {
-    //   xPercent: -100 * (sections.length - 1),
-    //   ease: "none",
-    //   scrollTrigger: {
-    //     trigger: ".container",
-    //     pin: true,
-    //     scrub: 1,
-    //     snap: 1 / (sections.length - 1),
-    //     // base vertical scrolling on how wide the container is so it feels more natural.
-    //     end: () => "+=3500"
-    //   },
-    // });
   }, []);
 
 
