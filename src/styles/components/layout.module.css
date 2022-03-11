@@ -11,5 +11,5 @@
 .headerContainer{
     top: 0px;
     position: fixed;
-    z-index: 20;
+    z-index: 2;
 }

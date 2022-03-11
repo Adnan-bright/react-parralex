@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import * as style from '../../styles/components/header.module.css'
 import { Link } from 'gatsby'
 // import { StaticImage } from "gatsby-plugin-image"
-import { gsap } from "gsap";
 
 function Header({navClick}) {
   const [toggle, setToggle] = useState(false)
@@ -10,18 +9,6 @@ function Header({navClick}) {
   if (typeof window !== 'undefined') {
     var width = window.matchMedia("(max-width: 768px)").matches
   }
-  document.querySelectorAll(".anchor").forEach(element => {
-    element.addEventListener('click', function () {
-
-      const id = this.getAttribute('href').split('#')[1];
-
-      gsap.to(window, {
-        scrollTo: (document.getElementById(id).offsetLeft * (document.querySelector(".container").offsetWidth / (document.querySelector(".container").offsetWidth - window.innerWidth))),
-        duration: 2
-      })
-
-    });
-  });
   useEffect(() => {
       setIsSmall((window.innerWidth/2)+140.5)
   }, [width])
@@ -31,25 +18,25 @@ function Header({navClick}) {
     <div className={style.main}>
       <div className={style.headerBar}>
         <div className={style.logoContainer}>
-         <a href="#panel-1"> <img  className={style.logo} src="/images/common/logo.png" alt="Logo" /></a>
+         <Link > <img onClick={()=> navClick('#panel-1')} className={style.logo} src="/images/common/logo.png" alt="Logo" /></Link>
         </div>
         <div className={toggle ? style.tabsContainerHide : style.tabsContainer}>
           {toggle ? <img onClick={() => setToggle(false)} className={style.icon} src="/icons/close.png" /> :
             <img onClick={() => setToggle(true)} className={style.icon} src="/icons/menu.png" />}
-          <Link  >
-            <a href="#panel-2" className={style.tab}>About</a>
+          <Link className={style.tab} >
+            <p onClick={()=> navClick('#panel-2')}>About</p>
           </Link>
           <Link >
-            <a href="#panel-3" className={style.tab}>Services</a>
+            <p onClick={()=> navClick('#panel-3')} className={style.tab}>Services</p>
           </Link>
           <Link >
-            <a href="#panel-4"  className={style.tab}>Stories</a>
+            <p  onClick={()=> navClick('#panel-4')}className={style.tab}>Stories</p>
           </Link>
           <Link >
-            <a href="#panel-5" className={style.tab}>Process</a>
+            <p onClick={()=> navClick('#panel-5')} className={style.tab}>Process</p>
           </Link>
           <Link >
-            <a href="#panel-6" className={style.tab}>Contact us</a>
+            <p onClick={()=> navClick('#panel-6')} className={style.tab}>Contact us</p>
           </Link>
         </div>
       </div>

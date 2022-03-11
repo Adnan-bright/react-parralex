@@ -40,44 +40,126 @@ const IndexPage = () => {
   //   }
   // }, []);
 
-  useEffect(() => {
-    let sections = gsap.utils.toArray(".panel");
-    gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: "none",
+
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+
+  //   let sections = gsap.utils.toArray(".panel");
+
+  //   gsap.to(sections, {
+  //     xPercent: -100 * (sections.length - 1),
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       trigger: ".container",
+  //       pin: true,
+  //       scrub: 1,
+
+  //       // base vertical scrolling on how wide the container is so it feels more natural.
+  //       end: () => "+=" + document.querySelector(".container").offsetWidth
+  //     }
+  //   });
+
+
+
+  // sections.forEach((sct, i) => {
+  //   ScrollTrigger.create({
+  //     trigger: sct,
+  //     start: 'top top-=' + (sct.offsetLeft - window.innerWidth/2) * (document.querySelector(".container").offsetWidth/(sct.offsetWidth * (sections.length - 1))),
+  //     end: '+=' + sct.offsetWidth * (document.querySelector(".container").offsetWidth/(sct.offsetWidth * (sections.length - 1))),
+  //     toggleClass: {targets: sct, className: "active"},
+
+  //   })
+
+  // });
+
+  // document.querySelectorAll(".anchor").forEach(element => {
+  //   element.addEventListener('click', function() {
+  //     const element = ref.current;
+
+  // let arrow = element.querySelector(".container");
+  //     const id = this.getAttribute('href').split('#')[1];
+  //     console.log('valueTest', (document.querySelector(".container").offsetWidth - window.innerWidth) )
+  //     gsap.to(window, {
+  //       scrollTo: ( document.getElementById(id).offsetLeft * (document.querySelector(".container").offsetWidth / (document.querySelector(".container").offsetWidth - window.innerWidth)) ),
+  //       duration: 2
+  //     })
+
+  //   });
+  // });
+
+  // }, [])
+  function GSAPHorizontalScroll() {
+    let Sections = gsap.utils.toArray(".panel");
+  
+    let GSAPHorizontalScrollTL = gsap.timeline({
       scrollTrigger: {
         trigger: ".container",
         pin: true,
+        start: "0% 0%",
+        end:
+          "+=" +
+          (document.querySelector(".container").scrollWidth - window.innerWidth),
         scrub: 1,
-        snap: 1 / (sections.length - 1),
-        end: "+=3500",
-      },
+        snap: {
+          snapTo: 1 / (Sections.length - 1),
+          duration: { min: 0.22, max: 0.31 },
+          delay: 0,
+          ease: "sine.inOut"
+        }
+        // markers: "true",
+      }
     });
+    GSAPHorizontalScrollTL.to(Sections, {
+      xPercent: -100 * (Sections.length - 1),
+      ease: "none"
+    });
+  }
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    //GSAPHorizontalScroll
+
+    //GSAPHorizontalScroll
+    
+    //SectionB
+    
+      GSAPHorizontalScroll();
+    
+
+    // gsap.registerPlugin(ScrollTrigger);
+    // let sections = gsap.utils.toArray(".panel");
+    // gsap.to(sections, {
+    //   xPercent: -100 * (sections.length - 1),
+    //   ease: "none",
+    //   scrollTrigger: {
+    //     trigger: ".container",
+    //     pin: true,
+    //     scrub: 1,
+    //     snap: 1 / (sections.length - 1),
+    //     // base vertical scrolling on how wide the container is so it feels more natural.
+    //     end: () => "+=3500"
+    //   },
+    // });
   }, []);
 
 
-  
 
+  const handleClick = (id) => {
+    // alert('Clicked')
+    gsap.registerPlugin(ScrollToPlugin);
+    gsap.to(window, { duration: 3, scrollTo: id });
+  }
 
 
 
 
 
   return (
-    <Layout  >
-      <div style={{
-        margin: "200px",
-      }}>
-          <a href="#panel-1" ref={anchorRef} className="anchor">Panel 1</a>
-          <a href="#panel-2"  className="anchor">Panel 2</a>
-          <a href="#panel-3"  className="anchor">Panel 3</a>
-      </div>
+    <Layout onNavClick={handleClick}>
+
+      <div onClick={handleClick} style={{ marginTop: '1px' }}></div>
       <div
         ref={ref}
       >
-        {/* <a href="#panel1" style={{
-          marginTop:"200px"
-        }}>clik</a> */}
 
         <div className="container">
           <div id={'panel-1'} className="panel">
@@ -95,8 +177,8 @@ const IndexPage = () => {
           <div id={'panel-5'} className="panel">
             <Process />
           </div>
-          <div  id={'panel-6'} className="panel">
-            <Contact1  />
+          <div id={'panel-6'} className="panel">
+            <Contact1 />
           </div>
 
 
