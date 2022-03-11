@@ -20,8 +20,7 @@ const IndexPage = () => {
   const [num, setNum] = useState(0)
   gsap.registerPlugin(ScrollTrigger);
   const ref = useRef(null);
-  const hero1Ref = useRef(null);
-
+  const anchorRef = useRef();
   // useEffect(() => {
   //   const element = ref.current;
 
@@ -57,48 +56,47 @@ const IndexPage = () => {
   }, []);
 
 
+  
 
-  const onClickHandler = (num) => {
-    let sections = gsap.utils.toArray(".panel");
-    console.log('3 / (sections.length - 1)', num * (sections.length))
-    let value = num * (sections.length)
-    gsap.registerPlugin(ScrollToPlugin);
-    try {
-      if (typeof window !== 'undefined') {
-        gsap.to(window, { duration: 2, value});
-      }
-    } catch (error) {
-      alert(error)
-    }
-  }
-  console.log('ref', ref.current)
+
+
+
+
 
   return (
-    <Layout onNavClick={onClickHandler}  >
+    <Layout  >
+      <div style={{
+        margin: "200px",
+      }}>
+          <a href="#panel-1" ref={anchorRef} className="anchor">Panel 1</a>
+          <a href="#panel-2"  className="anchor">Panel 2</a>
+          <a href="#panel-3"  className="anchor">Panel 3</a>
+      </div>
       <div
         ref={ref}
       >
         {/* <a href="#panel1" style={{
           marginTop:"200px"
         }}>clik</a> */}
+
         <div className="container">
-          <div className="panel">
+          <div id={'panel-1'} className="panel">
             <HeroVer1 />
           </div>
-          <div id={'panel1'} className="panel">
+          <div id={'panel-2'} className="panel">
             <AboutUS />
           </div>
-          <div className="panel">
+          <div id={'panel-3'} className="panel">
             <Service1 />
           </div>
-          <div className="panel">
+          <div id={'panel-4'} className="panel">
             <Stories1 />
           </div>
-          <div className="panel">
+          <div id={'panel-5'} className="panel">
             <Process />
           </div>
-          <div className="panel">
-            <Contact1 />
+          <div  id={'panel-6'} className="panel">
+            <Contact1  />
           </div>
 
 

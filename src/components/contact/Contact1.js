@@ -1,9 +1,9 @@
 import React from 'react'
 import * as style from '../../styles/components/contact1.module.css'
 
-function Contact1() {
+function Contact1({id}) {
     return (
-        <div className={style.main}>
+        <div id={id} className={style.main}>
             <div className={style.midContainer}>
                 <h1 className={style.heading}>CONTACT US</h1>
                 <div className={style.formContainer}>
