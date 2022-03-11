@@ -9,7 +9,8 @@ import Stories1 from "../components/stories1/Stories1";
 import Contact1 from "../components/contact/Contact1";
 import Process from "../components/process/Process";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger, } from "gsap/ScrollTrigger";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 
 
@@ -19,7 +20,7 @@ const IndexPage = () => {
   const [num, setNum] = useState(0)
   gsap.registerPlugin(ScrollTrigger);
   const ref = useRef(null);
-
+  const anchorRef = useRef();
   // useEffect(() => {
   //   const element = ref.current;
 
@@ -39,7 +40,37 @@ const IndexPage = () => {
   //   }
   // }, []);
 
+  // function GSAPHorizontalScroll() {
+  //   let Sections = gsap.utils.toArray(".panel");
+  
+  //   let GSAPHorizontalScrollTL = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: "#PageWrap",
+  //       pin: true,
+  //       start: "0% 0%",
+  //       end:
+  //         "+=" +
+  //         (document.querySelector("#PageWrap").scrollWidth - window.innerWidth),
+  //       scrub: 1,
+  //       snap: {
+  //         snapTo: 1 / (Sections.length - 1),
+  //         duration: { min: 0.22, max: 0.31 },
+  //         delay: 0,
+  //         ease: "sine.inOut"
+  //       }
+  //       // markers: "true",
+  //     }
+  //   });
+  //   GSAPHorizontalScrollTL.to(Sections, {
+  //     xPercent: -100 * (Sections.length - 1),
+  //     ease: "none"
+  //   });
+  // }
+
   useEffect(() => {
+    // GSAPHorizontalScroll();
+
+    gsap.registerPlugin(ScrollTrigger);
     let sections = gsap.utils.toArray(".panel");
     gsap.to(sections, {
       xPercent: -100 * (sections.length - 1),
@@ -49,63 +80,49 @@ const IndexPage = () => {
         pin: true,
         scrub: 1,
         snap: 1 / (sections.length - 1),
-        end: "+=3500",
+        // base vertical scrolling on how wide the container is so it feels more natural.
+        end: () => "+=3500"
       },
     });
-  }, [num]);
+  }, []);
 
 
 
-  // const onClickHandler = (num) => {
-  //   try {
-  //     if (typeof window !== 'undefined') {
-  //       alert('ok')
-  //       let sections = gsap.utils.toArray(".panel");
-  //       gsap.to(sections, {
-  //         xPercent: -100 * (sections.length - 1),
-  //         ease: "none",
-  //         scrollTrigger: {
-  //           trigger: ".container",
-  //           pin: true,
-  //           scrub: num,
-  //           snap: num / (sections.length - 1),
-  //           end: "+=3500",
-  //         },
-  //       });
-  //     }
-  //   } catch (error) {
-  //     alert(error)
-  //   }
-  // }
-  console.log('ref', ref.current)
+  const handleClick = (id) => {
+    // alert('Clicked')
+    gsap.registerPlugin(ScrollToPlugin);
+    gsap.to(window, { duration: 3, scrollTo: id });
+  }
+
+
+
+
 
   return (
-    <Layout  >
+    <Layout onNavClick={handleClick}>
+
+      <div onClick={handleClick} style={{ marginTop: '1px' }}></div>
       <div
         ref={ref}
       >
-        {/* <button
-          style={{
-            marginTop: "200px"
-          }}
-          onClick={() => setNum(2)}>Next</button> */}
+
         <div className="container">
-          <div className="panel ">
+          <div id={'panel-1'} className="panel">
             <HeroVer1 />
           </div>
-          <div className="panel">
+          <div id={'panel-2'} className="panel">
             <AboutUS />
           </div>
-          <div className="panel">
+          <div id={'panel-3'} className="panel">
             <Service1 />
           </div>
-          <div className="panel">
+          <div id={'panel-4'} className="panel">
             <Stories1 />
           </div>
-          <div className="panel">
+          <div id={'panel-5'} className="panel">
             <Process />
           </div>
-          <div className="panel">
+          <div id={'panel-6'} className="panel">
             <Contact1 />
           </div>
 

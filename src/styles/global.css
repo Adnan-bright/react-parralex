@@ -93,7 +93,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: #0E0E0F;
     -ms-overflow-style: none; 
     scrollbar-width: none;  
     /* overflow-y: hidden;  */
