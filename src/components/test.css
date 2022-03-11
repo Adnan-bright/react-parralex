@@ -1,0 +1,27 @@
+/* body {
+    -ms-scroll-chaining: none;
+    overscroll-behavior: none;
+    height: 100vh;
+}
+
+.container {
+    -ms-scroll-chaining: none;
+    overscroll-behavior: none;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.description {
+    min-width: 100vw;
+    background-color: black;
+}
+
+.description2 {
+    min-width: 100vw;
+    background-color: black;
+}
+.description3{
+    min-width: 100vw;
+    background-color:black;
+} */

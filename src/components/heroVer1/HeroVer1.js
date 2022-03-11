@@ -4,58 +4,68 @@ import PlayIcon from '../../../static/icons/playIcon.png'
 import Video from '../../../static/videos/dummyVideo.mp4'
 import RightArrow from '../../../static/icons/rightArrow.png'
 import VideoCloseIcon from '../../../static/icons/videoClose.png'
-import { ParallaxLayer } from "@react-spring/parallax";
-import { motion } from 'framer-motion'
 import ReactPlayer from 'react-player'
+import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
 
 function HeroVer1() {
     const ref = useRef(null)
-
+    const bgImage = '../../../static/images/home/union.png'
     const [video, setVideo] = useState(false)
     return (
         <div>
             {video ?
                 <div className={style.videoContainer}>
-                <motion.div
+                    <div
 
-                    animate={{
-                        scale: [0.5, 1],
-                        opacity: [0, 3, 1],
-                    }}
-                    transition={{ duration: 0.3, easings: "easeInOut" }}
-
-                    className={style.videoBox}
-                >
-                    <img onClick={() => setVideo(false)}
-                        className={style.videoCloseIcon} src={VideoCloseIcon} alt='VideoCloseIcon' />
-                    <ReactPlayer
-                        ref={ref}
-                        playing={true}
-                        loop={false}
-                        height='100%'
-                        width={'100%'}
-                        className={style.video}
-                        url={Video}
-                        title={Video}
-                        controls={false}
-                    />
-                </motion.div>
-            </div>
+                        className={style.videoBox}
+                    >
+                        <img onClick={() => setVideo(false)}
+                            className={style.videoCloseIcon} src={VideoCloseIcon} alt='VideoCloseIcon' />
+                        <ReactPlayer
+                            ref={ref}
+                            playing={true}
+                            loop={false}
+                            height='100%'
+                            width={'100%'}
+                            className={style.video}
+                            url={Video}
+                            title={Video}
+                            controls={false}
+                        />
+                    </div>
+                </div>
                 :
-                <div className={style.main}>
+                <ParallaxBanner
+                    layers={[{
+                        image: '/images/home/union.png',
+                        translateX: [0, 0],
+                        easing: 'easeInOut',
+                        style: {
+                            backgroundSize: "contain",
+                            backgroundRepeat: "no-repeat", backgroundPositionX: "center"
+                        }
+                    }]}
+
+                    className={style.main}
+
+                >
                     <div
                         className={style.content}>
-                        <ParallaxLayer
-                            speed={1}
-                            className={style.mainHeading1}  >Creative support</ParallaxLayer>
-                        <ParallaxLayer
-                            speed={.3}
-                            className={style.mainHeading2} >
-                            for your business</ParallaxLayer>
+                        <Parallax
+                            translateX={[0, 10]}
+                            easing={'easeInOut'}
+                            className={style.headings}
+                        >
+                            <Parallax translateX={[0, 0]}
+                                easing={'easeInOut'}
+                                className={style.mainHeading1}  >Creative support</Parallax>
+                            <Parallax translateX={[0, 0]}
+                                className={style.mainHeading2} >
+                                for your business</Parallax>
 
-                        <ParallaxLayer
-                            speed={.5}
-                            className={style.mainHeading3}>at an affordable cost.</ParallaxLayer>
+                            <Parallax
+                                className={style.mainHeading3}>at an affordable cost.</Parallax>
+                        </Parallax>
                         <div style={{
                         }} className={style.playIconContainer}>
                             <img
@@ -69,7 +79,7 @@ function HeroVer1() {
                         </div>
 
                     </div>
-                </div>
+                </ParallaxBanner>
             }
         </div>
     )

@@ -1,19 +1,16 @@
 import React from 'react'
 import * as style from '../../styles/components/aboutUs.module.css'
-import CrossIcon from '../../../static/icons/crossIcon.png'
-import {ParallaxLayer } from "@react-spring/parallax";
-import Boxes from '../../../static/images/about-us/boxes.png'
 
 function AboutUS() {
 
     return (
         <div className={style.main}>
-            <ParallaxLayer 
-            style={{marginTop:"50px"}}
-            speed={0.3}
-            offset={.9}
+            <div className={style.bgCross}>
+                <img src='/images/about-us/cross.png' />
+            </div>
+    
+            <div 
             className={style.body}>
-                
                     <p className={style.title}>About us</p>
 
                     <p className={style.paragraph}>We build creative experiences.<br />
@@ -25,7 +22,7 @@ function AboutUS() {
                     {/* <div className={style.button}>
                         <p className={style.buttonTitle}>Read more</p>
                     </div> */}
-            </ParallaxLayer>
+            </div>
 
         </div>
     )

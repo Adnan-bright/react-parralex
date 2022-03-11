@@ -3,12 +3,15 @@ import * as style from '../../styles/components/stories1.module.css'
 function Stories1() {
     return (
         <div className={style.main}>
+            <div className={style.bgImg}>
+                <img src='/images/stories/bg.png' />
+            </div>
             <div className={style.upperContainer}>
                 <h1 className={style.heading}>
                     our best stories
                 </h1>
                 <div className={style.btn}>
-                see all work
+                    see all work
                 </div>
             </div>
             <div className={style.imagesContainer}>
@@ -24,7 +27,7 @@ function Stories1() {
                 <img className={style.img10} src='/images/stories/10.png' />
                 <img className={style.img11} src='/images/stories/11.png' />
             </div>
-         
+
         </div>
     )
 }

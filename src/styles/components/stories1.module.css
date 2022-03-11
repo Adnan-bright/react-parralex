@@ -3,7 +3,7 @@
     overflow: hidden;
     width: 100%;
     color: white;
-    background-image: url(../../../static/images/stories/bg.png);
+    /* background-image: url(../../../static/images/stories/bg.png); */
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: left;
@@ -26,7 +26,14 @@
 
     color: #FFFFFF;
 }
-
+.imagesContainer:hover img:not(:hover) {
+    filter: blur(4px);
+    transition: ease-in-out .5s;
+}
+.imagesContainer:hover img:hover {
+    transform: scale(1.5);
+    transition: ease-in-out .8s;
+}
 .btn {
     width: 168px;
     height: 54px;
@@ -125,4 +132,9 @@
     left: 80vw;
     bottom: 150px;
 
+}
+.bgImg{
+    position: absolute;
+    right: 190px;
+    top: 130px;
 }

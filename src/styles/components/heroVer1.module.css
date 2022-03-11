@@ -3,15 +3,20 @@
     overflow: hidden;
     width: 100%;
 }
+.headings{
+    margin-left: -11%;
+    margin-top: 0%;
+}
 .main {
     height: 100vh;
     overflow: hidden;
     width: 100%;
     color: white;
-    background-image: url(../../../static/images/home/union.png);
+    /* background-image: url(../../../static/images/home/union.png); */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    border: none;
 }
 .content {
     height: 100%;
@@ -20,12 +25,12 @@
     justify-content: center;
 }
 .mainHeading1 {
-    margin-top: 30vh;
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
     font-size: 85px;
     line-height: 90px;
+    margin-left: -3%;
     /* margin-top: -40px; */
     /* identical to box height */
     text-transform: uppercase;
@@ -33,20 +38,19 @@
     color: #FFFFFF;
 }
 .mainHeading2 {
-    margin-top: 42vh;
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
     font-size: 85px;
     line-height: 90px;
-    text-align: left;
-    padding-left: 7%;
+    text-align: center;
+    margin-left: -23%;
+    margin-top: 20px;
     /* identical to box height */
     text-transform: uppercase;
     color: #FFFFFF;
 }
 .mainHeading3 {
-    margin-top: 55vh;
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
@@ -54,6 +58,7 @@
     line-height: 90px;
     /* identical to box height */
     text-align: center;
+    margin-top: 20px;
     text-transform: uppercase;
     color: #FFFFFF;
 }
@@ -82,12 +87,13 @@
 .playIconContainer{
     display: flex;
     justify-content: center;
-    padding-top: 68px;
 }
 .playIcon{
+    width: 68px;
+    height: 68px;
     cursor: pointer;  
     position: absolute;
-    bottom: 100px;
+    bottom: 110px;
 }
 .videoContainer{
     position: relative;
@@ -149,9 +155,12 @@
 }
 .bottomTextContainer{
     display: flex;
+    position: absolute;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    right: 38px;
+    bottom: 10px;
 }
 .bottomText{
     font-family: graphik-regular;
@@ -160,6 +169,6 @@
     margin-right: 20px;
 }
 .rightArrow{
-    margin-right: 38px;
+    width: 42px;
     cursor: pointer;
 }
