@@ -9,7 +9,8 @@ import Stories1 from "../components/stories1/Stories1";
 import Contact1 from "../components/contact/Contact1";
 import Process from "../components/process/Process";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger, } from "gsap/ScrollTrigger";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 
 
@@ -19,6 +20,7 @@ const IndexPage = () => {
   const [num, setNum] = useState(0)
   gsap.registerPlugin(ScrollTrigger);
   const ref = useRef(null);
+  const hero1Ref = useRef(null);
 
   // useEffect(() => {
   //   const element = ref.current;
@@ -52,48 +54,38 @@ const IndexPage = () => {
         end: "+=3500",
       },
     });
-  }, [num]);
+  }, []);
 
 
 
-  // const onClickHandler = (num) => {
-  //   try {
-  //     if (typeof window !== 'undefined') {
-  //       alert('ok')
-  //       let sections = gsap.utils.toArray(".panel");
-  //       gsap.to(sections, {
-  //         xPercent: -100 * (sections.length - 1),
-  //         ease: "none",
-  //         scrollTrigger: {
-  //           trigger: ".container",
-  //           pin: true,
-  //           scrub: num,
-  //           snap: num / (sections.length - 1),
-  //           end: "+=3500",
-  //         },
-  //       });
-  //     }
-  //   } catch (error) {
-  //     alert(error)
-  //   }
-  // }
+  const onClickHandler = (num) => {
+    let sections = gsap.utils.toArray(".panel");
+    console.log('3 / (sections.length - 1)', num * (sections.length))
+    let value = num * (sections.length)
+    gsap.registerPlugin(ScrollToPlugin);
+    try {
+      if (typeof window !== 'undefined') {
+        gsap.to(window, { duration: 2, value});
+      }
+    } catch (error) {
+      alert(error)
+    }
+  }
   console.log('ref', ref.current)
 
   return (
-    <Layout  >
+    <Layout onNavClick={onClickHandler}  >
       <div
         ref={ref}
       >
-        {/* <button
-          style={{
-            marginTop: "200px"
-          }}
-          onClick={() => setNum(2)}>Next</button> */}
+        {/* <a href="#panel1" style={{
+          marginTop:"200px"
+        }}>clik</a> */}
         <div className="container">
-          <div className="panel ">
+          <div className="panel">
             <HeroVer1 />
           </div>
-          <div className="panel">
+          <div id={'panel1'} className="panel">
             <AboutUS />
           </div>
           <div className="panel">
