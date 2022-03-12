@@ -119,3 +119,62 @@
     left: -400px;
     z-index: -1;
 }
+
+.videoContainer{
+    position: relative;
+    width: 100vw;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.videoBox{
+    position: relative;
+    width: 65vw;
+}
+.videoCloseIcon{
+    position: absolute; 
+    height: 25px;
+    width:  25px;
+    right: 20px;
+    top: 35px;
+    z-index: 200;
+    cursor: pointer;
+ }
+ .video{
+    margin-top: 20px;
+    z-index: 999;
+
+}
+ @media only screen and (max-width:1350px){
+    .videoBox{
+        position: relative;
+        width: 70vw;
+    }
+}
+@media only screen and (max-width:1250px){
+    .videoBox{
+        position: relative;
+        width: 80vw;
+    }
+}
+@media only screen and (max-width:1050px){
+    .videoBox{
+        position: relative;
+        width: 90vw;
+    }
+}
+@media only screen and (max-width:768px){
+    .videoBox{
+        position: relative;
+        width: 95vw;
+    }
+    .videoCloseIcon{
+        height: 20px;
+        width:  20px;
+        right: 0px;
+        top: 25px;
+        z-index: 200;
+        cursor: pointer;
+     }
+}

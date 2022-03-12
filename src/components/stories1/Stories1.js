@@ -15,17 +15,71 @@ function Stories1() {
                 </div>
             </div>
             <div className={style.imagesContainer}>
-                <img className={style.img1} src='/images/stories/1.png' />
-                <img className={style.img2} src='/images/stories/2.png' />
-                <img className={style.img3} src='/images/stories/3.png' />
-                <img className={style.img4} src='/images/stories/4.png' />
-                <img className={style.img5} src='/images/stories/5.png' />
-                <img className={style.img6} src='/images/stories/6.png' />
-                <img className={style.img7} src='/images/stories/7.png' />
-                <img className={style.img8} src='/images/stories/8.png' />
-                <img className={style.img9} src='/images/stories/9.png' />
-                <img className={style.img10} src='/images/stories/10.png' />
-                <img className={style.img11} src='/images/stories/11.png' />
+
+                <div className={style.topContainer}>
+                    <div className={style.singleImgContainer}>
+                        <img className={style.imgTop} src='/images/stories/1.png' />
+                    </div>
+                    <div className={style.singleImgContainer}>
+                        <img className={style.imgTop} src='/images/stories/2.png' />
+                    </div>
+                    <div className={style.singleImgContainer}>
+                        <img className={style.imgTop} src='/images/stories/3.png' />
+                    </div>
+                    <div className={style.singleImgContainer}>
+                        <img className={style.imgTop} src='/images/stories/4.png' />
+                    </div>
+                </div>
+                <div className={style.bottomContainer}>
+                    <div className={style.singleImgContainer}>
+                        <img className={style.imgTop} src='/images/stories/1.png' />
+                    </div>
+                    <div className={style.singleImgContainer}>
+                        <img className={style.imgTop} src='/images/stories/2.png' />
+                    </div>
+                    <div className={style.singleImgContainer}>
+                        <img className={style.imgTop} src='/images/stories/3.png' />
+                    </div>
+                    <div className={style.singleImgContainer}>
+                        <img className={style.imgTop} src='/images/stories/4.png' />
+                    </div>
+                </div>
+
+
+                {/* <div className={style.singleImgContainer}>
+                    <img className={style.img5} src='/images/stories/5.png' />
+                </div>
+
+                <div className={style.singleImgContainer}>
+
+                    <img className={style.img6} src='/images/stories/6.png' />
+
+                </div>
+                <div className={style.singleImgContainer}>
+
+                    <img className={style.img7} src='/images/stories/7.png' />
+
+                </div>
+                <div className={style.singleImgContainer}>
+
+                    <img className={style.img8} src='/images/stories/8.png' />
+
+                </div>
+                <div className={style.singleImgContainer}>
+
+                    <img className={style.img9} src='/images/stories/9.png' />
+
+                </div>
+                <div className={style.singleImgContainer}>
+
+                    <img className={style.img10} src='/images/stories/10.png' />
+
+                </div>
+                <div className={style.singleImgContainer}>
+
+                    <img className={style.img11} src='/images/stories/11.png' />
+
+                </div> */}
             </div>
 
         </div>
