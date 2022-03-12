@@ -3,7 +3,6 @@ body {
   overscroll-behavior: none;
   height: 100vh;
 }
-
 .container {
   -ms-scroll-chaining: none;
   overscroll-behavior: none;

@@ -14,7 +14,7 @@
 }
 
 .tabsContainer {
-    display: flex ;
+    display: flex;
     cursor: pointer;
 }
 
@@ -74,4 +74,23 @@
     text-transform: uppercase;
     color: #FFFFFF;
     text-decoration: none;
+    transition: ease-in-out .3s;
+}
+
+.tabFill {
+    margin-right: 30px;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: right;
+    text-transform: uppercase;
+    transition: ease-in-out .3s;
+    
+    /* Linear */
+    background: -webkit-linear-gradient(270deg, #63E6B9 40.02%, #E6F29B 83.2%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
 }

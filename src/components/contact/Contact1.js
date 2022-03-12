@@ -27,20 +27,23 @@ function Contact1({id}) {
             <div className={style.followContainer}>
                 <p className={style.follow}>FOLLOW</p><br />
                 <div className={style.tabs}>
-                    <a className={style.tab}>
-                        INSTAGRAM
+                    <a className={style.tab1}>
+                        {/* <img src='/images/contact/insta.png' /> */}
                     </a>
-                    <a className={style.tab}>
-                        Facebook
+                    <a className={style.tab2}>
+                    {/* <img src='/images/contact/facebook.png' /> */}
                     </a>
-                    <a className={style.tab}>
-                        Linkedin
+                    <a className={style.tab3}>
+                    {/* <img src='/images/contact/twitter.png' /> */}
                     </a>
-                    <a className={style.tab}>
-                        youtube
+                    <a className={style.tab4}>
+                    {/* <img src='/images/contact/linkedin.png' /> */}
                     </a>
-                    <a className={style.tab}>
-                        vimeo
+                    <a className={style.tab5}>
+                    {/* <img src='/images/contact/youtube.png' /> */}
+                    </a>
+                    <a className={style.tab6}>
+                    {/* <img src='/images/contact/vimeo.png' /> */}
                     </a>
                 </div>
             </div>
