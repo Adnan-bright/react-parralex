@@ -10,7 +10,7 @@
 
 .heading {
     margin-top: 100px;
-    margin-left: 45px;
+    margin-left: 7%;
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
@@ -23,8 +23,8 @@
 
 .imagesContainer {
     margin-top: 40px;
-    margin-left: 45px;
-    margin-right: 45px;
+    margin-left: 7%;
+    margin-right: 7%;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -116,7 +116,7 @@
 .bgBoxes {
     position: absolute;
     top: 0px;
-    left: -400px;
+    left: -610px;
     z-index: -1;
 }
 

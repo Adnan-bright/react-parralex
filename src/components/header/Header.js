@@ -3,14 +3,15 @@ import * as style from '../../styles/components/header.module.css'
 import { Link } from 'gatsby'
 // import { StaticImage } from "gatsby-plugin-image"
 
-function Header({navClick}) {
+function Header({ navClick }) {
   const [toggle, setToggle] = useState(false)
   const [isSmall, setIsSmall] = useState(0)
+  const [nav, setNav] = useState('')
   if (typeof window !== 'undefined') {
     var width = window.matchMedia("(max-width: 768px)").matches
   }
   useEffect(() => {
-      setIsSmall((window.innerWidth/2)+140.5)
+    setIsSmall((window.innerWidth / 2) + 140.5)
   }, [width])
   console.log('isSmall', isSmall)
   // const tabs = ['about', 'services', 'stories', 'process', 'Contact us']
@@ -18,25 +19,27 @@ function Header({navClick}) {
     <div className={style.main}>
       <div className={style.headerBar}>
         <div className={style.logoContainer}>
-         <Link > <img onClick={()=> navClick('#panel-1')} className={style.logo} src="/images/common/logo.png" alt="Logo" /></Link>
+          <Link > <img onClick={() => {setNav(''); navClick('#panel-1')} } className={style.logo} src="/images/common/logo.png" alt="Logo" /></Link>
         </div>
         <div className={toggle ? style.tabsContainerHide : style.tabsContainer}>
           {toggle ? <img onClick={() => setToggle(false)} className={style.icon} src="/icons/close.png" /> :
             <img onClick={() => setToggle(true)} className={style.icon} src="/icons/menu.png" />}
-          <Link className={style.tab} >
-            <p onClick={()=> navClick('#panel-2')}>About</p>
+          <Link className={nav === '#panel-2'? style.tabFill : style.tab} >
+            <p 
+            onClick={() => {setNav('#panel-2'); navClick('#panel-2')} }
+            >About</p>
           </Link>
           <Link >
-            <p onClick={()=> navClick('#panel-3')} className={style.tab}>Services</p>
+            <p onClick={() => {setNav('#panel-3'); navClick('#panel-3')} } className={nav === '#panel-3'? style.tabFill : style.tab}>Services</p>
           </Link>
           <Link >
-            <p  onClick={()=> navClick('#panel-4')}className={style.tab}>Stories</p>
+            <p onClick={() => {setNav('#panel-4'); navClick('#panel-4')} } className={nav === '#panel-4'? style.tabFill : style.tab}>Stories</p>
           </Link>
           <Link >
-            <p onClick={()=> navClick('#panel-5')} className={style.tab}>Process</p>
+            <p onClick={() => {setNav('#panel-5'); navClick('#panel-5')} } className={nav === '#panel-5'? style.tabFill : style.tab}>Process</p>
           </Link>
           <Link >
-            <p onClick={()=> navClick('#panel-6')} className={style.tab}>Contact us</p>
+            <p onClick={() => {setNav('#panel-6'); navClick('#panel-6')} } className={nav === '#panel-6'? style.tabFill : style.tab}>Contact us</p>
           </Link>
         </div>
       </div>

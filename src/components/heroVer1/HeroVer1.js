@@ -13,6 +13,7 @@ function HeroVer1() {
     const [video, setVideo] = useState(false)
     return (
         <div>
+
             {video ?
                 <div className={style.videoContainer}>
                     <div

@@ -115,7 +115,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: ease-in-out .4s;
     background: url(../../../static/images/common/btnBg.png);
+}
+.btn:hover {
+    transition: ease-in-out .4s;
+    background: url(../../../static/images/common/btnBgHover.png);
 }
 
 .btnContainer {
@@ -162,16 +167,136 @@
 }
 .tabs{
     display: flex;
+    align-items: center;
 }
-.tab {
+.tab1 {
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    margin-right: 25px;
+    margin-right: 20px;
     margin-bottom: 15px;
     line-height: 15px;
+    width: 26px;
+    height: 26px;
+    background-image: url(../../../static/images/contact/insta.png);
     text-transform: uppercase;
     color: #7A858D;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
+.tab1:hover {
+    background-image: url(../../../static/images/contact/instaHv.png);
+    cursor: pointer;
+}
+
+.tab2 {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    line-height: 15px;
+    width: 26px;
+    height: 26px;
+    background-image: url(../../../static/images/contact/facebook.png);
+    text-transform: uppercase;
+    color: #7A858D;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
+.tab2:hover {
+    background-image: url(../../../static/images/contact/facebookHv.png);
+    cursor: pointer;
+}
+
+.tab3 {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    line-height: 15px;
+    width: 26px;
+    height: 26px;
+    background-image: url(../../../static/images/contact/twitter.png);
+    text-transform: uppercase;
+    color: #7A858D;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
+.tab3:hover {
+    background-image: url(../../../static/images/contact/twitterHv.png);
+    cursor: pointer;
+}
+
+.tab4 {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    line-height: 15px;
+    width: 26px;
+    height: 26px;
+    background-image: url(../../../static/images/contact/linkedin.png);
+    text-transform: uppercase;
+    color: #7A858D;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
+.tab4:hover {
+    background-image: url(../../../static/images/contact/linkedinHv.png);
+    cursor: pointer;
+}
+
+.tab5 {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    line-height: 15px;
+    width: 26px;
+    height: 26px;
+    background-image: url(../../../static/images/contact/youtube.png);
+    text-transform: uppercase;
+    color: #7A858D;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
+.tab5:hover {
+    background-image: url(../../../static/images/contact/youtubeHv.png);
+    cursor: pointer;
+}
+
+.tab6 {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    line-height: 15px;
+    width: 26px;
+    height: 26px;
+    background-image: url(../../../static/images/contact/vimeo.png);
+    text-transform: uppercase;
+    color: #7A858D;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
+.tab6:hover {
+    background-image: url(../../../static/images/contact/vimeoHv.png);
     cursor: pointer;
 }
