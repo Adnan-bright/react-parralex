@@ -59,15 +59,11 @@ const IndexPage = () => {
       },
     });
 
-
-
   }, []);
 
 
   const handleClick = (id) => {
-    // const id = this.getAttribute('href').split('#')[1];
   gsap.registerPlugin(ScrollToPlugin);
-
     gsap.to(window, { duration: 3, scrollTo: id});
   }
 
@@ -78,14 +74,19 @@ const IndexPage = () => {
   return (
     <Layout onNavClick={handleClick}>
 
-      <div style={{
+      {/* <div style={{
         marginTop: '100px',
         backgroundColor: "red"
       }}>    <nav className="anchor-nav" role="navigation">
           <a href="#panel-1" className="anchor">Panel 1</a>
           <a href="#panel-3" className="anchor">Panel 3</a>
           <a href="#panel-5" className="anchor">Panel 5</a>
-        </nav></div>
+        </nav></div> */}
+        <div style={{
+          marginTop:"1px"
+        }}>
+
+        </div>
       <div
         id={'indexMainComponent'}
         ref={ref}
