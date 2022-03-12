@@ -42,7 +42,7 @@ const IndexPage = () => {
 
   // function GSAPHorizontalScroll() {
   //   let Sections = gsap.utils.toArray(".panel");
-  
+
   //   let GSAPHorizontalScrollTL = gsap.timeline({
   //     scrollTrigger: {
   //       trigger: "#PageWrap",
