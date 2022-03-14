@@ -12,16 +12,13 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 
-// markup
 const IndexPage = () => {
   gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollToPlugin);
   const ref = useRef(null);
-  const anchorRef = useRef();
 
   useEffect(() => {
-    // GSAPHorizontalScroll();
     const element = ref.current;
-    console.log('element', element.querySelector(".container"),)
 
     let sections = gsap.utils.toArray(".panel");
     gsap.to(sections, {
@@ -36,12 +33,20 @@ const IndexPage = () => {
       },
     });
 
+
   }, []);
 
 
   const handleClick = (id) => {
-    gsap.registerPlugin(ScrollToPlugin);
-    gsap.to(window, { duration: 3, scrollTo: id });
+    const element = ref.current;
+    gsap.to(window, {
+      scrollTo: 700*id,
+      duration: 2
+    })
+
+
+    // gsap.registerPlugin(ScrollToPlugin);
+    // gsap.to(window, { duration: 3, scrollTo: id });
   }
 
 
@@ -53,16 +58,17 @@ const IndexPage = () => {
 
       </div>
       <div
-        ref={ref}
+          ref={ref}
       >
-        <div className="container">
+        <div
+          className="container">
           <div id={'panel-1'} className="panel">
             <HeroVer1 />
           </div>
           <div id={'panel-2'} className="panel">
             <AboutUS />
           </div>
-          <div id={'panel-3'} ref={anchorRef} className="panel">
+          <div id={'panel-3'} className="panel">
             <Service1 />
           </div>
           <div id={'panel-4'} className="panel">
