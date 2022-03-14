@@ -9,7 +9,6 @@ import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
 
 function HeroVer1() {
     const ref = useRef(null)
-    const bgImage = '../../../static/images/home/union.png'
     const [video, setVideo] = useState(false)
     return (
         <div>

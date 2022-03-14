@@ -32,6 +32,7 @@
     text-transform: uppercase;
     color: #FFFFFF;
     margin-top: 17px;
+    z-index: 300;
 }
 
 .bottomRow {
@@ -258,7 +259,9 @@
     bottom: 332px;
     z-index: 22;
 }
-
+.imgItem{
+    z-index: 300;
+}
 .imageContainer5 {
     background-image: url(../../../static/images/process/5.png);
     background-size: contain;
@@ -271,6 +274,7 @@
     flex-direction: column;
     margin-left: 30px;
     transition: ease-in-out .3s;
+    /* pointer-events: none; */
 }
 
 .imageContainer5Active {
