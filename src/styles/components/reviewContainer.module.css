@@ -1,2 +1,63 @@
-.main{
+.main {
+    position: relative;
+    width: 320px;
+    height: 320px;
+}
+
+.mainImg {
+    width: 320px;
+    height: 320px;
+}
+
+.revCont {
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.starIcon {
+    width: 24px;
+    height: 24px;
+    padding-bottom: 5px;
+}
+
+.recDesc {
+    margin-top: 20px;
+    width: 80%;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.lowerText {
+    margin-top: 40px;
+    width: 50%;
+    font-family: 'Graphik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.revText {
+    margin-right: 7px;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.dataContainer {
+    position: absolute;
+    top: 0px;
 }

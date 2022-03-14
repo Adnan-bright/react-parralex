@@ -6,10 +6,11 @@ function Contact1({ id }) {
     return (
         <div className={style.body}>
             <div id={id} className={style.main}>
+                <div className={style.reviewContainer}>
+                    <ReviewContainer />
+                </div>
                 <div className={style.midContainer}>
-                    <div className={style.reviewContainer}>
-                        {/* <ReviewContainer /> */}
-                    </div>
+
                     <h1 className={style.heading}>CONTACT US</h1>
                     <div className={style.formContainer}>
                         <div className={style.topRow}>
@@ -26,28 +27,28 @@ function Contact1({ id }) {
                         <div className={style.btnContainer}> <div className={style.btn}>submit</div></div>
                     </div>
                 </div>
-               
+
             </div>
             <div className={style.copyrightContainer}>
-                    <p className={style.copyRight}>© 2022 MAG-RAW Creations, LLC all rights reserved</p>
+                <p className={style.copyRight}>© 2022 MAG-RAW Creations, LLC all rights reserved</p>
+            </div>
+            <div className={style.followContainer}>
+                <p className={style.follow}>FOLLOW</p><br />
+                <div className={style.tabs}>
+                    <a className={style.tab1}>
+                    </a>
+                    <a className={style.tab2}>
+                    </a>
+                    <a className={style.tab3}>
+                    </a>
+                    <a className={style.tab4}>
+                    </a>
+                    <a className={style.tab5}>
+                    </a>
+                    <a className={style.tab6}>
+                    </a>
                 </div>
-                <div className={style.followContainer}>
-                    <p className={style.follow}>FOLLOW</p><br />
-                    <div className={style.tabs}>
-                        <a className={style.tab1}>
-                        </a>
-                        <a className={style.tab2}>
-                        </a>
-                        <a className={style.tab3}>
-                        </a>
-                        <a className={style.tab4}>
-                        </a>
-                        <a className={style.tab5}>
-                        </a>
-                        <a className={style.tab6}>
-                        </a>
-                    </div>
-                </div>
+            </div>
         </div>
     )
 }
