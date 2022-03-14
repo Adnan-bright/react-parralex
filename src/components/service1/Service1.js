@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react'
 import * as style from '../../styles/components/service1.module.css'
 import ReactPlayer from 'react-player'
-import Video from '../../../static/videos/dummyVideo.mp4'
 import VideoCloseIcon from '../../../static/icons/videoClose.png'
 
 function Service1() {

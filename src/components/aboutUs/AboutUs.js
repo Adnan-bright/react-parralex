@@ -1,6 +1,5 @@
 import React from 'react'
 import * as style from '../../styles/components/aboutUs.module.css'
-
 function AboutUS() {
 
     return (
@@ -8,7 +7,6 @@ function AboutUS() {
             <div className={style.bgCross}>
                 <img src='/images/about-us/cross.png' />
             </div>
-    
             <div 
             className={style.body}>
                     <p className={style.title}>About us</p>
@@ -19,9 +17,6 @@ function AboutUS() {
                         design, and creative technology.<br />
                         Our goal is your success.
                     </p>
-                    {/* <div className={style.button}>
-                        <p className={style.buttonTitle}>Read more</p>
-                    </div> */}
             </div>
 
         </div>

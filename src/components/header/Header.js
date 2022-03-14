@@ -19,27 +19,27 @@ function Header({ navClick }) {
     <div className={style.main}>
       <div className={style.headerBar}>
         <div className={style.logoContainer}>
-          <Link > <img onClick={() => {setNav(''); navClick('#panel-1')} } className={style.logo} src="/images/common/logo.png" alt="Logo" /></Link>
+          <Link > <img onClick={() => {setNav(''); navClick(0)} } className={style.logo} src="/images/common/logo.png" alt="Logo" /></Link>
         </div>
         <div className={toggle ? style.tabsContainerHide : style.tabsContainer}>
           {toggle ? <img onClick={() => setToggle(false)} className={style.icon} src="/icons/close.png" /> :
             <img onClick={() => setToggle(true)} className={style.icon} src="/icons/menu.png" />}
           <Link className={nav === '#panel-2'? style.tabFill : style.tab} >
             <p 
-            onClick={() => {setNav('#panel-2'); navClick('#panel-2')} }
+            onClick={() => {setNav('#panel-2'); navClick(1)} }
             >About</p>
           </Link>
           <Link >
-            <p onClick={() => {setNav('#panel-3'); navClick('#panel-3')} } className={nav === '#panel-3'? style.tabFill : style.tab}>Services</p>
+            <p onClick={() => {setNav('#panel-3'); navClick(2)} } className={nav === '#panel-3'? style.tabFill : style.tab}>Services</p>
           </Link>
           <Link >
-            <p onClick={() => {setNav('#panel-4'); navClick('#panel-4')} } className={nav === '#panel-4'? style.tabFill : style.tab}>Stories</p>
+            <p onClick={() => {setNav('#panel-4'); navClick(3)} } className={nav === '#panel-4'? style.tabFill : style.tab}>Stories</p>
           </Link>
           <Link >
-            <p onClick={() => {setNav('#panel-5'); navClick('#panel-5')} } className={nav === '#panel-5'? style.tabFill : style.tab}>Process</p>
+            <p onClick={() => {setNav('#panel-5'); navClick(4)} } className={nav === '#panel-5'? style.tabFill : style.tab}>Process</p>
           </Link>
           <Link >
-            <p onClick={() => {setNav('#panel-6'); navClick('#panel-6')} } className={nav === '#panel-6'? style.tabFill : style.tab}>Contact us</p>
+            <p onClick={() => {setNav('#panel-6'); navClick(5)} } className={nav === '#panel-6'? style.tabFill : style.tab}>Contact us</p>
           </Link>
         </div>
       </div>
