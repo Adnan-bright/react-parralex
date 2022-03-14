@@ -1,11 +1,15 @@
 import React from 'react'
 import * as style from '../../styles/components/contact1.module.css'
+import ReviewContainer from '../reviewContainer/ReviewContainer'
 
 function Contact1({ id }) {
     return (
         <div className={style.body}>
             <div id={id} className={style.main}>
                 <div className={style.midContainer}>
+                    <div className={style.reviewContainer}>
+                        {/* <ReviewContainer /> */}
+                    </div>
                     <h1 className={style.heading}>CONTACT US</h1>
                     <div className={style.formContainer}>
                         <div className={style.topRow}>

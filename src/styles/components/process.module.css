@@ -6,7 +6,23 @@
     position: relative;
 
 }
-
+.dataContainer{
+    transform: rotate(-45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+.bgContainer{
+    z-index: 500;
+    width: 70%;
+    height: 70%;
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
 .imageContainer5:hover~.imageContainer3 {
     display: none;
 }
@@ -261,6 +277,8 @@
 }
 .imgItem{
     z-index: 300;
+    /* transform: rotate(-45deg); */
+
 }
 .imageContainer5 {
     background-image: url(../../../static/images/process/5.png);

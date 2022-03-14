@@ -13,7 +13,12 @@ function HeroVer1() {
     return (
         <div>
 
-            {video ?
+
+            <div
+                style={{
+                    display: video ? 'flex' : "none",
+                }}
+                className={style.videoBody}>
                 <div className={style.videoContainer}>
                     <div
 
@@ -34,53 +39,52 @@ function HeroVer1() {
                         />
                     </div>
                 </div>
-                :
-                <ParallaxBanner
-                    layers={[{
-                        image: '/images/home/union.png',
-                        translateX: [0, 0],
-                        easing: 'easeInOut',
-                        style: {
-                            backgroundSize: "contain",
-                            backgroundRepeat: "no-repeat", backgroundPositionX: "center"
-                        }
-                    }]}
+            </div>
+            <ParallaxBanner
+                layers={[{
+                    image: '/images/home/union.png',
+                    translateX: [0, 0],
+                    easing: 'easeInOut',
+                    style: {
+                        backgroundSize: "contain",
+                        backgroundRepeat: "no-repeat", backgroundPositionX: "center"
+                    }
+                }]}
 
-                    className={style.main}
+                className={style.main}
 
-                >
-                    <div
-                        className={style.content}>
-                        <Parallax
-                            translateX={[0, 10]}
+            >
+                <div
+                    className={style.content}>
+                    <Parallax
+                        translateX={[0, 10]}
+                        easing={'easeInOut'}
+                        className={style.headings}
+                    >
+                        <Parallax translateX={[0, 0]}
                             easing={'easeInOut'}
-                            className={style.headings}
-                        >
-                            <Parallax translateX={[0, 0]}
-                                easing={'easeInOut'}
-                                className={style.mainHeading1}  >Creative support</Parallax>
-                            <Parallax translateX={[0, 0]}
-                                className={style.mainHeading2} >
-                                for your business</Parallax>
+                            className={style.mainHeading1}  >Creative support</Parallax>
+                        <Parallax translateX={[0, 0]}
+                            className={style.mainHeading2} >
+                            for your business</Parallax>
 
-                            <Parallax
-                                className={style.mainHeading3}>at an affordable cost.</Parallax>
-                        </Parallax>
-                        <div style={{
-                        }} className={style.playIconContainer}>
-                            <img
+                        <Parallax
+                            className={style.mainHeading3}>at an affordable cost.</Parallax>
+                    </Parallax>
+                    <div style={{
+                    }} className={style.playIconContainer}>
+                        <img
 
-                                className={style.playIcon} onClick={() => setVideo(true)} src={PlayIcon} alt='PlayIcon' />
-                        </div>
-                        <div
-                            className={style.bottomTextContainer}>
-                            <p className={style.bottomText}>Scroll</p>
-                            <img className={style.rightArrow} src={RightArrow} alt='PlayIcon' />
-                        </div>
-
+                            className={style.playIcon} onClick={() => setVideo(true)} src={PlayIcon} alt='PlayIcon' />
                     </div>
-                </ParallaxBanner>
-            }
+                    <div
+                        className={style.bottomTextContainer}>
+                        <p className={style.bottomText}>Scroll</p>
+                        <img className={style.rightArrow} src={RightArrow} alt='PlayIcon' />
+                    </div>
+
+                </div>
+            </ParallaxBanner>
         </div>
     )
 }

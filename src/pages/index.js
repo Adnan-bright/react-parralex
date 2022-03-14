@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import '../styles/index.css'
 import HeroVer1 from "../components/heroVer1/HeroVer1"
 import Layout from "../components/layout/Layout";
@@ -13,6 +13,7 @@ import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 
 const IndexPage = () => {
+  const [updateValue, setUpdateValue] = useState(0)
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
   const ref = useRef(null);
@@ -28,6 +29,7 @@ const IndexPage = () => {
         trigger: ".container",
         pin: true,
         scrub: 1,
+        onUpdate: self => setUpdateValue(Math.round(self.progress * 10) / 10),
         snap: 1 / (sections.length - 1),
         end: () => "+=3500"
       },
@@ -35,28 +37,22 @@ const IndexPage = () => {
 
 
   }, []);
+  var decPart = (updateValue+"").split(".")[1];
+  console.log("decPart", updateValue)
 
 
   const handleClick = (id) => {
-    const element = ref.current;
     gsap.to(window, {
       scrollTo: 700*id,
       duration: 2
     })
 
-
-    // gsap.registerPlugin(ScrollToPlugin);
-    // gsap.to(window, { duration: 3, scrollTo: id });
   }
 
 
   return (
-    <Layout onNavClick={handleClick}>
-      <div style={{
-        marginTop: "1px"
-      }}>
+    <Layout hoverValue={updateValue} onNavClick={handleClick}>
 
-      </div>
       <div
           ref={ref}
       >

@@ -13,6 +13,14 @@
     justify-content: center;
     position: relative;
 }
+.reviewContainer{
+    right: 5%;
+    top: 15%;
+    /* transform: translate(-50%, 0); */
+    height: 400px;
+    width: 300px;
+    position: absolute;
+}
 .body{
     position: relative;
     height: 90%;

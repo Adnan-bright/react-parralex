@@ -5,7 +5,16 @@
     background-color: transparent;
 }
 
-
+.tabContainer{
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dot{
+    margin-top: -10px;
+}
 .headerBar {
     display: flex;
     justify-content: space-between;
@@ -65,7 +74,7 @@
 }
 
 .tab {
-    margin-right: 30px;
+    /* margin-right: 30px; */
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
@@ -78,7 +87,7 @@
 }
 
 .tabFill {
-    margin-right: 30px;
+    /* margin-right: 30px; */
     font-family: graphik-regular;
     font-style: normal;
     font-weight: 400;
