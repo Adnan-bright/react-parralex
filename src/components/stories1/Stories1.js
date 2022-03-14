@@ -4,7 +4,7 @@ function Stories1() {
     const [whichCard, setWhichCard] = useState('')
     return (
         <div className={style.main}>
-                    <img src='/images/stories/croses.png' className={style.bgImgBtm} />
+            <img src='/images/stories/croses.png' className={style.bgImgBtm} />
             <div className={style.bgImg}>
                 <img src='/images/stories/bg.png' />
             </div>
