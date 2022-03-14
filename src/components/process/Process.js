@@ -26,6 +26,8 @@ function Process() {
                             <p
                                 className={style.imageText}
                             >Expansion</p>
+                            <p className={hover === 'expansion' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
+                                consectetur adipiing elit, sed do eiusmod.</p>
                         </div>
                     </div>
                 </div>
@@ -47,6 +49,8 @@ function Process() {
                             <p
 
                                 className={style.imageText}>Planning</p>
+                            <p className={hover === 'planning' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
+                                consectetur adipiing elit, sed do eiusmod.</p>
                         </div>
 
                     </div>
@@ -68,6 +72,8 @@ function Process() {
                             <p
 
                                 className={style.imageText}>Deployment</p>
+                            <p className={hover === 'deployment' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
+                                consectetur adipiing elit, sed do eiusmod.</p>
                         </div>
                     </div>
 
@@ -90,6 +96,8 @@ function Process() {
                             <p
 
                                 className={style.imageText}>Ideation</p>
+                            <p className={hover === 'ideation' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
+                                consectetur adipiing elit, sed do eiusmod.</p>
                         </div>
 
                     </div>
@@ -111,6 +119,8 @@ function Process() {
                             <p
 
                                 className={style.imageText}>Creation</p>
+                            <p className={hover === 'creation' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
+                                consectetur adipiing elit, sed do eiusmod.</p>
                         </div>
 
                     </div>
