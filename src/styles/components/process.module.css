@@ -6,14 +6,45 @@
     position: relative;
 
 }
-.dataContainer{
+.boxDetailsHide{
+    position: absolute;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    width: 170%;
+    top: 60px;
+    line-height: 18px;
+    opacity: 0;
+    text-align: center;
+    color: #FFFFFF;
+    transition: ease-in-out .4s;
+}
+.boxDetails {
+    transition: ease-in-out .4s;
+    opacity: 1;
+    position: absolute;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    width: 170%;
+    top: 80px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.dataContainer {
     transform: rotate(-45deg);
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; 
+    flex-direction: column;
 }
-.bgContainer{
+
+.bgContainer {
+    position: relative;
     z-index: 500;
     width: 70%;
     height: 70%;
@@ -21,8 +52,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; 
+    flex-direction: column;
 }
+
 .imageContainer5:hover~.imageContainer3 {
     display: none;
 }
@@ -58,6 +90,7 @@
     bottom: -30px;
     left: 30px;
 }
+
 .bottomRow:hover {
     display: flex;
     width: 100%;
@@ -165,6 +198,7 @@
     left: 220px;
     bottom: 150px;
 }
+
 .midRow:hover {
     display: flex;
     width: 100%;
@@ -267,6 +301,7 @@
     left: 757px;
     bottom: 332px;
 }
+
 .topRow:hover {
     display: flex;
     width: 100%;
@@ -275,11 +310,13 @@
     bottom: 332px;
     z-index: 22;
 }
-.imgItem{
+
+.imgItem {
     z-index: 300;
     /* transform: rotate(-45deg); */
 
 }
+
 .imageContainer5 {
     background-image: url(../../../static/images/process/5.png);
     background-size: contain;
