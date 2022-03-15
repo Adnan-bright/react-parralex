@@ -1,6 +1,6 @@
 .main {
     height: 100vh;
-    overflow-y: hidden;
+    overflow: hidden;
     width: 100%;
     color: white;
     background-size:cover;

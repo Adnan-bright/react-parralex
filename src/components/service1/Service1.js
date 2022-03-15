@@ -1,15 +1,63 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import * as style from '../../styles/components/service1.module.css'
 import ReactPlayer from 'react-player'
 import VideoCloseIcon from '../../../static/icons/videoClose.png'
-
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 function Service1() {
+    gsap.registerPlugin(ScrollTrigger);
     const [whichCard, setWhichCard] = useState('')
     const [video, setVideo] = useState('')
     const ref = useRef(null)
+    
+    useEffect(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".panel",
+                scrub: 5,
+                markers: false
+            }
+        });
+        const tl1 = gsap.timeline({
+            scrollTrigger: {
+                trigger: " .panel ",
+                scrub: 5,
+                markers: false
+            }
+        });
+        const tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: " .panel ",
+                scrub: 5,
+                markers: false
+            }
+        });
+
+        const tl3 = gsap.timeline({
+            scrollTrigger: {
+                trigger: " .panel ",
+                scrub: 5,
+                markers: false,
+            }
+        });
+
+        tl.to(".serviceBoxesBg", { xPercent: 200, filter: "blur(8px)", duration: 9, ease: "power2.out" })
+        tl.to(".serviceBoxesBg", { xPercent: 0, filter: "blur(0px)", duration: 7, ease: "power2.out" })
+
+        tl1.to(".serviceCard1", { rotateX: 180, filter: "blur(8px)", duration: 12, ease: "power2.out" })
+        tl1.to(".serviceCard1", { rotateX: 0, filter: "blur(0px)",delay:10, duration: 5, ease: "power2.out" })
+
+
+        tl2.to(".serviceCard2", { rotateY: 180, filter: "blur(8px)",  duration: 12, ease: "power2.out" })
+        tl2.to(".serviceCard2", { rotateY: 0, filter: "blur(0px)", delay:700, duration: 7, ease: "power2.out" })
+
+        tl3.to(".serviceCard3", { rotateZ: 180, filter: "blur(8px)",  duration: 12, ease: "power2.out" })
+        tl3.to(".serviceCard3", { rotateZ: 0, filter: "blur(0px)", delay:2000, duration: 7, ease: "power2.out" })
+
+    }, [])
     return (
         <div
-            className={style.main}
+            className={`${style.main} serviceMain`}
         >
             <div
                 style={{
@@ -20,13 +68,13 @@ function Service1() {
 
                 >
                     <div
-           
+
                         className={style.videoBox}
                     >
                         <img
-                    
+
                             onClick={() => setVideo('')}
-                            
+
                             className={style.videoCloseIcon} src={VideoCloseIcon} alt='VideoCloseIcon' />
                         <ReactPlayer
                             ref={ref}
@@ -44,7 +92,7 @@ function Service1() {
             </div>
             <div>
                 <div>
-                    <div className={style.bgBoxes}>
+                    <div className={`${style.bgBoxes} serviceBoxesBg`}>
                         <img src='/images/about-us/boxes.png' />
                     </div>
                     <div
@@ -58,7 +106,7 @@ function Service1() {
                             style={{
                                 filter: whichCard !== '' && whichCard !== 'film' ? "blur(3px)" : "blur(0px)",
                             }}
-                            className={style.imgCont}> <img className={style.imgItem} src='/images/services/img1.png' />
+                            className={`${style.imgCont} serviceCard1`}> <img className={style.imgItem} src='/images/services/img1.png' />
                             <h2 className={style.imgText}>film</h2>
                             <p className={style.imglowerText}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
@@ -74,8 +122,8 @@ function Service1() {
                                 style={{
                                     filter: whichCard !== '' && whichCard !== 'design' ? "blur(3px)" : "blur(0px)",
                                 }}
-                                className={style.imgCont}> <img className={style.imgItem} src='/images/services/img2.png' />
-                                <h2 className={style.imgText}>Design</h2>
+                                className={`${style.imgCont} serviceCard2`}> <img className={style.imgItem} src='/images/services/img2.png' />
+                                <h2 className={`${style.imgText} serviceDesignText`}>Design</h2>
                                 <p className={style.imglowerText}>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
                                 <img
@@ -91,7 +139,7 @@ function Service1() {
                                 style={{
                                     filter: whichCard !== '' && whichCard !== 'tech' ? "blur(3px)" : "blur(0px)",
                                 }}
-                                className={style.imgCont}> <img className={style.imgItem} src='/images/services/img3.png' />
+                                className={`${style.imgCont} serviceCard3`}> <img className={style.imgItem} src='/images/services/img3.png' />
                                 <h2 className={style.imgText}>Tech</h2>
                                 <p className={style.imglowerText}>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>

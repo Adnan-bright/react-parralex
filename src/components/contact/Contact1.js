@@ -4,7 +4,7 @@ import ReviewContainer from '../reviewContainer/ReviewContainer'
 
 function Contact1({ id }) {
     return (
-        <div className={style.body}>
+        <div className={`${style.body} contactMain`}>
             <div id={id} className={style.main}>
                 <div className={style.reviewContainer}>
                     <ReviewContainer />
