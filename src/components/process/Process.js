@@ -1,24 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import * as style from '../../styles/components/process.module.css'
-
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 function Process() {
     const [hover, setHover] = useState('')
+    gsap.registerPlugin(ScrollTrigger);
+
+    useEffect(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".processTopRow",
+                scrub: 2,
+                markers: false
+            }
+        });
+        tl.from(".processDataContainer", { scale: 1.4, duration: 8, ease: "power2.out" })
+        tl.to(".processDataContainer", { scale: 1, duration: 7, ease: "power2.out" })
+
+    }, [])
     return (
-        <div className={style.main}>
+        <div className={`${style.main} processMainContainer`}>
             <h1 className={style.heading}>
                 OUR PROCESS
             </h1>
-            <div className={style.topRow}>
+            <div className={`${style.topRow} processTopRow`}>
                 <div
 
-                    className={hover === '' ? style.imageContainer5 : hover === 'expansion' ? style.imageContainer5Active : style.imageContainer5Blur}
+                    className={hover === '' ? `${style.imageContainer5} ` : hover === 'expansion' ? `${style.imageContainer5Active} ` : `${style.imageContainer5Blur} `}
 
                 >
                     <div
                         onMouseEnter={() => setHover('expansion')}
                         onMouseLeave={() => setHover('')}
-                        className={style.bgContainer}>
-                        <div className={style.dataContainer}>
+                        className={`${style.bgContainer} `}>
+                        <div className={`${style.dataContainer} processDataContainer`}>
                             <img
 
                                 className={style.imgItem}

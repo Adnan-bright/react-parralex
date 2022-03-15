@@ -30,7 +30,7 @@ const IndexPage = () => {
         trigger: ".container",
         pin: true,
         scrub: 2,
-        onSnapComplete: snap=> setDetectChange(snap) ,
+        onSnapComplete: snap => setDetectChange(snap),
         onUpdate: self => setUpdateValue(Math.round(self.progress * 10) / 10),
         snap: 1 / (sections.length - 1),
         end: () => "+=8500"
@@ -39,13 +39,14 @@ const IndexPage = () => {
 
 
   }, []);
-  var decPart = (updateValue+"").split(".")[1];
+  var decPart = (updateValue + "").split(".")[1];
   console.log("detectChange", detectChange)
+
 
 
   const handleClick = (id) => {
     gsap.to(window, {
-      scrollTo: 700*id,
+      scrollTo: 1700 * id,
       duration: 1
     })
 
@@ -56,7 +57,7 @@ const IndexPage = () => {
     <Layout hoverValue={updateValue} onNavClick={handleClick}>
 
       <div
-          ref={ref}
+        ref={ref}
       >
         <div
           className="container">
