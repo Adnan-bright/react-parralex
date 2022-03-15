@@ -28,7 +28,7 @@ function HeroVer1() {
                             className={style.videoCloseIcon} src={VideoCloseIcon} alt='VideoCloseIcon' />
                         <ReactPlayer
                             ref={ref}
-                            playing={true}
+                            playing={video}
                             loop={false}
                             height='100%'
                             width={'100%'}
