@@ -14,6 +14,7 @@ import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 const IndexPage = () => {
   const [updateValue, setUpdateValue] = useState(0)
+  const [detectChange, setDetectChange] = useState([])
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
   const ref = useRef(null);
@@ -28,23 +29,24 @@ const IndexPage = () => {
       scrollTrigger: {
         trigger: ".container",
         pin: true,
-        scrub: 1,
+        scrub: 2,
+        onSnapComplete: snap=> setDetectChange(snap) ,
         onUpdate: self => setUpdateValue(Math.round(self.progress * 10) / 10),
         snap: 1 / (sections.length - 1),
-        end: () => "+=3500"
+        end: () => "+=8500"
       },
     });
 
 
   }, []);
   var decPart = (updateValue+"").split(".")[1];
-  console.log("decPart", updateValue)
+  console.log("detectChange", detectChange)
 
 
   const handleClick = (id) => {
     gsap.to(window, {
       scrollTo: 700*id,
-      duration: 2
+      duration: 1
     })
 
   }
