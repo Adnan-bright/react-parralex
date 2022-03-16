@@ -18,29 +18,29 @@ function Service1() {
                 markers: false
             }
         });
-        const tl1 = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".serviceCard1 .serviceMainContainer",
-                scrub: 2,
-                markers: false
-            }
-        });
+        // const tl1 = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".serviceCard1 .serviceMainContainer",
+        //         scrub: 2,
+        //         markers: false
+        //     }
+        // });
 
-        const tl2 = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".serviceCard2 .serviceMainContainer",
-                scrub: 2,
-                markers: false
-            }
-        });
+        // const tl2 = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".serviceCard2 .serviceMainContainer",
+        //         scrub: 2,
+        //         markers: false
+        //     }
+        // });
 
-        const tl3 = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".serviceCard3 .serviceMainContainer",
-                scrub: 2,
-                markers: false,
-            }
-        });
+        // const tl3 = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".serviceCard3 .serviceMainContainer",
+        //         scrub: 2,
+        //         markers: false,
+        //     }
+        // });
 
         tl.to(".serviceBoxesBg", { xPercent: 200, filter: "blur(8px)", duration: 9, ease: "power2.out" })
         tl.to(".serviceBoxesBg", { xPercent: 0, filter: "blur(0px)", duration: 7, ease: "power2.out" })
