@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 function Process() {
     const [hover, setHover] = useState('')
-    gsap.registerPlugin(ScrollTrigger);
+    
 
     useEffect(() => {
 
@@ -29,7 +29,6 @@ function Process() {
                 markers: false
             }
         });
-
 
 
         tl.to(".processMidRow", { xPercent: 25, duration: 8, ease: "power2.out" })
