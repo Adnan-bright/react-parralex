@@ -45,17 +45,17 @@ function Service1() {
         tl.to(".serviceBoxesBg", { xPercent: 200, filter: "blur(8px)", duration: 9, ease: "power2.out" })
         tl.to(".serviceBoxesBg", { xPercent: 0, filter: "blur(0px)", duration: 7, ease: "power2.out" })
 
-        tl1.to(".serviceCard1", { rotateY: 180, duration: 12, ease: "power2.out" })
-        tl1.to(".serviceCard1", { rotateY: 480, duration: 30, ease: "power2.out" })
-        tl1.to(".serviceCard1", { rotateY: 360, duration: 5, ease: "power2.out" })
+        // tl1.to(".serviceCard1", { rotateY: 180, duration: 12, ease: "power2.out" })
+        // tl1.to(".serviceCard1", { rotateY: 480, duration: 30, ease: "power2.out" })
+        // tl1.to(".serviceCard1", { rotateY: 360, duration: 5, ease: "power2.out" })
 
-        tl2.to(".serviceCard2", { rotateY: 360, duration: 12, ease: "power2.out" })
-        tl2.to(".serviceCard2", { rotateY: 180, duration: 20, ease: "power2.out" })
+        // tl2.to(".serviceCard2", { rotateY: 360, duration: 12, ease: "power2.out" })
+        // tl2.to(".serviceCard2", { rotateY: 180, duration: 20, ease: "power2.out" })
 
     
 
-        tl3.to(".serviceCard3", { rotateY: 360, duration: 12, ease: "power2.out" })
-        tl3.to(".serviceCard3", { rotateY: 180, duration: 18, ease: "power2.out" })
+        // tl3.to(".serviceCard3", { rotateY: 360, duration: 12, ease: "power2.out" })
+        // tl3.to(".serviceCard3", { rotateY: 180, duration: 18, ease: "power2.out" })
 
     }, [])
     return (
