@@ -3,7 +3,7 @@ import * as style from '../../styles/components/aboutUs.module.css'
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 function AboutUS() {
-    gsap.registerPlugin(ScrollTrigger);
+    
 
     useEffect(() => {
         const tl = gsap.timeline({

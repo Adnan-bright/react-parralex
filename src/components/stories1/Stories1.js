@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 function Stories1() {
     const [whichCard, setWhichCard] = useState('')
-    gsap.registerPlugin(ScrollTrigger);
+    
 
     useEffect(() => {
         const tl = gsap.timeline({
