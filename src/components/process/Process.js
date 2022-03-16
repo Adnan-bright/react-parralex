@@ -31,7 +31,6 @@ function Process() {
         });
 
 
-
         tl.to(".processMidRow", { xPercent: 25, duration: 8, ease: "power2.out" })
         tl.to(".processMidRow", { xPercent: -15, duration: 6, ease: "power2.out" })
 
