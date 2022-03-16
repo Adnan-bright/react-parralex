@@ -11,7 +11,6 @@ function Service1() {
     const ref = useRef(null)
 
     useEffect(() => {
-        // ScrollTrigger.refresh();
          // const tl = gsap.timeline({
         //     scrollTrigger: {
         //         trigger: ".storiesMain ",
@@ -37,18 +36,18 @@ function Service1() {
         // tl.to(".serviceCard1", { xPercent: 0, duration: 8, ease: "power2.out" })
         // tl.to(".serviceCard1", { xPercent: -15, duration: 6, ease: "power2.out" })
 
-        gsap.to("[data-speed]", {
-            x: (i, el) => (1 - parseFloat(el.getAttribute("data-speed"))) * ScrollTrigger.maxScroll(window) ,
-            ease: "none",
-            scrollTrigger: {
-                trigger:".serviceMain .storiesMain",
-              start: 0,
-              end: "max",
-              invalidateOnRefresh: true,
-              scrub: 0,
-            //   horizontal:true
-            }
-          });
+        // gsap.to("[data-speed]", {
+        //     x: (i, el) => (1 - parseFloat(el.getAttribute("data-speed"))) * ScrollTrigger.maxScroll(window) ,
+        //     ease: "none",
+        //     scrollTrigger: {
+        //         trigger:".serviceMain .storiesMain",
+        //       start: 0,
+        //       end: "max",
+        //       invalidateOnRefresh: true,
+        //       scrub: 0,
+        //     //   horizontal:true
+        //     }
+        //   });
 
     }, [])
     return (
