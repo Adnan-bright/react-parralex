@@ -8,13 +8,13 @@ function AboutUS() {
     useEffect(() => {
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: ".aboutCrossBg .bgImageAbout",
-                scrub: 2,
+                trigger: " .bgImageAbout",
+                scrub: 15,
                 markers: false
             }
         });
-        tl.to(".aboutCrossBg", {rotateZ:121, duration: 17,ease: "power2.out"})
-        tl.to(".aboutCrossBg", {rotateZ:360, duration: 6,ease: "power2.out"})
+        tl.to(".aboutCrossBg", {rotateZ:180, duration: 6,ease: "power2.out"})
+        tl.to(".aboutCrossBg", {rotateZ:450, duration: 6,ease: "power2.out"})
 
 
     }, [])
