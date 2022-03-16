@@ -20,8 +20,6 @@ function Service1() {
         //     }
         // });
 
-
-
         // tl.to(".serviceBoxesBg", { xPercent: 200, filter: "blur(8px)", duration: 9, ease: "power2.out" })
         // tl.to(".serviceBoxesBg", { xPercent: 0, filter: "blur(0px)", duration: 7, ease: "power2.out" })
 
