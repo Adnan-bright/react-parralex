@@ -9,50 +9,46 @@ function Service1() {
     const [whichCard, setWhichCard] = useState('')
     const [video, setVideo] = useState('')
     const ref = useRef(null)
-    
+
     useEffect(() => {
-        const tl = gsap.timeline({
+        // ScrollTrigger.refresh();
+         // const tl = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".storiesMain ",
+        //         scrub: 5,
+        //         markers: false
+        //     }
+        // });
+
+
+
+        // tl.to(".serviceBoxesBg", { xPercent: 200, filter: "blur(8px)", duration: 9, ease: "power2.out" })
+        // tl.to(".serviceBoxesBg", { xPercent: 0, filter: "blur(0px)", duration: 7, ease: "power2.out" })
+
+
+
+        // const tl = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".serviceImagesContainer",
+        //         scrub: 2,
+        //         markers: false
+        //     }
+        // });
+        // tl.to(".serviceCard1", { xPercent: 0, duration: 8, ease: "power2.out" })
+        // tl.to(".serviceCard1", { xPercent: -15, duration: 6, ease: "power2.out" })
+
+        gsap.to("[data-speed]", {
+            x: (i, el) => (1 - parseFloat(el.getAttribute("data-speed"))) * ScrollTrigger.maxScroll(window) ,
+            ease: "none",
             scrollTrigger: {
-                trigger: ".panel",
-                scrub: 5,
-                markers: false
+                trigger:".serviceMain .storiesMain",
+              start: 0,
+              end: "max",
+              invalidateOnRefresh: true,
+              scrub: 0,
+            //   horizontal:true
             }
-        });
-        const tl1 = gsap.timeline({
-            scrollTrigger: {
-                trigger: " .panel ",
-                scrub: 5,
-                markers: false
-            }
-        });
-        const tl2 = gsap.timeline({
-            scrollTrigger: {
-                trigger: " .panel ",
-                scrub: 5,
-                markers: false
-            }
-        });
-
-        const tl3 = gsap.timeline({
-            scrollTrigger: {
-                trigger: " .panel ",
-                scrub: 5,
-                markers: false,
-            }
-        });
-
-        tl.to(".serviceBoxesBg", { xPercent: 200, filter: "blur(8px)", duration: 9, ease: "power2.out" })
-        tl.to(".serviceBoxesBg", { xPercent: 0, filter: "blur(0px)", duration: 7, ease: "power2.out" })
-
-        tl1.to(".serviceCard1", { rotateX: 180, filter: "blur(8px)", duration: 12, ease: "power2.out" })
-        tl1.to(".serviceCard1", { rotateX: 0, filter: "blur(0px)",delay:10, duration: 5, ease: "power2.out" })
-
-
-        tl2.to(".serviceCard2", { rotateY: 180, filter: "blur(8px)",  duration: 12, ease: "power2.out" })
-        tl2.to(".serviceCard2", { rotateY: 0, filter: "blur(0px)", delay:700, duration: 7, ease: "power2.out" })
-
-        tl3.to(".serviceCard3", { rotateZ: 180, filter: "blur(8px)",  duration: 12, ease: "power2.out" })
-        tl3.to(".serviceCard3", { rotateZ: 0, filter: "blur(0px)", delay:2000, duration: 7, ease: "power2.out" })
+          });
 
     }, [])
     return (
@@ -64,9 +60,7 @@ function Service1() {
                     display: video ? 'flex' : "none",
                 }}
                 className={style.videoBody}>
-                <div className={style.videoContainer}
-
-                >
+                <div className={style.videoContainer}>
                     <div
 
                         className={style.videoBox}
@@ -92,21 +86,24 @@ function Service1() {
             </div>
             <div>
                 <div>
-                    <div className={`${style.bgBoxes} serviceBoxesBg`}>
+                    <div className={`${style.bgBoxes} S`}>
                         <img src='/images/about-us/boxes.png' />
                     </div>
                     <div
                     >
                         <h1 className={style.heading}>services</h1>
                     </div>
-                    <div className={style.imagesContainer}>
+                    <div className={`${style.imagesContainer} serviceImagesContainer`}>
                         <div
+                         data-speed="0.25"
                             onMouseEnter={() => setWhichCard('film')}
                             onMouseLeave={() => setWhichCard('')}
                             style={{
                                 filter: whichCard !== '' && whichCard !== 'film' ? "blur(3px)" : "blur(0px)",
+                                // marginLeft:"-750px"
                             }}
-                            className={`${style.imgCont} serviceCard1`}> <img className={style.imgItem} src='/images/services/img1.png' />
+                            className={`${style.imgCont} serviceCard1`}>
+                            <img className={style.imgItem} src='/images/services/img1.png' />
                             <h2 className={style.imgText}>film</h2>
                             <p className={style.imglowerText}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
@@ -116,7 +113,7 @@ function Service1() {
                         </div>
                         <div
                         >
-                            <div
+                            <div data-speed="0.50"
                                 onMouseEnter={() => setWhichCard('design')}
                                 onMouseLeave={() => setWhichCard('')}
                                 style={{

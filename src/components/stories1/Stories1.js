@@ -9,7 +9,7 @@ function Stories1() {
     useEffect(() => {
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: ".storiesBtmRow processMainContainer",
+                trigger: ".storiesBtmRow .processMainContainer",
                 scrub: 2,
                 markers: false
             }
