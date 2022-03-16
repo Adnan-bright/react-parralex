@@ -26,6 +26,7 @@ function Service1() {
                 markers: false
             }
         });
+        
         const tl2 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".serviceCard2 .serviceMainContainer",
