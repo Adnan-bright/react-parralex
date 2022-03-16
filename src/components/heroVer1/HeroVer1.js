@@ -10,7 +10,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 function HeroVer1() {
     const ref = useRef(null)
-    gsap.registerPlugin(ScrollTrigger);
+    
 
     useEffect(() => {
         const tl = gsap.timeline({

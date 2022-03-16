@@ -5,7 +5,7 @@ import VideoCloseIcon from '../../../static/icons/videoClose.png'
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 function Service1() {
-    gsap.registerPlugin(ScrollTrigger);
+    
     const [whichCard, setWhichCard] = useState('')
     const [video, setVideo] = useState('')
     const ref = useRef(null)
