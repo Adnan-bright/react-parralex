@@ -17,6 +17,7 @@ function AboutUS() {
         tl.to(".aboutCrossBg", {rotateZ:450, duration: 6,ease: "power2.out"})
 
 
+        
     }, [])
     return (
         <div className={`${style.main} bgImageAbout `}>
