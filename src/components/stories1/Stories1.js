@@ -5,7 +5,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 function Stories1() {
     const [whichCard, setWhichCard] = useState('')
     
-
     useEffect(() => {
         const tl = gsap.timeline({
             scrollTrigger: {
