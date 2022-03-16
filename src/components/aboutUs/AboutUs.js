@@ -13,7 +13,7 @@ function AboutUS() {
                 markers: false
             }
         });
-        tl.to(".aboutCrossBg", {rotateZ:120, duration: 6,ease: "power2.out"})
+        tl.to(".aboutCrossBg", {rotateZ:121, duration: 17,ease: "power2.out"})
         tl.to(".aboutCrossBg", {rotateZ:360, duration: 6,ease: "power2.out"})
 
 
