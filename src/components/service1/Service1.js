@@ -11,7 +11,6 @@ function Service1() {
     const ref = useRef(null)
 
     useEffect(() => {
-        ScrollTrigger.refresh()
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".panel ",
@@ -26,7 +25,7 @@ function Service1() {
                 markers: false
             }
         });
-        
+
         const tl2 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".serviceCard2 .serviceMainContainer",
