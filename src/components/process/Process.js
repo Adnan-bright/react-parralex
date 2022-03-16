@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 function Process() {
     const [hover, setHover] = useState('')
+  gsap.registerPlugin(ScrollTrigger);
     
 
     useEffect(() => {
