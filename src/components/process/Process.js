@@ -7,26 +7,53 @@ function Process() {
     gsap.registerPlugin(ScrollTrigger);
 
     useEffect(() => {
+
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: ".processTopRow",
+                trigger: ".processMidRow  .processMainContainer",
                 scrub: 2,
                 markers: false
             }
         });
-        tl.from(".processDataContainer", { scale: 1.4, duration: 8, ease: "power2.out" })
-        tl.to(".processDataContainer", { scale: 1, duration: 7, ease: "power2.out" })
+        const tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".processBtmRow  .processMainContainer",
+                scrub: 2,
+                markers: false
+            }
+        });
+        const tl3 = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".processTopRow  .processMainContainer",
+                scrub: 2,
+                markers: false
+            }
+        });
 
+
+
+        tl.to(".processMidRow", { xPercent: 25, duration: 8, ease: "power2.out" })
+        tl.to(".processMidRow", { xPercent: -15, duration: 6, ease: "power2.out" })
+
+        tl2.to(".processBtmRow", { xPercent: 25, duration: 8, ease: "power2.out" })
+        tl2.to(".processBtmRow", { xPercent: 125, duration: 6, ease: "power2.out" })
+
+        tl3.to(".processTopRow", { xPercent: 25, duration: 8, ease: "power2.out" })
+        tl3.to(".processTopRow", { xPercent: 40, duration: 6, ease: "power2.out" })
     }, [])
     return (
         <div className={`${style.main} processMainContainer`}>
             <h1 className={style.heading}>
                 OUR PROCESS
             </h1>
-            <div className={`${style.topRow} processTopRow`}>
+            <div
+                style={{
+                    marginLeft: "-625px"
+                }}
+                className={`${style.topRow} processTopRow`}>
                 <div
 
-                    className={hover === '' ? `${style.imageContainer5} ` : hover === 'expansion' ? `${style.imageContainer5Active} ` : `${style.imageContainer5Blur} `}
+                    className={hover === '' ? `${style.imageContainer5} processContainer1` : hover === 'expansion' ? `${style.imageContainer5Active} ` : `${style.imageContainer5Blur} `}
 
                 >
                     <div
@@ -47,10 +74,14 @@ function Process() {
                     </div>
                 </div>
             </div>
-            <div className={style.midRow}>
+            <div
+                style={{
+                    marginLeft: "170px"
+                }}
+                className={`${style.midRow} processMidRow`}>
                 <div
 
-                    className={hover === '' ? style.imageContainer3 : hover === 'planning' ? style.imageContainer3Active : style.imageContainer3Blur}>
+                    className={hover === '' ? `${style.imageContainer3} ` : hover === 'planning' ? style.imageContainer3Active : style.imageContainer3Blur}>
 
                     <div
                         onMouseEnter={() => setHover('planning')}
@@ -94,7 +125,11 @@ function Process() {
 
                 </div>
             </div>
-            <div className={style.bottomRow}>
+            <div
+                style={{
+                    marginLeft: "-1840px"
+                }}
+                className={`${style.bottomRow} processBtmRow`}>
                 <div
 
                     className={hover === '' ? style.imageContainer1 : hover === 'ideation' ? style.imageContainer1Active : style.imageContainer1Blur}
