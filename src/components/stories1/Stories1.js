@@ -4,22 +4,22 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 function Stories1() {
     const [whichCard, setWhichCard] = useState('')
-  gsap.registerPlugin(ScrollTrigger);
-    
-    useEffect(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".storiesBtmRow .processMainContainer",
-                scrub: 2,
-                markers: false
-            }
-        });
-        tl.to(".storiesBtmRow", {xPercent:-25, duration: 8,ease: "power2.out"})
-        tl.to(".storiesBtmRow", {xPercent:0, duration: 6,ease: "power2.out"})
-        tl.to(".storiesBtmRow", {xPercent:-15, duration: 6,ease: "power2.out"})
+    gsap.registerPlugin(ScrollTrigger);
+
+    // useEffect(() => {
+    //     const tl = gsap.timeline({
+    //         scrollTrigger: {
+    //             trigger: ".storiesBtmRow .processMainContainer",
+    //             scrub: 2,
+    //             markers: false
+    //         }
+    //     });
+    //     tl.to(".storiesBtmRow", {xPercent:-25, duration: 8,ease: "power2.out"})
+    //     tl.to(".storiesBtmRow", {xPercent:0, duration: 6,ease: "power2.out"})
+    //     tl.to(".storiesBtmRow", {xPercent:-15, duration: 6,ease: "power2.out"})
 
 
-    }, [])
+    // }, [])
     return (
         <div className={`${style.main} storiesMain`}>
             <img src='/images/stories/croses.png' className={style.bgImgBtm} />

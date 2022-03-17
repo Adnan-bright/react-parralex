@@ -12,19 +12,19 @@ function HeroVer1() {
     const ref = useRef(null)
     
 
-    useEffect(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".panel",
-                scrub: 2,
-                markers: false
-            }
-        });
-        tl.to(".bgImageHero1", { filter: "blur(0px)", xPercent:0, duration: 2, ease: "power2.out",})
-        tl.to(".bgImageHero1", { filter: "blur(8px)", xPercent:0, duration: 1, ease: "power2.out",})
-        tl.to(".bgImageHero1", { filter: "blur(8px)", xPercent:-30, duration: 1, ease: "power2.out",})
+    // useEffect(() => {
+    //     const tl = gsap.timeline({
+    //         scrollTrigger: {
+    //             trigger: ".panel",
+    //             scrub: 2,
+    //             markers: false
+    //         }
+    //     });
+    //     tl.to(".bgImageHero1", { filter: "blur(0px)", xPercent:0, duration: 2, ease: "power2.out",})
+    //     tl.to(".bgImageHero1", { filter: "blur(8px)", xPercent:0, duration: 1, ease: "power2.out",})
+    //     tl.to(".bgImageHero1", { filter: "blur(8px)", xPercent:-30, duration: 1, ease: "power2.out",})
 
-    }, [])
+    // }, [])
 
     const [video, setVideo] = useState(false)
     return (

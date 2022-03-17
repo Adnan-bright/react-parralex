@@ -7,6 +7,7 @@ function Header({ navClick, hoverValue }) {
   const [toggle, setToggle] = useState(false)
   const [nav, setNav] = useState('')
   const [value, setValue] = useState('')
+  console.log('hoverValue', hoverValue)
   useEffect(() => {
     // setTimeout(() => {
     hoverValue === 0.2 ?
@@ -19,7 +20,9 @@ function Header({ navClick, hoverValue }) {
             setNav('#panel-5') :
             hoverValue === 1 ?
               setNav('#panel-6') :
-              setValue('')
+              hoverValue === 0 ?
+                setNav('') :
+                setValue('')
     // }, 1000);
 
 

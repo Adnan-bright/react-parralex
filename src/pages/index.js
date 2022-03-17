@@ -34,21 +34,16 @@ const IndexPage = () => {
         onSnapComplete: snap => setDetectChange(snap),
         onUpdate: self => setUpdateValue(Math.round(self.progress * 10) / 10),
         snap: 1 / (sections.length - 1),
-        end: () => "+=8500"
+        end: () => "+=3500"
       },
     });
-
-
   }, []);
   var decPart = (updateValue + "").split(".")[1];
-  console.log("detectChange", detectChange)
-
-
 
   const handleClick = (id) => {
     gsap.to(window, {
-      scrollTo: 1700 * id,
-      duration: 1
+      scrollTo: 700 * id,
+      duration: .5,
     })
 
   }
