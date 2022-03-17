@@ -15,12 +15,12 @@ import ScrollToPlugin from "gsap/ScrollToPlugin";
 const IndexPage = () => {
   const [updateValue, setUpdateValue] = useState(0)
   const [detectChange, setDetectChange] = useState([])
+  const [scrub, setScrub] = useState(1)
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
   const ref = useRef(null);
 
   useEffect(() => {
-
     const element = ref.current;
 
     let sections = gsap.utils.toArray(".panel");
@@ -30,10 +30,14 @@ const IndexPage = () => {
       scrollTrigger: {
         trigger: ".container",
         pin: true,
-        scrub: 2,
+        scrub: 1.5,
         onSnapComplete: snap => setDetectChange(snap),
         onUpdate: self => setUpdateValue(Math.round(self.progress * 10) / 10),
-        snap: 1 / (sections.length - 1),
+        snap: {
+          snapTo: 1 / (sections.length - 1),
+          duration: {min: 0.1, max: 0.2},
+          ease: "power1.inOut"
+        },
         end: () => "+=3500"
       },
     });
@@ -41,6 +45,7 @@ const IndexPage = () => {
   var decPart = (updateValue + "").split(".")[1];
 
   const handleClick = (id) => {
+    setScrub(2)
     gsap.to(window, {
       scrollTo: 700 * id,
       duration: .5,
