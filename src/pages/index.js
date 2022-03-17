@@ -20,6 +20,7 @@ const IndexPage = () => {
   const ref = useRef(null);
 
   useEffect(() => {
+
     const element = ref.current;
 
     let sections = gsap.utils.toArray(".panel");
