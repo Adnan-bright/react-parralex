@@ -46,7 +46,7 @@
 .button{
     width: 168px;
     height: 54px;
-    background-image: url(../../../static/icons/buttonBg.png);
+    background-image: url(../../../static/icons/buttonBg.webp);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

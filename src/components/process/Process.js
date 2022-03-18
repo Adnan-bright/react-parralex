@@ -64,7 +64,7 @@ function Process() {
                             <img
 
                                 className={style.imgItem}
-                                src='/images/process/icon5.png' />
+                                src='/images/process/icon5.webp' />
                             <p
                                 className={style.imageText}
                             >Expansion</p>
@@ -91,7 +91,7 @@ function Process() {
                             <img
                                 className={style.imgItem}
 
-                                src='/images/process/icon2.png' />
+                                src='/images/process/icon2.webp' />
                             <p
 
                                 className={style.imageText}>Planning</p>
@@ -114,7 +114,7 @@ function Process() {
                             <img
                                 className={style.imgItem}
 
-                                src='/images/process/icon4.png' />
+                                src='/images/process/icon4.webp' />
                             <p
 
                                 className={style.imageText}>Deployment</p>
@@ -142,7 +142,7 @@ function Process() {
                             <img
                                 className={style.imgItem}
 
-                                src='/images/process/icon1.png' />
+                                src='/images/process/icon1.webp' />
                             <p
 
                                 className={style.imageText}>Ideation</p>
@@ -165,7 +165,7 @@ function Process() {
                             <img
                                 className={style.imgItem}
 
-                                src='/images/process/icon3.png' />
+                                src='/images/process/icon3.webp' />
                             <p
 
                                 className={style.imageText}>Creation</p>

@@ -22,7 +22,7 @@ function AboutUS() {
     return (
         <div className={`${style.main} bgImageAbout `}>
             <div className={`${style.bgCross}  aboutCrossBg`}>
-                <img className='pImage' src='/images/about-us/cross.png' />
+                <img className='pImage' src='/images/about-us/cross.webp' />
             </div>
             <div
             style={{

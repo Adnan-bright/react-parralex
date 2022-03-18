@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react'
 import * as style from '../../styles/components/heroVer1.module.css'
-import PlayIcon from '../../../static/icons/playIcon.png'
+import PlayIcon from '../../../static/icons/playIcon.webp'
 import Video from '../../../static/videos/dummyVideo.mp4'
-import RightArrow from '../../../static/icons/rightArrow.png'
-import VideoCloseIcon from '../../../static/icons/videoClose.png'
+import RightArrow from '../../../static/icons/rightArrow.webp'
+import VideoCloseIcon from '../../../static/icons/videoClose.webp'
 import ReactPlayer from 'react-player'
 import gsap from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -60,7 +60,7 @@ function HeroVer1() {
 
             >
                 <div className={style.bgImgContainer}>
-                    <img className={`${style.bgImage} bgImageHero1`} src='/images/home/union.png' />
+                    <img className={`${style.bgImage} bgImageHero1`} src='/images/home/union.webp' />
                 </div>
                 <div
                     className={`${style.content} hero1MainContent`}>

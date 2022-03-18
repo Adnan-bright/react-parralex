@@ -4,7 +4,7 @@
     overflow: hidden;
     width: 100%;
     color: white;
-    background-image: url(../../../static/images/contact/bg.png);
+    background-image: url(../../../static/images/contact/bg.webp);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -130,11 +130,11 @@
     align-items: center;
     justify-content: center;
     transition: ease-in-out .4s;
-    background: url(../../../static/images/common/btnBg.png);
+    background: url(../../../static/images/common/btnBg.webp);
 }
 .btn:hover {
     transition: ease-in-out .4s;
-    background: url(../../../static/images/common/btnBgHover.png);
+    background: url(../../../static/images/common/btnBgHover.webp);
 }
 
 .btnContainer {
@@ -193,7 +193,7 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/insta.png);
+    background-image: url(../../../static/images/contact/insta.webp);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
@@ -201,7 +201,7 @@
     transition: ease-in-out .4s;
 }
 .tab1:hover {
-    background-image: url(../../../static/images/contact/instaHv.png);
+    background-image: url(../../../static/images/contact/instaHv.webp);
     cursor: pointer;
 }
 
@@ -215,7 +215,7 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/facebook.png);
+    background-image: url(../../../static/images/contact/facebook.webp);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
@@ -223,7 +223,7 @@
     transition: ease-in-out .4s;
 }
 .tab2:hover {
-    background-image: url(../../../static/images/contact/facebookHv.png);
+    background-image: url(../../../static/images/contact/facebookHv.webp);
     cursor: pointer;
 }
 
@@ -237,7 +237,7 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/twitter.png);
+    background-image: url(../../../static/images/contact/twitter.webp);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
@@ -245,7 +245,7 @@
     transition: ease-in-out .4s;
 }
 .tab3:hover {
-    background-image: url(../../../static/images/contact/twitterHv.png);
+    background-image: url(../../../static/images/contact/twitterHv.webp);
     cursor: pointer;
 }
 
@@ -259,7 +259,7 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/linkedin.png);
+    background-image: url(../../../static/images/contact/linkedin.webp);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
@@ -267,7 +267,7 @@
     transition: ease-in-out .4s;
 }
 .tab4:hover {
-    background-image: url(../../../static/images/contact/linkedinHv.png);
+    background-image: url(../../../static/images/contact/linkedinHv.webp);
     cursor: pointer;
 }
 
@@ -281,7 +281,7 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/youtube.png);
+    background-image: url(../../../static/images/contact/youtube.webp);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
@@ -289,7 +289,7 @@
     transition: ease-in-out .4s;
 }
 .tab5:hover {
-    background-image: url(../../../static/images/contact/youtubeHv.png);
+    background-image: url(../../../static/images/contact/youtubeHv.webp);
     cursor: pointer;
 }
 
@@ -303,7 +303,7 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/vimeo.png);
+    background-image: url(../../../static/images/contact/vimeo.webp);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
@@ -311,6 +311,6 @@
     transition: ease-in-out .4s;
 }
 .tab6:hover {
-    background-image: url(../../../static/images/contact/vimeoHv.png);
+    background-image: url(../../../static/images/contact/vimeoHv.webp);
     cursor: pointer;
 }

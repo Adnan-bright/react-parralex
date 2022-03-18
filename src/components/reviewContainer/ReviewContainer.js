@@ -6,13 +6,13 @@ function ReviewContainer() {
             className={style.main}
         >
             <div className={style.mainSection}>
-                <img className={style.mainImg} src='/images/contact/singleBox.png' />
+                <img className={style.mainImg} src='/images/contact/singleBox.webp' />
                 <div className={style.dataContainer}>
                     <div className={style.revCont}>
                         <p className={style.revText}>5.0</p>
                         <img
                             className={style.starIcon}
-                            src='/images/contact/star.png' />
+                            src='/images/contact/star.webp' />
                     </div>
                     <center>
                         <p className={style.recDesc}>“There are a lot of benefits to working with MAG-RAW, and that’s why I’ll continue to go back to them.”</p>

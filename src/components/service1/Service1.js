@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import * as style from '../../styles/components/service1.module.css'
 import ReactPlayer from 'react-player'
-import VideoCloseIcon from '../../../static/icons/videoClose.png'
+import VideoCloseIcon from '../../../static/icons/videoClose.webp'
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 function Service1() {
@@ -96,7 +96,7 @@ function Service1() {
             <div>
                 <div>
                     <div className={`${style.bgBoxes} serviceBoxesBg`}>
-                        <img src='/images/about-us/boxes.png' />
+                        <img src='/images/about-us/boxes.webp' />
                     </div>
                     <div
                     >
@@ -114,13 +114,13 @@ function Service1() {
                                 style={{
                                     filter: whichCard !== '' && whichCard !== 'film' ? "blur(3px)" : "blur(0px)",
                                 }}
-                                className={`${style.imgCont} `}> <img className={style.imgItem} src='/images/services/img1.png' />
+                                className={`${style.imgCont} `}> <img className={style.imgItem} src='/images/services/img1.webp' />
                                 <h2 className={style.imgText}>film</h2>
                                 <p className={style.imglowerText}>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
                                 <img className={style.playIcon}
                                     onClick={() => setVideo('/videos/dummyVideo.mp4')}
-                                    src='/icons/playIcon.png' />
+                                    src='/icons/playIcon.webp' />
                             </div>
                         </div>
                         <div
@@ -131,13 +131,13 @@ function Service1() {
                                 style={{
                                     filter: whichCard !== '' && whichCard !== 'design' ? "blur(3px)" : "blur(0px)",
                                 }}
-                                className={`${style.imgCont} serviceCard2`}> <img className={style.imgItem} src='/images/services/img2.png' />
+                                className={`${style.imgCont} serviceCard2`}> <img className={style.imgItem} src='/images/services/img2.webp' />
                                 <h2 className={`${style.imgText} serviceDesignText`}>Design</h2>
                                 <p className={style.imglowerText}>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
                                 <img
                                     onClick={() => setVideo('/videos/dummyVideo.mp4')}
-                                    className={style.playIcon} src='/icons/playIcon.png' />
+                                    className={style.playIcon} src='/icons/playIcon.webp' />
                             </div>
                         </div>
                         <div
@@ -148,13 +148,13 @@ function Service1() {
                                 style={{
                                     filter: whichCard !== '' && whichCard !== 'tech' ? "blur(3px)" : "blur(0px)",
                                 }}
-                                className={`${style.imgCont} serviceCard3`}> <img className={style.imgItem} src='/images/services/img3.png' />
+                                className={`${style.imgCont} serviceCard3`}> <img className={style.imgItem} src='/images/services/img3.webp' />
                                 <h2 className={style.imgText}>Tech</h2>
                                 <p className={style.imglowerText}>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
                                 <img
                                     onClick={() => setVideo('/videos/dummyVideo.mp4')}
-                                    className={style.playIcon} src='/icons/playIcon.png' />
+                                    className={style.playIcon} src='/icons/playIcon.webp' />
                             </div>
                         </div>
                     </div>

@@ -101,7 +101,7 @@
 }
 
 .imageContainer1 {
-    background-image: url(../../../static/images/process/1.png);
+    background-image: url(../../../static/images/process/1.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 350px;
@@ -114,7 +114,7 @@
 }
 
 .imageContainer1Active {
-    background-image: url(../../../static/images/process/1.png);
+    background-image: url(../../../static/images/process/1.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 350px;
@@ -128,7 +128,7 @@
 }
 
 .imageContainer1Blur {
-    background-image: url(../../../static/images/process/1.png);
+    background-image: url(../../../static/images/process/1.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 350px;
@@ -143,7 +143,7 @@
 
 
 .imageContainer2 {
-    background-image: url(../../../static/images/process/2.png);
+    background-image: url(../../../static/images/process/2.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 350px;
@@ -158,7 +158,7 @@
 }
 
 .imageContainer2Active {
-    background-image: url(../../../static/images/process/2.png);
+    background-image: url(../../../static/images/process/2.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 350px;
@@ -174,7 +174,7 @@
 }
 
 .imageContainer2Blur {
-    background-image: url(../../../static/images/process/2.png);
+    background-image: url(../../../static/images/process/2.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 350px;
@@ -209,7 +209,7 @@
 }
 
 .imageContainer3 {
-    background-image: url(../../../static/images/process/planning.png);
+    background-image: url(../../../static/images/process/planning.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 350px;
@@ -222,7 +222,7 @@
 }
 
 .imageContainer3Blur {
-    background-image: url(../../../static/images/process/planning.png);
+    background-image: url(../../../static/images/process/planning.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 350px;
@@ -236,7 +236,7 @@
 }
 
 .imageContainer3Active {
-    background-image: url(../../../static/images/process/planning.png);
+    background-image: url(../../../static/images/process/planning.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 350px;
@@ -250,7 +250,7 @@
 }
 
 .imageContainer4 {
-    background-image: url(../../../static/images/process/4.png);
+    background-image: url(../../../static/images/process/4.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 350px;
@@ -265,7 +265,7 @@
 }
 
 .imageContainer4Active {
-    background-image: url(../../../static/images/process/4.png);
+    background-image: url(../../../static/images/process/4.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 350px;
@@ -280,7 +280,7 @@
 }
 
 .imageContainer4Blur {
-    background-image: url(../../../static/images/process/4.png);
+    background-image: url(../../../static/images/process/4.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 350px;
@@ -318,7 +318,7 @@
 }
 
 .imageContainer5 {
-    background-image: url(../../../static/images/process/5.png);
+    background-image: url(../../../static/images/process/5.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 350px;
@@ -333,7 +333,7 @@
 }
 
 .imageContainer5Active {
-    background-image: url(../../../static/images/process/5.png);
+    background-image: url(../../../static/images/process/5.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 350px;
@@ -349,7 +349,7 @@
 
 .imageContainer5Blur {
     filter: blur(3px);
-    background-image: url(../../../static/images/process/5.png);
+    background-image: url(../../../static/images/process/5.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 350px;

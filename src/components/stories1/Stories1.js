@@ -11,7 +11,6 @@ function Stories1() {
         dots: false,
         infinite: false,
         arrows: false,
-        speed: 500,
         slidesToShow: 4,
         slidesToScroll: 4
     };
@@ -32,60 +31,60 @@ function Stories1() {
 
     const items = [
         {
-            img: '/images/stories/1.png',
+            img: '/images/stories/1.webp',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.png'
+            icon: '/images/stories/icon.webp'
         },
         {
-            img: '/images/stories/2.png',
+            img: '/images/stories/2.webp',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.png'
+            icon: '/images/stories/icon.webp'
         },
         {
-            img: '/images/stories/4.png',
+            img: '/images/stories/4.webp',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.png'
+            icon: '/images/stories/icon.webp'
         },
         {
-            img: '/images/stories/5.png',
+            img: '/images/stories/5.webp',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.png'
+            icon: '/images/stories/icon.webp'
         },
         {
-            img: '/images/stories/6.png',
+            img: '/images/stories/6.webp',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.png'
+            icon: '/images/stories/icon.webp'
         },
         {
-            img: '/images/stories/7.png',
+            img: '/images/stories/7.webp',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.png'
+            icon: '/images/stories/icon.webp'
         },
         {
-            img: '/images/stories/8.png',
+            img: '/images/stories/8.webp',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.png'
+            icon: '/images/stories/icon.webp'
         },
         {
             img: 'https://picsum.photos/id/55/200/300',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.png'
+            icon: '/images/stories/icon.webp'
         }
 
     ]
     return (
         <div className={`${style.main} storiesMain`}>
-            <img src='/images/stories/croses.png' className={style.bgImgBtm} />
+            <img draggable={false} src='/images/stories/croses.webp' className={style.bgImgBtm} />
             <div className={style.bgImg}>
-                <img src='/images/stories/bg.png' />
+                <img draggable={false} src='/images/stories/bg.webp' />
             </div>
             <div className={style.upperContainer}>
                 <h1 className={style.heading}>
