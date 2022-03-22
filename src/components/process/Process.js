@@ -2,181 +2,203 @@ import React, { useState, useEffect } from 'react'
 import * as style from '../../styles/components/process.module.css'
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-function Process() {
+function Process({ isMobile }) {
     const [hover, setHover] = useState('')
-  gsap.registerPlugin(ScrollTrigger);
-    
-
-    // useEffect(() => {
-
-    //     const tl = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: ".processMidRow  .processMainContainer",
-    //             scrub: 2,
-    //             markers: false
-    //         }
-    //     });
-    //     const tl2 = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: ".processBtmRow  .processMainContainer",
-    //             scrub: 2,
-    //             markers: false
-    //         }
-    //     });
-    //     const tl3 = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: ".processTopRow  .processMainContainer",
-    //             scrub: 2,
-    //             markers: false
-    //         }
-    //     });
-
-
-    //     tl.to(".processMidRow", { xPercent: 25, duration: 8, ease: "power2.out" })
-    //     tl.to(".processMidRow", { xPercent: -15, duration: 6, ease: "power2.out" })
-
-    //     tl2.to(".processBtmRow", { xPercent: 25, duration: 8, ease: "power2.out" })
-    //     tl2.to(".processBtmRow", { xPercent: 125, duration: 6, ease: "power2.out" })
-
-    //     tl3.to(".processTopRow", { xPercent: 25, duration: 8, ease: "power2.out" })
-    //     tl3.to(".processTopRow", { xPercent: 40, duration: 6, ease: "power2.out" })
-    // }, [])
+    gsap.registerPlugin(ScrollTrigger);
+    const items = [
+        {
+            title: "Expansion",
+            description: "Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.",
+            bgImage: "/images/process/5.webp",
+            icon: "/images/process/icon5.webp"
+        },
+        {
+            title: "Planning",
+            description: "Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.",
+            bgImage: "/images/process/2.webp",
+            icon: "/images/process/icon2.webp"
+        },
+        {
+            title: "Deployment",
+            description: "Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.",
+            bgImage: "/images/process/4.webp",
+            icon: "/images/process/icon4.webp"
+        },
+        {
+            title: "Ideation",
+            description: "Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.",
+            bgImage: "/images/process/1.webp",
+            icon: "/images/process/icon1.webp"
+        },
+        {
+            title: "Creation",
+            description: "Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.",
+            bgImage: "/images/process/planning.webp",
+            icon: "/images/process/icon3.webp"
+        },
+    ]
     return (
-        <div className={`${style.main} processMainContainer`}>
-            <h1 className={style.heading}>
-                OUR PROCESS
-            </h1>
-            <div
-                // style={{
-                //     marginLeft: "-625px"
-                // }}
-                className={`${style.topRow} processTopRow`}>
-                <div
-
-                    className={hover === '' ? `${style.imageContainer5} processContainer1` : hover === 'expansion' ? `${style.imageContainer5Active} ` : `${style.imageContainer5Blur} `}
-
-                >
-                    <div
-                        onMouseEnter={() => setHover('expansion')}
-                        onMouseLeave={() => setHover('')}
-                        className={`${style.bgContainer} `}>
-                        <div className={`${style.dataContainer} processDataContainer`}>
-                            <img
-
-                                className={style.imgItem}
-                                src='/images/process/icon5.png' />
-                            <p
-                                className={style.imageText}
-                            >Expansion</p>
-                            <p className={hover === 'expansion' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
-                                consectetur adipiing elit, sed do eiusmod.</p>
+        <div>
+            {
+                isMobile ?
+                    <div className={style.mblMain}>
+                        <div className={style.body}>
+                            {
+                                items.map((item, index) => {
+                                    return <center  key={index}>
+                                        <div
+                                            className={style.mblMainContainer}
+                                            style={{
+                                                backgroundImage:`url(${item.bgImage})`,
+                                            }}
+                                        >
+                                            <img className={style.mblIcon} src={item.icon} />
+                                            <p
+                                            className={style.mblTitle}
+                                            >{item.title}</p>
+                                            <p
+                                            className={style.mblDescription}
+                                            >{item.description}</p>
+                                        </div>
+                                    </center>
+                                })
+                            }
                         </div>
                     </div>
-                </div>
-            </div>
-            <div
-                // style={{
-                //     marginLeft: "170px"
-                // }}
-                className={`${style.midRow} processMidRow`}>
-                <div
+                    :
+                    <div className={`${style.main} `}>
+                        <h1 className={style.heading}>
+                            OUR PROCESS
+                        </h1>
+                        <div
 
-                    className={hover === '' ? `${style.imageContainer3} ` : hover === 'planning' ? style.imageContainer3Active : style.imageContainer3Blur}>
+                            className={`${style.topRow} processTopRow`}>
+                            <div
 
-                    <div
-                        onMouseEnter={() => setHover('planning')}
-                        onMouseLeave={() => setHover('')}
-                        className={style.bgContainer}>
-                        <div className={style.dataContainer}>
-                            <img
-                                className={style.imgItem}
+                                className={hover === '' ? `${style.imageContainer5} processContainer1` : hover === 'expansion' ? `${style.imageContainer5Active} ` : `${style.imageContainer5Blur} `}
 
-                                src='/images/process/icon2.png' />
-                            <p
+                            >
+                                <div
+                                    onMouseEnter={() => setHover('expansion')}
+                                    onMouseLeave={() => setHover('')}
+                                    className={`${style.bgContainer} `}>
+                                    <div className={`${style.dataContainer} processDataContainer`}>
+                                        <img
 
-                                className={style.imageText}>Planning</p>
-                            <p className={hover === 'planning' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
-                                consectetur adipiing elit, sed do eiusmod.</p>
+                                            className={style.imgItem}
+                                            src='/images/process/icon5.webp' />
+                                        <p
+                                            className={style.imageText}
+                                        >Expansion</p>
+                                        <p className={hover === 'expansion' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
+                                            consectetur adipiing elit, sed do eiusmod.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <div
 
-                    </div>
+                            className={`${style.midRow} processMidRow`}>
+                            <div
 
-                </div>
-                <div
+                                className={hover === '' ? `${style.imageContainer3} ` : hover === 'planning' ? style.imageContainer3Active : style.imageContainer3Blur}>
 
-                    className={hover === '' ? style.imageContainer4 : hover === 'deployment' ? style.imageContainer4Active : style.imageContainer4Blur}
-                >
-                    <div
-                        onMouseEnter={() => setHover('deployment')}
-                        onMouseLeave={() => setHover('')}
-                        className={style.bgContainer}>
-                        <div className={style.dataContainer}>
-                            <img
-                                className={style.imgItem}
+                                <div
+                                    onMouseEnter={() => setHover('planning')}
+                                    onMouseLeave={() => setHover('')}
+                                    className={style.bgContainer}>
+                                    <div className={style.dataContainer}>
+                                        <img
+                                            className={style.imgItem}
 
-                                src='/images/process/icon4.png' />
-                            <p
+                                            src='/images/process/icon2.webp' />
+                                        <p
 
-                                className={style.imageText}>Deployment</p>
-                            <p className={hover === 'deployment' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
-                                consectetur adipiing elit, sed do eiusmod.</p>
+                                            className={style.imageText}>Planning</p>
+                                        <p className={hover === 'planning' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
+                                            consectetur adipiing elit, sed do eiusmod.</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div
+
+                                className={hover === '' ? style.imageContainer4 : hover === 'deployment' ? style.imageContainer4Active : style.imageContainer4Blur}
+                            >
+                                <div
+                                    onMouseEnter={() => setHover('deployment')}
+                                    onMouseLeave={() => setHover('')}
+                                    className={style.bgContainer}>
+                                    <div className={style.dataContainer}>
+                                        <img
+                                            className={style.imgItem}
+
+                                            src='/images/process/icon4.webp' />
+                                        <p
+
+                                            className={style.imageText}>Deployment</p>
+                                        <p className={hover === 'deployment' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
+                                            consectetur adipiing elit, sed do eiusmod.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div
+                            // style={{
+                            //     marginLeft: "-1840px"
+                            // }}
+                            className={`${style.bottomRow} processBtmRow`}>
+                            <div
+
+                                className={hover === '' ? style.imageContainer1 : hover === 'ideation' ? style.imageContainer1Active : style.imageContainer1Blur}
+                            >
+                                <div
+                                    onMouseEnter={() => setHover('ideation')}
+                                    onMouseLeave={() => setHover('')}
+                                    className={style.bgContainer}>
+                                    <div className={style.dataContainer}>
+                                        <img
+                                            className={style.imgItem}
+
+                                            src='/images/process/icon1.webp' />
+                                        <p
+
+                                            className={style.imageText}>Ideation</p>
+                                        <p className={hover === 'ideation' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
+                                            consectetur adipiing elit, sed do eiusmod.</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div
+
+                                className={hover === '' ? style.imageContainer2 : hover === 'creation' ? style.imageContainer2Active : style.imageContainer2Blur}>
+
+                                <div
+                                    onMouseEnter={() => setHover('creation')}
+                                    onMouseLeave={() => setHover('')}
+                                    className={style.bgContainer}>
+                                    <div className={style.dataContainer}>
+                                        <img
+                                            className={style.imgItem}
+
+                                            src='/images/process/icon3.webp' />
+                                        <p
+
+                                            className={style.imageText}>Creation</p>
+                                        <p className={hover === 'creation' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
+                                            consectetur adipiing elit, sed do eiusmod.</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
                         </div>
                     </div>
-
-                </div>
-            </div>
-            <div
-                // style={{
-                //     marginLeft: "-1840px"
-                // }}
-                className={`${style.bottomRow} processBtmRow`}>
-                <div
-
-                    className={hover === '' ? style.imageContainer1 : hover === 'ideation' ? style.imageContainer1Active : style.imageContainer1Blur}
-                >
-                    <div
-                        onMouseEnter={() => setHover('ideation')}
-                        onMouseLeave={() => setHover('')}
-                        className={style.bgContainer}>
-                        <div className={style.dataContainer}>
-                            <img
-                                className={style.imgItem}
-
-                                src='/images/process/icon1.png' />
-                            <p
-
-                                className={style.imageText}>Ideation</p>
-                            <p className={hover === 'ideation' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
-                                consectetur adipiing elit, sed do eiusmod.</p>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div
-
-                    className={hover === '' ? style.imageContainer2 : hover === 'creation' ? style.imageContainer2Active : style.imageContainer2Blur}>
-
-                    <div
-                        onMouseEnter={() => setHover('creation')}
-                        onMouseLeave={() => setHover('')}
-                        className={style.bgContainer}>
-                        <div className={style.dataContainer}>
-                            <img
-                                className={style.imgItem}
-
-                                src='/images/process/icon3.png' />
-                            <p
-
-                                className={style.imageText}>Creation</p>
-                            <p className={hover === 'creation' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
-                                consectetur adipiing elit, sed do eiusmod.</p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
+            }
         </div>
     )
 }

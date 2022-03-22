@@ -46,7 +46,7 @@
 .button{
     width: 168px;
     height: 54px;
-    background-image: url(../../../static/icons/buttonBg.png);
+    background-image: url(../../../static/icons/buttonBg.webp);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -69,4 +69,44 @@
     z-index: -1;
     width: 215px;
     height: 215px;
+}
+
+
+/* ================================================================================================================ */
+
+/* ___________________________________________________Mobile Style_________________________________________________ */
+
+/* ================================================================================================================ */
+
+.mblMain{
+    position: relative;
+}
+.mblBgCross{
+    position: absolute;
+    right: 0px;
+    top: -50px;
+}
+.mblTextContainer{
+    padding-top: 70px;
+    padding-left: 24px;
+}
+.mblTitle{
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+.mblParagraph{
+    margin-top: 60px;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding-bottom: 20px;
 }

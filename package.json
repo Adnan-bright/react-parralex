@@ -32,6 +32,8 @@
     "react-helmet": "^6.1.0",
     "react-intersection-observer": "^8.33.1",
     "react-player": "^2.9.0",
-    "react-scroll-parallax": "^3.0.4"
+    "react-scroll-parallax": "^3.0.4",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1"
   }
 }

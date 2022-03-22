@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 // import { StaticImage } from "gatsby-plugin-image"
 
 function Header({ navClick, hoverValue }) {
-  const [toggle, setToggle] = useState(false)
   const [nav, setNav] = useState('')
   const [value, setValue] = useState('')
   console.log('hoverValue', hoverValue)
@@ -33,11 +32,10 @@ function Header({ navClick, hoverValue }) {
     <div className={style.main}>
       <div className={style.headerBar}>
         <div className={style.logoContainer}>
-          <Link > <img onClick={() => { setNav(''); navClick(0) }} className={style.logo} src="/images/common/logo.png" alt="Logo" /></Link>
+          <Link > <img onClick={() => { setNav(''); navClick(0) }} className={style.logo} src="/images/common/logo.webp" alt="Logo" /></Link>
         </div>
-        <div className={toggle ? style.tabsContainerHide : style.tabsContainer}>
-          {toggle ? <img onClick={() => setToggle(false)} className={style.icon} src="/icons/close.png" /> :
-            <img onClick={() => setToggle(true)} className={style.icon} src="/icons/menu.png" />}
+        <div className={style.tabsContainer}>
+         
           <Link className={nav === '#panel-2' ? style.tabFill : style.tab} >
             <div
               className={style.tabContainer}
@@ -50,7 +48,7 @@ function Header({ navClick, hoverValue }) {
                   opacity: nav === '#panel-2' ? 1 : 0,
                   transition: "easeInOut .4s"
                 }}
-                className={style.dot} src='icons/dot.png' />
+                className={style.dot} src='icons/dot.webp' />
             </div>
           </Link>
           <Link >
@@ -63,7 +61,7 @@ function Header({ navClick, hoverValue }) {
                   opacity: nav === '#panel-3' ? 1 : 0,
                   transition: "easeInOut .4s"
                 }}
-                className={style.dot} src='icons/dot.png' />
+                className={style.dot} src='icons/dot.webp' />
             </div>
           </Link>
           <Link >
@@ -76,7 +74,7 @@ function Header({ navClick, hoverValue }) {
                   opacity: nav === '#panel-4' ? 1 : 0,
                   transition: "easeInOut .4s"
                 }}
-                className={style.dot} src='icons/dot.png' />
+                className={style.dot} src='icons/dot.webp' />
             </div>
           </Link>
           <Link >
@@ -89,7 +87,7 @@ function Header({ navClick, hoverValue }) {
                   opacity: nav === '#panel-5' ? 1 : 0,
                   transition: "easeInOut .4s"
                 }}
-                className={style.dot} src='icons/dot.png' />
+                className={style.dot} src='icons/dot.webp' />
             </div>
           </Link>
           <Link >
@@ -102,7 +100,7 @@ function Header({ navClick, hoverValue }) {
                   opacity: nav === '#panel-6' ? 1 : 0,
                   transition: "easeInOut .4s"
                 }}
-                className={style.dot} src='icons/dot.png' />
+                className={style.dot} src='icons/dot.webp' />
             </div>
           </Link>
         </div>

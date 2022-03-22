@@ -4,7 +4,7 @@
     overflow: hidden;
     width: 100%;
     color: white;
-    background-image: url(../../../static/images/contact/bg.png);
+    background-image: url(../../../static/images/contact/bg.webp);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -13,7 +13,8 @@
     justify-content: center;
     position: relative;
 }
-.reviewContainer{
+
+.reviewContainer {
     z-index: 1;
     right: 10%;
     top: 15%;
@@ -22,11 +23,13 @@
     width: 300px;
     position: absolute;
 }
-.body{
+
+.body {
     position: relative;
     height: 90%;
     width: 100%;
 }
+
 .midContainer {
     width: 100%;
     margin-left: 30%;
@@ -59,7 +62,6 @@
     outline: none;
     border-bottom: 1px solid #C0C0C0;
     background-color: transparent;
-
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
@@ -130,11 +132,12 @@
     align-items: center;
     justify-content: center;
     transition: ease-in-out .4s;
-    background: url(../../../static/images/common/btnBg.png);
+    background: url(../../../static/images/common/btnBg.webp);
 }
+
 .btn:hover {
     transition: ease-in-out .4s;
-    background: url(../../../static/images/common/btnBgHover.png);
+    background: url(../../../static/images/common/btnBgHover.webp);
 }
 
 .btnContainer {
@@ -179,10 +182,12 @@
     color: #FFFFFF;
 
 }
-.tabs{
+
+.tabs {
     display: flex;
     align-items: center;
 }
+
 .tab1 {
     font-family: graphik-regular;
     font-style: normal;
@@ -193,15 +198,16 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/insta.png);
+    background-image: url(../../../static/images/contact/insta.webp);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
     cursor: pointer;
     transition: ease-in-out .4s;
 }
+
 .tab1:hover {
-    background-image: url(../../../static/images/contact/instaHv.png);
+    background-image: url(../../../static/images/contact/instaHv.webp);
     cursor: pointer;
 }
 
@@ -215,15 +221,16 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/facebook.png);
+    background-image: url(../../../static/images/contact/facebook.webp);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
     cursor: pointer;
     transition: ease-in-out .4s;
 }
+
 .tab2:hover {
-    background-image: url(../../../static/images/contact/facebookHv.png);
+    background-image: url(../../../static/images/contact/facebookHv.webp);
     cursor: pointer;
 }
 
@@ -237,15 +244,16 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/twitter.png);
+    background-image: url(../../../static/images/contact/twitter.webp);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
     cursor: pointer;
     transition: ease-in-out .4s;
 }
+
 .tab3:hover {
-    background-image: url(../../../static/images/contact/twitterHv.png);
+    background-image: url(../../../static/images/contact/twitterHv.webp);
     cursor: pointer;
 }
 
@@ -259,15 +267,16 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/linkedin.png);
+    background-image: url(../../../static/images/contact/linkedin.webp);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
     cursor: pointer;
     transition: ease-in-out .4s;
 }
+
 .tab4:hover {
-    background-image: url(../../../static/images/contact/linkedinHv.png);
+    background-image: url(../../../static/images/contact/linkedinHv.webp);
     cursor: pointer;
 }
 
@@ -281,15 +290,16 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/youtube.png);
+    background-image: url(../../../static/images/contact/youtube.webp);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
     cursor: pointer;
     transition: ease-in-out .4s;
 }
+
 .tab5:hover {
-    background-image: url(../../../static/images/contact/youtubeHv.png);
+    background-image: url(../../../static/images/contact/youtubeHv.webp);
     cursor: pointer;
 }
 
@@ -303,14 +313,247 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/vimeo.png);
+    background-image: url(../../../static/images/contact/vimeo.webp);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
     cursor: pointer;
     transition: ease-in-out .4s;
 }
+
 .tab6:hover {
-    background-image: url(../../../static/images/contact/vimeoHv.png);
+    background-image: url(../../../static/images/contact/vimeoHv.webp);
     cursor: pointer;
+}
+
+
+
+/* ================================================================================================================ */
+
+/* ___________________________________________________Mobile Style_________________________________________________ */
+
+/* ================================================================================================================ */
+
+.mblBody {
+    position: relative;
+    margin-top: 80px;
+}
+
+.rightBgImage {
+    position: absolute;
+    right: 0px;
+}
+
+.leftBgImage {
+    position: absolute;
+    left: 30px;
+    top: -30px;
+}
+
+.textContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.mblMainHeading {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.mblMainDesc {
+    margin-top: -0px;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    width: 80%;
+    line-height: 150%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.mblTopRow {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mblTopRow>input {
+    height: 50px;
+    width: 85%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #C0C0C0;
+    background-color: transparent;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #808080;
+}
+
+.mblTopRow .mblMessageTxt {
+    height: 100px;
+    width: 85%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #C0C0C0;
+    background-color: transparent;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #808080;
+}
+
+.mblBtn {
+    width: 80%;
+    height: 54px;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+    margin-top: 50px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease-in-out .4s;
+    background: url(../../../static/images/common/mblBtnBg.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.mblSingleBox {
+    width: 80%;
+    margin-top: 50px;
+}
+
+.singleBoxContainer {
+    position: relative;
+}
+
+.mblRatingCont {
+    position: absolute;
+    top: 75px;
+    width: 60px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mblRating {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.mblStar {
+    width: 24px;
+    height: 24px;
+}
+
+.mblDescriptionMain {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 145px;
+    font-family: graphik-regular;
+    font-style: normal;
+    width: 65%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+.mblShortDesc {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13px;
+    bottom: 38px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.btmLeftBgImg {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    left: 35px;
+    margin-top: 30px;
+}
+
+.btmRightBgImg {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    right: 25px;
+}
+
+.mblFolloeContainer {
+    padding-left: 24px;
+    margin-top: 230px;
+}
+
+.mblFollow {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.mblIconsContainer {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copyRight {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #7A858D;
+    margin-top: 20px;
+    padding-bottom: 15px;
 }

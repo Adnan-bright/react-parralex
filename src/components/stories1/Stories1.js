@@ -2,421 +2,217 @@ import React, { useState, useEffect } from 'react'
 import * as style from '../../styles/components/stories1.module.css'
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-function Stories1() {
+import Slider from "react-slick";
+
+function Stories1({ isMobile }) {
+    const [check, setcCheck] = useState(false)
     const [whichCard, setWhichCard] = useState('')
     gsap.registerPlugin(ScrollTrigger);
+    const settings = {
+        dots: false,
+        infinite: false,
+        arrows: false,
+        slidesToShow: 4,
+        slidesToScroll: 4
+    };
+    const items = [
+        {
+            img: '/images/stories/1.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/2.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/4.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/5.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/6.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/7.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/8.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: 'https://picsum.photos/id/13/200/300',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        }
 
-    // useEffect(() => {
-    //     const tl = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: ".storiesBtmRow .processMainContainer",
-    //             scrub: 2,
-    //             markers: false
-    //         }
-    //     });
-    //     tl.to(".storiesBtmRow", {xPercent:-25, duration: 8,ease: "power2.out"})
-    //     tl.to(".storiesBtmRow", {xPercent:0, duration: 6,ease: "power2.out"})
-    //     tl.to(".storiesBtmRow", {xPercent:-15, duration: 6,ease: "power2.out"})
-
-
-    // }, [])
+    ]
     return (
-        <div className={`${style.main} storiesMain`}>
-            <img src='/images/stories/croses.png' className={style.bgImgBtm} />
-            <div className={style.bgImg}>
-                <img src='/images/stories/bg.png' />
-            </div>
-            <div className={style.upperContainer}>
-                <h1 className={style.heading}>
-                    our best stories
-                </h1>
-                <div className={style.btn}>
-                    see all work
-                </div>
-            </div>
-            <div className={style.imagesContainer}>
+        <div>
+            {
+                isMobile ?
+                    <div className={style.mblMain}>
+                        <h1 className={style.mblHeading}>
+                            our best stories
+                        </h1>
 
-                <div className={style.topContainer}>
-                    <div
-                        onMouseEnter={() => setWhichCard('top1')}
-                        onMouseLeave={() => setWhichCard('')}
-                        style={{
-                            filter: whichCard !== '' && whichCard !== 'top1' ? "blur(3px)" : "blur(0px)",
-                        }}
-                        className={style.singleImgContainer}>
-                        <center>
-                            <img
-                                style={{
-                                    opacity: whichCard !== '' && whichCard === 'top1' ? 1 : 0,
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.icon}
-                                src='/images/stories/icon.png' />
-                        </center>
                         <div
-                            style={{
-                                opacity: whichCard !== '' && whichCard === 'top1' ? 1 : 0,
-                                transition: "ease-in-out .4s",
-
-                            }}
-                            className={style.txtContainer}>
-                            <center> <h5
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'top1' ? 'translateY(0px)' : 'translateY(-20px)',
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.title}>
-                                Henry Miner Artist Spotlight
-                            </h5></center>
-                            <center>  <p
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'top1' ? 'translateY(0px)' : 'translateY(20px)',
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.description}>
-                                Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit, sed do eiusmod.
-                            </p></center>
+                            onClick={()=> check && setWhichCard('')}
+                            className={style.mblImagesContainer}
+                        >
+                            {
+                                items?.map((item, index) => {
+                                    return <div
+                                        style={{
+                                            alignSelf: whichCard === index ? "center" :
+                                                index % 2 === 0 ? "flex-end" : "",
+                                            transition: "ease-in-out .5s"
+                                        }}
+                                        key={index}
+                                        onMouseEnter={()=> setcCheck(false)}
+                                        onMouseLeave={()=> setcCheck(true)}
+                                        onClick={() => setWhichCard(index)}
+                                        className={index === whichCard ?
+                                            style.mblSingleImgContainerActive :
+                                            style.mblSingleImgContainer
+                                        }>
+                                        <img
+                                        style={{
+                                            opacity:whichCard === index ? 1 : 0
+                                        }}
+                                            className={style.mblIcon}
+                                            src={item.icon} />
+                                        <div 
+                                        style={{
+                                                transform:whichCard === index ?
+                                                 'translateY(0px) rotateZ(-45deg)':
+                                                 'translateY(-20px) rotateZ(-45deg)',
+                                                 opacity:whichCard === index ?
+                                                 1:
+                                                 0,
+                                        }}  
+                                        className={style.mblTxtContainer}>
+                                            <h5 className={style.mblTitle}>
+                                                {item.title}
+                                            </h5>
+                                            <p className={style.mblDescription}>
+                                                {item.description}
+                                            </p>
+                                        </div>
+                                        <img draggable={false}
+                                            className={style.mblImgTop} src={item.img} />
+                                    </div>
+                                })
+                            }
+                          
                         </div>
-                        <img className={style.imgTop} src='/images/stories/2.png' />
-                    </div>
-                    <div
-                        onMouseEnter={() => setWhichCard('top2')}
-                        onMouseLeave={() => setWhichCard('')}
-                        style={{
-                            filter: whichCard !== '' && whichCard !== 'top2' ? "blur(3px)" : "blur(0px)",
-                        }}
-                        className={style.singleImgContainer}>
-                        <center>
-                            <img
-                                style={{
-                                    opacity: whichCard !== '' && whichCard === 'top2' ? 1 : 0,
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.icon}
-                                src='/images/stories/icon.png' />
-                        </center>
                         <div
-                            style={{
-                                opacity: whichCard !== '' && whichCard === 'top2' ? 1 : 0,
-                                transition: "ease-in-out .4s",
-
-                            }}
-                            className={style.txtContainer}>
-                            <center> <h5
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'top2' ? 'translateY(0px)' : 'translateY(-20px)',
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.title}>
-                                Henry Miner Artist Spotlight
-                            </h5></center>
-                            <center>  <p
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'top2' ? 'translateY(0px)' : 'translateY(20px)',
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.description}>
-                                Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit, sed do eiusmod.
-                            </p></center>
+                        className={
+                            style.mblBtnContainer
+                        }
+                        >
+                                <p 
+                                className={style.mblBtnText}
+                                >see all work</p>
+                            </div>
+                    </div>
+                    :
+                    <div className={`${style.main} `}>
+                        <img draggable={false} src='/images/stories/croses.webp' className={style.bgImgBtm} />
+                        <div className={style.bgImg}>
+                            <img draggable={false} src='/images/stories/bg.webp' />
                         </div>
-                        <img className={style.imgTop} src='/images/stories/7.png' />
-                    </div>
-                    <div
-                        onMouseEnter={() => setWhichCard('top3')}
-                        onMouseLeave={() => setWhichCard('')}
-                        style={{
-                            filter: whichCard !== '' && whichCard !== 'top3' ? "blur(3px)" : "blur(0px)",
-                        }}
-                        className={style.singleImgContainer}>
-                        <center>
-                            <img
-                                style={{
-                                    opacity: whichCard !== '' && whichCard === 'top3' ? 1 : 0,
-                                    transition: "ease-in-out .4s",
+                        <div className={style.upperContainer}>
+                            <h1 className={style.heading}>
+                                our best stories
+                            </h1>
+                            <div className={style.btn}>
+                                see all work
+                            </div>
+                        </div>
+                        <div className={style.imagesContainer}>
 
-                                }}
-                                className={style.icon}
-                                src='/images/stories/icon.png' />
-                        </center>
-                        <div
-                            style={{
-                                opacity: whichCard !== '' && whichCard === 'top3' ? 1 : 0,
-                                transition: "ease-in-out .4s",
+                            <div className={style.topContainer}>
+                                <Slider {...settings}
+                                    className={style.slider}
+                                >
+                                    {
+                                        items?.map((item, index) => {
+                                            return <div
+                                                onMouseEnter={() => setWhichCard('active')}
+                                                onMouseLeave={() => setWhichCard('')}
+                                                key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
+                                                <img
+                                                    className={style.icon}
+                                                    src={item.icon} />
+                                                <div className={style.txtContainer}>
+                                                    <h5 className={style.title}>
+                                                        {item.title}
+                                                    </h5>
+                                                    <p className={style.description}>
+                                                        {item.description}
+                                                    </p>
+                                                </div>
+                                                <img draggable={false} className={style.imgTop} src={item.img} />
+                                            </div>
+                                        })
+                                    }
+                                </Slider>
+                            </div>
 
-                            }}
-                            className={style.txtContainer}>
-                            <center> <h5
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'top3' ? 'translateY(0px)' : 'translateY(-20px)',
-                                    transition: "ease-in-out .4s",
 
-                                }}
-                                className={style.title}>
-                                Henry Miner Artist Spotlight
-                            </h5></center>
-                            <center>  <p
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'top3' ? 'translateY(0px)' : 'translateY(20px)',
-                                    transition: "ease-in-out .4s",
+                            <div className={`${style.bottomContainer} storiesBtmRow`}>
+                                <Slider {...settings}
+                                    className={style.slider}
+                                >
+                                    {
+                                        items?.map((item, index) => {
+                                            return <div
+                                                onMouseEnter={() => setWhichCard('active')}
+                                                onMouseLeave={() => setWhichCard('')}
+                                                key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
+                                                <img
+                                                    className={style.icon}
+                                                    src={item.icon} />
+                                                <div className={style.txtContainer}>
+                                                    <h5 className={style.title}>
+                                                        {item.title}
+                                                    </h5>
+                                                    <p className={style.description}>
+                                                        {item.description}
+                                                    </p>
+                                                </div>
+                                                <img draggable={false} className={style.imgTop} src={item.img} />
+                                            </div>
+                                        })
+                                    }
+                                </Slider>
+                            </div>
 
-                                }}
-                                className={style.description}>
-                                Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit, sed do eiusmod.
-                            </p></center>
                         </div>
 
-                        <img className={style.imgTop} src='/images/stories/4.png' />
                     </div>
-                    <div
-                        onMouseEnter={() => setWhichCard('top4')}
-                        onMouseLeave={() => setWhichCard('')}
-                        style={{
-                            filter: whichCard !== '' && whichCard !== 'top4' ? "blur(3px)" : "blur(0px)",
-                        }}
-                        className={style.singleImgContainer}>
-                        <center>
-                            <img
-                                style={{
-                                    opacity: whichCard !== '' && whichCard === 'top4' ? 1 : 0,
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.icon}
-                                src='/images/stories/icon.png' />
-                        </center>
-                        <div
-                            style={{
-                                opacity: whichCard !== '' && whichCard === 'top4' ? 1 : 0,
-                                transition: "ease-in-out .4s",
-
-                            }}
-                            className={style.txtContainer}>
-                            <center> <h5
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'top4' ? 'translateY(0px)' : 'translateY(-20px)',
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.title}>
-                                Henry Miner Artist Spotlight
-                            </h5></center>
-                            <center>  <p
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'top4' ? 'translateY(0px)' : 'translateY(20px)',
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.description}>
-                                Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit, sed do eiusmod.
-                            </p></center>
-                        </div>
-
-                        <img className={style.imgTop} src='/images/stories/11.png' />
-                    </div>
-                </div>
-
-                {/* Bottom */}
-
-                <div className={`${style.bottomContainer} storiesBtmRow`}>
-                    <div
-                        onMouseEnter={() => setWhichCard('bottom1')}
-                        onMouseLeave={() => setWhichCard('')}
-                        style={{
-                            filter: whichCard !== '' && whichCard !== 'bottom1' ? "blur(3px)" : "blur(0px)",
-                        }}
-                        className={style.singleImgContainer}>
-                        <center>
-                            <img
-                                style={{
-                                    opacity: whichCard !== '' && whichCard === 'bottom1' ? 1 : 0,
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.icon}
-                                src='/images/stories/icon.png' />
-                        </center>
-                        <div
-                            style={{
-                                opacity: whichCard !== '' && whichCard === 'bottom1' ? 1 : 0,
-                                transition: "ease-in-out .4s",
-
-                            }}
-                            className={style.txtContainer}>
-                            <center> <h5
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'bottom1' ? 'translateY(0px)' : 'translateY(-20px)',
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.title}>
-                                Henry Miner Artist Spotlight
-                            </h5></center>
-                            <center>  <p
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'bottom1' ? 'translateY(0px)' : 'translateY(20px)',
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.description}>
-                                Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit, sed do eiusmod.
-                            </p></center>
-                        </div>
-                        <img className={style.imgTop} src='/images/stories/3.png' />
-                    </div>
-                    <div
-                        onMouseEnter={() => setWhichCard('bottom2')}
-                        onMouseLeave={() => setWhichCard('')}
-                        style={{
-                            filter: whichCard !== '' && whichCard !== 'bottom2' ? "blur(3px)" : "blur(0px)",
-                        }}
-                        className={style.singleImgContainer}>
-                        <center>
-                            <img
-                                style={{
-                                    opacity: whichCard !== '' && whichCard === 'bottom2' ? 1 : 0,
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.icon}
-                                src='/images/stories/icon.png' />
-                        </center>
-                        <div
-                            style={{
-                                opacity: whichCard !== '' && whichCard === 'bottom2' ? 1 : 0,
-                                transition: "ease-in-out .4s",
-
-                            }}
-                            className={style.txtContainer}>
-                            <center> <h5
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'bottom2' ? 'translateY(0px)' : 'translateY(-20px)',
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.title}>
-                                Henry Miner Artist Spotlight
-                            </h5></center>
-                            <center>  <p
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'bottom2' ? 'translateY(0px)' : 'translateY(20px)',
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.description}>
-                                Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit, sed do eiusmod.
-                            </p></center>
-                        </div>
-                        <img className={style.imgTop} src='/images/stories/10.png' />
-                    </div>
-                    <div
-                        onMouseEnter={() => setWhichCard('bottom3')}
-                        onMouseLeave={() => setWhichCard('')}
-                        style={{
-                            filter: whichCard !== '' && whichCard !== 'bottom3' ? "blur(3px)" : "blur(0px)",
-                        }}
-                        className={style.singleImgContainer}>
-                        <center>
-                            <img
-                                style={{
-                                    opacity: whichCard !== '' && whichCard === 'bottom3' ? 1 : 0,
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.icon}
-                                src='/images/stories/icon.png' />
-                        </center>
-                        <div
-                            style={{
-                                opacity: whichCard !== '' && whichCard === 'bottom3' ? 1 : 0,
-                                transition: "ease-in-out .4s",
-
-                            }}
-                            className={style.txtContainer}>
-                            <center> <h5
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'bottom3' ? 'translateY(0px)' : 'translateY(-20px)',
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.title}>
-                                Henry Miner Artist Spotlight
-                            </h5></center>
-                            <center>  <p
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'bottom3' ? 'translateY(0px)' : 'translateY(20px)',
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.description}>
-                                Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit, sed do eiusmod.
-                            </p></center>
-                        </div>
-                        <img className={style.imgTop} src='/images/stories/12.png' />
-                    </div>
-                    <div
-                        onMouseEnter={() => setWhichCard('bottom4')}
-                        onMouseLeave={() => setWhichCard('')}
-                        style={{
-                            filter: whichCard !== '' && whichCard !== 'bottom4' ? "blur(3px)" : "blur(0px)",
-                        }}
-                        className={style.singleImgContainer}>
-                        <center>
-                            <img
-                                style={{
-                                    opacity: whichCard !== '' && whichCard === 'bottom4' ? 1 : 0,
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.icon}
-                                src='/images/stories/icon.png' />
-                        </center>
-                        <div
-                            style={{
-                                opacity: whichCard !== '' && whichCard === 'bottom4' ? 1 : 0,
-                                transition: "ease-in-out .4s",
-
-                            }}
-                            className={style.txtContainer}>
-                            <center> <h5
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'bottom4' ? 'translateY(0px)' : 'translateY(-20px)',
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.title}>
-                                Henry Miner Artist Spotlight
-                            </h5></center>
-                            <center>  <p
-                                style={{
-                                    transform: whichCard !== '' && whichCard === 'bottom4' ? 'translateY(0px)' : 'translateY(20px)',
-                                    transition: "ease-in-out .4s",
-
-                                }}
-                                className={style.description}>
-                                Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit, sed do eiusmod.
-                            </p></center>
-                        </div>
-                        <img className={style.imgTop} src='/images/stories/1.png' />
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
+            }
+        </div >
     )
 }
 
