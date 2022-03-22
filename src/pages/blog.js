@@ -2,8 +2,8 @@ import React from 'react'
 import { graphql } from "gatsby"
 
 function Blog({ data }) {
-    console.log('data', data?.allWpStories?.edges)
-    const posts = data?.allWpStories?.edges
+    // console.log('data', data?.allWpStories?.edges)
+    // const posts = data?.allWpStories?.edges
     // function createMarkup(post) {
     //     return {__html: post};
     //   }
@@ -16,7 +16,7 @@ function Blog({ data }) {
         >
 
          <center><h1>Our Stories</h1></center>
-            {
+            {/* {
                 posts?.map((item, index) => {
                     return <div
                     style={{
@@ -38,31 +38,31 @@ function Blog({ data }) {
                     </div>
                 })
 
-            }
+            } */}
         </div>
     )
 }
 
-export const pageQuery = graphql`
-  query {
-    allWpStories {
-        edges {
-          node {
-            storiesfields {
-              fieldGroupName
-              storyDescription
-              storyIcon {
-                id
-                mediaItemUrl
-              }
-              storyCover {
-                id
-                mediaItemUrl
-              }
-            }
-            title
-          }
-        }
-      }
-  }`
+// export const pageQuery = graphql`
+//   query {
+//     allWpStories {
+//         edges {
+//           node {
+//             storiesfields {
+//               fieldGroupName
+//               storyDescription
+//               storyIcon {
+//                 id
+//                 mediaItemUrl
+//               }
+//               storyCover {
+//                 id
+//                 mediaItemUrl
+//               }
+//             }
+//             title
+//           }
+//         }
+//       }
+//   }`
 export default Blog
