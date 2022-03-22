@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 // import { StaticImage } from "gatsby-plugin-image"
 
 function Header({ navClick, hoverValue }) {
-  const [toggle, setToggle] = useState(false)
   const [nav, setNav] = useState('')
   const [value, setValue] = useState('')
   console.log('hoverValue', hoverValue)
@@ -35,9 +34,8 @@ function Header({ navClick, hoverValue }) {
         <div className={style.logoContainer}>
           <Link > <img onClick={() => { setNav(''); navClick(0) }} className={style.logo} src="/images/common/logo.webp" alt="Logo" /></Link>
         </div>
-        <div className={toggle ? style.tabsContainerHide : style.tabsContainer}>
-          {toggle ? <img onClick={() => setToggle(false)} className={style.icon} src="/icons/close.webp" /> :
-            <img onClick={() => setToggle(true)} className={style.icon} src="/icons/menu.webp" />}
+        <div className={style.tabsContainer}>
+         
           <Link className={nav === '#panel-2' ? style.tabFill : style.tab} >
             <div
               className={style.tabContainer}

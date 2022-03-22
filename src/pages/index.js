@@ -10,42 +10,41 @@ import Process from "../components/process/Process";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
-
+import useWindowDimensions from "../hooks/getWindowDimension";
 
 const IndexPage = () => {
+  const { height, width } = useWindowDimensions();
   const [updateValue, setUpdateValue] = useState(0)
   const [detectChange, setDetectChange] = useState([])
-  const [scrub, setScrub] = useState(1)
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
   const ref = useRef(null);
 
   useEffect(() => {
-    const element = ref.current;
-
-    let sections = gsap.utils.toArray(".panel");
-    gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".container",
-        pin: true,
-        scrub: 1.5,
-        onSnapComplete: snap => setDetectChange(snap),
-        onUpdate: self => setUpdateValue(Math.round(self.progress * 10) / 10),
-        snap: {
-          snapTo: 1 / (sections.length - 1),
-          duration: {min: 0.1, max: 0.2},
-          ease: "power1.inOut"
+    if (width >= 600) {
+      let sections = gsap.utils.toArray(".panel");
+      gsap.to(sections, {
+        xPercent: -100 * (sections.length - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".container",
+          pin: true,
+          scrub: 1.5,
+          onSnapComplete: snap => setDetectChange(snap),
+          onUpdate: self => setUpdateValue(Math.round(self.progress * 10) / 10),
+          snap: {
+            snapTo: 1 / (sections.length - 1),
+            duration: { min: 0.1, max: 0.2 },
+            ease: "power1.inOut"
+          },
+          end: () => "+=3500"
         },
-        end: () => "+=3500"
-      },
-    });
+      });
+    }
+
   }, []);
-  var decPart = (updateValue + "").split(".")[1];
 
   const handleClick = (id) => {
-    setScrub(2)
     gsap.to(window, {
       scrollTo: 700 * id,
       duration: .5,
@@ -55,34 +54,56 @@ const IndexPage = () => {
 
 
   return (
-    <Layout hoverValue={updateValue} onNavClick={handleClick}>
+    <Layout isMobile={width >= 800 ? false : true} hoverValue={updateValue} onNavClick={handleClick}>
 
       <div
         ref={ref}
       >
-        <div
-          className="container">
-          <div id={'panel-1'} className="panel">
-            <HeroVer1 />
+        {width >= 600 ?
+          <div
+            className="container">
+            <div id={'panel-1'} className="panel">
+              <HeroVer1 isMobile={width < 600} />
+            </div>
+            <div id={'panel-2'} className="panel">
+              <AboutUS isMobile={width < 600} />
+            </div>
+            <div id={'panel-3'} className="panel">
+              <Service1 isMobile={width < 600} />
+            </div>
+            <div id={'panel-4'} className="panel">
+              <Stories1 isMobile={width < 600} />
+            </div>
+            <div id={'panel-5'} className="panel">
+              <Process isMobile={width < 600} />
+            </div>
+            <div id={'panel-6'} className="panel">
+              <Contact1 isMobile={width < 600} />
+            </div>
           </div>
-          <div id={'panel-2'} className="panel">
-            <AboutUS />
+          :
+          <div
+            className="verticalContainer">
+            <div id={'verticalPanel-1'} className="verticalPanel">
+              <HeroVer1 isMobile={width < 600} />
+            </div>
+            <div id={'verticalPanel-2'} className="verticalPanel">
+              <AboutUS isMobile={width < 600} />
+            </div>
+            <div id={'verticalPanel-3'} className="verticalPanel">
+              <Service1 isMobile={width < 600} />
+            </div>
+             <div id={'verticalPanel-4'} className="verticalPanel">
+              <Stories1 isMobile={width < 600 } />
+            </div>
+           {/* <div id={'verticalPanel-5'} className="verticalPanel">
+              <Process isMobile={width < 600 } />
+            </div>
+            <div id={'verticalPanel-6'} className="verticalPanel">
+              <Contact1 isMobile={width < 600 } />
+            </div> */}
           </div>
-          <div id={'panel-3'} className="panel">
-            <Service1 />
-          </div>
-          <div id={'panel-4'} className="panel">
-            <Stories1 />
-          </div>
-          <div id={'panel-5'} className="panel">
-            <Process />
-          </div>
-          <div id={'panel-6'} className="panel">
-            <Contact1 />
-          </div>
-
-
-        </div>
+        }
       </div>
     </Layout>
 

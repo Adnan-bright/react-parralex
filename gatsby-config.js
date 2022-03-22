@@ -4,18 +4,19 @@ module.exports = {
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: [
-  //   {
-  //   resolve: 'gatsby-source-wordpress',
-  //   options: {
-  //     "url": "http://localhost:8888/mag-raw-cms/graphql",
-  //     // Specify which URL structures to fetch
-  //     includedRoutes: [
-  //       '**/posts',
-  //       '**/tags',
-  //       '**/categories'
-  //     ]
-  //   }
-  // },
+    {
+    resolve: 'gatsby-source-wordpress',
+    options: {
+      "url": "http://localhost:8888/mag-raw-cms/graphql",
+      // Specify which URL structures to fetch
+      includedRoutes: [
+        '**/posts',
+        '**/tags',
+        '**/categories'
+      ],
+      useACF: true,
+    }
+  },
    "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
     options: {

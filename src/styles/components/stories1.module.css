@@ -43,6 +43,7 @@
     background: url(../../../static/images/common/btnBg.webp);
     transition: ease-in-out .4s;
 }
+
 .btn:hover {
     background: url(../../../static/images/common/btnBgHover.webp);
     transition: ease-in-out .4s;
@@ -68,7 +69,8 @@
     padding-left: 18%;
     margin-top: -120px;
 }
-.singleImgContainerBlur{
+
+.singleImgContainerBlur {
     margin-left: 90px;
     width: 200px !important;
     height: 200px !important;
@@ -80,7 +82,8 @@
     position: relative;
     filter: blur(3px);
 }
- .singleImgContainer {
+
+.singleImgContainer {
     margin-left: 90px;
     width: 200px !important;
     height: 200px !important;
@@ -91,6 +94,7 @@
     transition: ease-in-out .4s;
     position: relative;
 }
+
 .imgTop {
     transform: rotateZ(-45deg) translateY(-20%);
     object-fit: cover;
@@ -98,10 +102,12 @@
     width: 140%;
     z-index: -1;
 }
-.imageCover{
-    width: 200px ;
-    height: 200px ;
+
+.imageCover {
+    width: 200px;
+    height: 200px;
 }
+
 .icon {
     position: absolute;
     left: 150px;
@@ -120,7 +126,7 @@
     filter: blur(0px);
 }
 
-.singleImgContainerBlur:hover .icon{
+.singleImgContainerBlur:hover .icon {
     position: absolute;
     left: 150px;
     bottom: -9px;
@@ -131,6 +137,7 @@
     transition: ease-in-out .4s;
     transform: rotateZ(-45deg);
 }
+
 .singleImgContainerBlur:hover .txtContainer {
     position: absolute;
     overflow: hidden;
@@ -185,44 +192,191 @@
     line-height: 13px;
     color: #FFFFFF;
 }
-.bgImgBtm{
+
+.bgImgBtm {
     position: absolute;
     left: 25px;
     bottom: 0px;
 }
-@media only screen and (max-width:1300px){
+
+@media only screen and (max-width:1300px) {
 
     .description {
         margin-left: 15px;
         margin-right: 10px;
         margin-top: -13px;
     }
+
     .title {
         margin-top: 34px;
-        margin-left:7px;
+        margin-left: 7px;
     }
 
 
 }
-@media only screen and (max-width:1100px){
 
-    .imagesContainer{
+@media only screen and (max-width:1100px) {
+
+    .imagesContainer {
         margin-top: 10%;
     }
+
     .description {
         margin-left: 20px;
         margin-right: 10px;
         margin-top: -13px;
     }
+
     .title {
-        margin-left:20px;
+        margin-left: 20px;
         font-size: 12px;
     }
 
 }
-@media only screen and (max-width:1000px){
 
-    .imagesContainer{
+@media only screen and (max-width:1000px) {
+
+    .imagesContainer {
         margin-top: 10%;
     }
+}
+
+/* ================================================================================================================ */
+
+/* ___________________________________________________Mobile Style_________________________________________________ */
+
+/* ================================================================================================================ */
+
+.mblMain {
+    position: relative;
+}
+
+.mblHeading {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-left: 24px;
+    margin-top: 50px;
+}
+
+.mblSingleImgContainer {
+    width: 140px !important;
+    height: 140px !important;
+    margin-top: -90px;
+    margin-bottom: 90px;
+    transform: rotateZ(45deg);
+    overflow: hidden;
+    transition: ease-in-out .4s;
+    position: relative;
+    z-index: 10;
+}
+
+.mblSingleImgContainerActive {
+    width: 140px !important;
+    height: 140px !important;
+    margin-top: 0px;
+    margin-bottom: 190px;
+    transform: rotateZ(45deg) scale(1.6);
+    overflow: hidden;
+    transition: ease-in-out .4s;
+    position: relative;
+    z-index: 20;
+}
+
+.mblImagesContainer {
+    margin-top: 200px;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.mblImgTop {
+    transform: rotateZ(-45deg) translateY(-20%);
+    object-fit: cover;
+    height: 140%;
+    width: 140%;
+    z-index: 99;
+}
+
+.mblIcon {
+    position: absolute;
+    left: 98px;
+    bottom: -7px;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    transition: ease-in-out .4s;
+    transform: rotateZ(-45deg);
+}
+
+.mblTxtContainer {
+    position: absolute;
+    width: 100%;
+    margin-top: 40px;
+    left: 0px;
+    bottom: 20px;
+    opacity: 1;
+    z-index: 2;
+    transform: rotateZ(-45deg);
+    transition: ease-in-out .4s;
+}
+
+.mblTitle {
+    z-index: 999;
+    font-family: graphik-regular;
+    padding-left: 8px;
+    font-style: normal;
+    font-weight: 600;
+    padding-right: 0px;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    transition: ease-in-out .4s;
+}
+
+.mblDescription {
+    width: 100%;
+    text-align: left;
+    margin-left: 8px;
+    margin-right: 10px;
+    margin-top: -16px;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
+    color: #FFFFFF;
+}
+
+.mblBtnText {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -10px;
+    width: 90%;
+    height: 54px;
+    background: url(../../../static/images/stories/mblBtnBg.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.mblBtnContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

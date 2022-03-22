@@ -2,8 +2,8 @@ import React from 'react'
 import { graphql } from "gatsby"
 
 function Blog({ data }) {
-    // console.log('data', data.allWpPost.edges)
-    // const posts = data?.allWpPost?.edges
+    console.log('data', data?.allWpStories?.edges)
+    const posts = data?.allWpStories?.edges
     // function createMarkup(post) {
     //     return {__html: post};
     //   }
@@ -15,8 +15,8 @@ function Blog({ data }) {
             }}
         >
 
-          blog test
-            {/* {
+         <center><h1>Our Stories</h1></center>
+            {
                 posts?.map((item, index) => {
                     return <div
                     style={{
@@ -24,12 +24,10 @@ function Blog({ data }) {
                         fontFamily: "graphik-regular"
                     }}
                     key={index}>
-                        <h1>{item.node.title}</h1>
-                        <p>{item.node.id}</p>
-                        <p>
-                        <div dangerouslySetInnerHTML={createMarkup(item.node.content)}/>
-                            
-                        </p>
+                        <img src={item.node.storiesfields.storyIcon.mediaItemUrl} />
+                        <h2>{item.node.title}</h2>
+                        <p>{item.node.storiesfields.storyDescription}</p>
+                        <img src={item.node.storiesfields.storyCover.mediaItemUrl}  />
                         <p
                         style={{
                             borderBottom: "solid",
@@ -40,35 +38,31 @@ function Blog({ data }) {
                     </div>
                 })
 
-            } */}
+            }
         </div>
     )
 }
 
-// export const pageQuery = graphql`
-//   query {
-//     allWpPost {
-//         edges {
-//           node {
-//             id
-//             authorDatabaseId
-//             authorId
-//             children {
-//               id
-//             }
-//             commentCount
-//             commentStatus
-//             content
-//             databaseId
-//             date
-//             dateGmt
-//             slug
-//             status
-//             title
-//             uri
-//           }
-//         }
-//         totalCount
-//       }
-//   }`
+export const pageQuery = graphql`
+  query {
+    allWpStories {
+        edges {
+          node {
+            storiesfields {
+              fieldGroupName
+              storyDescription
+              storyIcon {
+                id
+                mediaItemUrl
+              }
+              storyCover {
+                id
+                mediaItemUrl
+              }
+            }
+            title
+          }
+        }
+      }
+  }`
 export default Blog

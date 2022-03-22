@@ -5,51 +5,14 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 function Process() {
     const [hover, setHover] = useState('')
   gsap.registerPlugin(ScrollTrigger);
-    
 
-    // useEffect(() => {
-
-    //     const tl = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: ".processMidRow  .processMainContainer",
-    //             scrub: 2,
-    //             markers: false
-    //         }
-    //     });
-    //     const tl2 = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: ".processBtmRow  .processMainContainer",
-    //             scrub: 2,
-    //             markers: false
-    //         }
-    //     });
-    //     const tl3 = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: ".processTopRow  .processMainContainer",
-    //             scrub: 2,
-    //             markers: false
-    //         }
-    //     });
-
-
-    //     tl.to(".processMidRow", { xPercent: 25, duration: 8, ease: "power2.out" })
-    //     tl.to(".processMidRow", { xPercent: -15, duration: 6, ease: "power2.out" })
-
-    //     tl2.to(".processBtmRow", { xPercent: 25, duration: 8, ease: "power2.out" })
-    //     tl2.to(".processBtmRow", { xPercent: 125, duration: 6, ease: "power2.out" })
-
-    //     tl3.to(".processTopRow", { xPercent: 25, duration: 8, ease: "power2.out" })
-    //     tl3.to(".processTopRow", { xPercent: 40, duration: 6, ease: "power2.out" })
-    // }, [])
     return (
         <div className={`${style.main} processMainContainer`}>
             <h1 className={style.heading}>
                 OUR PROCESS
             </h1>
             <div
-                // style={{
-                //     marginLeft: "-625px"
-                // }}
+
                 className={`${style.topRow} processTopRow`}>
                 <div
 

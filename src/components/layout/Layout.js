@@ -1,17 +1,24 @@
 import React, { useRef, useState, useEffect } from "react"
 import * as style from '../../styles/components/layout.module.css'
 import Header from "../header/Header";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import MobileHeader from "../mobileHeader/MobileHeader";
+export default function Layout({ children, onNavClick, hoverValue, isMobile }) {
 
-export default function Layout({ children, onNavClick, hoverValue }) {
 
- 
     return (
         <div className={style.main}>
-            <div className={style.headerContainer}><div className={style.header}><Header hoverValue={hoverValue} navClick={onNavClick} /></div></div>
-       
-                {children}
+            <div className={style.headerContainer}>
+                <div className={style.header}>
+                   {!isMobile? <Header
+                        isMobile={isMobile}
+                        hoverValue={hoverValue} navClick={onNavClick}
+                    />
+                :
+                <MobileHeader />
+                }
+                </div>
+            </div>
+            {children}
         </div>
     )
 }
