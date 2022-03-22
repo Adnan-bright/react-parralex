@@ -5,7 +5,8 @@
     position: relative;
 
 }
-.boxDetailsHide{
+
+.boxDetailsHide {
     position: absolute;
     font-family: graphik-regular;
     font-style: normal;
@@ -19,6 +20,7 @@
     color: #FFFFFF;
     transition: ease-in-out .4s;
 }
+
 .boxDetails {
     transition: ease-in-out .4s;
     opacity: 1;
@@ -360,4 +362,58 @@
     flex-direction: column;
     margin-left: 30px;
     transition: ease-in-out .3s;
+}
+
+
+/* ================================================================================================================ */
+
+/* ___________________________________________________Mobile Style_________________________________________________ */
+
+/* ================================================================================================================ */
+
+.mblMainContainer {
+    margin-top: 30px;
+    position: relative;
+    width: auto;
+    height: 85vw;
+    margin-left: 7.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.mblIcon {
+    margin-top: -10px;
+    height: 35px;
+    width: auto;
+    margin-left: -7.5%;
+}
+
+.mblTitle {
+    margin-left: -7.5%;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF
+}
+
+.mblDescription {
+    margin-top: -5px;
+    margin-left: -7.5%;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    width: 64%;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+
 }
