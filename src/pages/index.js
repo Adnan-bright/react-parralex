@@ -96,10 +96,10 @@ const IndexPage = () => {
              <div id={'verticalPanel-4'} className="verticalPanel">
               <Stories1 isMobile={width < 600 } />
             </div>
-           {/* <div id={'verticalPanel-5'} className="verticalPanel">
+           <div id={'verticalPanel-5'} className="verticalPanel">
               <Process isMobile={width < 600 } />
             </div>
-            <div id={'verticalPanel-6'} className="verticalPanel">
+           {/*  <div id={'verticalPanel-6'} className="verticalPanel">
               <Contact1 isMobile={width < 600 } />
             </div> */}
           </div>
