@@ -46,11 +46,11 @@ function Service1({ isMobile }) {
                                 <div
                                     className={style.mblVideoBox}
                                 >
-                                    <img
-                                        onClick={() => {setLoading(true); setVideo('')}}
+                                    {!loading && <img
+                                        onClick={() => { setLoading(true); setVideo('') }}
 
                                         className={style.mblVideoCloseIcon}
-                                        src={VideoCloseIcon} alt='VideoCloseIcon' />
+                                        src={VideoCloseIcon} alt='VideoCloseIcon' />}
                                     <ReactPlayer
                                         onStart={() => setLoading(false)}
                                         ref={ref}
@@ -64,7 +64,13 @@ function Service1({ isMobile }) {
                                         controls={false}
                                     />
                                 </div>
-                                {loading && <div>loading...</div>}
+                                {loading && <center>
+                                    <div
+                                        style={{
+                                            color: "white"
+                                        }}
+                                    >loading...</div>
+                                </center>}
                             </div>
                         </div>
                         <div>
