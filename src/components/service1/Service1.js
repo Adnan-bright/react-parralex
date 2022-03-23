@@ -67,7 +67,7 @@ function Service1({ isMobile }) {
                                 {loading && <center>
                                     <div
                                         className={style.loading}
-                                    >Loading...</div>
+                                    ><div className={style.dotTyping}></div></div>
                                 </center>}
                             </div>
                         </div>
