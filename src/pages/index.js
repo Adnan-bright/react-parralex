@@ -59,6 +59,7 @@ const IndexPage = () => {
       <div
         ref={ref}
       >
+        
         {width >= 600 ?
           <div
             className="container">
