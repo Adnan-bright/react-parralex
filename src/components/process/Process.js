@@ -43,21 +43,24 @@ function Process({ isMobile }) {
                 isMobile ?
                     <div className={style.mblMain}>
                         <div className={style.body}>
+                            <h1 className={style.mblHeading}>
+                                OUR PROCESS
+                            </h1>
                             {
                                 items.map((item, index) => {
-                                    return <center  key={index}>
+                                    return <center key={index}>
                                         <div
                                             className={style.mblMainContainer}
                                             style={{
-                                                backgroundImage:`url(${item.bgImage})`,
+                                                backgroundImage: `url(${item.bgImage})`,
                                             }}
                                         >
                                             <img className={style.mblIcon} src={item.icon} />
                                             <p
-                                            className={style.mblTitle}
+                                                className={style.mblTitle}
                                             >{item.title}</p>
                                             <p
-                                            className={style.mblDescription}
+                                                className={style.mblDescription}
                                             >{item.description}</p>
                                         </div>
                                     </center>
