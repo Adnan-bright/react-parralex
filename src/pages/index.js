@@ -19,8 +19,6 @@ const IndexPage = () => {
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
   const ref = useRef(null);
-  console.log('windowWidth', width)
-  console.log('Width', ref)
   useEffect(() => {
     if (width >= 600) {
       let sections = gsap.utils.toArray(".panel");
@@ -30,7 +28,7 @@ const IndexPage = () => {
         scrollTrigger: {
           trigger: ".container",
           pin: true,
-          scrub: 1.5,
+          scrub: 1.6,
           onSnapComplete: snap => setDetectChange(snap),
           onUpdate: self => setUpdateValue(Math.round(self.progress * 10) / 10),
           snap: {

@@ -49,6 +49,11 @@
     text-transform: uppercase;
     color: #FFFFFF;
 }
+.row a{
+    color: white;
+    text-decoration: none;
+}
+
 .bg{
     width: 90%;
     z-index: -1;
