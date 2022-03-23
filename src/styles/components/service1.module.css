@@ -311,3 +311,14 @@
     margin-top: 20px;
     z-index: 999;
 }
+.loading{
+    color: white;
+    font-family: graphik-regular;
+    font-size: 22px;
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    z-index: 999;
+}

@@ -66,10 +66,8 @@ function Service1({ isMobile }) {
                                 </div>
                                 {loading && <center>
                                     <div
-                                        style={{
-                                            color: "white"
-                                        }}
-                                    >loading...</div>
+                                        className={style.loading}
+                                    >Loading...</div>
                                 </center>}
                             </div>
                         </div>
