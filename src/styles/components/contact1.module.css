@@ -1,6 +1,6 @@
 .main {
     margin-top: 10vh;
-    height: 80vh;
+    height: 90vh;
     overflow: hidden;
     width: 100%;
     color: white;
@@ -17,7 +17,7 @@
 .reviewContainer {
     z-index: 1;
     right: 10%;
-    top: 15%;
+    top: 20%;
     /* transform: translate(-50%, 0); */
     height: 400px;
     width: 300px;

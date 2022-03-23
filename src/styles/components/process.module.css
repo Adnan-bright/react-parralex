@@ -416,15 +416,30 @@
     text-align: center;
     color: #FFFFFF;
 }
-@media only screen and (max-height: 650px){
+
+.mblHeading {
+    margin-top: 50px;
+    font-family: graphik-regular;
+    margin-left: 24px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+@media only screen and (max-height: 650px) {
     .mblTitle {
         font-size: 18px;
     }
+
     .mblDescription {
         width: 60%;
         font-size: 12px;
         line-height: 14px;
     }
+
     .mblIcon {
         margin-top: -30px;
         height: 35px;
