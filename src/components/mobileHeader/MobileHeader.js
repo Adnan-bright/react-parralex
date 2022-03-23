@@ -3,11 +3,6 @@ import * as style from '../../styles/components/mobileHeader.module.css'
 function MobileHeader() {
     const [toggle, setToggle] = useState(false)
     const [checkActive, setCheckActive] = useState('')
-if (typeof window !== 'undefined') {
-    window.onbeforeunload = function() {
-        setCheckActive('')
-    }
-}
 
     return (
         <div className={style.top}>

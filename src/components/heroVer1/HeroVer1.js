@@ -8,7 +8,6 @@ import ReactPlayer from 'react-player'
 
 function HeroVer1({ isMobile }) {
     const ref = useRef(null)
-    console.log('isMObole', isMobile)
 
     const [video, setVideo] = useState(false)
     return (
@@ -25,15 +24,21 @@ function HeroVer1({ isMobile }) {
                             className={style.mblVideoBody}>
                             <div className={style.mblVideoContainer}>
                                 <div
-
+                                onContextMenu={e => e.preventDefault()}
                                     className={style.mblVideoBox}
                                 >
                                     <img onClick={() => setVideo(false)}
                                         className={style.mblVideoCloseIcon}
                                         src={VideoCloseIcon} alt='VideoCloseIcon' />
                                     <ReactPlayer
+  
                                         ref={ref}
                                         playing={video}
+                                        config={{ file: { 
+                                            attributes: {
+                                              controlsList: 'nodownload'  //<- this is the important bit
+                                            }
+                                        }}}
                                         loop={false}
                                         height='100%'
                                         width={'100%'}
@@ -87,7 +92,7 @@ function HeroVer1({ isMobile }) {
                             className={style.videoBody}>
                             <div className={style.videoContainer}>
                                 <div
-
+                                onContextMenu={e => e.preventDefault()}
                                     className={style.videoBox}
                                 >
                                     <img onClick={() => setVideo(false)}
@@ -96,6 +101,11 @@ function HeroVer1({ isMobile }) {
                                         ref={ref}
                                         playing={video}
                                         loop={false}
+                                        config={{ file: { 
+                                            attributes: {
+                                              controlsList: 'nodownload'  //<- this is the important bit
+                                            }
+                                        }}}
                                         height='100%'
                                         width={'100%'}
                                         className={style.video}

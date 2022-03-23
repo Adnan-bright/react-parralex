@@ -132,7 +132,7 @@ function Stories1({ isMobile }) {
                             </center>
                     </div>
                     :
-                    <div className={`${style.main} `}>
+                    <div className={`${style.main} storiesMainPanel`}>
                         <img draggable={false} src='/images/stories/croses.webp' className={style.bgImgBtm} />
                         <div className={style.bgImg}>
                             <img draggable={false} src='/images/stories/bg.webp' />

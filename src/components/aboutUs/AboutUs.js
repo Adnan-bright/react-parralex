@@ -1,6 +1,25 @@
-import React from 'react'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+import React, {useEffect} from 'react'
 import * as style from '../../styles/components/aboutUs.module.css'
+
 function AboutUS({ isMobile }) {
+  gsap.registerPlugin(ScrollTrigger);
+
+    useEffect(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".aboutUsMainContent",
+                scrub: 2,
+                markers: false,
+                start: "left right"
+            }
+        });
+        tl.to(".pImage", {filter:"blur(3px)", opacity: 0.5, xPercent:0, duration: 8,  ease: "none",})
+        tl.to(".pImage", {filter:"blur(0px)", opacity: 1,  xPercent:-40, duration: 4,  ease: "none",})
+
+    }, [])
+  
 
 
     return (
@@ -9,7 +28,7 @@ function AboutUS({ isMobile }) {
                 isMobile ?
                     <div className={`${style.mblMain}  `}>
                         <div className={`${style.mblBgCross}  `}>
-                            <img className='pImage' src='/images/about-us/mblCross.webp' />
+                            <img  src='/images/about-us/mblCross.webp' />
                         </div>
                         <div
                             className={`${style.mblBody} `}>
@@ -30,7 +49,7 @@ function AboutUS({ isMobile }) {
                     :
                     <div className={`${style.main} bgImageAbout `}>
                         <div className={`${style.bgCross}  aboutCrossBg`}>
-                            <img className='pImage' src='/images/about-us/cross.webp' />
+                            <img  className='pImage' src='/images/about-us/cross.webp' />
                         </div>
                         <div
                             style={{
