@@ -3,7 +3,7 @@ import * as style from '../../styles/components/service1.module.css'
 import ReactPlayer from 'react-player'
 import VideoCloseIcon from '../../../static/icons/videoClose.webp'
 function Service1({ isMobile }) {
-
+    const [loading, setLoading] = useState(true)
     const [whichCard, setWhichCard] = useState('')
     const [video, setVideo] = useState('')
     const ref = useRef(null)
@@ -47,11 +47,12 @@ function Service1({ isMobile }) {
                                     className={style.mblVideoBox}
                                 >
                                     <img
-                                        onClick={() => setVideo('')}
+                                        onClick={() => {setLoading(true); setVideo('')}}
 
                                         className={style.mblVideoCloseIcon}
                                         src={VideoCloseIcon} alt='VideoCloseIcon' />
                                     <ReactPlayer
+                                        onStart={() => setLoading(false)}
                                         ref={ref}
                                         playing={true}
                                         loop={false}
@@ -63,6 +64,7 @@ function Service1({ isMobile }) {
                                         controls={false}
                                     />
                                 </div>
+                                {loading && <div>loading...</div>}
                             </div>
                         </div>
                         <div>
