@@ -19,7 +19,8 @@ const IndexPage = () => {
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
   const ref = useRef(null);
-
+  console.log('windowWidth', width)
+  console.log('Width', ref)
   useEffect(() => {
     if (width >= 600) {
       let sections = gsap.utils.toArray(".panel");
@@ -52,13 +53,16 @@ const IndexPage = () => {
 
   }
 
-
+  if (typeof window === `undefined`) {
+    return(<></>);
+}
   return (
     <Layout isMobile={width >= 800 ? false : true} hoverValue={updateValue} onNavClick={handleClick}>
 
       <div
         ref={ref}
       >
+
         {width >= 600 ?
           <div
             className="container">

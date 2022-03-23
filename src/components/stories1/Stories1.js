@@ -125,15 +125,11 @@ function Stories1({ isMobile }) {
                             }
                           
                         </div>
-                        <div
-                        className={
-                            style.mblBtnContainer
-                        }
-                        >
+                        <center >
                                 <p 
                                 className={style.mblBtnText}
                                 >see all work</p>
-                            </div>
+                            </center>
                     </div>
                     :
                     <div className={`${style.main} `}>
