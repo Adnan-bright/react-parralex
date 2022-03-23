@@ -1,16 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import * as style from '../../styles/components/mobileHeader.module.css'
 function MobileHeader() {
     const [toggle, setToggle] = useState(false)
     const [checkActive, setCheckActive] = useState('')
+if (typeof window !== 'undefined') {
+    window.onbeforeunload = function() {
+        setCheckActive('')
+    }
+}
+
     return (
         <div className={style.top}>
             <div className={style.header}>
                 <div className={style.topBar}>
-                    <img
-                        onClick={() => setToggle(false)}
+                   <a href='#verticalPanel-1'>
+                   <img
+                        onClick={() => { setToggle(false); setCheckActive('') }}
                         className={style.logo}
                         src="/images/common/logo.webp" alt='Mag-Raw' />
+                   </a>
                     <img
                         onClick={() => setToggle(!toggle)}
                         className={style.toggle}
