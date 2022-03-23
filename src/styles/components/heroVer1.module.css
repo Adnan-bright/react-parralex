@@ -418,3 +418,14 @@
     margin-top: 20px;
     z-index: 999;
 }
+@media only screen and (max-height: 650px){
+    .mblHeadingsContainer {
+        padding-top: 20vh;
+    }
+    .mblPlayIcon {
+        bottom: 30vh;
+    }
+    .mblScrollTxtCont {
+        bottom: 20px;
+    }
+}

@@ -373,10 +373,17 @@
     background: url(../../../static/images/stories/mblBtnBg.webp);
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
 .mblBtnContainer{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+@media only screen and (max-height: 650px){
+    .mblImagesContainer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }

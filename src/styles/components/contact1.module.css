@@ -436,6 +436,7 @@
     background: url(../../../static/images/common/mblBtnBg.webp);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
 }
 
 .mblSingleBox {
@@ -490,7 +491,6 @@
     line-height: 18px;
     text-align: center;
     color: #FFFFFF;
-
 }
 
 .mblShortDesc {
@@ -556,4 +556,31 @@
     color: #7A858D;
     margin-top: 20px;
     padding-bottom: 15px;
+}
+@media only screen and (max-height: 650px){
+    .mblRatingCont {
+        top: 65px;
+    }
+    .mblDescriptionMain {
+        top: 127px;
+        width: 65%;
+        font-size: 13px ;
+        line-height: 16px;
+    }
+    .mblShortDesc {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 38%;
+        font-family: graphik-regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 13px;
+        bottom: 40px;
+        text-align: center;
+        color: #FFFFFF;
+    }
 }
