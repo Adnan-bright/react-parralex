@@ -1,14 +1,27 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import * as style from '../../styles/components/heroVer1.module.css'
 import PlayIcon from '../../../static/icons/playIcon.webp'
 import Video from '../../../static/videos/dummyVideo.mp4'
 import RightArrow from '../../../static/icons/rightArrow.webp'
 import VideoCloseIcon from '../../../static/icons/videoClose.webp'
 import ReactPlayer from 'react-player'
-
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 function HeroVer1({ isMobile }) {
     const ref = useRef(null)
+    useEffect(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".bgImageHero1",
+                scrub: 10,
+                markers: false,
+                start: "left right"
+            }
+        });
+        tl.to(".bgImageHero1", { scale:1,    opacity:1, duration: 8,  ease: "none",})
+        tl.to(".bgImageHero1", { scale:.5,   opacity:0, duration: 4,  ease: "none",})
 
+    }, [])
     const [video, setVideo] = useState(false)
     return (
         <div>
