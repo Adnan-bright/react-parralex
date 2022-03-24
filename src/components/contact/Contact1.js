@@ -129,11 +129,57 @@ function Contact1({ id, isMobile }) {
                     </div>
                     :
                     <div className={`${style.body} `}>
-                        <div className={style.bgContainer}>
+                        {/* <div className={style.bgContainer}>
                             <img
                                 className={style.bgImage}
                                 src='/images/contact/bg.webp' />
-                        </div>
+                        </div> */}
+                        <motion.div
+                            ref={ref}
+                            variants={variants2}
+                            animate={isVisible ? "visible" : "hidden"}
+                            transition={{ duration: 3, ease: "easeOut" }}
+                            className={style.leftMidBg}
+                        >
+                            <img
+                                className={style.bgImage}
+                                src='/images/contact/leftMid.webp' />
+                        </motion.div>
+                        <motion.div
+                            ref={ref}
+                            variants={variants}
+                            animate={isVisible ? "visible" : "hidden"}
+                            transition={{ duration: 2, ease: "easeOut" }}
+                            className={style.leftBtmBg}
+                        >
+                            <img
+                                className={style.bgImage}
+                                src='/images/contact/leftBtm.webp' />
+                        </motion.div>
+
+                        <motion.div
+                         ref={ref}
+                         variants={variants2}
+                         animate={isVisible ? "visible" : "hidden"}
+                         transition={{ duration: 2, ease: "easeOut" }}
+                            className={style.right2ndBtmBg}
+                        >
+                            <img
+                                className={style.bgImage}
+                                src='/images/contact/right2ndBtm.webp' />
+                        </motion.div>
+                        <motion.div
+                         ref={ref}
+                         variants={variants}
+                         animate={isVisible ? "visible" : "hidden"}
+                         transition={{ duration: 2, ease: "easeOut" }}
+                            className={style.rightBtmBg}
+                        >
+                            <img
+                                className={style.bgImage}
+                                src='/images/contact/rightBtm.webp' />
+                        </motion.div>
+
                         <motion.div
                             ref={ref}
                             variants={variants}
@@ -155,11 +201,11 @@ function Contact1({ id, isMobile }) {
                                 src='/images/contact/leftSmall.webp' />
                         </motion.div>
                         <motion.div
-                        ref={ref}
-                        variants={variants3}
-                        animate={isVisible ? "visible" : "hidden"}
-                        transition={{ duration: 1.2, ease: "easeOut" }}
-                        className={style.bgContainerRightBox}>
+                            ref={ref}
+                            variants={variants3}
+                            animate={isVisible ? "visible" : "hidden"}
+                            transition={{ duration: 1.2, ease: "easeOut" }}
+                            className={style.bgContainerRightBox}>
                             <img
                                 className={style.bgImage}
                                 src='/images/contact/rightBox.webp' />
