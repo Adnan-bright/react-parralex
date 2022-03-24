@@ -54,6 +54,7 @@ const IndexPage = () => {
     })
 
   }
+
 // For  Getsby intial rendering 
   if (typeof window === `undefined`) {
     return(<></>);
