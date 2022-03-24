@@ -28,6 +28,7 @@ const IndexPage = () => {
       gsap.to(sections, {
         xPercent: -100 * (sections.length - 1),
         ease: "none",
+        
         scrollTrigger: {
           trigger: ".container",
           pin: true,
@@ -44,7 +45,7 @@ const IndexPage = () => {
       });
     }
 
-  }, [width]);
+  }, []);
 
   const handleClick = (id) => {
     gsap.to(window, {
