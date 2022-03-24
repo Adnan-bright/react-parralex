@@ -4,6 +4,8 @@ import ReactPlayer from 'react-player'
 import VideoCloseIcon from '../../../static/icons/videoClose.webp'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 function Service1({ isMobile }) {
 
@@ -12,10 +14,10 @@ function Service1({ isMobile }) {
     useEffect(() => {
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: ".storiesMainPanel",
-                scrub: 2,
+                trigger: ".serviceBoxesBg",
+                scrub: 5,
                 markers: false,
-                start: "left right"
+                // start: "left right"
             }
         });
         tl.to(".serviceBoxesBg", {filter:"blur(10px)",xPercent:30, opacity: 0.5, scale:0.6,  duration: 18,  ease: "none",})
