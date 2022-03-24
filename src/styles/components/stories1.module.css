@@ -147,12 +147,21 @@
 }
 
 
-.bgImg {
+.bgImgLarge {
     position: absolute;
-    right: 109px;
-    top: 130px;
+    right: 209px;
+    top: 100px;
 }
-
+.bgImgLeft{
+    position: absolute;
+    right: 310px;
+    top: 240px;
+}
+.bgImgRight{
+    position: absolute;
+    right: 130px;
+    top: 170px;
+}
 .txtContainer {
     position: absolute;
     overflow: hidden;
@@ -198,7 +207,24 @@
     left: 25px;
     bottom: 0px;
 }
-
+.bgImgBtmGr{
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+}
+.bgImgBtmGlr{
+    position: absolute;
+    left: 230px;
+    bottom: 60px;
+}
+.box {
+    width: 150px;
+    height: 150px;
+    border-radius: 1em;
+    background-color: #f9f07e;
+    margin-left: auto;
+    margin-right: auto;
+  }
 @media only screen and (max-width:1300px) {
 
     .description {

@@ -31,14 +31,8 @@ function HeroVer1({ isMobile }) {
                                         className={style.mblVideoCloseIcon}
                                         src={VideoCloseIcon} alt='VideoCloseIcon' />
                                     <ReactPlayer
-  
                                         ref={ref}
                                         playing={video}
-                                        config={{ file: { 
-                                            attributes: {
-                                              controlsList: 'nodownload'  //<- this is the important bit
-                                            }
-                                        }}}
                                         loop={false}
                                         height='100%'
                                         width={'100%'}

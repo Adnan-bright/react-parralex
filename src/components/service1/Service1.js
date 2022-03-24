@@ -18,9 +18,8 @@ function Service1({ isMobile }) {
                 start: "left right"
             }
         });
-        tl.to(".serviceBoxesBg", {filter:"blur(10px)", opacity: 0.5,  duration: 18,  ease: "none",})
-        tl.to(".serviceBoxesBg", {filter:"blur(0px)", opacity: 1,  duration: 4,  ease: "none",})
-        tl.to(".serviceBoxesBg", {filter:"blur(10px)", opacity: 1,  duration: 4,  ease: "none",})
+        tl.to(".serviceBoxesBg", {filter:"blur(10px)",xPercent:30, opacity: 0.5, scale:0.6,  duration: 18,  ease: "none",})
+        tl.to(".serviceBoxesBg", {filter:"blur(0px)", xPercent:0,opacity: 1, scale:1,  duration: 24,  ease: "none",})
 
     }, [])
 
