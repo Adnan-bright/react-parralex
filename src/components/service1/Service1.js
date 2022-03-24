@@ -2,7 +2,27 @@ import React, { useState, useRef, useEffect } from 'react'
 import * as style from '../../styles/components/service1.module.css'
 import ReactPlayer from 'react-player'
 import VideoCloseIcon from '../../../static/icons/videoClose.webp'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+
 function Service1({ isMobile }) {
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    useEffect(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".storiesMainPanel",
+                scrub: 2,
+                markers: false,
+                start: "left right"
+            }
+        });
+        tl.to(".serviceBoxesBg", {filter:"blur(10px)",xPercent:30, opacity: 0.5, scale:0.6,  duration: 18,  ease: "none",})
+        tl.to(".serviceBoxesBg", {filter:"blur(0px)", xPercent:0,opacity: 1, scale:1,  duration: 24,  ease: "none",})
+
+    }, [])
+
     const [loading, setLoading] = useState(true)
     const [whichCard, setWhichCard] = useState('')
     const [video, setVideo] = useState('')
@@ -109,7 +129,7 @@ function Service1({ isMobile }) {
                     </div>
                     :
                     <div
-                        className={`${style.main}  `}
+                        className={`${style.main}  serviceMainSection`}
                     >
                         <div
                             style={{
@@ -149,7 +169,7 @@ function Service1({ isMobile }) {
                                 </div>
                                 <div
                                 >
-                                    <h1 className={style.heading}>services</h1>
+                                    <h1 className={`${style.heading} servicesTitle`}>services</h1>
                                 </div>
                                 <div className={style.imagesContainer}>
                                     <div className='serviceCard1'

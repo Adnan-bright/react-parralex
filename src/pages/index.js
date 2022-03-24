@@ -14,12 +14,15 @@ import useWindowDimensions from "../hooks/getWindowDimension";
 
 const IndexPage = () => {
   const { height, width } = useWindowDimensions();
+  const [screenWidth, setScreenWidth] = useState(width)
   const [updateValue, setUpdateValue] = useState(0)
   const [detectChange, setDetectChange] = useState([])
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
   const ref = useRef(null);
+
   useEffect(() => {
+    setScreenWidth(width)
     if (width >= 600) {
       let sections = gsap.utils.toArray(".panel");
       gsap.to(sections, {
@@ -41,7 +44,7 @@ const IndexPage = () => {
       });
     }
 
-  }, []);
+  }, [width]);
 
   const handleClick = (id) => {
     gsap.to(window, {
@@ -50,59 +53,58 @@ const IndexPage = () => {
     })
 
   }
-
+// For  Getsby intial rendering 
   if (typeof window === `undefined`) {
     return(<></>);
 }
   return (
-    <Layout isMobile={width >= 800 ? false : true} hoverValue={updateValue} onNavClick={handleClick}>
+    <Layout isMobile={screenWidth >= 800 ? false : true} hoverValue={updateValue} onNavClick={handleClick}>
 
       <div
         ref={ref}
       >
-
-        {width >= 600 ?
+        {screenWidth >= 600 ?
           <div
             className="container">
             <div id={'panel-1'} className="panel">
-              <HeroVer1 isMobile={width < 600} />
+              <HeroVer1 isMobile={screenWidth < 600} />
             </div>
             <div id={'panel-2'} className="panel">
-              <AboutUS isMobile={width < 600} />
+              <AboutUS isMobile={screenWidth < 600} />
             </div>
             <div id={'panel-3'} className="panel">
-              <Service1 isMobile={width < 600} />
+              <Service1 isMobile={screenWidth < 600} />
             </div>
             <div id={'panel-4'} className="panel">
-              <Stories1 isMobile={width < 600} />
+              <Stories1 isMobile={screenWidth < 600} />
             </div>
             <div id={'panel-5'} className="panel">
-              <Process isMobile={width < 600} />
+              <Process isMobile={screenWidth < 600} />
             </div>
             <div id={'panel-6'} className="panel">
-              <Contact1 isMobile={width < 600} />
+              <Contact1 isMobile={screenWidth < 600} />
             </div>
           </div>
           :
           <div
             className="verticalContainer">
             <div id={'verticalPanel-1'} className="verticalPanel">
-              <HeroVer1 isMobile={width < 600} />
+              <HeroVer1 isMobile={screenWidth < 600} />
             </div>
             <div id={'verticalPanel-2'} className="verticalPanel">
-              <AboutUS isMobile={width < 600} />
+              <AboutUS isMobile={screenWidth < 600} />
             </div>
             <div id={'verticalPanel-3'} className="verticalPanel">
-              <Service1 isMobile={width < 600} />
+              <Service1 isMobile={screenWidth < 600} />
             </div>
              <div id={'verticalPanel-4'} className="verticalPanel">
-              <Stories1 isMobile={width < 600 } />
+              <Stories1 isMobile={screenWidth < 600 } />
             </div>
            <div id={'verticalPanel-5'} className="verticalPanel">
-              <Process isMobile={width < 600 } />
+              <Process isMobile={screenWidth < 600 } />
             </div>
             <div id={'verticalPanel-6'} className="verticalPanel">
-              <Contact1 isMobile={width < 600 } />
+              <Contact1 isMobile={screenWidth < 600 } />
             </div>
           </div>
         }

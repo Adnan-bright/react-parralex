@@ -1,8 +1,40 @@
 import React from 'react'
 import * as style from '../../styles/components/contact1.module.css'
 import ReviewContainer from '../reviewContainer/ReviewContainer'
-
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 function Contact1({ id, isMobile }) {
+    const [ref, isVisible] = useInView({ threshold: 0.7 });
+    const variants = {
+        visible: {
+            opacity: 1,
+            x: 0,
+        },
+        hidden: {
+            opacity: 0,
+            x: 100,
+        },
+    };
+    const variants2 = {
+        visible: {
+            opacity: 1,
+            x: 0,
+        },
+        hidden: {
+            opacity: 0,
+            x: -100,
+        },
+    };
+    const variants3 = {
+        visible: {
+            opacity: 1,
+            y: 0,
+        },
+        hidden: {
+            opacity: 0,
+            y: -100,
+        },
+    };
     return (
         <div>
             {
@@ -97,6 +129,41 @@ function Contact1({ id, isMobile }) {
                     </div>
                     :
                     <div className={`${style.body} `}>
+                        <div className={style.bgContainer}>
+                            <img
+                                className={style.bgImage}
+                                src='/images/contact/bg.webp' />
+                        </div>
+                        <motion.div
+                            ref={ref}
+                            variants={variants}
+                            animate={isVisible ? "visible" : "hidden"}
+                            transition={{ duration: 1.5, ease: "easeOut" }}
+                            className={style.bgContainerLeftLarge}>
+                            <img
+                                className={style.bgImage}
+                                src='/images/contact/leftLarge.webp' />
+                        </motion.div>
+                        <motion.div
+                            ref={ref}
+                            variants={variants2}
+                            animate={isVisible ? "visible" : "hidden"}
+                            transition={{ duration: 1.5, ease: "easeOut" }}
+                            className={style.bgContainerLeftSmall}>
+                            <img
+                                className={style.bgImage}
+                                src='/images/contact/leftSmall.webp' />
+                        </motion.div>
+                        <motion.div
+                        ref={ref}
+                        variants={variants3}
+                        animate={isVisible ? "visible" : "hidden"}
+                        transition={{ duration: 1.2, ease: "easeOut" }}
+                        className={style.bgContainerRightBox}>
+                            <img
+                                className={style.bgImage}
+                                src='/images/contact/rightBox.webp' />
+                        </motion.div>
                         <div id={id} className={style.main}>
                             <div className={style.reviewContainer}>
                                 <ReviewContainer />
