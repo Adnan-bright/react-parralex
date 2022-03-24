@@ -14,6 +14,26 @@
     top: 0px;
     left: 10%;
 }
+.leftMidBg{
+        position: absolute;
+        top: 40%;
+        left: 20%;
+}
+.leftBtmBg{
+    position: absolute;
+    bottom: 10%;
+    left: 12%;
+}
+.right2ndBtmBg{
+    position: absolute;
+    bottom: 15%;
+    right: 20%;
+}
+.rightBtmBg{
+    position: absolute;
+    bottom: 10%;
+    right: 8%;
+}
 .bgContainerLeftSmall{
     position: absolute;
     top: 160px;
