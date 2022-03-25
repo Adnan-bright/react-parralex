@@ -102,6 +102,7 @@ function HeroVer1({ isMobile }) {
                                 onContextMenu={e => e.preventDefault()}
                                     className={style.videoBox}
                                 >
+                                    
                                     <img onClick={() => setVideo(false)}
                                         className={style.videoCloseIcon} src={VideoCloseIcon} alt='VideoCloseIcon' />
                                     <ReactPlayer

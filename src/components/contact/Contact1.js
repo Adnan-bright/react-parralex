@@ -129,11 +129,7 @@ function Contact1({ id, isMobile }) {
                     </div>
                     :
                     <div className={`${style.body} `}>
-                        {/* <div className={style.bgContainer}>
-                            <img
-                                className={style.bgImage}
-                                src='/images/contact/bg.webp' />
-                        </div> */}
+
                         <motion.div
                             ref={ref}
                             variants={variants2}

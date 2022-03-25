@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 
 function Stories1({ isMobile }) {
     const [ref, isVisible] = useInView({ threshold: 0.7 });
-
-
     const [check, setcCheck] = useState(false)
     const [whichCard, setWhichCard] = useState('')
 

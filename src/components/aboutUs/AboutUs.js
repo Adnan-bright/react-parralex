@@ -19,9 +19,6 @@ function AboutUS({ isMobile }) {
         tl.to(".pImage", {filter:"blur(0px)", opacity: 1,  xPercent:-40, duration: 4,  ease: "none",})
 
     }, [])
-  
-
-
     return (
         <div>
             {

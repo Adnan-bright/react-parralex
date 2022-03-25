@@ -4,17 +4,14 @@ import ReactPlayer from 'react-player'
 import VideoCloseIcon from '../../../static/icons/videoClose.webp'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
 
 function Service1({ isMobile }) {
-
     gsap.registerPlugin(ScrollTrigger);
 
     useEffect(() => {
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: ".serviceBoxesBg",
+                trigger: ".serviceMainSection",
                 scrub: 5,
                 markers: false,
                 // start: "left right"
@@ -24,7 +21,6 @@ function Service1({ isMobile }) {
         tl.to(".serviceBoxesBg", {filter:"blur(0px)", xPercent:0,opacity: 1, scale:1,  duration: 24,  ease: "none",})
 
     }, [])
-
     const [loading, setLoading] = useState(true)
     const [whichCard, setWhichCard] = useState('')
     const [video, setVideo] = useState('')
