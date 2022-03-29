@@ -6,7 +6,7 @@ function ReviewContainer() {
             className={style.main}
         >
             <div className={style.mainSection}>
-                <img className={style.mainImg} src='/images/contact/singleBox.webp' />
+                <img className={style.mainImg} src='/images/contact/singleBox.png' />
                 <div className={style.dataContainer}>
                     <div className={style.revCont}>
                         <p className={style.revText}>5.0</p>

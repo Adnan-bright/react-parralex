@@ -70,7 +70,10 @@
     width: 215px;
     height: 215px;
 }
-
+.bgCross img{
+    width: 215px;
+    height: 215px;
+}
 
 /* ================================================================================================================ */
 
@@ -85,6 +88,10 @@
     position: absolute;
     right: 0px;
     top: -50px;
+}
+.mblBgCross img{
+    height: 141px;
+    width: 125px;
 }
 .mblTextContainer{
     padding-top: 70px;

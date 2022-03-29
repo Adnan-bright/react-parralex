@@ -42,11 +42,31 @@
     position: relative;
     transition: ease-in-out .3s;
 }
-
+@media only screen and (max-width:1440px){
+    .imgCont {
+        height: 430px;
+        width: 370px;
+        display: flex;
+    } 
+}
+@media only screen and (max-width:1350px){
+    .imgCont {
+        height: 400px;
+        width: 330px;
+        display: flex;
+    } 
+}
+@media only screen and (max-width:1200px){
+    .imgCont {
+        height: 370px;
+        width: 300px;
+        display: flex;
+    } 
+}
 
 .imagesContainer:hover .imgCont:hover {
-    transform: scale(1.1);
-    transition: ease-in-out .5s;
+    /* transform: scale(135%);
+    transition: ease-in-out .5s; */
 }
 
 .imgText {
@@ -125,6 +145,56 @@
     backdrop-filter: blur(5px);
     align-items: center;
     justify-content: center;
+    opacity: 1;
+    animation-name: scale;
+    animation-duration: .3s;
+    animation-timing-function: linear;
+}
+.videoBodyHide {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    opacity: 0;
+    backdrop-filter: blur(5px);
+    display: none;
+    align-items: center;
+    transition: ease-in-out 2s;
+    justify-content: center;
+    animation-name: scaleDown;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+
+}
+.contentVisible{
+    transform: scale(1);
+    opacity:1;
+    transition: ease-in-out .5s;
+}
+.contentInVisible{
+    transform: scale(0.8);
+    opacity:0;
+    transition: ease-in-out .5s;
+}
+@keyframes scale {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+@keyframes scaleDown {
+    from {
+        transform: scale(1);
+        display: flex;
+    }
+
+    to {
+        transform: scale(0);
+        display: none;
+    }
 }
 
 .bgBoxes {
@@ -133,7 +203,26 @@
     left: -610px;
     z-index: -1;
 }
-
+.bgBoxesHide{
+    position: absolute;
+    top: 0px;
+    left: -610px;
+    z-index: -1;
+}
+.bgBoxesHide img{
+    height: 80vh;
+    width: auto;
+    transform: scale(0);
+    opacity: 0;
+    transition: ease-in-out .5s;
+}
+.bgBoxes img{
+    height: 80vh;
+    transform: scale(1);
+    opacity: 1;
+    transition: ease-in-out .5s;
+    width: auto;
+}
 .videoContainer {
     filter: none;
     position: absolute;

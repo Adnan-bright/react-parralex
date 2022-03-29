@@ -139,7 +139,7 @@ function Contact1({ id, isMobile }) {
                         >
                             <img
                                 className={style.bgImage}
-                                src='/images/contact/leftMid.webp' />
+                                src='/images/contact/leftMid.png' />
                         </motion.div>
                         <motion.div
                             ref={ref}
@@ -150,7 +150,7 @@ function Contact1({ id, isMobile }) {
                         >
                             <img
                                 className={style.bgImage}
-                                src='/images/contact/leftBtm.webp' />
+                                src='/images/contact/leftBtm.png' />
                         </motion.div>
 
                         <motion.div

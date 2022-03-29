@@ -25,7 +25,7 @@ function AboutUS({ isMobile }) {
                 isMobile ?
                     <div className={`${style.mblMain}  `}>
                         <div className={`${style.mblBgCross}  `}>
-                            <img  src='/images/about-us/mblCross.webp' />
+                            <img  src='/images/about-us/mblCross.png' />
                         </div>
                         <div
                             className={`${style.mblBody} `}>
@@ -46,7 +46,7 @@ function AboutUS({ isMobile }) {
                     :
                     <div className={`${style.main} bgImageAbout `}>
                         <div className={`${style.bgCross}  aboutCrossBg`}>
-                            <img  className='pImage' src='/images/about-us/cross.webp' />
+                            <img  className='pImage'  src='/images/about-us/cross.png' />
                         </div>
                         <div
                             style={{

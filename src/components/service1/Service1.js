@@ -17,8 +17,8 @@ function Service1({ isMobile }) {
                 // start: "left right"
             }
         });
-        tl.to(".serviceBoxesBg", {filter:"blur(10px)",xPercent:30, opacity: 0.5, scale:0.6,  duration: 18,  ease: "none",})
-        tl.to(".serviceBoxesBg", {filter:"blur(0px)", xPercent:0,opacity: 1, scale:1,  duration: 24,  ease: "none",})
+        tl.to(".serviceBoxesBg", { filter: "blur(10px)", xPercent: 30, opacity: 0.5, scale: 0.6, duration: 18, ease: "none", })
+        tl.to(".serviceBoxesBg", { filter: "blur(0px)", xPercent: 0, opacity: 1, scale: 1, duration: 24, ease: "none", })
 
     }, [])
     const [loading, setLoading] = useState(true)
@@ -115,7 +115,7 @@ function Service1({ isMobile }) {
                                                     </div>
                                                     <img className={style.mblPlayIcon}
                                                         onClick={() => setVideo(item.videoUrl)}
-                                                        src='/icons/playIcon.webp' />
+                                                        src='/icons/playIcon.png' />
                                                 </div>
                                             </center>
                                         })
@@ -133,7 +133,7 @@ function Service1({ isMobile }) {
                             style={{
                                 display: video ? 'flex' : "none",
                             }}
-                            className={style.videoBody}>
+                            className={!video ? style.videoBodyHide : style.videoBody}>
                             <div className={style.videoContainer}
 
                             >
@@ -155,71 +155,83 @@ function Service1({ isMobile }) {
                                         className={style.video}
                                         url={video}
                                         title={video}
-                                        controls={false}
+                                        controls={true}
                                     />
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <div>
-                                <div className={`${style.bgBoxes} serviceBoxesBg`}>
-                                    <img src='/images/about-us/boxes.webp' />
+                            <div
+                            >
+                                <div className={`${video ?style.bgBoxesHide: style.bgBoxes} serviceBoxesBg`}>
+                                    <img src='/images/about-us/boxes.png' />
                                 </div>
                                 <div
+                                className={video? style.contentInVisible :style.contentVisible}
                                 >
-                                    <h1 className={`${style.heading} servicesTitle`}>services</h1>
-                                </div>
-                                <div className={style.imagesContainer}>
-                                    <div className='serviceCard1'
+                                    <div
+                                    >
+                                        <h1 className={`${style.heading} servicesTitle`}>services</h1>
+                                    </div>
+                                    <div className={style.imagesContainer}>
+                                        <div className='serviceCard1'
 
-                                    >
-                                        <div
-                                            onMouseEnter={() => setWhichCard('film')}
-                                            onMouseLeave={() => setWhichCard('')}
-                                            style={{
-                                                filter: whichCard !== '' && whichCard !== 'film' ? "blur(3px)" : "blur(0px)",
-                                            }}
-                                            className={`${style.imgCont} `}> <img className={style.imgItem} src='/images/services/img1.webp' />
-                                            <h2 className={style.imgText}>film</h2>
-                                            <p className={style.imglowerText}>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
-                                            <img className={style.playIcon}
-                                                onClick={() => setVideo('/videos/dummyVideo.mp4')}
-                                                src='/icons/playIcon.webp' />
+                                        >
+                                            <div
+                                                onMouseEnter={() => setWhichCard('film')}
+                                                onMouseLeave={() => setWhichCard('')}
+                                                style={{
+                                                    filter: whichCard !== '' && whichCard !== 'film' ? "blur(3px)" : "blur(0px)",
+                                                    transform: whichCard === 'film' ? "scale(135%)" :
+                                                        whichCard === 'design' || whichCard === 'tech' ? "scale(75%)" : "scale(100%)",
+                                                }}
+                                                className={`${style.imgCont} `}> <img className={style.imgItem} src='/images/services/img1.webp' />
+                                                <h2 className={style.imgText}>film</h2>
+                                                <p className={style.imglowerText}>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
+                                                <img className={style.playIcon}
+                                                    onClick={() => setVideo('/videos/dummyVideo.mp4')}
+                                                    src='/icons/playIcon.png' />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div
-                                    >
                                         <div
-                                            onMouseEnter={() => setWhichCard('design')}
-                                            onMouseLeave={() => setWhichCard('')}
-                                            style={{
-                                                filter: whichCard !== '' && whichCard !== 'design' ? "blur(3px)" : "blur(0px)",
-                                            }}
-                                            className={`${style.imgCont} serviceCard2`}> <img className={style.imgItem} src='/images/services/img2.webp' />
-                                            <h2 className={`${style.imgText} serviceDesignText`}>Design</h2>
-                                            <p className={style.imglowerText}>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                                            <img
-                                                onClick={() => setVideo('/videos/dummyVideo.mp4')}
-                                                className={style.playIcon} src='/icons/playIcon.webp' />
+                                        >
+                                            <div
+                                                onMouseEnter={() => setWhichCard('design')}
+                                                onMouseLeave={() => setWhichCard('')}
+                                                style={{
+                                                    filter: whichCard !== '' && whichCard !== 'design' ? "blur(3px)" : "blur(0px)",
+                                                    transform: whichCard === 'design' ? "scale(135%)" :
+                                                        whichCard === 'film' || whichCard === 'tech' ? "scale(75%)" : "scale(100%)",
+                                                }}
+                                                className={`${style.imgCont} serviceCard2`}> <img className={style.imgItem} src='/images/services/img2.webp' />
+                                                <h2 className={`${style.imgText} serviceDesignText`}>Design</h2>
+                                                <p className={style.imglowerText}>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                                                <img
+                                                    onClick={() => setVideo('/videos/dummyVideo.mp4')}
+                                                    className={style.playIcon} src='/icons/playIcon.png' />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div
-                                    >
                                         <div
-                                            onMouseEnter={() => setWhichCard('tech')}
-                                            onMouseLeave={() => setWhichCard('')}
-                                            style={{
-                                                filter: whichCard !== '' && whichCard !== 'tech' ? "blur(3px)" : "blur(0px)",
-                                            }}
-                                            className={`${style.imgCont} serviceCard3`}> <img className={style.imgItem} src='/images/services/img3.webp' />
-                                            <h2 className={style.imgText}>Tech</h2>
-                                            <p className={style.imglowerText}>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
-                                            <img
-                                                onClick={() => setVideo('/videos/dummyVideo.mp4')}
-                                                className={style.playIcon} src='/icons/playIcon.webp' />
+                                        >
+                                            <div
+                                                onMouseEnter={() => setWhichCard('tech')}
+                                                onMouseLeave={() => setWhichCard('')}
+                                                style={{
+
+                                                    filter: whichCard !== '' && whichCard !== 'tech' ? "blur(3px)" : "blur(0px)",
+                                                    transform: whichCard === 'tech' ? "scale(135%)" :
+                                                        whichCard === 'film' || whichCard === 'design' ? "scale(75%)" : "scale(100%)",
+                                                }}
+                                                className={`${style.imgCont} serviceCard3`}> <img className={style.imgItem} src='/images/services/img3.webp' />
+                                                <h2 className={style.imgText}>Tech</h2>
+                                                <p className={style.imglowerText}>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
+                                                <img
+                                                    onClick={() => setVideo('/videos/dummyVideo.mp4')}
+                                                    className={style.playIcon} src='/icons/playIcon.png' />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

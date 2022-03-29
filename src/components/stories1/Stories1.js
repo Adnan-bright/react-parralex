@@ -205,7 +205,7 @@ function Stories1({ isMobile }) {
                             style={{ marginLeft: "50px" }}
                             className={`${style.bgImgBtmGr} `}
                         >
-                            <img src='/images/stories/greenCross.webp'
+                            <img src='/images/stories/greenCross.png'
                             />
                         </motion.div>
                         <motion.div
@@ -226,7 +226,7 @@ function Stories1({ isMobile }) {
                             animate={isVisible ? "visible" : "hidden"}
                             transition={{ duration: 1.5, ease: "easeOut" }}
                             className={style.bgImgLarge}>
-                            <img src='/images/stories/largeBox.webp' />
+                            <img src='/images/stories/largeBox.png' />
                         </motion.div>
                         <motion.div
                             ref={ref}
@@ -234,7 +234,7 @@ function Stories1({ isMobile }) {
                             animate={isVisible ? "visible" : "hidden"}
                             transition={{ duration: 1.5, ease: "easeOut" }}
                             className={style.bgImgLeft}>
-                            <img src='/images/stories/leftBox.webp' />
+                            <img src='/images/stories/leftBox.png' />
                         </motion.div>
                         <motion.div
                             ref={ref}
@@ -242,7 +242,7 @@ function Stories1({ isMobile }) {
                             animate={isVisible ? "visible" : "hidden"}
                             transition={{ duration: 1.5, ease: "easeOut" }}
                             className={style.bgImgRight}>
-                            <img src='/images/stories/rightBox.webp' />
+                            <img src='/images/stories/rightBox.png' />
                         </motion.div>
                         <div className={style.upperContainer}>
                             <h1 className={style.heading}>

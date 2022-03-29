@@ -27,6 +27,48 @@
     backdrop-filter: blur(5px);
     align-items: center;
     justify-content: center;
+    opacity: 1;
+    animation-name: scale;
+    animation-duration: .3s;
+    animation-timing-function: linear;
+}
+
+@keyframes scale {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+@keyframes scaleDown {
+    from {
+        transform: scale(1);
+        display: flex;
+    }
+
+    to {
+        transform: scale(0);
+        display: none;
+    }
+}
+
+.videoBodyHide {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    opacity: 0;
+    backdrop-filter: blur(5px);
+    display: none;
+    align-items: center;
+    transition: ease-in-out 2s;
+    justify-content: center;
+    animation-name: scaleDown;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+
 }
 
 .box {
@@ -46,12 +88,36 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: ease-in-out .8s;
+    opacity: 1;
+}
+
+.bgImgContainerHide {
+    width: 60vw;
+    height: 60vh;
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    justify-content: center;
+    transition: ease-in-out .8s;
 }
 
 .bgImage {
     height: 100%;
     z-index: -1;
     position: absolute;
+
+    -webkit-mask-image: url(../../../static/images/home/union.png);
+    -webkit-mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+
+    mask-image: url(../../../static/images/home/union.png);
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
 }
 
 .main {
@@ -71,8 +137,19 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transform:  scale(1);
+    opacity: 1;
+    transition: ease-in-out .5s;
 }
-
+.contentHide{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transform:  scale(0.8);
+    opacity: 0;
+    transition: ease-in-out .5s;
+    justify-content: center;
+}
 .mainHeading1 {
     font-family: graphik-regular;
     font-style: normal;
@@ -377,7 +454,8 @@
     text-transform: uppercase;
     color: #FFFFFF;
 }
-.mblDownArrow{
+
+.mblDownArrow {
     text-align: center;
 }
 
@@ -393,6 +471,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .mblVideoContainer {
     position: relative;
     width: 100vw;
@@ -401,10 +480,12 @@
     align-items: center;
     justify-content: center;
 }
+
 .mblVideoBox {
     position: relative;
     width: 100vw;
 }
+
 .mblVideoCloseIcon {
     position: absolute;
     height: 15px;
@@ -414,17 +495,21 @@
     z-index: 200;
     cursor: pointer;
 }
+
 .mblVideo {
     margin-top: 20px;
     z-index: 999;
 }
-@media only screen and (max-height: 650px){
+
+@media only screen and (max-height: 650px) {
     .mblHeadingsContainer {
         padding-top: 20vh;
     }
+
     .mblPlayIcon {
         bottom: 30vh;
     }
+
     .mblScrollTxtCont {
         bottom: 20px;
     }

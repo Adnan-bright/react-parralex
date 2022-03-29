@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import * as style from '../../styles/components/heroVer1.module.css'
-import PlayIcon from '../../../static/icons/playIcon.webp'
+import PlayIcon from '../../../static/icons/playIcon.png'
 import Video from '../../../static/videos/dummyVideo.mp4'
 import RightArrow from '../../../static/icons/rightArrow.webp'
 import VideoCloseIcon from '../../../static/icons/videoClose.webp'
@@ -9,19 +9,19 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 function HeroVer1({ isMobile }) {
     const ref = useRef(null)
-    useEffect(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".bgImageHero1",
-                scrub: 10,
-                markers: false,
-                start: "left right"
-            }
-        });
-        tl.to(".bgImageHero1", { scale:1,    opacity:1, duration: 8,  ease: "none",})
-        tl.to(".bgImageHero1", { scale:.5,   opacity:0, duration: 4,  ease: "none",})
+    // useEffect(() => {
+    //     const tl = gsap.timeline({
+    //         scrollTrigger: {
+    //             trigger: ".",
+    //             scrub: 10,
+    //             markers: false,
+    //             start: "left right"
+    //         }
+    //     });
+    //     tl.to(".", { scale:1,    opacity:1, duration: 8,  ease: "none",})
+    //     tl.to(".", { scale:.5,   opacity:0, duration: 4,  ease: "none",})
 
-    }, [])
+    // }, [])
     const [video, setVideo] = useState(false)
     return (
         <div>
@@ -76,7 +76,7 @@ function HeroVer1({ isMobile }) {
                             <img
                                 onClick={() => setVideo(true)}
                                 className={style.mblPlayIcon}
-                                src='/images/home/playIcon.webp' />
+                                src='/images/home/playIcon.png' />
 
                             <div
                                 className={style.mblScrollTxtCont}
@@ -93,10 +93,7 @@ function HeroVer1({ isMobile }) {
                     :
                     <div>
                         <div
-                            style={{
-                                display: video ? 'flex' : "none",
-                            }}
-                            className={style.videoBody}>
+                            className={!video? style.videoBodyHide :style.videoBody}>
                             <div className={style.videoContainer}>
                                 <div
                                 onContextMenu={e => e.preventDefault()}
@@ -119,7 +116,7 @@ function HeroVer1({ isMobile }) {
                                         className={style.video}
                                         url={Video}
                                         title={Video}
-                                        controls={false}
+                                        controls={true}
                                     />
                                 </div>
                             </div>
@@ -128,11 +125,31 @@ function HeroVer1({ isMobile }) {
                             className={`${style.main} `}
 
                         >
-                            <div className={style.bgImgContainer}>
-                                <img className={`${style.bgImage} bgImageHero1`} src='/images/home/union.webp' />
+                           <div
+                           style={{
+                               width:"100vw",
+                               height:"100vh",
+                               display:"flex",
+                               alignItems:"center",
+                               justifyContent:"center",
+                               position: 'absolute'
+                           }}
+                           >
+                           <div className={video ? style.bgImgContainerHide : style.bgImgContainer}>
+                                <ReactPlayer
+                                 playing={true}
+                                 loop={true}
+                                 height='100%'
+                                 width={'100%'}
+                                 muted={true}
+                                 url={'/videos/video.mp4'}
+                                 title={Video}
+                                 controls={false}
+                                className={`${style.bgImage} `} src='/images/home/union.png' />
                             </div>
+                           </div>
                             <div
-                                className={`${style.content} hero1MainContent`}>
+                                className={`${video ? style.contentHide:style.content} hero1MainContent`}>
                                 <div
                                     className={style.headings}
                                 >
@@ -149,7 +166,8 @@ function HeroVer1({ isMobile }) {
                                 }} className={style.playIconContainer}>
                                     <img
 
-                                        className={style.playIcon} onClick={() => setVideo(true)} src={PlayIcon} alt='PlayIcon' />
+                                        className={style.playIcon} 
+                                        onClick={() => setVideo(true)} src={PlayIcon} alt='PlayIcon' />
                                 </div>
                                 <div
                                     className={style.bottomTextContainer}>

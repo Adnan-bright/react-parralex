@@ -32,7 +32,7 @@ function Header({ navClick, hoverValue }) {
     <div className={style.main}>
       <div className={style.headerBar}>
         <div className={style.logoContainer}>
-          <Link > <img onClick={() => { setNav(''); navClick(0) }} className={style.logo} src="/images/common/logo.webp" alt="Logo" /></Link>
+          <Link > <img onClick={() => { setNav(''); navClick(0) }} className={style.logo} src="/images/common/logo.png" alt="Logo" /></Link>
         </div>
         <div className={style.tabsContainer}>
          
