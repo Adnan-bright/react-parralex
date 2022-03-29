@@ -12,6 +12,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
 import useWindowDimensions from "../components/hooks/getWindowDimension";
 const IndexPage = () => {
+  const [isResume, setIsResume] = useState(true)
   const { height, width } = useWindowDimensions();
   const [updateValue, setUpdateValue] = useState(0)
   const [detectChange, setDetectChange] = useState([])
@@ -19,7 +20,6 @@ const IndexPage = () => {
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
   const ref = useRef(null);
-
   useEffect(() => {
     
       let sections = gsap.utils.toArray(".panel");
@@ -43,6 +43,8 @@ const IndexPage = () => {
       });
     }
 
+    
+
   }, [width]);
 
   const handleClick = (id) => {
@@ -64,6 +66,7 @@ const IndexPage = () => {
       >
         {width >= 600 ?
           <div
+          id='newId'
             className="container">
             <div id={'panel-1'} className="panel">
               <HeroVer1 isMobile={width < 600} />
@@ -75,7 +78,7 @@ const IndexPage = () => {
               <Service1 isMobile={width < 600} />
             </div>
             <div id={'panel-4'} className="panel">
-              <Stories1 isMobile={width < 600} />
+              <Stories1 setIsResume={setIsResume} isMobile={width < 600} />
             </div>
             <div id={'panel-5'} className="panel">
               <Process isMobile={width < 600} />

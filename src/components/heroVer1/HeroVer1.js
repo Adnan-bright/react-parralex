@@ -142,10 +142,10 @@ function HeroVer1({ isMobile }) {
                                  height='100%'
                                  width={'100%'}
                                  muted={true}
-                                 url={'/videos/video.mp4'}
+                                 url={'https://youtu.be/smIQmHvAXcQ'}
                                  title={Video}
                                  controls={false}
-                                className={`${style.bgImage} `} src='/images/home/union.png' />
+                                className={`${style.bgImage} `}  />
                             </div>
                            </div>
                             <div

@@ -1,22 +1,159 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import * as style from '../../styles/components/stories1.module.css'
 import Slider from "react-slick";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
-function Stories1({ isMobile }) {
+function Stories1({ isMobile, setIsResume }) {
     const [ref, isVisible] = useInView({ threshold: 0.7 });
+    const [resume, setResume] = useState(false)
     const [check, setcCheck] = useState(false)
     const [whichCard, setWhichCard] = useState('')
-
-    const settings = {
-        dots: false,
-        infinite: false,
-        arrows: false,
-        slidesToShow: 4,
-        slidesToScroll: 4
-    };
     const items = [
+        {
+            img: '/images/stories/1.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/2.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/4.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/5.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/6.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/7.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/8.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: 'https://picsum.photos/id/13/200/300',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/1.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/2.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/4.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/5.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/6.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/7.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/8.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: 'https://picsum.photos/id/13/200/300',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/1.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/2.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/4.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/5.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/6.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/7.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/8.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: 'https://picsum.photos/id/13/200/300',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
         {
             img: '/images/stories/1.webp',
             title: 'Henry Miner Artist Spotlight',
@@ -67,6 +204,24 @@ function Stories1({ isMobile }) {
         }
 
     ]
+    function disableScrolling(){
+        var x=window.scrollX;
+        var y=window.scrollY;
+        window.onscroll=function(){window.scrollTo(x, 2100);};
+    }
+    function enableScrolling(){
+        window.onscroll=function(){};
+    }
+    const settings = {
+        dots: false,
+        infinite: false,
+        arrows: false,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        afterChange:(currentSlide)=> {currentSlide===0 || currentSlide=== items.length-4 ?
+            enableScrolling(): disableScrolling()}
+    };
+ 
 
     const variants = {
         visible: {
@@ -128,6 +283,27 @@ function Stories1({ isMobile }) {
             scale: 1.5,
         },
     };
+    const myRef = useRef()
+    useEffect(() => {
+        if (isVisible) {
+            disableScrolling()
+        }else{
+            enableScrolling()
+        }
+    function scroll(e) {
+        if (myRef === null) return 0;
+    
+        e.wheelDelta > 0 ?   myRef.current.slickPrev() : myRef.current.slickNext();
+      }
+       const elem =  document.querySelector('.storiesMainPanel')
+        elem.addEventListener("wheel", scroll, true);
+        return () => {
+          elem.removeEventListener("wheel", scroll, true);
+        };
+
+        
+      }, [resume, isVisible]);
+
     return (
         <div>
             {
@@ -255,8 +431,10 @@ function Stories1({ isMobile }) {
                         <div className={style.imagesContainer}>
 
                             <div className={style.topContainer}>
-                                <Slider {...settings}
-                                    className={style.slider}
+                                <Slider
+                                ref={myRef}
+                                {...settings}
+                                    className={`${style.slider} sliderComponent`}
                                 >
                                     {
                                         items?.map((item, index) => {
@@ -284,7 +462,8 @@ function Stories1({ isMobile }) {
 
 
                             <div className={`${style.bottomContainer} storiesBtmRow`}>
-                                <Slider {...settings}
+                                <Slider
+                                {...settings}
                                     className={style.slider}
                                 >
                                     {
