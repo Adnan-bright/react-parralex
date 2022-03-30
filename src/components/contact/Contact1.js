@@ -1,10 +1,27 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import * as style from '../../styles/components/contact1.module.css'
 import ReviewContainer from '../reviewContainer/ReviewContainer'
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import MouseTracker from '../hooks/MouseTracker';
+
 function Contact1({ id, isMobile }) {
     const [ref, isVisible] = useInView({ threshold: 0.7 });
+    const myRef = useRef()
+    const myRef2 = useRef()
+    const myRef3 = useRef()
+    const myRef4 = useRef()
+    const myRef5 = useRef()
+    const myRef6 = useRef()
+    const myRef7 = useRef()
+    MouseTracker('cube', myRef, 380, 170, 20)
+    MouseTracker('cube', myRef2, 200, 40, 20)
+    MouseTracker('cube', myRef3, 200, 40, 20)
+    MouseTracker('cube', myRef4, 200, 40, 20)
+    MouseTracker('cube', myRef5, 350, 40, 15)
+    MouseTracker('cube', myRef6, 280, -470, 40)
+    MouseTracker('cube', myRef7, 480, -470, 40)
+
     const variants = {
         visible: {
             opacity: 1,
@@ -35,8 +52,28 @@ function Contact1({ id, isMobile }) {
             y: -100,
         },
     };
+    const classes = [
+        {
+            class: 'first'
+        },
+        {
+            class: 'second'
+        },
+        {
+            class: 'third'
+        },
+        {
+            class: 'fourth'
+        },
+        {
+            class: 'fifth'
+        },
+        {
+            class: 'sixth'
+        },
+    ]
     return (
-        <div>
+        <div >
             {
                 isMobile ?
                     <div className={style.mblMain}>
@@ -130,82 +167,155 @@ function Contact1({ id, isMobile }) {
                     :
                     <div className={`${style.body} `}>
 
-                        <motion.div
-                            ref={ref}
-                            variants={variants2}
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 3, ease: "easeOut" }}
-                            className={style.leftMidBg}
-                        >
-                            <img
-                                className={style.bgImage}
-                                src='/images/contact/leftMid.png' />
-                        </motion.div>
-                        <motion.div
-                            ref={ref}
-                            variants={variants}
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 2, ease: "easeOut" }}
-                            className={style.leftBtmBg}
-                        >
-                            <img
-                                className={style.bgImage}
-                                src='/images/contact/leftBtm.png' />
-                        </motion.div>
-
-                        <motion.div
-                         ref={ref}
-                         variants={variants2}
-                         animate={isVisible ? "visible" : "hidden"}
-                         transition={{ duration: 2, ease: "easeOut" }}
-                            className={style.right2ndBtmBg}
-                        >
-                            <img
-                                className={style.bgImage}
-                                src='/images/contact/right2ndBtm.webp' />
-                        </motion.div>
-                        <motion.div
-                         ref={ref}
-                         variants={variants}
-                         animate={isVisible ? "visible" : "hidden"}
-                         transition={{ duration: 2, ease: "easeOut" }}
-                            className={style.rightBtmBg}
-                        >
-                            <img
-                                className={style.bgImage}
-                                src='/images/contact/rightBtm.webp' />
-                        </motion.div>
-
-                        <motion.div
-                            ref={ref}
-                            variants={variants}
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 1.5, ease: "easeOut" }}
-                            className={style.bgContainerLeftLarge}>
-                            <img
-                                className={style.bgImage}
-                                src='/images/contact/leftLarge.webp' />
-                        </motion.div>
-                        <motion.div
-                            ref={ref}
-                            variants={variants2}
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 1.5, ease: "easeOut" }}
-                            className={style.bgContainerLeftSmall}>
-                            <img
-                                className={style.bgImage}
-                                src='/images/contact/leftSmall.webp' />
-                        </motion.div>
-                        <motion.div
-                            ref={ref}
-                            variants={variants3}
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 1.2, ease: "easeOut" }}
-                            className={style.bgContainerRightBox}>
-                            <img
-                                className={style.bgImage}
-                                src='/images/contact/rightBox.webp' />
-                        </motion.div>
+                        <div >
+                            <div ref={myRef} className='meinContainerAnimated'>
+                                <div id='cube'>
+                                    {
+                                        classes.map((item, index) => {
+                                            return <motion.div
+                                                key={index}
+                                                // ref={ref}
+                                                // variants={variants2}
+                                                // animate={isVisible ? "visible" : "hidden"}
+                                                // transition={{ duration: 3, ease: "easeOut" }}
+                                                className={`${style.leftMidBg} ${item.class}`}
+                                            >
+                                                <img
+                                                    className={`${style.bgImage} `}
+                                                    src='/images/contact/leftMid.png' />
+                                            </motion.div>
+                                        })
+                                    }
+                                </div>
+                            </div>
+                            <div ref={myRef2} className='meinContainerAnimated'>
+                                <div id='cube'>
+                                    {
+                                        classes.map((item, index) => {
+                                            return <motion.div
+                                                key={index}
+                                                // ref={ref}
+                                                // variants={variants2}
+                                                // animate={isVisible ? "visible" : "hidden"}
+                                                // transition={{ duration: 3, ease: "easeOut" }}
+                                                className={`${style.leftBtmBg} ${item.class}`}
+                                            >
+                                                <img
+                                                    className={`${style.bgImage} `}
+                                                    src='/images/contact/leftBtm.png' />
+                                            </motion.div>
+                                        })
+                                    }
+                                </div>
+                            </div>
+                            <div ref={myRef4} className='meinContainerAnimated'>
+                                <div id='cube'>
+                                    {
+                                        classes.map((item, index) => {
+                                            return <motion.div
+                                                key={index}
+                                                // ref={ref}
+                                                // variants={variants2}
+                                                // animate={isVisible ? "visible" : "hidden"}
+                                                // transition={{ duration: 3, ease: "easeOut" }}
+                                                className={`${style.bgContainerLeftLarge} ${item.class}`}
+                                            >
+                                                <img
+                                                    className={`${style.bgImage} `}
+                                                    src='/images/contact/leftLarge.png' />
+                                            </motion.div>
+                                        })
+                                    }
+                                </div>
+                            </div>
+                            <div ref={myRef3} className='meinContainerAnimated'>
+                                <div id='cube'>
+                                    {
+                                        classes.map((item, index) => {
+                                            return <motion.div
+                                                key={index}
+                                                // ref={ref}
+                                                // variants={variants2}
+                                                // animate={isVisible ? "visible" : "hidden"}
+                                                // transition={{ duration: 3, ease: "easeOut" }}
+                                                className={`${style.bgContainerLeftSmall} ${item.class}`}
+                                            >
+                                                <img
+                                                    className={`${style.bgImage} `}
+                                                    src='/images/contact/leftSmall.png' />
+                                            </motion.div>
+                                        })
+                                    }
+                                </div>
+                            </div>
+                            <div className={style.rightBoxContainer}>
+                                <div ref={myRef5} className='meinContainerAnimated'>
+                                    <div id='cube'>
+                                        {
+                                            classes.map((item, index) => {
+                                                return <motion.div
+                                                    key={index}
+                                                    // ref={ref}
+                                                    // variants={variants2}
+                                                    // animate={isVisible ? "visible" : "hidden"}
+                                                    // transition={{ duration: 3, ease: "easeOut" }}
+                                                    className={`${style.bgContainerRightBox} ${item.class}`}
+                                                >
+                                                    <img
+                                                        className={`${style.bgImage} `}
+                                                        src='/images/contact/rightBox.png' />
+                                                </motion.div>
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={style.right2ndBtmContainer}>
+                                <div ref={myRef6} className='meinContainerAnimated'>
+                                    <div id='cube'>
+                                        {
+                                            classes.map((item, index) => {
+                                                return <motion.div
+                                                    key={index}
+                                                    // ref={ref}
+                                                    // variants={variants2}
+                                                    // animate={isVisible ? "visible" : "hidden"}
+                                                    // transition={{ duration: 3, ease: "easeOut" }}
+                                                    className={`${style.right2ndBtmBg} ${item.class}`}
+                                                >
+                                                    <img
+                                                        className={`${style.bgImage} `}
+                                                        src='/images/contact/right2ndBtm.png' />
+                                                </motion.div>
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={style.right2ndBtmContainer}>
+                                <div ref={myRef7} className='meinContainerAnimated'>
+                                    <div id='cube'>
+                                        {
+                                            classes.map((item, index) => {
+                                                return <motion.div
+                                                    key={index}
+                                                    // ref={ref}
+                                                    // variants={variants2}
+                                                    // animate={isVisible ? "visible" : "hidden"}
+                                                    // transition={{ duration: 3, ease: "easeOut" }}
+                                                    className={`${style.rightBtmBg} ${item.class}`}
+                                                >
+                                                    <img
+                                                        className={`${style.bgImage} `}
+                                                        src='/images/contact/rightBtm.png' />
+                                                </motion.div>
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
                         <div id={id} className={style.main}>
                             <div className={style.reviewContainer}>
                                 <ReviewContainer />

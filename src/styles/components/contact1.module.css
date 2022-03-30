@@ -9,61 +9,104 @@
     justify-content: center;
     position: relative;
 }
-.bgContainerLeftLarge{
+
+.bgContainerLeftLarge {
     position: absolute;
-    top: 0px;
-    left: 10%;
+    top: 2vh;
+    left: 12vw;
 }
-.leftMidBg{
-        position: absolute;
-        top: 40%;
-        left: 20%;
+.bgContainerLeftLarge img{
+    height: 150px;
+    width: 150px;
 }
-.leftMidBg img{
+.leftMidBg {
+    position: absolute;
+    top: 30vh;
+    left: 20vw;
+}
+
+.leftMidBg img {
     width: 110px;
     height: 110px;
 }
-.leftBtmBg{
+
+.leftBtmBg {
     position: absolute;
-    bottom: 10%;
-    left: 12%;
+    top: 50vh;
+    left: 12vw;
 }
-.leftBtmBg{
+
+.leftBtmBg {
     width: 135px;
     height: 135px;
 }
-.right2ndBtmBg{
+
+.right2ndBtmBg {
     position: absolute;
     bottom: 15%;
-    right: 20%;
+    right: 100%;
 }
-.rightBtmBg{
+.right2ndBtmBg img{
+    width: 110px;
+    height: 110px;
+}
+
+.rightBtmBg {
     position: absolute;
-    bottom: 10%;
-    right: 8%;
+    bottom: 25%;
+    right: 15%;
 }
-.bgContainerLeftSmall{
+.rightBtmBg img{
+    width: 60px;
+    height: 60px;
+}
+.bgContainerLeftSmall {
     position: absolute;
     top: 160px;
-    left: 8%;
+    left: 10vw;
 }
-.bgContainerRightBox{
+.bgContainerLeftSmall img{
+    width: 80px;
+    height: 80px;
+}
+.bgContainerRightBox {
     position: absolute;
-    top: 10px;
-    right: 8%;
+    top: 22%;
+    right: 22%;
 }
-.bgImage{
+
+.bgContainerRightBox img{
+    width: 150px;
+    height: 150px;
+}
+.rightBoxContainer{
+    position: absolute;
+    right: 14%;
+}
+.right2ndBtmContainer{
+    position: absolute;
+    right: 14%;
+    bottom: 30%;
+}
+.right2ndBtmContainer{
+    position: absolute;
+    right: 15%;
+    bottom: 25%;
+}
+.bgImage {
     width: 100%;
 }
-.bgContainer{
+
+.bgContainer {
     position: absolute;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     width: 80%;
     bottom: 50px;
 }
+
 .reviewContainer {
     z-index: 1;
     right: 10%;
@@ -629,16 +672,19 @@
     margin-top: 20px;
     padding-bottom: 15px;
 }
-@media only screen and (max-height: 650px){
+
+@media only screen and (max-height: 650px) {
     .mblRatingCont {
         top: 65px;
     }
+
     .mblDescriptionMain {
         top: 127px;
         width: 65%;
-        font-size: 13px ;
+        font-size: 13px;
         line-height: 16px;
     }
+
     .mblShortDesc {
         position: absolute;
         left: 0;

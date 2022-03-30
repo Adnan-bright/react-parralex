@@ -3,7 +3,7 @@ import * as style from '../../styles/components/stories1.module.css'
 import Slider from "react-slick";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-
+import MouseTracker from '../hooks/MouseTracker';
 function Stories1({ isMobile, setIsResume }) {
     const [ref, isVisible] = useInView({ threshold: 0.7 });
     const [resume, setResume] = useState(false)
@@ -223,8 +223,6 @@ function Stories1({ isMobile, setIsResume }) {
                 enableScrolling() : disableScrolling()
         }
     };
-
-
     const variants = {
         visible: {
             opacity: 1,
@@ -286,6 +284,11 @@ function Stories1({ isMobile, setIsResume }) {
         },
     };
     const myRef = useRef()
+    const animRef = useRef()
+    const animRef2 = useRef()
+    MouseTracker('cube', animRef, 250, -60, 8)
+    MouseTracker('cube', animRef2, 250, -160, 10)
+
     useEffect(() => {
         if (isVisible) {
             disableScrolling()
@@ -302,12 +305,29 @@ function Stories1({ isMobile, setIsResume }) {
         return () => {
             elem.removeEventListener("wheel", scroll, true);
         };
-
-
     }, [resume, isVisible]);
-
+    const classes = [
+        {
+            class: 'first'
+        },
+        {
+            class: 'second'
+        },
+        {
+            class: 'third'
+        },
+        {
+            class: 'fourth'
+        },
+        {
+            class: 'fifth'
+        },
+        {
+            class: 'sixth'
+        },
+    ]
     return (
-        <div>
+        <div >
             {
                 isMobile ?
                     <div className={style.mblMain}>
@@ -373,55 +393,129 @@ function Stories1({ isMobile, setIsResume }) {
                     </div>
                     :
                     <div className={`${style.main} storiesMainPanel`}>
-                        <img draggable={false} src='/images/stories/croses.webp' className={style.bgImgBtm} />
+                        {/* <img draggable={false} src='/images/stories/croses.webp' className={style.bgImgBtm} /> */}
 
-                        <motion.div
-                            ref={ref}
-                            variants={variants}
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 1.5, ease: "easeOut" }}
-                            style={{ marginLeft: "50px" }}
-                            className={`${style.bgImgBtmGr} `}
-                        >
-                            <img src='/images/stories/greenCross.png'
-                            />
-                        </motion.div>
-                        <motion.div
-                            ref={ref}
-                            variants={variants2}
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 1.5, ease: "easeOut" }}
-                            style={{ marginLeft: "50px" }}
-                            className={`${style.bgImgBtmGlr} `}
-                        >
-                            <img src='/images/stories/goldenCross.webp'
-                            />
-                        </motion.div>
+                        <div ref={animRef} className={style.crossesContainer}>
+                            <div className='meinContainerAnimated'>
+                                <div id='cube'>
+                                    {
+                                        classes.map((item, index) => {
+                                            return <motion.div
+                                                key={index}
+                                                // ref={ref}
+                                                // variants={variants}
+                                                // animate={isVisible ? "visible" : "hidden"}
+                                                // transition={{ duration: 1.5, ease: "easeOut" }}
+                                                // style={{ marginLeft: "50px" }}
+                                                className={`${style.bgImgBtmGr} ${item.class}`}
+                                            >
+                                                <img src='/images/stories/greenCross.png'
+                                                />
+                                            </motion.div>
+                                        })
+                                    }
+                                    <div id='cube'>
+                                        {
+                                            classes.map((item, index) => {
+                                                return <motion.div
+                                                    key={index}
+                                                    // ref={ref}
+                                                    // variants={variants2}
+                                                    // animate={isVisible ? "visible" : "hidden"}
+                                                    // transition={{ duration: 1.5, ease: "easeOut" }}
+                                                    // style={{ marginLeft: "50px" }}
+                                                    className={`${style.bgImgBtmGlr} ${item.class}`}
+                                                >
+                                                    <img src='/images/stories/goldenCross.webp'
+                                                    />
+                                                </motion.div>
+                                            })
+                                        }
+                                    </div>
+                                    <div id='cube'>
+                                        {
+                                            classes.map((item, index) => {
+                                                return <motion.div
+                                                    key={index}
+                                                    // ref={ref}
+                                                    // variants={variants2}
+                                                    // animate={isVisible ? "visible" : "hidden"}
+                                                    // transition={{ duration: 1.5, ease: "easeOut" }}
+                                                    // style={{ marginLeft: "50px" }}
+                                                    className={`${style.bgImgBtmPlr} ${item.class}`}
+                                                >
+                                                    <img src='/images/stories/purpleCross.png'
+                                                    />
+                                                </motion.div>
+                                            })
+                                        }
+                                    </div>
+                                    <div id='cube'>
+                                        {
+                                            classes.map((item, index) => {
+                                                return <motion.div
+                                                    key={index}
+                                                    // ref={ref}
+                                                    // variants={variants2}
+                                                    // animate={isVisible ? "visible" : "hidden"}
+                                                    // transition={{ duration: 1.5, ease: "easeOut" }}
+                                                    // style={{ marginLeft: "50px" }}
+                                                    className={`${style.bgImgBtmRed} ${item.class}`}
+                                                >
+                                                    <img src='/images/stories/redCross.png'
+                                                    />
+                                                </motion.div>
+                                            })
+                                        }
+                                    </div>
+                                </div>
 
-                        <motion.div
-                            ref={ref}
-                            variants={variants3}
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 1.5, ease: "easeOut" }}
-                            className={style.bgImgLarge}>
-                            <img src='/images/stories/largeBox.png' />
-                        </motion.div>
-                        <motion.div
-                            ref={ref}
-                            variants={variants4}
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 1.5, ease: "easeOut" }}
-                            className={style.bgImgLeft}>
-                            <img src='/images/stories/leftBox.png' />
-                        </motion.div>
-                        <motion.div
-                            ref={ref}
-                            variants={variants5}
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 1.5, ease: "easeOut" }}
-                            className={style.bgImgRight}>
-                            <img src='/images/stories/rightBox.png' />
-                        </motion.div>
+
+                            </div>
+
+                        </div>
+                        <div ref={animRef2} className={style.boxesContainer}>
+                            <div className='meinContainerAnimated'>
+                                <div id='cube'>
+                                    {
+                                        classes.map((item, index) => {
+                                            return <motion.div
+                                                key={index}
+                                                // ref={ref}
+                                                // variants={variants3}
+                                                // animate={isVisible ? "visible" : "hidden"}
+                                                // transition={{ duration: 1.5, ease: "easeOut" }}
+                                                className={`${style.bgImgLarge} ${item.class}`}>
+                                                <img src='/images/stories/largeBox.png' />
+                                            </motion.div>
+                                        })
+                                    }
+                                </div>
+                                <div id='cube'>
+                                    {
+                                        classes.map((item, index) => {
+                                            return <motion.div
+                                                key={index}
+                                                // ref={ref}
+                                                // variants={variants3}
+                                                // animate={isVisible ? "visible" : "hidden"}
+                                                // transition={{ duration: 1.5, ease: "easeOut" }}
+                                                className={`${style.bgImgLeft} ${item.class}`}>
+                                                <img src='/images/stories/leftBox.png' />
+                                            </motion.div>
+                                        })
+                                    }
+                                </div>
+                                <motion.div
+                                    // ref={ref}
+                                    // variants={variants5}
+                                    // animate={isVisible ? "visible" : "hidden"}
+                                    // transition={{ duration: 1.5, ease: "easeOut" }}
+                                    className={style.bgImgRight}>
+                                    <img src='/images/stories/rightBox.png' />
+                                </motion.div>
+                            </div>
+                        </div>
                         <div className={style.upperContainer}>
                             <h1 className={style.heading}>
                                 our best stories
@@ -459,7 +553,7 @@ function Stories1({ isMobile, setIsResume }) {
                                                     <img draggable={false} className={style.imgTop} src={item.img} />
                                                 </div>
                                                 <div
-                                                className={style.btmRowInSlider}
+                                                    className={style.btmRowInSlider}
                                                 >
                                                     <div
                                                         onMouseEnter={() => setWhichCard('active')}

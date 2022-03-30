@@ -229,6 +229,16 @@
     left: 25px;
     bottom: 25px;
 }
+.boxesContainer{
+  position: absolute;
+    right: 125px;
+    top: 25px;
+}
+.crossesContainer{
+    position: absolute;
+    left: 25px;
+    bottom: 125px;
+}
 .bgImgBtmGr img{
     height: 144px;
     width: 144px;
@@ -236,7 +246,16 @@
 .bgImgBtmGlr{
     position: absolute;
     left: 230px;
-    bottom: 60px;
+    bottom: -60px;
+}
+.bgImgBtmPlr{
+    position: absolute;
+    top: -150px;
+}
+.bgImgBtmRed{
+    position: absolute;
+    bottom: -100px;
+    left: 330px;
 }
 .box {
     width: 150px;
