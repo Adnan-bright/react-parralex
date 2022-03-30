@@ -9,53 +9,104 @@
     justify-content: center;
     position: relative;
 }
-.bgContainerLeftLarge{
+
+.bgContainerLeftLarge {
     position: absolute;
-    top: 0px;
-    left: 10%;
+    top: 2vh;
+    left: 12vw;
 }
-.leftMidBg{
-        position: absolute;
-        top: 40%;
-        left: 20%;
+.bgContainerLeftLarge img{
+    height: 150px;
+    width: 150px;
 }
-.leftBtmBg{
+.leftMidBg {
     position: absolute;
-    bottom: 10%;
-    left: 12%;
+    top: 30vh;
+    left: 20vw;
 }
-.right2ndBtmBg{
+
+.leftMidBg img {
+    width: 110px;
+    height: 110px;
+}
+
+.leftBtmBg {
+    position: absolute;
+    top: 50vh;
+    left: 12vw;
+}
+
+.leftBtmBg {
+    width: 135px;
+    height: 135px;
+}
+
+.right2ndBtmBg {
     position: absolute;
     bottom: 15%;
-    right: 20%;
+    right: 100%;
 }
-.rightBtmBg{
+.right2ndBtmBg img{
+    width: 110px;
+    height: 110px;
+}
+
+.rightBtmBg {
     position: absolute;
-    bottom: 10%;
-    right: 8%;
+    bottom: 25%;
+    right: 15%;
 }
-.bgContainerLeftSmall{
+.rightBtmBg img{
+    width: 60px;
+    height: 60px;
+}
+.bgContainerLeftSmall {
     position: absolute;
     top: 160px;
-    left: 8%;
+    left: 10vw;
 }
-.bgContainerRightBox{
+.bgContainerLeftSmall img{
+    width: 80px;
+    height: 80px;
+}
+.bgContainerRightBox {
     position: absolute;
-    top: 10px;
-    right: 8%;
+    top: 22%;
+    right: 22%;
 }
-.bgImage{
+
+.bgContainerRightBox img{
+    width: 150px;
+    height: 150px;
+}
+.rightBoxContainer{
+    position: absolute;
+    right: 14%;
+}
+.right2ndBtmContainer{
+    position: absolute;
+    right: 14%;
+    bottom: 30%;
+}
+.right2ndBtmContainer{
+    position: absolute;
+    right: 15%;
+    bottom: 25%;
+}
+.bgImage {
     width: 100%;
 }
-.bgContainer{
+
+.bgContainer {
     position: absolute;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     width: 80%;
     bottom: 50px;
 }
+
 .reviewContainer {
     z-index: 1;
     right: 10%;
@@ -174,12 +225,12 @@
     align-items: center;
     justify-content: center;
     transition: ease-in-out .4s;
-    background: url(../../../static/images/common/btnBg.webp);
+    background: url(../../../static/images/common/btnBgHover.webp);
 }
 
 .btn:hover {
     transition: ease-in-out .4s;
-    background: url(../../../static/images/common/btnBgHover.webp);
+    background: url(../../../static/images/common/btnBg.webp);
 }
 
 .btnContainer {
@@ -240,8 +291,9 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/insta.webp);
+    background-image: url(../../../static/images/contact/insta.png);
     text-transform: uppercase;
+    background-size: contain;
     color: #7A858D;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -249,7 +301,8 @@
 }
 
 .tab1:hover {
-    background-image: url(../../../static/images/contact/instaHv.webp);
+    background-image: url(../../../static/images/contact/instaHv.png);
+    background-size: contain;
     cursor: pointer;
 }
 
@@ -263,17 +316,21 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/facebook.webp);
+    background-image: url(../../../static/images/contact/facebook.png);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
     cursor: pointer;
+    background-size: contain;
+
     transition: ease-in-out .4s;
 }
 
 .tab2:hover {
-    background-image: url(../../../static/images/contact/facebookHv.webp);
+    background-image: url(../../../static/images/contact/facebookHv.png);
     cursor: pointer;
+    background-size: contain;
+
 }
 
 .tab3 {
@@ -286,7 +343,9 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/twitter.webp);
+    background-size: contain;
+
+    background-image: url(../../../static/images/contact/twitter.png);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
@@ -295,8 +354,10 @@
 }
 
 .tab3:hover {
-    background-image: url(../../../static/images/contact/twitterHv.webp);
+    background-image: url(../../../static/images/contact/twitterHv.png);
     cursor: pointer;
+    background-size: contain;
+
 }
 
 .tab4 {
@@ -309,7 +370,9 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/linkedin.webp);
+    background-size: contain;
+
+    background-image: url(../../../static/images/contact/linkedin.png);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
@@ -318,8 +381,10 @@
 }
 
 .tab4:hover {
-    background-image: url(../../../static/images/contact/linkedinHv.webp);
+    background-image: url(../../../static/images/contact/linkedinHv.png);
     cursor: pointer;
+    background-size: contain;
+
 }
 
 .tab5 {
@@ -331,8 +396,10 @@
     margin-bottom: 15px;
     line-height: 15px;
     width: 26px;
+    background-size: contain;
+
     height: 26px;
-    background-image: url(../../../static/images/contact/youtube.webp);
+    background-image: url(../../../static/images/contact/youtube.png);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
@@ -341,8 +408,10 @@
 }
 
 .tab5:hover {
-    background-image: url(../../../static/images/contact/youtubeHv.webp);
+    background-image: url(../../../static/images/contact/youtubeHv.png);
     cursor: pointer;
+    background-size: contain;
+
 }
 
 .tab6 {
@@ -354,8 +423,10 @@
     margin-bottom: 15px;
     line-height: 15px;
     width: 26px;
+    background-size: contain;
+
     height: 26px;
-    background-image: url(../../../static/images/contact/vimeo.webp);
+    background-image: url(../../../static/images/contact/vimeo.png);
     text-transform: uppercase;
     color: #7A858D;
     background-repeat: no-repeat;
@@ -364,8 +435,10 @@
 }
 
 .tab6:hover {
-    background-image: url(../../../static/images/contact/vimeoHv.webp);
+    background-image: url(../../../static/images/contact/vimeoHv.png);
     cursor: pointer;
+    background-size: contain;
+
 }
 
 
@@ -599,16 +672,19 @@
     margin-top: 20px;
     padding-bottom: 15px;
 }
-@media only screen and (max-height: 650px){
+
+@media only screen and (max-height: 650px) {
     .mblRatingCont {
         top: 65px;
     }
+
     .mblDescriptionMain {
         top: 127px;
         width: 65%;
-        font-size: 13px ;
+        font-size: 13px;
         line-height: 16px;
     }
+
     .mblShortDesc {
         position: absolute;
         left: 0;

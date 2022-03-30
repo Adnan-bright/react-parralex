@@ -10,25 +10,23 @@ import Process from "../components/process/Process";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
-import useWindowDimensions from "../hooks/getWindowDimension";
-
+import useWindowDimensions from "../components/hooks/getWindowDimension";
 const IndexPage = () => {
+  const [isResume, setIsResume] = useState(true)
   const { height, width } = useWindowDimensions();
-  const [screenWidth, setScreenWidth] = useState(width)
   const [updateValue, setUpdateValue] = useState(0)
   const [detectChange, setDetectChange] = useState([])
+  const [isSmall, setIsSmall] = useState(true)
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
   const ref = useRef(null);
-
   useEffect(() => {
-    setScreenWidth(width)
-    if (width >= 600) {
+    
       let sections = gsap.utils.toArray(".panel");
+    if (width >= 600  ) {
       gsap.to(sections, {
         xPercent: -100 * (sections.length - 1),
         ease: "none",
-        
         scrollTrigger: {
           trigger: ".container",
           pin: true,
@@ -45,7 +43,9 @@ const IndexPage = () => {
       });
     }
 
-  }, []);
+    
+
+  }, [width]);
 
   const handleClick = (id) => {
     gsap.to(window, {
@@ -59,53 +59,54 @@ const IndexPage = () => {
     return(<></>);
 }
   return (
-    <Layout isMobile={screenWidth >= 800 ? false : true} hoverValue={updateValue} onNavClick={handleClick}>
+    <Layout isMobile={width >= 800 ? false : true} hoverValue={updateValue} onNavClick={handleClick}>
 
       <div
         ref={ref}
       >
-        {screenWidth >= 600 ?
+        {width >= 600 ?
           <div
+          id='newId'
             className="container">
             <div id={'panel-1'} className="panel">
-              <HeroVer1 isMobile={screenWidth < 600} />
+              <HeroVer1 isMobile={width < 600} />
             </div>
             <div id={'panel-2'} className="panel">
-              <AboutUS isMobile={screenWidth < 600} />
+              <AboutUS isMobile={width < 600} />
             </div>
             <div id={'panel-3'} className="panel">
-              <Service1 isMobile={screenWidth < 600} />
+              <Service1 isMobile={width < 600} />
             </div>
             <div id={'panel-4'} className="panel">
-              <Stories1 isMobile={screenWidth < 600} />
+              <Stories1 setIsResume={setIsResume} isMobile={width < 600} />
             </div>
             <div id={'panel-5'} className="panel">
-              <Process isMobile={screenWidth < 600} />
+              <Process isMobile={width < 600} />
             </div>
             <div id={'panel-6'} className="panel">
-              <Contact1 isMobile={screenWidth < 600} />
+              <Contact1 isMobile={width < 600} />
             </div>
           </div>
           :
           <div
             className="verticalContainer">
             <div id={'verticalPanel-1'} className="verticalPanel">
-              <HeroVer1 isMobile={screenWidth < 600} />
+              <HeroVer1 isMobile={width < 600} />
             </div>
             <div id={'verticalPanel-2'} className="verticalPanel">
-              <AboutUS isMobile={screenWidth < 600} />
+              <AboutUS isMobile={width < 600} />
             </div>
             <div id={'verticalPanel-3'} className="verticalPanel">
-              <Service1 isMobile={screenWidth < 600} />
+              <Service1 isMobile={width < 600} />
             </div>
              <div id={'verticalPanel-4'} className="verticalPanel">
-              <Stories1 isMobile={screenWidth < 600 } />
+              <Stories1 isMobile={width < 600 } />
             </div>
            <div id={'verticalPanel-5'} className="verticalPanel">
-              <Process isMobile={screenWidth < 600 } />
+              <Process isMobile={width < 600 } />
             </div>
             <div id={'verticalPanel-6'} className="verticalPanel">
-              <Contact1 isMobile={screenWidth < 600 } />
+              <Contact1 isMobile={width < 600 } />
             </div>
           </div>
         }

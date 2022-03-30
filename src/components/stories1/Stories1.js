@@ -1,24 +1,159 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import * as style from '../../styles/components/stories1.module.css'
 import Slider from "react-slick";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-
-function Stories1({ isMobile }) {
+import MouseTracker from '../hooks/MouseTracker';
+function Stories1({ isMobile, setIsResume }) {
     const [ref, isVisible] = useInView({ threshold: 0.7 });
-
-
+    const [resume, setResume] = useState(false)
     const [check, setcCheck] = useState(false)
     const [whichCard, setWhichCard] = useState('')
-
-    const settings = {
-        dots: false,
-        infinite: false,
-        arrows: false,
-        slidesToShow: 4,
-        slidesToScroll: 4
-    };
     const items = [
+        {
+            img: '/images/stories/1.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/2.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/4.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/5.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/6.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/7.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/8.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: 'https://picsum.photos/id/13/200/300',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/1.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/2.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/4.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/5.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/6.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/7.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/8.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: 'https://picsum.photos/id/13/200/300',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/1.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/2.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/4.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/5.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/6.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/7.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: '/images/stories/8.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
+        {
+            img: 'https://picsum.photos/id/13/200/300',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
         {
             img: '/images/stories/1.webp',
             title: 'Henry Miner Artist Spotlight',
@@ -69,7 +204,25 @@ function Stories1({ isMobile }) {
         }
 
     ]
-
+    function disableScrolling() {
+        var x = window.scrollX;
+        var y = window.scrollY;
+        window.onscroll = function () { window.scrollTo(x, 2100); };
+    }
+    function enableScrolling() {
+        window.onscroll = function () { };
+    }
+    const settings = {
+        dots: false,
+        infinite: false,
+        arrows: false,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        afterChange: (currentSlide) => {
+            currentSlide === 0 || currentSlide === items.length - 4 ?
+                enableScrolling() : disableScrolling()
+        }
+    };
     const variants = {
         visible: {
             opacity: 1,
@@ -130,8 +283,51 @@ function Stories1({ isMobile }) {
             scale: 1.5,
         },
     };
+    const myRef = useRef()
+    const animRef = useRef()
+    const animRef2 = useRef()
+    MouseTracker('cube', animRef, 250, -60, 8)
+    MouseTracker('cube', animRef2, 250, -160, 10)
+
+    useEffect(() => {
+        if (isVisible) {
+            disableScrolling()
+        } else {
+            enableScrolling()
+        }
+        function scroll(e) {
+            if (myRef === null) return 0;
+
+            e.wheelDelta > 0 ? myRef.current.slickPrev() : myRef.current.slickNext();
+        }
+        const elem = document.querySelector('.storiesMainPanel')
+        elem.addEventListener("wheel", scroll, true);
+        return () => {
+            elem.removeEventListener("wheel", scroll, true);
+        };
+    }, [resume, isVisible]);
+    const classes = [
+        {
+            class: 'first'
+        },
+        {
+            class: 'second'
+        },
+        {
+            class: 'third'
+        },
+        {
+            class: 'fourth'
+        },
+        {
+            class: 'fifth'
+        },
+        {
+            class: 'sixth'
+        },
+    ]
     return (
-        <div>
+        <div >
             {
                 isMobile ?
                     <div className={style.mblMain}>
@@ -197,55 +393,129 @@ function Stories1({ isMobile }) {
                     </div>
                     :
                     <div className={`${style.main} storiesMainPanel`}>
-                        <img draggable={false} src='/images/stories/croses.webp' className={style.bgImgBtm} />
+                        {/* <img draggable={false} src='/images/stories/croses.webp' className={style.bgImgBtm} /> */}
 
-                        <motion.div
-                            ref={ref}
-                            variants={variants}
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 1.5, ease: "easeOut" }}
-                            style={{ marginLeft: "50px" }}
-                            className={`${style.bgImgBtmGr} `}
-                        >
-                            <img src='/images/stories/greenCross.webp'
-                            />
-                        </motion.div>
-                        <motion.div
-                            ref={ref}
-                            variants={variants2}
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 1.5, ease: "easeOut" }}
-                            style={{ marginLeft: "50px" }}
-                            className={`${style.bgImgBtmGlr} `}
-                        >
-                            <img src='/images/stories/goldenCross.webp'
-                            />
-                        </motion.div>
+                        <div ref={animRef} className={style.crossesContainer}>
+                            <div className='meinContainerAnimated'>
+                                <div id='cube'>
+                                    {
+                                        classes.map((item, index) => {
+                                            return <motion.div
+                                                key={index}
+                                                // ref={ref}
+                                                // variants={variants}
+                                                // animate={isVisible ? "visible" : "hidden"}
+                                                // transition={{ duration: 1.5, ease: "easeOut" }}
+                                                // style={{ marginLeft: "50px" }}
+                                                className={`${style.bgImgBtmGr} ${item.class}`}
+                                            >
+                                                <img src='/images/stories/greenCross.png'
+                                                />
+                                            </motion.div>
+                                        })
+                                    }
+                                    <div id='cube'>
+                                        {
+                                            classes.map((item, index) => {
+                                                return <motion.div
+                                                    key={index}
+                                                    // ref={ref}
+                                                    // variants={variants2}
+                                                    // animate={isVisible ? "visible" : "hidden"}
+                                                    // transition={{ duration: 1.5, ease: "easeOut" }}
+                                                    // style={{ marginLeft: "50px" }}
+                                                    className={`${style.bgImgBtmGlr} ${item.class}`}
+                                                >
+                                                    <img src='/images/stories/goldenCross.webp'
+                                                    />
+                                                </motion.div>
+                                            })
+                                        }
+                                    </div>
+                                    <div id='cube'>
+                                        {
+                                            classes.map((item, index) => {
+                                                return <motion.div
+                                                    key={index}
+                                                    // ref={ref}
+                                                    // variants={variants2}
+                                                    // animate={isVisible ? "visible" : "hidden"}
+                                                    // transition={{ duration: 1.5, ease: "easeOut" }}
+                                                    // style={{ marginLeft: "50px" }}
+                                                    className={`${style.bgImgBtmPlr} ${item.class}`}
+                                                >
+                                                    <img src='/images/stories/purpleCross.png'
+                                                    />
+                                                </motion.div>
+                                            })
+                                        }
+                                    </div>
+                                    <div id='cube'>
+                                        {
+                                            classes.map((item, index) => {
+                                                return <motion.div
+                                                    key={index}
+                                                    // ref={ref}
+                                                    // variants={variants2}
+                                                    // animate={isVisible ? "visible" : "hidden"}
+                                                    // transition={{ duration: 1.5, ease: "easeOut" }}
+                                                    // style={{ marginLeft: "50px" }}
+                                                    className={`${style.bgImgBtmRed} ${item.class}`}
+                                                >
+                                                    <img src='/images/stories/redCross.png'
+                                                    />
+                                                </motion.div>
+                                            })
+                                        }
+                                    </div>
+                                </div>
 
-                        <motion.div
-                            ref={ref}
-                            variants={variants3}
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 1.5, ease: "easeOut" }}
-                            className={style.bgImgLarge}>
-                            <img src='/images/stories/largeBox.webp' />
-                        </motion.div>
-                        <motion.div
-                            ref={ref}
-                            variants={variants4}
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 1.5, ease: "easeOut" }}
-                            className={style.bgImgLeft}>
-                            <img src='/images/stories/leftBox.webp' />
-                        </motion.div>
-                        <motion.div
-                            ref={ref}
-                            variants={variants5}
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 1.5, ease: "easeOut" }}
-                            className={style.bgImgRight}>
-                            <img src='/images/stories/rightBox.webp' />
-                        </motion.div>
+
+                            </div>
+
+                        </div>
+                        <div ref={animRef2} className={style.boxesContainer}>
+                            <div className='meinContainerAnimated'>
+                                <div id='cube'>
+                                    {
+                                        classes.map((item, index) => {
+                                            return <motion.div
+                                                key={index}
+                                                // ref={ref}
+                                                // variants={variants3}
+                                                // animate={isVisible ? "visible" : "hidden"}
+                                                // transition={{ duration: 1.5, ease: "easeOut" }}
+                                                className={`${style.bgImgLarge} ${item.class}`}>
+                                                <img src='/images/stories/largeBox.png' />
+                                            </motion.div>
+                                        })
+                                    }
+                                </div>
+                                <div id='cube'>
+                                    {
+                                        classes.map((item, index) => {
+                                            return <motion.div
+                                                key={index}
+                                                // ref={ref}
+                                                // variants={variants3}
+                                                // animate={isVisible ? "visible" : "hidden"}
+                                                // transition={{ duration: 1.5, ease: "easeOut" }}
+                                                className={`${style.bgImgLeft} ${item.class}`}>
+                                                <img src='/images/stories/leftBox.png' />
+                                            </motion.div>
+                                        })
+                                    }
+                                </div>
+                                <motion.div
+                                    // ref={ref}
+                                    // variants={variants5}
+                                    // animate={isVisible ? "visible" : "hidden"}
+                                    // transition={{ duration: 1.5, ease: "easeOut" }}
+                                    className={style.bgImgRight}>
+                                    <img src='/images/stories/rightBox.png' />
+                                </motion.div>
+                            </div>
+                        </div>
                         <div className={style.upperContainer}>
                             <h1 className={style.heading}>
                                 our best stories
@@ -257,7 +527,62 @@ function Stories1({ isMobile }) {
                         <div className={style.imagesContainer}>
 
                             <div className={style.topContainer}>
-                                <Slider {...settings}
+                                <Slider
+                                    ref={myRef}
+                                    {...settings}
+                                    className={`${style.slider} sliderComponent`}
+                                >
+                                    {
+                                        items?.map((item, index) => {
+                                            return <div>
+                                                <div
+                                                    onMouseEnter={() => setWhichCard('active')}
+                                                    onMouseLeave={() => setWhichCard('')}
+                                                    key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
+                                                    <img
+                                                        className={style.icon}
+                                                        src={item.icon} />
+                                                    <div className={style.txtContainer}>
+                                                        <h5 className={style.title}>
+                                                            {item.title}
+                                                        </h5>
+                                                        <p className={style.description}>
+                                                            {item.description}
+                                                        </p>
+                                                    </div>
+                                                    <img draggable={false} className={style.imgTop} src={item.img} />
+                                                </div>
+                                                <div
+                                                    className={style.btmRowInSlider}
+                                                >
+                                                    <div
+                                                        onMouseEnter={() => setWhichCard('active')}
+                                                        onMouseLeave={() => setWhichCard('')}
+                                                        key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
+                                                        <img
+                                                            className={style.icon}
+                                                            src={item.icon} />
+                                                        <div className={style.txtContainer}>
+                                                            <h5 className={style.title}>
+                                                                {item.title}
+                                                            </h5>
+                                                            <p className={style.description}>
+                                                                {item.description}
+                                                            </p>
+                                                        </div>
+                                                        <img draggable={false} className={style.imgTop} src={item.img} />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        })
+                                    }
+                                </Slider>
+                            </div>
+
+
+                            {/* <div className={`${style.bottomContainer} storiesBtmRow`}>
+                                <Slider
+                                    {...settings}
                                     className={style.slider}
                                 >
                                     {
@@ -282,36 +607,7 @@ function Stories1({ isMobile }) {
                                         })
                                     }
                                 </Slider>
-                            </div>
-
-
-                            <div className={`${style.bottomContainer} storiesBtmRow`}>
-                                <Slider {...settings}
-                                    className={style.slider}
-                                >
-                                    {
-                                        items?.map((item, index) => {
-                                            return <div
-                                                onMouseEnter={() => setWhichCard('active')}
-                                                onMouseLeave={() => setWhichCard('')}
-                                                key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
-                                                <img
-                                                    className={style.icon}
-                                                    src={item.icon} />
-                                                <div className={style.txtContainer}>
-                                                    <h5 className={style.title}>
-                                                        {item.title}
-                                                    </h5>
-                                                    <p className={style.description}>
-                                                        {item.description}
-                                                    </p>
-                                                </div>
-                                                <img draggable={false} className={style.imgTop} src={item.img} />
-                                            </div>
-                                        })
-                                    }
-                                </Slider>
-                            </div>
+                            </div> */}
 
                         </div>
 

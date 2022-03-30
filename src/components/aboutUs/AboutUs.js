@@ -1,39 +1,37 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-import React, {useEffect} from 'react'
+import React, { useEffect, useRef } from 'react'
 import * as style from '../../styles/components/aboutUs.module.css'
-
+import MouseTracker from '../hooks/MouseTracker';
 function AboutUS({ isMobile }) {
-  gsap.registerPlugin(ScrollTrigger);
+    const ref = useRef()
+    gsap.registerPlugin(ScrollTrigger);
+    MouseTracker('cube', ref, 60, -70, 4)
+    // useEffect(() => {
+    //     const tl = gsap.timeline({
+    //         scrollTrigger: {
+    //             trigger: ".aboutUsMainContent",
+    //             scrub: 2,
+    //             markers: false,
+    //             start: "left right"
+    //         }
+    //     });
+    //     tl.to(".pImage", { filter: "blur(3px)", opacity: 0.5, xPercent: 0, duration: 8, ease: "none", })
+    //     tl.to(".pImage", { filter: "blur(0px)", opacity: 1, xPercent: -40, duration: 4, ease: "none", })
 
-    useEffect(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".aboutUsMainContent",
-                scrub: 2,
-                markers: false,
-                start: "left right"
-            }
-        });
-        tl.to(".pImage", {filter:"blur(3px)", opacity: 0.5, xPercent:0, duration: 8,  ease: "none",})
-        tl.to(".pImage", {filter:"blur(0px)", opacity: 1,  xPercent:-40, duration: 4,  ease: "none",})
-
-    }, [])
-  
-
-
+    // }, [])
     return (
-        <div>
+        <div ref={ref}>
             {
                 isMobile ?
                     <div className={`${style.mblMain}  `}>
                         <div className={`${style.mblBgCross}  `}>
-                            <img  src='/images/about-us/mblCross.webp' />
+                            <img src='/images/about-us/mblCross.png' />
                         </div>
                         <div
                             className={`${style.mblBody} `}>
                             <div
-                            className={style.mblTextContainer}
+                                className={style.mblTextContainer}
                             >
                                 <p className={style.mblTitle}>About us</p>
                                 <p className={style.mblParagraph}>We build creative experiences.<br />
@@ -48,9 +46,29 @@ function AboutUS({ isMobile }) {
                     </div>
                     :
                     <div className={`${style.main} bgImageAbout `}>
-                        <div className={`${style.bgCross}  aboutCrossBg`}>
-                            <img  className='pImage' src='/images/about-us/cross.webp' />
-                        </div>
+                          <div className='meinContainerAnimated'>
+                          <div id='cube'
+                                className={`${style.bgCross}  aboutCrossBg`}>
+                               <div className='first'>
+                               <img className='pImage' src='/images/about-us/cross.png' />
+                               </div>
+                               <div className='second'>
+                               <img className='pImage' src='/images/about-us/cross.png' />
+                               </div>
+                               <div className='third'>
+                               <img className='pImage' src='/images/about-us/cross.png' />
+                               </div>
+                               <div className='fourth'>
+                               <img className='pImage' src='/images/about-us/cross.png' />
+                               </div>
+                               <div className='fifth'>
+                               <img className='pImage' src='/images/about-us/cross.png' />
+                               </div>
+                               <div className='sixth'>
+                               <img className='pImage' src='/images/about-us/cross.png' />
+                               </div>
+                            </div>
+                          </div>
                         <div
                             style={{
                                 marginLeft: "-30px"

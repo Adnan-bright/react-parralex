@@ -71,6 +71,8 @@
 .logo {
     margin-left: 40px;
     cursor: pointer;
+    width: 142px;
+    height: 28px;
 }
 
 .tab {

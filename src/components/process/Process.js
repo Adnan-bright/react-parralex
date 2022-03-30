@@ -37,6 +37,8 @@ function Process({ isMobile }) {
             icon: "/images/process/icon3.webp"
         },
     ]
+
+    
     return (
         <div>
             {

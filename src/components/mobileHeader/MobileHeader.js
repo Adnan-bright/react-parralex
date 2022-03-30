@@ -12,7 +12,7 @@ function MobileHeader() {
                    <img
                         onClick={() => { setToggle(false); setCheckActive('') }}
                         className={style.logo}
-                        src="/images/common/logo.webp" alt='Mag-Raw' />
+                        src="/images/common/logo.png" alt='Mag-Raw' />
                    </a>
                     <img
                         onClick={() => setToggle(!toggle)}

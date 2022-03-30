@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react"
+import React from "react"
 import * as style from '../../styles/components/layout.module.css'
 import Header from "../header/Header";
 import MobileHeader from "../mobileHeader/MobileHeader";
