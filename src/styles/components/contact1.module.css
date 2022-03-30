@@ -182,12 +182,12 @@
     align-items: center;
     justify-content: center;
     transition: ease-in-out .4s;
-    background: url(../../../static/images/common/btnBg.webp);
+    background: url(../../../static/images/common/btnBgHover.webp);
 }
 
 .btn:hover {
     transition: ease-in-out .4s;
-    background: url(../../../static/images/common/btnBgHover.webp);
+    background: url(../../../static/images/common/btnBg.webp);
 }
 
 .btnContainer {
@@ -250,6 +250,7 @@
     height: 26px;
     background-image: url(../../../static/images/contact/insta.png);
     text-transform: uppercase;
+    background-size: contain;
     color: #7A858D;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -258,6 +259,7 @@
 
 .tab1:hover {
     background-image: url(../../../static/images/contact/instaHv.png);
+    background-size: contain;
     cursor: pointer;
 }
 
@@ -276,12 +278,16 @@
     color: #7A858D;
     background-repeat: no-repeat;
     cursor: pointer;
+    background-size: contain;
+
     transition: ease-in-out .4s;
 }
 
 .tab2:hover {
     background-image: url(../../../static/images/contact/facebookHv.png);
     cursor: pointer;
+    background-size: contain;
+
 }
 
 .tab3 {
@@ -294,6 +300,8 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
+    background-size: contain;
+
     background-image: url(../../../static/images/contact/twitter.png);
     text-transform: uppercase;
     color: #7A858D;
@@ -305,6 +313,8 @@
 .tab3:hover {
     background-image: url(../../../static/images/contact/twitterHv.png);
     cursor: pointer;
+    background-size: contain;
+
 }
 
 .tab4 {
@@ -317,6 +327,8 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
+    background-size: contain;
+
     background-image: url(../../../static/images/contact/linkedin.png);
     text-transform: uppercase;
     color: #7A858D;
@@ -328,6 +340,8 @@
 .tab4:hover {
     background-image: url(../../../static/images/contact/linkedinHv.png);
     cursor: pointer;
+    background-size: contain;
+
 }
 
 .tab5 {
@@ -339,6 +353,8 @@
     margin-bottom: 15px;
     line-height: 15px;
     width: 26px;
+    background-size: contain;
+
     height: 26px;
     background-image: url(../../../static/images/contact/youtube.png);
     text-transform: uppercase;
@@ -351,6 +367,8 @@
 .tab5:hover {
     background-image: url(../../../static/images/contact/youtubeHv.png);
     cursor: pointer;
+    background-size: contain;
+
 }
 
 .tab6 {
@@ -362,6 +380,8 @@
     margin-bottom: 15px;
     line-height: 15px;
     width: 26px;
+    background-size: contain;
+
     height: 26px;
     background-image: url(../../../static/images/contact/vimeo.png);
     text-transform: uppercase;
@@ -374,6 +394,8 @@
 .tab6:hover {
     background-image: url(../../../static/images/contact/vimeoHv.png);
     cursor: pointer;
+    background-size: contain;
+
 }
 
 

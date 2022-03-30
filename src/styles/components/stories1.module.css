@@ -42,12 +42,12 @@
     line-height: 15px;
     text-align: center;
     text-transform: uppercase;
-    background: url(../../../static/images/common/btnBg.webp);
+    background: url(../../../static/images/common/btnBgHover.webp);
     transition: ease-in-out .4s;
 }
 
 .btn:hover {
-    background: url(../../../static/images/common/btnBgHover.webp);
+    background: url(../../../static/images/common/btnBg.webp);
     transition: ease-in-out .4s;
     cursor: pointer;
 }
