@@ -204,24 +204,26 @@ function Stories1({ isMobile, setIsResume }) {
         }
 
     ]
-    function disableScrolling(){
-        var x=window.scrollX;
-        var y=window.scrollY;
-        window.onscroll=function(){window.scrollTo(x, 2100);};
+    function disableScrolling() {
+        var x = window.scrollX;
+        var y = window.scrollY;
+        window.onscroll = function () { window.scrollTo(x, 2100); };
     }
-    function enableScrolling(){
-        window.onscroll=function(){};
+    function enableScrolling() {
+        window.onscroll = function () { };
     }
     const settings = {
         dots: false,
         infinite: false,
         arrows: false,
         slidesToShow: 4,
-        slidesToScroll: 4,
-        afterChange:(currentSlide)=> {currentSlide===0 || currentSlide=== items.length-4 ?
-            enableScrolling(): disableScrolling()}
+        slidesToScroll: 1,
+        afterChange: (currentSlide) => {
+            currentSlide === 0 || currentSlide === items.length - 4 ?
+                enableScrolling() : disableScrolling()
+        }
     };
- 
+
 
     const variants = {
         visible: {
@@ -287,22 +289,22 @@ function Stories1({ isMobile, setIsResume }) {
     useEffect(() => {
         if (isVisible) {
             disableScrolling()
-        }else{
+        } else {
             enableScrolling()
         }
-    function scroll(e) {
-        if (myRef === null) return 0;
-    
-        e.wheelDelta > 0 ?   myRef.current.slickPrev() : myRef.current.slickNext();
-      }
-       const elem =  document.querySelector('.storiesMainPanel')
+        function scroll(e) {
+            if (myRef === null) return 0;
+
+            e.wheelDelta > 0 ? myRef.current.slickPrev() : myRef.current.slickNext();
+        }
+        const elem = document.querySelector('.storiesMainPanel')
         elem.addEventListener("wheel", scroll, true);
         return () => {
-          elem.removeEventListener("wheel", scroll, true);
+            elem.removeEventListener("wheel", scroll, true);
         };
 
-        
-      }, [resume, isVisible]);
+
+    }, [resume, isVisible]);
 
     return (
         <div>
@@ -432,28 +434,51 @@ function Stories1({ isMobile, setIsResume }) {
 
                             <div className={style.topContainer}>
                                 <Slider
-                                ref={myRef}
-                                {...settings}
+                                    ref={myRef}
+                                    {...settings}
                                     className={`${style.slider} sliderComponent`}
                                 >
                                     {
                                         items?.map((item, index) => {
-                                            return <div
-                                                onMouseEnter={() => setWhichCard('active')}
-                                                onMouseLeave={() => setWhichCard('')}
-                                                key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
-                                                <img
-                                                    className={style.icon}
-                                                    src={item.icon} />
-                                                <div className={style.txtContainer}>
-                                                    <h5 className={style.title}>
-                                                        {item.title}
-                                                    </h5>
-                                                    <p className={style.description}>
-                                                        {item.description}
-                                                    </p>
+                                            return <div>
+                                                <div
+                                                    onMouseEnter={() => setWhichCard('active')}
+                                                    onMouseLeave={() => setWhichCard('')}
+                                                    key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
+                                                    <img
+                                                        className={style.icon}
+                                                        src={item.icon} />
+                                                    <div className={style.txtContainer}>
+                                                        <h5 className={style.title}>
+                                                            {item.title}
+                                                        </h5>
+                                                        <p className={style.description}>
+                                                            {item.description}
+                                                        </p>
+                                                    </div>
+                                                    <img draggable={false} className={style.imgTop} src={item.img} />
                                                 </div>
-                                                <img draggable={false} className={style.imgTop} src={item.img} />
+                                                <div
+                                                className={style.btmRowInSlider}
+                                                >
+                                                    <div
+                                                        onMouseEnter={() => setWhichCard('active')}
+                                                        onMouseLeave={() => setWhichCard('')}
+                                                        key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
+                                                        <img
+                                                            className={style.icon}
+                                                            src={item.icon} />
+                                                        <div className={style.txtContainer}>
+                                                            <h5 className={style.title}>
+                                                                {item.title}
+                                                            </h5>
+                                                            <p className={style.description}>
+                                                                {item.description}
+                                                            </p>
+                                                        </div>
+                                                        <img draggable={false} className={style.imgTop} src={item.img} />
+                                                    </div>
+                                                </div>
                                             </div>
                                         })
                                     }
@@ -461,9 +486,9 @@ function Stories1({ isMobile, setIsResume }) {
                             </div>
 
 
-                            <div className={`${style.bottomContainer} storiesBtmRow`}>
+                            {/* <div className={`${style.bottomContainer} storiesBtmRow`}>
                                 <Slider
-                                {...settings}
+                                    {...settings}
                                     className={style.slider}
                                 >
                                     {
@@ -488,7 +513,7 @@ function Stories1({ isMobile, setIsResume }) {
                                         })
                                     }
                                 </Slider>
-                            </div>
+                            </div> */}
 
                         </div>
 
