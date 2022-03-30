@@ -7,8 +7,30 @@
 .mainImg {
     width: 320px;
     height: 320px;
+    z-index: -2;
 }
-
+.dataContainer {
+    z-index: 200;
+}
+.sliderContainer{
+    top: 44px;
+    left: 45px;
+    position: absolute;
+    width: 230px;
+    overflow: hidden;
+    height: 230px;
+    display: flex;
+    justify-content: right;
+    transform: rotate(-45deg);
+}
+.slider{
+    top: -34px;
+    left: 45px;
+    transform: rotate(45deg);
+    position: absolute;
+    width: 220px;
+    height: 220px;
+}
 .revCont {
     margin-top: 35px;
     display: flex;
@@ -24,7 +46,7 @@
 
 .recDesc {
     margin-top: 20px;
-    width: 80%;
+    width: 100%;
     font-family: graphik-regular;
     font-style: normal;
     font-weight: 400;
@@ -36,8 +58,8 @@
 
 .lowerText {
     margin-top: 40px;
-    width: 50%;
-    font-family: 'Graphik';
+    width: 60%;
+    font-family: graphik-regular;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -57,7 +79,3 @@
     color: #FFFFFF;
 }
 
-.dataContainer {
-    position: absolute;
-    top: 0px;
-}
