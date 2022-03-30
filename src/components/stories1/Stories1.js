@@ -286,8 +286,12 @@ function Stories1({ isMobile, setIsResume }) {
     const myRef = useRef()
     const animRef = useRef()
     const animRef2 = useRef()
+    const animRef3 = useRef()
+    const animRef4 = useRef()
     MouseTracker('cube', animRef, 250, -60, 8)
     MouseTracker('cube', animRef2, 250, -160, 10)
+    MouseTracker('cube', animRef3, 250, -160, 10)
+    MouseTracker('cube', animRef4, 250, -160, 10)
 
     useEffect(() => {
         if (isVisible) {
@@ -491,29 +495,41 @@ function Stories1({ isMobile, setIsResume }) {
                                         })
                                     }
                                 </div>
-                                <div id='cube'>
-                                    {
-                                        classes.map((item, index) => {
-                                            return <motion.div
-                                                key={index}
-                                                // ref={ref}
-                                                // variants={variants3}
-                                                // animate={isVisible ? "visible" : "hidden"}
-                                                // transition={{ duration: 1.5, ease: "easeOut" }}
-                                                className={`${style.bgImgLeft} ${item.class}`}>
-                                                <img src='/images/stories/leftBox.png' />
-                                            </motion.div>
-                                        })
-                                    }
+                                <div ref={animRef3} className={style.bgImgLeftContainer}>
+                                    <div id='cube'>
+                                        {
+                                            classes.map((item, index) => {
+                                                return <motion.div
+                                                    key={index}
+                                                    // ref={ref}
+                                                    // variants={variants3}
+                                                    // animate={isVisible ? "visible" : "hidden"}
+                                                    // transition={{ duration: 1.5, ease: "easeOut" }}
+                                                    className={`${style.bgImgLeft} ${item.class}`}>
+                                                    <img src='/images/stories/leftBox.png' />
+                                                </motion.div>
+                                            })
+                                        }
+                                    </div>
                                 </div>
-                                <motion.div
-                                    // ref={ref}
-                                    // variants={variants5}
-                                    // animate={isVisible ? "visible" : "hidden"}
-                                    // transition={{ duration: 1.5, ease: "easeOut" }}
-                                    className={style.bgImgRight}>
-                                    <img src='/images/stories/rightBox.png' />
-                                </motion.div>
+                                <div ref={animRef4} className={style.rightBoxContainer}>
+                                    <div id='cube'>
+                                        {
+                                            classes.map((item, index) => {
+                                                return <motion.div
+                                                    key={index}
+                                                    // ref={ref}
+                                                    // variants={variants3}
+                                                    // animate={isVisible ? "visible" : "hidden"}
+                                                    // transition={{ duration: 1.5, ease: "easeOut" }}
+                                                    className={`${style.bgImgRight} ${item.class}`}>
+                                                    <img src='/images/stories/rightBox.png' />
+                                                </motion.div>
+                                            })
+                                        }
+                                    </div>
+                                </div>
+        
                             </div>
                         </div>
                         <div className={style.upperContainer}>
