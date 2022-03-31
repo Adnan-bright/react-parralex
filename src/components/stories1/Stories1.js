@@ -156,7 +156,7 @@ function Stories1({ isMobile, setIsResume }) {
         infinite: false,
         arrows: false,
         slidesToShow: 8,
-        slidesToScroll: 2,
+        slidesToScroll: 8,
         afterChange: (currentSlide) => {
             setActiveIndex(currentSlide)
         }
