@@ -229,7 +229,9 @@ function Stories1({ isMobile, setIsResume }) {
     MouseTracker('cube', animRef2, 250, -160, 10)
     MouseTracker('cube', animRef3, 250, -160, 10)
     MouseTracker('cube', animRef4, 250, -160, 10)
-
+    const onDotsClick = (num) => {
+        myRef.current.slickGoTo(num)
+    }
     useEffect(() => {
         // if (isVisible) {
         //     disableScrolling()
@@ -518,7 +520,7 @@ function Stories1({ isMobile, setIsResume }) {
                             </div>
                             <center>
                                 <div className={style.customDotsContainer}>
-                                    <CustomDots dots={items} activeIndex={activeIndex} />
+                                    <CustomDots onDotClick={onDotsClick} dots={items} activeIndex={activeIndex} />
                                 </div>
                             </center>
 
