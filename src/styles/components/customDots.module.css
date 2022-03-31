@@ -1,0 +1,19 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.item{
+    margin: 5px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.filledItem{
+    background-color: white;
+    width: 60%;
+    height: 60%;
+}
