@@ -20,6 +20,8 @@ function AboutUS({ isMobile }) {
     //     tl.to(".pImage", { filter: "blur(0px)", opacity: 1, xPercent: -40, duration: 4, ease: "none", })
 
     // }, [])
+    
+  
     return (
         <div ref={ref}>
             {
@@ -32,19 +34,23 @@ function AboutUS({ isMobile }) {
                             className={`${style.mblBody} `}>
                             <div
                                 className={style.mblTextContainer}
+                            
                             >
                                 <p className={style.mblTitle}>About us</p>
-                                <p className={style.mblParagraph}>We build creative experiences.<br />
+                                <p  className={style.mblParagraph}>We build creative experiences.<br />
                                     As a Dallas based studio that utilizes multiple<br />
                                     disciplines to pioneer new ideas through film,<br />
                                     design, and creative technology.<br />
                                     Our goal is your success.
+                                    <br />
+                                   
                                 </p>
                             </div>
                         </div>
 
                     </div>
                     :
+                    <div>
                     <div className={`${style.main} bgImageAbout `}>
                           <div className='meinContainerAnimated'>
                           <div id='cube'
@@ -83,6 +89,56 @@ function AboutUS({ isMobile }) {
                             </p>
                         </div>
 
+                    </div>
+                    <div className={style.bgBoxes}>
+                                    <div className={style.boxesContainer}>
+                                        <div className={style.containerRow1}>
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
+                                        </div>
+                                        <div className={style.containerRow2}>
+                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
+                                        </div>
+                                        <div className={style.containerRow3}>
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
+                                        </div>
+                                        <div className={style.containerRow4}>
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
+                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
+                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
+                                        </div>
+                                        <div className={style.containerRow5}>
+                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
+                                        </div>
+                                        <div className={style.containerRow6}>
+                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
+                                        </div>
+                                        <div className={style.containerRow5}>
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
+                                        </div>
+                                        <div className={style.containerRow6}>
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
+                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
+                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
+                                        </div>
+                                    </div>
+                                </div>
                     </div>
             }
         </div>

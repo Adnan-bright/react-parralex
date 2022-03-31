@@ -161,57 +161,7 @@ function Service1({ isMobile }) {
                             </div>
                         </div>
                         <div>
-                            <div
-                            >
-                                <div className={`${video ? style.bgBoxesHide : style.bgBoxes} `}>
-                                    <div className={style.boxesContainer}>
-                                        <div ref={myRef} className={style.containerRow1}>
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                        </div>
-                                        <div className={style.containerRow2}>
-                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
-                                        </div>
-                                        <div className={style.containerRow3}>
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
-                                        </div>
-                                        <div className={style.containerRow4}>
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
-                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
-                                        </div>
-                                        <div className={style.containerRow5}>
-                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                        </div>
-                                        <div className={style.containerRow6}>
-                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
-                                        </div>
-                                        <div className={style.containerRow5}>
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
-                                        </div>
-                                        <div className={style.containerRow6}>
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
-                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                        </div>
-                                    </div>
-                                </div>
+                            <div>
                                 <div
                                     className={video ? style.contentInVisible : style.contentVisible}
                                 >
