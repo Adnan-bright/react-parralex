@@ -4,10 +4,11 @@ import ReactPlayer from 'react-player'
 import VideoCloseIcon from '../../../static/icons/videoClose.webp'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-
+import MouseTracker from '../hooks/MouseTracker';
 function Service1({ isMobile }) {
+    const myRef=useRef()
     gsap.registerPlugin(ScrollTrigger);
-
+    // MouseTracker('cube', myRef, 60, -70, 4)
     useEffect(() => {
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -165,7 +166,8 @@ function Service1({ isMobile }) {
                             >
                                 <div className={`${video ? style.bgBoxesHide : style.bgBoxes} `}>
                                     <div className={style.boxesContainer}>
-                                        <div className={style.containerRow1}>
+                                        <div ref={myRef} className={style.containerRow1}>
+                                            
                                             <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
                                         </div>
                                         <div className={style.containerRow2}>

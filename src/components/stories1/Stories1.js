@@ -5,6 +5,40 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import MouseTracker from '../hooks/MouseTracker';
 function Stories1({ isMobile, setIsResume }) {
+
+    const [index, setIndex] = useState(0)
+    useEffect(() => {
+      var lastMouseX = 0,
+        lastMouseY = 0;
+      var rotX = 250,
+        rotY =  -70;
+  
+      document.addEventListener("mousemove", mouseMoved);
+      document.addEventListener("mouseup", function () {
+        document.removeEventListener("mousemove", mouseMoved);
+      });
+      document.addEventListener("click", function () {
+        setIndex(index+1)
+      });
+      function mouseMoved(ev) {
+        var deltaX = ev.pageX - lastMouseX;
+        var deltaY = ev.pageY - lastMouseY;
+  
+        lastMouseX = ev.pageX;
+        lastMouseY = ev.pageY;
+  
+        rotY -= deltaX * -0.1;
+        rotX += deltaY * -0.1;
+  
+        console.log("rotYs", rotX,rotY);
+        if (myRef === null) return 0;
+
+        // e.wheelDelta > 0 ? myRef.current.slickPrev() : myRef.current.slickNext();
+        // ref.current.querySelector(`#dwdq`)
+        //   .style.transform = "translateZ( -100px) rotateX( " + (-rotX) + "deg) rotateY(" + (-rotY) + "deg)"
+      }
+    }, [index]);
+
     const [ref, isVisible] = useInView({ threshold: 0.7 });
     const [resume, setResume] = useState(false)
     const [check, setcCheck] = useState(false)
