@@ -15,7 +15,6 @@ function Service1({ isMobile }) {
                 trigger: ".serviceMainSection",
                 scrub: 5,
                 markers: false,
-                // start: "left right"
             }
         });
         tl.to(".serviceBoxesBg", { filter: "blur(10px)", xPercent: 30, opacity: 0.5, scale: 0.6, duration: 18, ease: "none", })
