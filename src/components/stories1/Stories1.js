@@ -237,24 +237,24 @@ function Stories1({ isMobile, setIsResume }) {
         }
 
     ]
-    function disableScrolling() {
-        var x = window.scrollX;
-        var y = window.scrollY;
-        window.onscroll = function () { window.scrollTo(x, 2100); };
-    }
-    function enableScrolling() {
-        window.onscroll = function () { };
-    }
+    // function disableScrolling() {
+    //     var x = window.scrollX;
+    //     var y = window.scrollY;
+    //     window.onscroll = function () { window.scrollTo(x, 2100); };
+    // }
+    // function enableScrolling() {
+    //     window.onscroll = function () { };
+    // }
     const settings = {
         dots: false,
         infinite: false,
         arrows: false,
         slidesToShow: 4,
         slidesToScroll: 1,
-        afterChange: (currentSlide) => {
-            currentSlide === 0 || currentSlide === items.length - 4 ?
-                enableScrolling() : disableScrolling()
-        }
+        // afterChange: (currentSlide) => {
+        //     currentSlide === 0 || currentSlide === items.length - 4 ?
+        //         enableScrolling() : disableScrolling()
+        // }
     };
     const variants = {
         visible: {
@@ -326,11 +326,11 @@ function Stories1({ isMobile, setIsResume }) {
     MouseTracker('cube', animRef4, 250, -160, 10)
 
     useEffect(() => {
-        if (isVisible) {
-            disableScrolling()
-        } else {
-            enableScrolling()
-        }
+        // if (isVisible) {
+        //     disableScrolling()
+        // } else {
+        //     enableScrolling()
+        // }
         function scroll(e) {
             if (myRef === null) return 0;
 
