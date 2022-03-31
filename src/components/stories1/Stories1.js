@@ -314,21 +314,6 @@ function Stories1({ isMobile, setIsResume }) {
         {
             class: 'first'
         },
-        {
-            class: 'second'
-        },
-        {
-            class: 'third'
-        },
-        {
-            class: 'fourth'
-        },
-        {
-            class: 'fifth'
-        },
-        {
-            class: 'sixth'
-        },
     ]
     return (
         <div >

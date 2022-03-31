@@ -55,22 +55,7 @@ function Contact1({ id, isMobile }) {
     const classes = [
         {
             class: 'first'
-        },
-        {
-            class: 'second'
-        },
-        {
-            class: 'third'
-        },
-        {
-            class: 'fourth'
-        },
-        {
-            class: 'fifth'
-        },
-        {
-            class: 'sixth'
-        },
+        }
     ]
     return (
         <div >
