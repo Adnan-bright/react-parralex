@@ -229,10 +229,8 @@ function Service1({ isMobile }) {
                                                 onMouseLeave={() => setWhichCard('')}
                                                 style={{
                                                     filter: whichCard !== '' && whichCard !== 'film' ? "blur(3px)" : "blur(0px)",
-                                                    transform: whichCard === 'film' ? "scale(135%)" :
-                                                        whichCard === 'design' || whichCard === 'tech' ? "scale(75%)" : "scale(100%)",
                                                 }}
-                                                className={`${style.imgCont} `}> <img className={style.imgItem} src='/images/services/img1.webp' />
+                                                className={`${whichCard === 'film' ? style.newStyle : whichCard === 'design' || whichCard === 'tech' ? style.newStyle1 : style.newStyle2} ${style.imgCont}`}> <img className={style.imgItem} src='/images/services/img1.webp' />
                                                 <h2 className={style.imgText}>film</h2>
                                                 <p className={style.imglowerText}>
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
@@ -248,10 +246,8 @@ function Service1({ isMobile }) {
                                                 onMouseLeave={() => setWhichCard('')}
                                                 style={{
                                                     filter: whichCard !== '' && whichCard !== 'design' ? "blur(3px)" : "blur(0px)",
-                                                    transform: whichCard === 'design' ? "scale(135%)" :
-                                                        whichCard === 'film' || whichCard === 'tech' ? "scale(75%)" : "scale(100%)",
                                                 }}
-                                                className={`${style.imgCont} serviceCard2`}> <img className={style.imgItem} src='/images/services/img2.webp' />
+                                                className={`${whichCard === 'design' ? style.newStyle : whichCard === 'film' || whichCard === 'tech' ? style.newStyle1 : style.newStyle2} ${style.imgCont} serviceCard2`}> <img className={style.imgItem} src='/images/services/img2.webp' />
                                                 <h2 className={`${style.imgText} serviceDesignText`}>Design</h2>
                                                 <p className={style.imglowerText}>
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
@@ -266,12 +262,9 @@ function Service1({ isMobile }) {
                                                 onMouseEnter={() => setWhichCard('tech')}
                                                 onMouseLeave={() => setWhichCard('')}
                                                 style={{
-
                                                     filter: whichCard !== '' && whichCard !== 'tech' ? "blur(3px)" : "blur(0px)",
-                                                    transform: whichCard === 'tech' ? "scale(135%)" :
-                                                        whichCard === 'film' || whichCard === 'design' ? "scale(75%)" : "scale(100%)",
                                                 }}
-                                                className={`${style.imgCont} serviceCard3`}> <img className={style.imgItem} src='/images/services/img3.webp' />
+                                                className={`${whichCard === 'tech' ? style.newStyle : whichCard === 'film' || whichCard === 'design' ? style.newStyle1 : style.newStyle2} ${style.imgCont} serviceCard3`}> <img className={style.imgItem} src='/images/services/img3.webp' />
                                                 <h2 className={style.imgText}>Tech</h2>
                                                 <p className={style.imglowerText}>
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>

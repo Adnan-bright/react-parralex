@@ -497,6 +497,21 @@
     width: 65px;
     height: 65px;
 }
+.newStyle{
+    transform: scale(1.35);
+    --webkit-transform: scale(1.35);
+
+}
+.newStyle1{
+    transform: scale(.75);
+    --webkit-transform: scale(.75);
+
+}
+.newStyle2{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+
+}
 
 /* video */
 .mblVideoBody {
