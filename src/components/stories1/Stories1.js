@@ -5,6 +5,39 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import MouseTracker from '../hooks/MouseTracker';
 function Stories1({ isMobile, setIsResume }) {
+    const myRef = useRef()
+
+    const [index, setIndex] = useState(0)
+    useEffect(() => {
+      var lastMouseX = 0,
+        lastMouseY = 0;
+      var rotX = 250,
+        rotY =  -70;
+  
+      document.addEventListener("mousemove", mouseMoved);
+      document.addEventListener("mouseup", function () {
+        document.removeEventListener("mousemove", mouseMoved);
+      });
+      document.addEventListener("click", function () {
+        setIndex(index+1)
+      });
+      function mouseMoved(ev) {
+        var deltaX = ev.pageX ;
+        var deltaY = ev.pageY - lastMouseY;
+        var direction = ""
+        if (ev.pageX < lastMouseX) {
+            direction = "left"
+        } else if (ev.pageX > lastMouseX) {
+            direction = "right"
+        }
+        rotY -= deltaX * -0.1;
+        lastMouseX=ev.pageX 
+        if (myRef === null) return 0;
+
+        direction === 'right'  ? myRef.current.slickPrev() : myRef.current.slickNext();
+      }
+    }, [index]);
+
     const [ref, isVisible] = useInView({ threshold: 0.7 });
     const [resume, setResume] = useState(false)
     const [check, setcCheck] = useState(false)
@@ -204,24 +237,24 @@ function Stories1({ isMobile, setIsResume }) {
         }
 
     ]
-    function disableScrolling() {
-        var x = window.scrollX;
-        var y = window.scrollY;
-        window.onscroll = function () { window.scrollTo(x, 2100); };
-    }
-    function enableScrolling() {
-        window.onscroll = function () { };
-    }
+    // function disableScrolling() {
+    //     var x = window.scrollX;
+    //     var y = window.scrollY;
+    //     window.onscroll = function () { window.scrollTo(x, 2100); };
+    // }
+    // function enableScrolling() {
+    //     window.onscroll = function () { };
+    // }
     const settings = {
         dots: false,
         infinite: false,
         arrows: false,
         slidesToShow: 4,
         slidesToScroll: 1,
-        afterChange: (currentSlide) => {
-            currentSlide === 0 || currentSlide === items.length - 4 ?
-                enableScrolling() : disableScrolling()
-        }
+        // afterChange: (currentSlide) => {
+        //     currentSlide === 0 || currentSlide === items.length - 4 ?
+        //         enableScrolling() : disableScrolling()
+        // }
     };
     const variants = {
         visible: {
@@ -283,7 +316,6 @@ function Stories1({ isMobile, setIsResume }) {
             scale: 1.5,
         },
     };
-    const myRef = useRef()
     const animRef = useRef()
     const animRef2 = useRef()
     const animRef3 = useRef()
@@ -294,15 +326,15 @@ function Stories1({ isMobile, setIsResume }) {
     MouseTracker('cube', animRef4, 250, -160, 10)
 
     useEffect(() => {
-        if (isVisible) {
-            disableScrolling()
-        } else {
-            enableScrolling()
-        }
+        // if (isVisible) {
+        //     disableScrolling()
+        // } else {
+        //     enableScrolling()
+        // }
         function scroll(e) {
             if (myRef === null) return 0;
 
-            e.wheelDelta > 0 ? myRef.current.slickPrev() : myRef.current.slickNext();
+            // e.wheelDelta > 0 ? myRef.current.slickPrev() : myRef.current.slickNext();
         }
         const elem = document.querySelector('.storiesMainPanel')
         elem.addEventListener("wheel", scroll, true);
