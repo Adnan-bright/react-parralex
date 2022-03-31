@@ -4,41 +4,43 @@ import Slider from "react-slick";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import MouseTracker from '../hooks/MouseTracker';
+import CustomDots from '../customDots/CustomDots';
 function Stories1({ isMobile, setIsResume }) {
     const myRef = useRef()
 
-    const [index, setIndex] = useState(0)
-    useEffect(() => {
-      var lastMouseX = 0,
-        lastMouseY = 0;
-      var rotX = 250,
-        rotY =  -70;
-  
-      document.addEventListener("mousemove", mouseMoved);
-      document.addEventListener("mouseup", function () {
-        document.removeEventListener("mousemove", mouseMoved);
-      });
-      document.addEventListener("click", function () {
-        setIndex(index+1)
-      });
-      function mouseMoved(ev) {
-        var deltaX = ev.pageX ;
-        var deltaY = ev.pageY - lastMouseY;
-        var direction = ""
-        if (ev.pageX < lastMouseX) {
-            direction = "left"
-        } else if (ev.pageX > lastMouseX) {
-            direction = "right"
-        }
-        rotY -= deltaX * -0.1;
-        lastMouseX=ev.pageX 
-        if (myRef === null) return 0;
+    // const [index, setIndex] = useState(0)
+    // useEffect(() => {
+    //   var lastMouseX = 0,
+    //     lastMouseY = 0;
+    //   var rotX = 250,
+    //     rotY =  -70;
 
-        direction === 'right'  ? myRef.current.slickPrev() : myRef.current.slickNext();
-      }
-    }, [index]);
+    //   document.addEventListener("mousemove", mouseMoved);
+    //   document.addEventListener("mouseup", function () {
+    //     document.removeEventListener("mousemove", mouseMoved);
+    //   });
+    //   document.addEventListener("click", function () {
+    //     setIndex(index+1)
+    //   });
+    //   function mouseMoved(ev) {
+    //     var deltaX = ev.pageX ;
+    //     var deltaY = ev.pageY - lastMouseY;
+    //     var direction = ""
+    //     if (ev.pageX < lastMouseX) {
+    //         direction = "left"
+    //     } else if (ev.pageX > lastMouseX) {
+    //         direction = "right"
+    //     }
+    //     rotY -= deltaX * -0.1;
+    //     lastMouseX=ev.pageX 
+    //     if (myRef === null) return 0;
+
+    //     direction === 'right'  ? myRef.current.slickPrev() : myRef.current.slickNext();
+    //   }
+    // }, [index]);
 
     const [ref, isVisible] = useInView({ threshold: 0.7 });
+    const [activeIndex, setActiveIndex] = useState(0)
     const [resume, setResume] = useState(false)
     const [check, setcCheck] = useState(false)
     const [whichCard, setWhichCard] = useState('')
@@ -92,149 +94,53 @@ function Stories1({ isMobile, setIsResume }) {
             icon: '/images/stories/icon.webp'
         },
         {
-            img: '/images/stories/1.webp',
+            img: 'https://picsum.photos/id/1/200/300',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
             icon: '/images/stories/icon.webp'
         },
         {
-            img: '/images/stories/2.webp',
+            img: 'https://picsum.photos/id/2/200/300',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
             icon: '/images/stories/icon.webp'
         },
         {
-            img: '/images/stories/4.webp',
+            img: 'https://picsum.photos/id/3/200/300',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
             icon: '/images/stories/icon.webp'
         },
         {
-            img: '/images/stories/5.webp',
+            img: 'https://picsum.photos/id/4/200/300',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
             icon: '/images/stories/icon.webp'
         },
         {
-            img: '/images/stories/6.webp',
+            img: 'https://picsum.photos/id/5/200/300',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
             icon: '/images/stories/icon.webp'
         },
         {
-            img: '/images/stories/7.webp',
+            img: 'https://picsum.photos/id/6/200/300',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
             icon: '/images/stories/icon.webp'
         },
         {
-            img: '/images/stories/8.webp',
+            img: 'https://picsum.photos/id/7/200/300',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
             icon: '/images/stories/icon.webp'
         },
         {
-            img: 'https://picsum.photos/id/13/200/300',
+            img: 'https://picsum.photos/id/8/200/300',
             title: 'Henry Miner Artist Spotlight',
             description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
             icon: '/images/stories/icon.webp'
         },
-        {
-            img: '/images/stories/1.webp',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
-        {
-            img: '/images/stories/2.webp',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
-        {
-            img: '/images/stories/4.webp',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
-        {
-            img: '/images/stories/5.webp',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
-        {
-            img: '/images/stories/6.webp',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
-        {
-            img: '/images/stories/7.webp',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
-        {
-            img: '/images/stories/8.webp',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
-        {
-            img: 'https://picsum.photos/id/13/200/300',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
-        {
-            img: '/images/stories/1.webp',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
-        {
-            img: '/images/stories/2.webp',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
-        {
-            img: '/images/stories/4.webp',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
-        {
-            img: '/images/stories/5.webp',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
-        {
-            img: '/images/stories/6.webp',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
-        {
-            img: '/images/stories/7.webp',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
-        {
-            img: '/images/stories/8.webp',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
-        {
-            img: 'https://picsum.photos/id/13/200/300',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        }
 
     ]
     // function disableScrolling() {
@@ -246,15 +152,14 @@ function Stories1({ isMobile, setIsResume }) {
     //     window.onscroll = function () { };
     // }
     const settings = {
-        dots: false,
+        dots: true,
         infinite: false,
         arrows: false,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        // afterChange: (currentSlide) => {
-        //     currentSlide === 0 || currentSlide === items.length - 4 ?
-        //         enableScrolling() : disableScrolling()
-        // }
+        slidesToShow: 8,
+        slidesToScroll: 2,
+        afterChange: (currentSlide) => {
+            setActiveIndex(currentSlide)
+        }
     };
     const variants = {
         visible: {
@@ -324,7 +229,9 @@ function Stories1({ isMobile, setIsResume }) {
     MouseTracker('cube', animRef2, 250, -160, 10)
     MouseTracker('cube', animRef3, 250, -160, 10)
     MouseTracker('cube', animRef4, 250, -160, 10)
-
+    const onDotsClick = (num) => {
+        myRef.current.slickGoTo(num)
+    }
     useEffect(() => {
         // if (isVisible) {
         //     disableScrolling()
@@ -546,7 +453,7 @@ function Stories1({ isMobile, setIsResume }) {
                                         }
                                     </div>
                                 </div>
-        
+
                             </div>
                         </div>
                         <div className={style.upperContainer}>
@@ -558,7 +465,7 @@ function Stories1({ isMobile, setIsResume }) {
                             </div>
                         </div>
                         <div className={style.imagesContainer}>
-
+                           
                             <div className={style.topContainer}>
                                 <Slider
                                     ref={myRef}
@@ -568,7 +475,7 @@ function Stories1({ isMobile, setIsResume }) {
                                     {
                                         items?.map((item, index) => {
                                             return <div>
-                                                <div
+                                                {index % 2 === 0 ? <div
                                                     onMouseEnter={() => setWhichCard('active')}
                                                     onMouseLeave={() => setWhichCard('')}
                                                     key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
@@ -584,34 +491,38 @@ function Stories1({ isMobile, setIsResume }) {
                                                         </p>
                                                     </div>
                                                     <img draggable={false} className={style.imgTop} src={item.img} />
-                                                </div>
-                                                <div
-                                                    className={style.btmRowInSlider}
-                                                >
+                                                </div> :
                                                     <div
-                                                        onMouseEnter={() => setWhichCard('active')}
-                                                        onMouseLeave={() => setWhichCard('')}
-                                                        key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
-                                                        <img
-                                                            className={style.icon}
-                                                            src={item.icon} />
-                                                        <div className={style.txtContainer}>
-                                                            <h5 className={style.title}>
-                                                                {item.title}
-                                                            </h5>
-                                                            <p className={style.description}>
-                                                                {item.description}
-                                                            </p>
+                                                        className={style.btmRowInSlider}
+                                                    >
+                                                        <div
+                                                            onMouseEnter={() => setWhichCard('active')}
+                                                            onMouseLeave={() => setWhichCard('')}
+                                                            key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
+                                                            <img
+                                                                className={style.icon}
+                                                                src={item.icon} />
+                                                            <div className={style.txtContainer}>
+                                                                <h5 className={style.title}>
+                                                                    {item.title}
+                                                                </h5>
+                                                                <p className={style.description}>
+                                                                    {item.description}
+                                                                </p>
+                                                            </div>
+                                                            <img draggable={false} className={style.imgTop} src={item.img} />
                                                         </div>
-                                                        <img draggable={false} className={style.imgTop} src={item.img} />
-                                                    </div>
-                                                </div>
+                                                    </div>}
                                             </div>
                                         })
                                     }
                                 </Slider>
                             </div>
-
+                            <center>
+                                <div className={style.customDotsContainer}>
+                                    <CustomDots onDotClick={onDotsClick} dots={items} activeIndex={activeIndex} />
+                                </div>
+                            </center>
 
                             {/* <div className={`${style.bottomContainer} storiesBtmRow`}>
                                 <Slider
