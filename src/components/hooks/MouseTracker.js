@@ -1,34 +1,37 @@
 import { useEffect, useRef, useState } from "react";
-
+import useWindowDimensions from "./getWindowDimension";
 function MouseTracker(id, ref, x, y, value) {
+  const {width} = useWindowDimensions()
   const [index, setIndex] = useState(0)
   useEffect(() => {
+   if (width >= 600) {
     var lastMouseX = 0,
-      lastMouseY = 0;
-    var rotX = x,
-      rotY = y || -70;
+    lastMouseY = 0;
+  var rotX = x,
+    rotY = y || -70;
 
-    document.addEventListener("mousemove", mouseMoved);
-    document.addEventListener("mouseup", function () {
-      document.removeEventListener("mousemove", mouseMoved);
-    });
-    document.addEventListener("click", function () {
-      setIndex(index+1)
-    });
-    function mouseMoved(ev) {
-      var deltaX = ev.pageX - lastMouseX;
-      var deltaY = ev.pageY - lastMouseY;
+  document.addEventListener("mousemove", mouseMoved);
+  document.addEventListener("mouseup", function () {
+    document.removeEventListener("mousemove", mouseMoved);
+  });
+  document.addEventListener("click", function () {
+    setIndex(index+1)
+  });
+  function mouseMoved(ev) {
+    var deltaX = ev.pageX - lastMouseX;
+    var deltaY = ev.pageY - lastMouseY;
 
-      lastMouseX = ev.pageX;
-      lastMouseY = ev.pageY;
+    lastMouseX = ev.pageX;
+    lastMouseY = ev.pageY;
 
-      rotY -= deltaX * -0.1;
-      rotX += deltaY * -0.1;
+    rotY -= deltaX * -0.1;
+    rotX += deltaY * -0.1;
 
-      console.log("rotY", rotX,rotY);
-      ref.current.querySelector(`#${id}`)
-        .style.transform = "translateZ( -100px) rotateX( " + (-rotX/value) + "deg) rotateY(" + (-rotY/value) + "deg)"
-    }
+    console.log("rotY", rotX,rotY);
+    ref.current.querySelector(`#${id}`)
+      .style.transform = "translateZ( -100px) rotateX( " + (-rotX/value) + "deg) rotateY(" + (-rotY/value) + "deg)"
+  }
+   }
   }, [index]);
   const response=true
   return {response}
