@@ -36,12 +36,12 @@ function Header({ navClick, hoverValue }) {
         </div>
         <div className={style.tabsContainer}>
          
-          <Link className={nav === '#panel-2' ? style.tabFill : style.tab} >
+          <Link>
             <div
               className={style.tabContainer}
             >
               <p
-                onClick={() => { navClick(1) }}
+                onClick={() => { navClick(1) }} className={nav === '#panel-2' ? style.tabFill : style.tab}
               >About</p>
               <img
                 style={{
