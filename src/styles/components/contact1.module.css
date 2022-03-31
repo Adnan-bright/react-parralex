@@ -111,12 +111,20 @@
     z-index: 1;
     right: 10%;
     top: 20%;
-    /* transform: translate(-50%, 0); */
     height: 400px;
     width: 300px;
     position: absolute;
 }
-
+@media only screen and (max-width:1500px){
+    .reviewContainer {
+        z-index: 1;
+        right: 7%;
+        top: 20%;
+        height: 400px;
+        width: 300px;
+        position: absolute;
+    }
+}
 .body {
     position: relative;
     height: 90%;

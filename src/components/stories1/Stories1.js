@@ -233,21 +233,12 @@ function Stories1({ isMobile, setIsResume }) {
         myRef.current.slickGoTo(num)
     }
     useEffect(() => {
-        // if (isVisible) {
-        //     disableScrolling()
-        // } else {
-        //     enableScrolling()
-        // }
-        function scroll(e) {
-            if (myRef === null) return 0;
 
-            // e.wheelDelta > 0 ? myRef.current.slickPrev() : myRef.current.slickNext();
-        }
-        const elem = document.querySelector('.storiesMainPanel')
-        elem.addEventListener("wheel", scroll, true);
-        return () => {
-            elem.removeEventListener("wheel", scroll, true);
-        };
+        // const elem = document.querySelector('.storiesMainPanel')
+        // elem.addEventListener("wheel", scroll, true);
+        // return () => {
+        //     elem.removeEventListener("wheel", scroll, true);
+        // };
     }, [resume, isVisible]);
     const classes = [
         {
