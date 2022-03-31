@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import MouseTracker from '../hooks/MouseTracker';
 function Stories1({ isMobile, setIsResume }) {
+    const myRef = useRef()
 
     const [index, setIndex] = useState(0)
     useEffect(() => {
@@ -21,21 +22,19 @@ function Stories1({ isMobile, setIsResume }) {
         setIndex(index+1)
       });
       function mouseMoved(ev) {
-        var deltaX = ev.pageX - lastMouseX;
+        var deltaX = ev.pageX ;
         var deltaY = ev.pageY - lastMouseY;
-  
-        lastMouseX = ev.pageX;
-        lastMouseY = ev.pageY;
-  
+        var direction = ""
+        if (ev.pageX < lastMouseX) {
+            direction = "left"
+        } else if (ev.pageX > lastMouseX) {
+            direction = "right"
+        }
         rotY -= deltaX * -0.1;
-        rotX += deltaY * -0.1;
-  
-        console.log("rotYs", rotX,rotY);
+        lastMouseX=ev.pageX 
         if (myRef === null) return 0;
 
-        // e.wheelDelta > 0 ? myRef.current.slickPrev() : myRef.current.slickNext();
-        // ref.current.querySelector(`#dwdq`)
-        //   .style.transform = "translateZ( -100px) rotateX( " + (-rotX) + "deg) rotateY(" + (-rotY) + "deg)"
+        direction === 'right'  ? myRef.current.slickPrev() : myRef.current.slickNext();
       }
     }, [index]);
 
@@ -317,7 +316,6 @@ function Stories1({ isMobile, setIsResume }) {
             scale: 1.5,
         },
     };
-    const myRef = useRef()
     const animRef = useRef()
     const animRef2 = useRef()
     const animRef3 = useRef()
@@ -336,7 +334,7 @@ function Stories1({ isMobile, setIsResume }) {
         function scroll(e) {
             if (myRef === null) return 0;
 
-            e.wheelDelta > 0 ? myRef.current.slickPrev() : myRef.current.slickNext();
+            // e.wheelDelta > 0 ? myRef.current.slickPrev() : myRef.current.slickNext();
         }
         const elem = document.querySelector('.storiesMainPanel')
         elem.addEventListener("wheel", scroll, true);
