@@ -202,6 +202,70 @@
     top: 0px;
     left: -610px;
     z-index: -1;
+    height: 80vh;
+    width: 830px;
+}
+.boxesContainer{
+    width: 100%;
+    height: 100%;
+ 
+   
+}
+
+
+/* ====================================================Background Boxes Style==================================================== */
+
+
+.containerRow1{
+
+}
+.containerRow2{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin-left: 65px;
+    margin-top: -28px;
+}
+.containerRow3{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin-left: 0px;
+    margin-top: -28px;
+}
+.containerRow4{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin-left: 65px;
+    margin-top: -28px;
+}
+.containerRow5{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin-left: 268px;
+    margin-top: -28px;
+
+}
+.containerRow6{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin-left: 335px;
+    margin-top: -28px;
+    /* background-color: red; */
+    z-index: -1100;
+}
+.firstBox{
+    width: 95px;
+    height: 95px;
+    z-index: -1;
 }
 .bgBoxesHide{
     position: absolute;
@@ -209,20 +273,23 @@
     left: -610px;
     z-index: -1;
 }
-.bgBoxesHide img{
+.bgBoxesHide .boxesImage{
     height: 80vh;
     width: auto;
     transform: scale(0);
     opacity: 0;
     transition: ease-in-out .5s;
 }
-.bgBoxes img{
+.bgBoxes .boxesImage{
     height: 80vh;
     transform: scale(1);
     opacity: 1;
     transition: ease-in-out .5s;
     width: auto;
 }
+
+/* ====================================================Background Boxes Style End======================================= */
+
 .videoContainer {
     filter: none;
     position: absolute;
@@ -361,6 +428,22 @@
     width: 65px;
     height: 65px;
 }
+.newStyle{
+    transform: scale(1.35);
+    --webkit-transform: scale(1.35);
+
+}
+.newStyle1{
+    transform: scale(.75);
+    --webkit-transform: scale(.75);
+
+}
+.newStyle2{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+
+}
+
 /* video */
 .mblVideoBody {
     position: fixed;
