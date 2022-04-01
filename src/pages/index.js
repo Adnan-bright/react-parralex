@@ -10,14 +10,12 @@ import Process from "../components/process/Process";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
-import useWindowDimensions from "../components/hooks/getWindowDimension";
-// import MouseTracker from "../components/hooks/MouseTracker";
-
+import UseWindowDimension from "../components/hooks/useWindowDimension";
 
 const IndexPage = () => {
 
   const [isResume, setIsResume] = useState(true)
-  const { height, width } = useWindowDimensions();
+  const { height, width } = UseWindowDimension();
   const [updateValue, setUpdateValue] = useState(0)
   const [detectChange, setDetectChange] = useState([])
   const [isSmall, setIsSmall] = useState(true)
@@ -26,7 +24,6 @@ const IndexPage = () => {
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
   const ref = useRef(null);
-  // const {bind} = MouseTracker('cube', ref, 250, -60, 8)
   useEffect(() => {
     
       let sections = gsap.utils.toArray(".panel");
