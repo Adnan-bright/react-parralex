@@ -3,7 +3,7 @@ import * as style from '../../styles/components/stories1.module.css'
 import Slider from "react-slick";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import MouseTracker from '../hooks/MouseTracker';
+// import MouseTracker from '../hooks/useMouseGesture';
 import CustomDots from '../customDots/CustomDots';
 function Stories1({ isMobile, setIsResume }) {
     const myRef = useRef()
@@ -225,10 +225,10 @@ function Stories1({ isMobile, setIsResume }) {
     const animRef2 = useRef()
     const animRef3 = useRef()
     const animRef4 = useRef()
-    MouseTracker('cube', animRef, 250, -60, 8)
-    MouseTracker('cube', animRef2, 250, -160, 10)
-    MouseTracker('cube', animRef3, 250, -160, 10)
-    MouseTracker('cube', animRef4, 250, -160, 10)
+    // const {bind} =MouseTracker('cube', animRef, 250, -60, 8, 5, [animRef, animRef2, animRef3, animRef4] )
+    // const {bind: bind2} = MouseTracker('cube', animRef2, 250, 160, 10)
+    // MouseTracker('cube', animRef3, 250, -160, 10)
+    // MouseTracker('cube', animRef4, 250, -160, 10)
     const onDotsClick = (num) => {
         myRef.current.slickGoTo(num)
     }

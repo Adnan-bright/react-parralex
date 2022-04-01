@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player'
 import VideoCloseIcon from '../../../static/icons/videoClose.webp'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-import MouseTracker from '../hooks/MouseTracker';
+// import MouseTracker from '../hooks/MouseTracker';
 function Service1({ isMobile }) {
     const myRef=useRef()
     gsap.registerPlugin(ScrollTrigger);

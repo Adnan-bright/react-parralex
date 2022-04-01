@@ -3,7 +3,7 @@ import * as style from '../../styles/components/contact1.module.css'
 import ReviewContainer from '../reviewContainer/ReviewContainer'
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import MouseTracker from '../hooks/MouseTracker';
+// import MouseTracker from '../hooks/MouseTracker';
 
 function Contact1({ id, isMobile }) {
     const [ref, isVisible] = useInView({ threshold: 0.7 });
@@ -14,13 +14,13 @@ function Contact1({ id, isMobile }) {
     const myRef5 = useRef()
     const myRef6 = useRef()
     const myRef7 = useRef()
-    MouseTracker('cube', myRef, 380, 170, 20)
-    MouseTracker('cube', myRef2, 200, 40, 20)
-    MouseTracker('cube', myRef3, 200, 40, 20)
-    MouseTracker('cube', myRef4, 200, 40, 20)
-    MouseTracker('cube', myRef5, 350, 40, 15)
-    MouseTracker('cube', myRef6, 280, -470, 40)
-    MouseTracker('cube', myRef7, 480, -470, 40)
+    // MouseTracker('cube', myRef, 380, 170, 20)
+    // MouseTracker('cube', myRef2, 200, 40, 20)
+    // MouseTracker('cube', myRef3, 200, 40, 20)
+    // MouseTracker('cube', myRef4, 200, 40, 20)
+    // MouseTracker('cube', myRef5, 350, 40, 15)
+    // MouseTracker('cube', myRef6, 280, -470, 40)
+    // MouseTracker('cube', myRef7, 480, -470, 40)
 
     const variants = {
         visible: {

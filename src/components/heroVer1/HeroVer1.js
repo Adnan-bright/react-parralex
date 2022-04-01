@@ -7,8 +7,11 @@ import VideoCloseIcon from '../../../static/icons/videoClose.webp'
 import ReactPlayer from 'react-player'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import { useWheel } from "@use-gesture/react";
+
 function HeroVer1({ isMobile }) {
     const ref = useRef(null)
+    const myRef = useRef()
     // useEffect(() => {
     //     const tl = gsap.timeline({
     //         scrollTrigger: {
@@ -22,9 +25,11 @@ function HeroVer1({ isMobile }) {
     //     tl.to(".", { scale:.5,   opacity:0, duration: 4,  ease: "none",})
 
     // }, [])
+  
+    
     const [video, setVideo] = useState(false)
     return (
-        <div>
+        <div ref={myRef}>
             {
                 isMobile ?
                     <div

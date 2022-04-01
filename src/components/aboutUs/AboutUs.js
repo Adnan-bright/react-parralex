@@ -2,11 +2,15 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import React, { useEffect, useRef } from 'react'
 import * as style from '../../styles/components/aboutUs.module.css'
-import MouseTracker from '../hooks/MouseTracker';
+// import MouseTracker from '../hooks/MouseTracker';
+import { useInView } from "react-intersection-observer";
+import UseMouseGesture from './useMouseGesture';
 function AboutUS({ isMobile }) {
-    const ref = useRef()
+    const [ref, isVisible] = useInView({ threshold: 0.7 });
+    const myRef = useRef()
+    const {bind} = UseMouseGesture('aboutCrossBg',myRef )
+  
     gsap.registerPlugin(ScrollTrigger);
-    MouseTracker('cube', ref, 60, -70, 4)
     // useEffect(() => {
     //     const tl = gsap.timeline({
     //         scrollTrigger: {
@@ -21,7 +25,7 @@ function AboutUS({ isMobile }) {
 
     // }, [])
     return (
-        <div ref={ref}>
+        <div {...bind()}  ref={myRef}>
             {
                 isMobile ?
                     <div className={`${style.mblMain}  `}>
@@ -45,10 +49,10 @@ function AboutUS({ isMobile }) {
 
                     </div>
                     :
-                    <div className={`${style.main} bgImageAbout `}>
+                    <div ref={ref}  className={`${style.main} bgImageAbout `}>
                           <div className='meinContainerAnimated'>
-                          <div id='cube'
-                                className={`${style.bgCross}  aboutCrossBg`}>
+                          <div 
+                                className={`${style.bgCross}   aboutCrossBg cube`}>
                                <div className='first'>
                                <img className='pImage' src='/images/about-us/cross.png' />
                                </div>
