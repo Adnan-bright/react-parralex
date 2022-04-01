@@ -53,18 +53,13 @@ function Stories({ isMobile }) {
     const myRef = useRef()
     const pageRef = useRef()
     const { bind } = UseStoriesMouseGesture(data, pageRef)
-
+    
     const [activeIndex, setActiveIndex] = useState(0)
     const [check, setcCheck] = useState(false)
     const [whichCard, setWhichCard] = useState('')
 
     const items = [
-        {
-            img: '/images/stories/1.webp',
-            title: 'Henry Miner Artist Spotlight',
-            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-            icon: '/images/stories/icon.webp'
-        },
+
         {
             img: '/images/stories/2.webp',
             title: 'Henry Miner Artist Spotlight',
@@ -177,6 +172,7 @@ function Stories({ isMobile }) {
             class: 'first'
         },
     ]
+    items.push(items[0])
     return (
         <div {...bind()} ref={pageRef}>
             {
@@ -368,6 +364,9 @@ function Stories({ isMobile }) {
                                         items?.map((item, index) => {
                                             return <div>
                                                 {index % 2 === 0 ? <div
+                                                         style={{
+                                                            opacity: index+1 === items.length && 0
+                                                        }}
                                                     onMouseEnter={() => setWhichCard('active')}
                                                     onMouseLeave={() => setWhichCard('')}
                                                     key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
@@ -385,6 +384,9 @@ function Stories({ isMobile }) {
                                                     <img draggable={false} className={style.imgTop} src={item.img} />
                                                 </div> :
                                                     <div
+                                                    style={{
+                                                        opacity: index+1 === items.length && 0
+                                                    }}
                                                         className={style.btmRowInSlider}
                                                     >
                                                         <div

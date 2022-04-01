@@ -4951,6 +4951,11 @@
   "resolved" "https://registry.npmjs.org/dotenv-expand/-/dotenv-expand-5.1.0.tgz"
   "version" "5.1.0"
 
+"dotenv@^16.0.0":
+  "integrity" "sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q=="
+  "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-16.0.0.tgz"
+  "version" "16.0.0"
+
 "dotenv@^7.0.0":
   "integrity" "sha512-M3NhsLbV1i6HuGzBUH8vXrtxOk+tWmzWKDMbAVSUp3Zsjm7ywFeuwrUXhmhQyRK1q5B5GGy7hcXPbj3bnfZg2g=="
   "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-7.0.0.tgz"
@@ -6143,6 +6148,11 @@
   dependencies:
     "@babel/runtime" "^7.15.4"
     "escape-string-regexp" "^1.0.5"
+
+"gatsby-plugin-config@^1.0.7":
+  "integrity" "sha512-js7zLJcTD+G5ea4rPYHztb+N+KqGo6ax5rGviuTUDdKu0N1oGWp8FuozQrdx7TPKjMv/g5pvMAGrhk5TcPd5tQ=="
+  "resolved" "https://registry.npmjs.org/gatsby-plugin-config/-/gatsby-plugin-config-1.0.7.tgz"
+  "version" "1.0.7"
 
 "gatsby-plugin-image@^2.0.0-zz-next.1", "gatsby-plugin-image@^2.9.0":
   "integrity" "sha512-2LIKmwACRNXBnh30zNhlfEDjSPL60G8vi4ZRAmMpywq7SVXJJ63lKiBRF+g2aKcN/hW0hvBPh0hgQifxSBhbYA=="
