@@ -1,10 +1,10 @@
 import React, { useRef } from 'react'
-import * as style from '../../styles/components/contact1.module.css'
+import * as style from '../../styles/components/contact.module.css'
 import ReviewContainer from '../reviewContainer/ReviewContainer'
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import UseContactMouseGesture from './useContactMouseGesture';
-function Contact1({ id, isMobile }) {
+function Contact({ id, isMobile }) {
     const [ref, isVisible] = useInView({ threshold: 0.7 });
     const myRef = useRef()
     const data = [
@@ -323,4 +323,4 @@ function Contact1({ id, isMobile }) {
     )
 }
 
-export default Contact1
+export default Contact

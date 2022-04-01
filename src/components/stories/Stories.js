@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
-import * as style from '../../styles/components/stories1.module.css'
+import * as style from '../../styles/components/stories.module.css'
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import CustomDots from '../customDots/CustomDots';
 import UseStoriesMouseGesture from './useStoriesMouseGesture';
 
-function Stories1({ isMobile }) {
+function Stories({ isMobile }) {
     const data = [
         {
             className: 'greenCross',
@@ -423,4 +423,4 @@ function Stories1({ isMobile }) {
     )
 }
 
-export default Stories1
+export default Stories

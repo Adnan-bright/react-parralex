@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react'
-import * as style from '../../styles/components/service1.module.css'
+import * as style from '../../styles/components/service.module.css'
 import ReactPlayer from 'react-player'
 import VideoCloseIcon from '../../../static/icons/videoClose.webp'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-function Service1({ isMobile }) {
+function Service({ isMobile }) {
     const myRef=useRef()
     gsap.registerPlugin(ScrollTrigger);
     useEffect(() => {
@@ -231,4 +231,4 @@ function Service1({ isMobile }) {
     )
 }
 
-export default Service1
+export default Service

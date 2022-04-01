@@ -3,6 +3,7 @@ import * as style from '../../styles/components/process.module.css'
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 function Process({ isMobile }) {
+    
     const [hover, setHover] = useState('')
     gsap.registerPlugin(ScrollTrigger);
     const items = [
