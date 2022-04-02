@@ -4,7 +4,11 @@ import ReactPlayer from 'react-player'
 import VideoCloseIcon from '../../../static/icons/videoClose.webp'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import UseService from './useService';
 function Service({ isMobile }) {
+    const {designData, filmData, techData} = UseService()
+
+
     const myRef=useRef()
     gsap.registerPlugin(ScrollTrigger);
     useEffect(() => {
@@ -180,9 +184,9 @@ function Service({ isMobile }) {
                                                 className={`${whichCard === 'film' ? style.newStyle : whichCard === 'design' || whichCard === 'tech' ? style.newStyle1 : style.newStyle2} ${style.imgCont}`}> <img className={style.imgItem} src='/images/services/img1.webp' />
                                                 <h2 className={style.imgText}>film</h2>
                                                 <p className={style.imglowerText}>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
+                                                   {filmData.description} </p>
                                                 <img className={style.playIcon}
-                                                    onClick={() => setVideo('/videos/dummyVideo.mp4')}
+                                                    onClick={() => setVideo(filmData.video)}
                                                     src='/icons/playIcon.png' />
                                             </div>
                                         </div>
@@ -197,9 +201,9 @@ function Service({ isMobile }) {
                                                 className={`${whichCard === 'design' ? style.newStyle : whichCard === 'film' || whichCard === 'tech' ? style.newStyle1 : style.newStyle2} ${style.imgCont} serviceCard2`}> <img className={style.imgItem} src='/images/services/img2.webp' />
                                                 <h2 className={`${style.imgText} serviceDesignText`}>Design</h2>
                                                 <p className={style.imglowerText}>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                                                   {designData.description}</p>
                                                 <img
-                                                    onClick={() => setVideo('/videos/dummyVideo.mp4')}
+                                                    onClick={() => setVideo(designData.video)}
                                                     className={style.playIcon} src='/icons/playIcon.png' />
                                             </div>
                                         </div>
@@ -214,9 +218,9 @@ function Service({ isMobile }) {
                                                 className={`${whichCard === 'tech' ? style.newStyle : whichCard === 'film' || whichCard === 'design' ? style.newStyle1 : style.newStyle2} ${style.imgCont} serviceCard3`}> <img className={style.imgItem} src='/images/services/img3.webp' />
                                                 <h2 className={style.imgText}>Tech</h2>
                                                 <p className={style.imglowerText}>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>
+                                                    {techData.description} </p>
                                                 <img
-                                                    onClick={() => setVideo('/videos/dummyVideo.mp4')}
+                                                    onClick={() => setVideo(techData.video)}
                                                     className={style.playIcon} src='/icons/playIcon.png' />
                                             </div>
                                         </div>
