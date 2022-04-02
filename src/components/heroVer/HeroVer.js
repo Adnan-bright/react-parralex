@@ -10,10 +10,10 @@ import UseHeroVer from './useHeroVer'
 function HeroVer({ isMobile }) {
     const {HeroData} = UseHeroVer();
     const {videoTitle, video:videoLink} = HeroData
-    console.log('HeroData', videoLink)
     const ref = useRef(null)
     const myRef = useRef()
-    
+    const coverVide = videoLink.link
+    console.log('HeroData', HeroData)
     const [video, setVideo] = useState(false)
     return (
         <div ref={myRef}>
@@ -106,7 +106,7 @@ function HeroVer({ isMobile }) {
                                         height='100%'
                                         width={'100%'}
                                         className={style.video}
-                                        url={Video}
+                                        url={"https://wordpress-668504-2533396.cloudwaysapps.com/index.php/hero-section/20/attachment/1648028194678/"}
                                         title={videoTitle}
                                         controls={true}
                                     />
