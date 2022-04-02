@@ -3,8 +3,8 @@ import { graphql } from "gatsby"
 
 function Blog({ data }) {
 
-    const response = data.allWpHeroSection.edges
-    console.log('data', response)
+    // const response = data.allWpHeroSection.edges
+    // console.log('data', response)
     // const posts = data?.allWpStories?.edges
     // function createMarkup(post) {
     //     return {__html: post};
@@ -45,23 +45,23 @@ function Blog({ data }) {
     )
 }
 
-export const pageQuery = graphql`
-query NewQuery {
-    allWpHeroSection {
-      edges {
-        node {
-          heroSection {
-            fieldGroupName
-            videoDescription
-            videoTitle
-            video {
-              id
-              link
-            }
-          }
-        }
-      }
-    }
-  }
-  `
+// export const pageQuery = graphql`
+// query NewQuery {
+//     allWpHeroSection {
+//       edges {
+//         node {
+//           heroSection {
+//             fieldGroupName
+//             videoDescription
+//             videoTitle
+//             video {
+//               id
+//               link
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+//   `
 export default Blog

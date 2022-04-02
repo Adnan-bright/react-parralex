@@ -5,11 +5,12 @@ import Video from '../../../static/videos/dummyVideo.mp4'
 import RightArrow from '../../../static/icons/rightArrow.webp'
 import VideoCloseIcon from '../../../static/icons/videoClose.webp'
 import ReactPlayer from 'react-player'
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
-import { useWheel } from "@use-gesture/react";
+import UseHeroVer from './useHeroVer'
 
 function HeroVer({ isMobile }) {
+    const {HeroData} = UseHeroVer();
+    const {videoTitle, video:videoLink} = HeroData
+    console.log('HeroData', videoLink)
     const ref = useRef(null)
     const myRef = useRef()
     
@@ -106,7 +107,7 @@ function HeroVer({ isMobile }) {
                                         width={'100%'}
                                         className={style.video}
                                         url={Video}
-                                        title={Video}
+                                        title={videoTitle}
                                         controls={true}
                                     />
                                 </div>
@@ -134,7 +135,7 @@ function HeroVer({ isMobile }) {
                                  width={'100%'}
                                  muted={true}
                                  url={'https://youtu.be/smIQmHvAXcQ'}
-                                 title={Video}
+                                 title={videoTitle}
                                  controls={false}
                                 className={`${style.bgImage} `}  />
                             </div>
