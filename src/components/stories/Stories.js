@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react'
 import * as style from '../../styles/components/stories.module.css'
 import Slider from "react-slick";
 import { motion } from "framer-motion";
-import CustomDots from '../customDots/CustomDots';
 import UseStoriesMouseGesture from './useStoriesMouseGesture';
 
 function Stories({ isMobile }) {
@@ -15,51 +14,57 @@ function Stories({ isMobile }) {
         },
         {
             className: 'goldenCross',
-            xValue:90,
+            xValue: 90,
             yValue: 130,
-            speedValue:5
+            speedValue: 5
         },
         {
             className: 'purpleCross',
-            xValue:-100,
+            xValue: -100,
             yValue: 0,
-            speedValue:12
+            speedValue: 12
         },
         {
             className: 'redCross',
-            xValue:90,
+            xValue: 90,
             yValue: 120,
-            speedValue:10
+            speedValue: 10
         },
         {
             className: 'largeBox',
-            xValue:110,
+            xValue: 110,
             yValue: 20,
-            speedValue:12
+            speedValue: 12
         },
         {
             className: 'leftBox',
-            xValue:110,
+            xValue: 110,
             yValue: 20,
-            speedValue:8
+            speedValue: 8
         },
         {
             className: 'rightBox',
-            xValue:140,
+            xValue: 140,
             yValue: 20,
-            speedValue:6
+            speedValue: 6
         },
     ]
     const myRef = useRef()
     const pageRef = useRef()
     const { bind } = UseStoriesMouseGesture(data, pageRef)
-    
+
     const [activeIndex, setActiveIndex] = useState(0)
     const [check, setcCheck] = useState(false)
     const [whichCard, setWhichCard] = useState('')
 
     const items = [
 
+        {
+            img: '/images/stories/2.webp',
+            title: 'Henry Miner Artist Spotlight',
+            description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
+            icon: '/images/stories/icon.webp'
+        },
         {
             img: '/images/stories/2.webp',
             title: 'Henry Miner Artist Spotlight',
@@ -156,17 +161,16 @@ function Stories({ isMobile }) {
     const settings = {
         dots: true,
         infinite: false,
-        arrows: false,
+        speed: 500,
         slidesToShow: 8,
         slidesToScroll: 8,
-        afterChange: (currentSlide) => {
-            setActiveIndex(currentSlide)
-        }
+        autoplay: false,
+        autoplaySpeed: 3000,
+        dotsClass: "button__bar",
+        arrows: false
     };
 
-    const onDotsClick = (num) => {
-        myRef.current.slickGoTo(num)
-    }
+
     const classes = [
         {
             class: 'first'
@@ -364,9 +368,9 @@ function Stories({ isMobile }) {
                                         items?.map((item, index) => {
                                             return <div>
                                                 {index % 2 === 0 ? <div
-                                                         style={{
-                                                            opacity: index+1 === items.length && 0
-                                                        }}
+                                                    style={{
+                                                        opacity: index + 1 === items.length && 0
+                                                    }}
                                                     onMouseEnter={() => setWhichCard('active')}
                                                     onMouseLeave={() => setWhichCard('')}
                                                     key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
@@ -384,9 +388,9 @@ function Stories({ isMobile }) {
                                                     <img draggable={false} className={style.imgTop} src={item.img} />
                                                 </div> :
                                                     <div
-                                                    style={{
-                                                        opacity: index+1 === items.length && 0
-                                                    }}
+                                                        style={{
+                                                            opacity: index + 1 === items.length && 0
+                                                        }}
                                                         className={style.btmRowInSlider}
                                                     >
                                                         <div
@@ -412,11 +416,11 @@ function Stories({ isMobile }) {
                                     }
                                 </Slider>
                             </div>
-                            <center>
+                            {/* <center>
                                 <div className={style.customDotsContainer}>
                                     <CustomDots onDotClick={onDotsClick} dots={items} activeIndex={activeIndex} />
                                 </div>
-                            </center>
+                            </center> */}
                         </div>
 
                     </div>
