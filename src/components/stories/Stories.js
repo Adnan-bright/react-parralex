@@ -179,6 +179,7 @@ function Stories({ isMobile }) {
     items.push(items[0])
     return (
         <div {...bind()} ref={pageRef}>
+    
             {
                 isMobile ?
                     <div className={style.mblMain}>
