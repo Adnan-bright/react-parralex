@@ -15,7 +15,7 @@ function AboutUS({ isMobile }) {
                 isMobile ?
                     <div className={`${style.mblMain}  `}>
                         <div className={`${style.mblBgCross}  `}>
-                            <img src='/images/about-us/mblCross.png' />
+                            <img src='/images/about-us/mblCross.webp' />
                         </div>
                         <div
                             className={`${style.mblBody} `}>
@@ -43,22 +43,22 @@ function AboutUS({ isMobile }) {
                           <div 
                                 className={`${style.bgCross}   aboutCrossBg cube`}>
                                <div className='first'>
-                               <img className='pImage' src='/images/about-us/cross.png' />
+                               <img className='pImage' src='/images/about-us/cross.webp' />
                                </div>
                                <div className='second'>
-                               <img className='pImage' src='/images/about-us/cross.png' />
+                               <img className='pImage' src='/images/about-us/cross.webp' />
                                </div>
                                <div className='third'>
-                               <img className='pImage' src='/images/about-us/cross.png' />
+                               <img className='pImage' src='/images/about-us/cross.webp' />
                                </div>
                                <div className='fourth'>
-                               <img className='pImage' src='/images/about-us/cross.png' />
+                               <img className='pImage' src='/images/about-us/cross.webp' />
                                </div>
                                <div className='fifth'>
-                               <img className='pImage' src='/images/about-us/cross.png' />
+                               <img className='pImage' src='/images/about-us/cross.webp' />
                                </div>
                                <div className='sixth'>
-                               <img className='pImage' src='/images/about-us/cross.png' />
+                               <img className='pImage' src='/images/about-us/cross.webp' />
                                </div>
                             </div>
                           </div>
@@ -80,49 +80,49 @@ function AboutUS({ isMobile }) {
                     <div className={style.bgBoxes}>
                                     <div className={style.boxesContainer}>
                                         <div className={style.containerRow1}>
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.webp' />
                                         </div>
                                         <div className={style.containerRow2}>
-                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.webp' />
                                         </div>
                                         <div className={style.containerRow3}>
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.webp' />
                                         </div>
                                         <div className={style.containerRow4}>
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
-                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.webp' />
+                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.webp' />
+                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.webp' />
                                         </div>
                                         <div className={style.containerRow5}>
-                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.webp' />
                                         </div>
                                         <div className={style.containerRow6}>
-                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.webp' />
                                         </div>
                                         <div className={style.containerRow5}>
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.webp' />
                                         </div>
                                         <div className={style.containerRow6}>
-                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.png' />
-                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
-                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.png' />
-                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.png' />
+                                            <img className={`${style.firstBox} ${style.mdmBox}`} src='/images/services/box.webp' />
+                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.webp' />
+                                            <img className={`${style.firstBox} ${style.lrgBox}`} src='/images/services/box.webp' />
+                                            <img style={{opacity:'0'}} className={`${style.firstBox} ${style.smallBox}`} src='/images/services/box.webp' />
                                         </div>
                                     </div>
                                 </div>

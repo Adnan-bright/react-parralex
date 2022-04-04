@@ -256,7 +256,7 @@ function Stories({ isMobile }) {
                                             return <motion.div
                                                 key={index}
                                                 className={`${style.bgImgBtmGr} ${item.class}`}>
-                                                <img src='/images/stories/greenCross.png'
+                                                <img src='/images/stories/greenCross.webp'
                                                     alt='green-cross'
                                                 />
                                             </motion.div>
@@ -283,7 +283,7 @@ function Stories({ isMobile }) {
                                             return <motion.div
                                                 key={index}
                                                 className={`${style.bgImgBtmPlr} ${item.class}`}>
-                                                <img src='/images/stories/purpleCross.png'
+                                                <img src='/images/stories/purpleCross.webp'
                                                     alt='purple-cross'
                                                 />
                                             </motion.div>
@@ -297,7 +297,7 @@ function Stories({ isMobile }) {
                                                 key={index}
                                                 className={`${style.bgImgBtmRed} ${item.class}`}
                                             >
-                                                <img src='/images/stories/redCross.png'
+                                                <img src='/images/stories/redCross.webp'
                                                     alt='red-cross'
                                                 />
                                             </motion.div>
@@ -316,7 +316,7 @@ function Stories({ isMobile }) {
                                         classes.map((item, index) => {
                                             return <motion.div
                                                 key={index} className={`${style.bgImgLarge} ${item.class}`}>
-                                                <img src='/images/stories/largeBox.png'
+                                                <img src='/images/stories/largeBox.webp'
                                                     alt='large-box'
                                                 />
                                             </motion.div>
@@ -329,7 +329,7 @@ function Stories({ isMobile }) {
                                             classes.map((item, index) => {
                                                 return <motion.div
                                                     key={index} className={`${style.bgImgLeft} ${item.class}`}>
-                                                    <img src='/images/stories/leftBox.png' alt='leftBox' />
+                                                    <img src='/images/stories/leftBox.webp' alt='leftBox' />
                                                 </motion.div>
                                             })
                                         }
@@ -342,7 +342,7 @@ function Stories({ isMobile }) {
                                                 return <motion.div
                                                     key={index}
                                                     className={`${style.bgImgRight} ${item.class}`}>
-                                                    <img src='/images/stories/rightBox.png' alt='rightBox' />
+                                                    <img src='/images/stories/rightBox.webp' alt='rightBox' />
                                                 </motion.div>
                                             })
                                         }

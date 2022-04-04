@@ -117,7 +117,7 @@ function Service({ isMobile }) {
                                                     </div>
                                                     <img className={style.mblPlayIcon}
                                                         onClick={() => setVideo(item.videoUrl)}
-                                                        src='/icons/playIcon.png' />
+                                                        src='/icons/playIcon.webp' />
                                                 </div>
                                             </center>
                                         })
@@ -187,7 +187,7 @@ function Service({ isMobile }) {
                                                    {filmData.description} </p>
                                                 <img className={style.playIcon}
                                                     onClick={() => setVideo(filmData.video)}
-                                                    src='/icons/playIcon.png' />
+                                                    src='/icons/playIcon.webp' />
                                             </div>
                                         </div>
                                         <div
@@ -204,7 +204,7 @@ function Service({ isMobile }) {
                                                    {designData.description}</p>
                                                 <img
                                                     onClick={() => setVideo(designData.video)}
-                                                    className={style.playIcon} src='/icons/playIcon.png' />
+                                                    className={style.playIcon} src='/icons/playIcon.webp' />
                                             </div>
                                         </div>
                                         <div
@@ -221,7 +221,7 @@ function Service({ isMobile }) {
                                                     {techData.description} </p>
                                                 <img
                                                     onClick={() => setVideo(techData.video)}
-                                                    className={style.playIcon} src='/icons/playIcon.png' />
+                                                    className={style.playIcon} src='/icons/playIcon.webp' />
                                             </div>
                                         </div>
                                     </div>

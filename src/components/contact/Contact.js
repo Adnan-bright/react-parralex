@@ -218,7 +218,7 @@ function Contact({ id, isMobile }) {
                                                 >
                                                     <img alt='rightBox'
                                                         className={`${style.bgImage} `}
-                                                        src='/images/contact/rightBox.png' />
+                                                        src='/images/contact/rightBox.webp' />
                                                 </motion.div>
                                             })
                                         }
@@ -236,7 +236,7 @@ function Contact({ id, isMobile }) {
                                                 >
                                                     <img
                                                         className={`${style.bgImage} `} alt='right2ndBtm'
-                                                        src='/images/contact/right2ndBtm.png' />
+                                                        src='/images/contact/right2ndBtm.webp' />
                                                 </motion.div>
                                             })
                                         }
@@ -254,7 +254,7 @@ function Contact({ id, isMobile }) {
                                                 >
                                                     <img
                                                         className={`${style.bgImage} `}
-                                                        src='/images/contact/rightBtm.png' alt='rightBtm' />
+                                                        src='/images/contact/rightBtm.webp' alt='rightBtm' />
                                                 </motion.div>
                                             })
                                         }

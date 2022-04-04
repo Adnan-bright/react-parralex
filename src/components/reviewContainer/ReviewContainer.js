@@ -18,7 +18,7 @@ function ReviewContainer() {
             className={style.main}
         >
             <div className={style.mainSection}>
-                <img className={style.mainImg} src='/images/contact/singleBox.png' />
+                <img className={style.mainImg} src='/images/contact/singleBox.webp' />
                 <div className={style.sliderContainer}>
                     <Slider
                         {...settings}
