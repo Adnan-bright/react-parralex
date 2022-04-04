@@ -21,6 +21,11 @@ function UseHeroVer() {
                     url
                   }
                   videoTitle
+                  titleText {
+                    firstLine
+                    secondLine
+                    thirdLine
+                  }
                 }
               }
             }
@@ -29,12 +34,11 @@ function UseHeroVer() {
         `
   )
   const HeroData = data?.allWpHeroSection?.edges?.[0]?.node?.heroSection
-
-  const { videoTitle, video, videoLink, backgroundVideoLink, backgroundVideo } = HeroData
+  const { videoTitle, video, videoLink, backgroundVideoLink, backgroundVideo, titleText } = HeroData
 
   const coverVideo = videoLink ? videoLink.url : video?.mediaItemUrl
   const bgVideo = backgroundVideoLink ? backgroundVideoLink.url : backgroundVideo?.mediaItemUrl
-  return { videoTitle, coverVideo, bgVideo }
+  return { videoTitle, coverVideo, bgVideo, titleText }
 }
 
 export default UseHeroVer

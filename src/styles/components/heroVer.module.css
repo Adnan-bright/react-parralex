@@ -368,6 +368,60 @@
     cursor: pointer;
 }
 
+@media only screen and (max-width: 1200px) {
+    .mainHeading1 {
+        font-size: 45px;
+        line-height: 50px;
+    }
+    
+    .mainHeading2 {
+        font-size: 45px;
+        line-height: 50px;
+    }
+    
+    .mainHeading3 {
+        font-size: 45px;
+        line-height: 50px;
+    }
+    .bgImgContainer {
+        width: 70vw;
+        min-height: 70vh;
+       
+    }
+    .bgImgContainerHide {
+        width: 40vw;
+        height: 40vh;
+    }
+   
+}
+@media only screen and (max-width: 650px) {
+    .mainHeading1 {
+        font-size: 35px;
+        line-height: 50px;
+    }
+    
+    .mainHeading2 {
+        font-size: 35px;
+        line-height: 50px;
+    }
+    
+    .mainHeading3 {
+        font-size: 35px;
+        line-height: 50px;
+    }
+    .bgImgContainer {
+        width: 70vw;
+        min-height: 70vh;
+       
+    }
+    .bgImgContainerHide {
+        width: 40vw;
+        height: 40vh;
+    }
+   
+}
+
+
 /* ================================================================================================================ */
 
 /* ___________________________________________________Mobile Style_________________________________________________ */

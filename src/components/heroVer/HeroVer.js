@@ -8,7 +8,7 @@ import ReactPlayer from 'react-player'
 import UseHeroVer from './useHeroVer'
 
 function HeroVer({ isMobile }) {
-    const { videoTitle, coverVideo, bgVideo } = UseHeroVer();
+    const { videoTitle, coverVideo, bgVideo, titleText } = UseHeroVer();
     const [loading, setLoading] = useState(true)
     const ref = useRef(null)
     const myRef = useRef()
@@ -154,13 +154,13 @@ function HeroVer({ isMobile }) {
                                     className={style.headings}
                                 >
                                     <div
-                                        className={`${style.mainHeading1}`}  >Creative support</div>
+                                        className={`${style.mainHeading1}`}  >{titleText?.firstLine }</div>
                                     <div
                                         className={style.mainHeading2} >
-                                        for your business</div>
+                                        { titleText?.secondLine}</div>
 
                                     <div
-                                        className={style.mainHeading3}>at an affordable cost.</div>
+                                        className={style.mainHeading3}>{titleText?.thirdLine }</div>
                                 </div>
                                 <div style={{
                                 }} className={style.playIconContainer}>

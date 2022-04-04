@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import * as style from '../../styles/components/process.module.css'
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import UseProcess from './useProcess';
 function Process({ isMobile }) {
     
     const [hover, setHover] = useState('')
@@ -38,7 +39,10 @@ function Process({ isMobile }) {
             icon: "/images/process/icon3.webp"
         },
     ]
-
+    
+    const {newData} = UseProcess()
+    const mblNewData = Object.values(newData);
+    mblNewData.sort((a,b)=>a?.sortNumber -b?.sortNumber )
     items?.reverse()
     return (
         <div>
@@ -50,21 +54,21 @@ function Process({ isMobile }) {
                                 OUR PROCESS
                             </h1>
                             {
-                                items.map((item, index) => {
+                                mblNewData.map((item, index) => {
                                     return <center key={index}>
                                         <div
                                             className={style.mblMainContainer}
                                             style={{
-                                                backgroundImage: `url(${item.bgImage})`,
+                                                backgroundImage: `url(${items[index]?.bgImage})`,
                                             }}
                                         >
-                                            <img className={style.mblIcon} src={item.icon} />
+                                            <img className={style.mblIcon} src={item?.icon?.mediaItemUrl} />
                                             <p
                                                 className={style.mblTitle}
-                                            >{item.title}</p>
+                                            >{item?.title}</p>
                                             <p
                                                 className={style.mblDescription}
-                                            >{item.description}</p>
+                                            >{item?.description}</p>
                                         </div>
                                     </center>
                                 })
@@ -92,12 +96,12 @@ function Process({ isMobile }) {
                                         <img
 
                                             className={style.imgItem}
-                                            src='/images/process/icon5.webp' />
+                                            src={newData?.fifthStep?.icon?.mediaItemUrl} />
                                         <p
                                             className={style.imageText}
-                                        >Expansion</p>
-                                        <p className={hover === 'expansion' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
-                                            consectetur adipiing elit, sed do eiusmod.</p>
+                                        >{newData?.fifthStep?.title}</p>
+                                        <p className={hover === 'expansion' ? style.boxDetails : style.boxDetailsHide}>
+                                            {newData?.fifthStep?.description}</p>
                                     </div>
                                 </div>
                             </div>
@@ -117,12 +121,12 @@ function Process({ isMobile }) {
                                         <img
                                             className={style.imgItem}
 
-                                            src='/images/process/icon2.webp' />
+                                           src={newData?.secondStep?.icon?.mediaItemUrl} />
                                         <p
 
-                                            className={style.imageText}>Planning</p>
-                                        <p className={hover === 'planning' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
-                                            consectetur adipiing elit, sed do eiusmod.</p>
+                                            className={style.imageText}>{newData?.secondStep?.title}</p>
+                                        <p className={hover === 'planning' ? style.boxDetails : style.boxDetailsHide}>
+                                        {newData?.secondStep?.description}</p>
                                     </div>
 
                                 </div>
@@ -140,12 +144,13 @@ function Process({ isMobile }) {
                                         <img
                                             className={style.imgItem}
 
-                                            src='/images/process/icon4.webp' />
+                                            src={newData?.fourthStep?.icon?.mediaItemUrl} />
                                         <p
 
-                                            className={style.imageText}>Deployment</p>
-                                        <p className={hover === 'deployment' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
-                                            consectetur adipiing elit, sed do eiusmod.</p>
+                                            className={style.imageText}>{newData?.fourthStep?.title}</p>
+                                        <p className={hover === 'deployment' ? style.boxDetails : style.boxDetailsHide}>
+                                        {newData?.fourthStep?.description}
+                                        </p>
                                     </div>
                                 </div>
 
@@ -168,12 +173,12 @@ function Process({ isMobile }) {
                                         <img
                                             className={style.imgItem}
 
-                                            src='/images/process/icon1.webp' />
+                                            src={newData?.firstStep?.icon?.mediaItemUrl} />
                                         <p
 
-                                            className={style.imageText}>Ideation</p>
-                                        <p className={hover === 'ideation' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
-                                            consectetur adipiing elit, sed do eiusmod.</p>
+                                            className={style.imageText}>{newData?.firstStep?.title}</p>
+                                        <p className={hover === 'ideation' ? style.boxDetails : style.boxDetailsHide}>
+                                        {newData?.firstStep?.description}</p>
                                     </div>
 
                                 </div>
@@ -191,12 +196,13 @@ function Process({ isMobile }) {
                                         <img
                                             className={style.imgItem}
 
-                                            src='/images/process/icon3.webp' />
+                                            src={newData?.thirdStep?.icon?.mediaItemUrl} />
                                         <p
 
-                                            className={style.imageText}>Creation</p>
-                                        <p className={hover === 'creation' ? style.boxDetails : style.boxDetailsHide}>Lorem ipsum dolor sit amet,
-                                            consectetur adipiing elit, sed do eiusmod.</p>
+                                            className={style.imageText}>{newData?.thirdStep?.title}</p>
+                                        <p className={hover === 'creation' ? style.boxDetails : style.boxDetailsHide}>
+                                        {newData?.thirdStep?.description}
+                                        </p>
                                     </div>
 
                                 </div>
