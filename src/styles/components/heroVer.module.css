@@ -109,12 +109,12 @@
     z-index: -1;
     position: absolute;
 
-    -webkit-mask-image: url(../../../static/images/home/union.png);
+    -webkit-mask-image: url(../../../static/images/home/union.webp);
     -webkit-mask-position: center center;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: contain;
 
-    mask-image: url(../../../static/images/home/union.png);
+    mask-image: url(../../../static/images/home/union.webp);
     mask-position: center center;
     mask-repeat: no-repeat;
     mask-size: contain;

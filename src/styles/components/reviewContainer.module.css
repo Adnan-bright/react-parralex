@@ -13,23 +13,23 @@
     z-index: 200;
 }
 .sliderContainer{
-    top: 44px;
-    left: 45px;
+    top: 48px;
+    left: 48px;
     position: absolute;
-    width: 230px;
+    width: 225px;
     overflow: hidden;
-    height: 230px;
+    height: 225px;
     display: flex;
     justify-content: right;
     transform: rotate(-45deg);
 }
 .slider{
-    top: -34px;
-    left: 0px;
+    top: -44px;
+    left: -44px;
     transform: rotate(45deg);
     position: absolute;
-    width: 260px;
-    height: 260px;
+    width: 314px;
+    height: 314px;
 }
 .revCont {
     margin-top: 35px;
@@ -46,7 +46,7 @@
 
 .recDesc {
     margin-top: 20px;
-    width: 100%;
+    width: 80%;
     font-family: graphik-regular;
     font-style: normal;
     font-weight: 400;
@@ -58,7 +58,7 @@
 
 .lowerText {
     margin-top: 40px;
-    width: 60%;
+    width: 40%;
     font-family: graphik-regular;
     font-style: normal;
     font-weight: 400;

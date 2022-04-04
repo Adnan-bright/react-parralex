@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import * as style from '../../styles/components/heroVer.module.css'
-import PlayIcon from '../../../static/icons/playIcon.png'
+import PlayIcon from '../../../static/icons/playIcon.webp'
 import Video from '../../../static/videos/dummyVideo.mp4'
 import RightArrow from '../../../static/icons/rightArrow.webp'
 import VideoCloseIcon from '../../../static/icons/videoClose.webp'
@@ -73,7 +73,7 @@ function HeroVer({ isMobile }) {
                                <center> <img
                                     onClick={() => setVideo(true)}
                                     className={style.mblPlayIcon}
-                                    src='/images/home/playIcon.png' /></center>
+                                    src='/images/home/playIcon.webp' /></center>
                             </div>
 
                             <div
@@ -84,7 +84,7 @@ function HeroVer({ isMobile }) {
                                 </p>
                                 <center><img
                                     className={style.mblDownArrow}
-                                    src='/images/home/downArrow.png' /></center>
+                                    src='/images/home/downArrow.webp' /></center>
                             </div>
                         </div>
                     </div>
