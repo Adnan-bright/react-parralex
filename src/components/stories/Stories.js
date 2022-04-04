@@ -7,7 +7,6 @@ import UseStories from './useStories';
 
 function Stories({ isMobile }) {
     const {storiesData}=UseStories()
-    console.log('datas', storiesData)
     const data = [
         {
             className: 'greenCross',

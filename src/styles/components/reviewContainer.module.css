@@ -25,11 +25,11 @@
 }
 .slider{
     top: -34px;
-    left: 45px;
+    left: 0px;
     transform: rotate(45deg);
     position: absolute;
-    width: 220px;
-    height: 220px;
+    width: 260px;
+    height: 260px;
 }
 .revCont {
     margin-top: 35px;
