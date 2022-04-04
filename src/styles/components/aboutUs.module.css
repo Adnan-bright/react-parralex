@@ -139,11 +139,18 @@
     animation: mymove 4s ease-out 0s alternate infinite none running;
 }
 .mdmBox {
-    animation: mymove 4s ease-out 6s alternate infinite none running;
+    animation: mymove 4s ease-out 5s alternate infinite none running;
 }
 .smallBox {
     animation: mymove 4s ease-out 8s alternate infinite none running;
 }
+.mediumBox{
+    animation: mymove 4s ease-out 5s alternate infinite none running;
+}
+.mediumBox2{
+    animation: mymove 4s ease-out 9s alternate infinite none running;
+}
+
 
 
 
