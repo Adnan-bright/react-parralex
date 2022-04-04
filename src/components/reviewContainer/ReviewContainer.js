@@ -6,11 +6,14 @@ function ReviewContainer() {
     const {reviewsData} = UseReviewContainer()
     const settings = {
         dots: false,
-        infinite: false,
+        infinite: true,
         arrows: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-
+        autoplay: true,
+        speed: 2000,
+        autoplaySpeed: 3000,
+        pauseOnHover: true
     };
 
     return (
