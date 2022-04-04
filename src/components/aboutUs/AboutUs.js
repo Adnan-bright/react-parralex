@@ -1,14 +1,17 @@
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
 import React, { useEffect, useRef } from 'react'
 import * as style from '../../styles/components/aboutUs.module.css'
 import { useInView } from "react-intersection-observer";
 import UseAboutMouseGesture from './useAboutMouseGesture';
+import useAboutUs from './useAboutUs';
 function AboutUS({ isMobile }) {
     const [ref, isVisible] = useInView({ threshold: 0.7 });
     const myRef = useRef()
     const {bind} = UseAboutMouseGesture('aboutCrossBg',myRef )
-  
+  const {aboutText} = useAboutUs()
+      function createMarkup(html) {
+        return {__html: html};
+      }
     return (
         <div {...bind()}  ref={myRef}>
             {
@@ -68,12 +71,7 @@ function AboutUS({ isMobile }) {
                             }}
                             className={`${style.body} aboutUsMainContent`}>
                             <p className={style.title}>About us</p>
-                            <p className={style.paragraph}>We build creative experiences.<br />
-                                As a Dallas based studio that utilizes multiple<br />
-                                disciplines to pioneer new ideas through film,<br />
-                                design, and creative technology.<br />
-                                Our goal is your success.
-                            </p>
+                            <p className={style.paragraph} dangerouslySetInnerHTML={createMarkup(aboutText)} />
                         </div>
 
                     </div>

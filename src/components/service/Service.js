@@ -109,7 +109,13 @@ function Service({ isMobile }) {
                                                 <div
                                                     className={`${style.mblImgCont}`}>
                                                     <img className={style.mblImgItem}
-                                                        src={item.coverImg} />
+                                                        src={
+                                                            index === 0 ?
+                                                            filmData.bgImage: 
+                                                            index ===1 ?
+                                                            designData.bgImage:
+                                                            techData.bgImage
+                                                        } />
                                                     <div className={style.mblTextContainer}>
                                                         <h2 className={style.mblImgText}>{item.title}</h2>
                                                         <p className={style.mblImglowerText}>
@@ -181,7 +187,9 @@ function Service({ isMobile }) {
                                                 style={{
                                                     filter: whichCard !== '' && whichCard !== 'film' ? "blur(3px)" : "blur(0px)",
                                                 }}
-                                                className={`${whichCard === 'film' ? style.newStyle : whichCard === 'design' || whichCard === 'tech' ? style.newStyle1 : style.newStyle2} ${style.imgCont}`}> <img className={style.imgItem} src='/images/services/img1.webp' />
+                                                className={`${whichCard === 'film' ? style.newStyle : whichCard === 'design' || whichCard === 'tech' ?
+                                                 style.newStyle1 : style.newStyle2} ${style.imgCont}`}> <img className={style.imgItem}
+                                                  src={filmData.bgImage} />
                                                 <h2 className={style.imgText}>film</h2>
                                                 <p className={style.imglowerText}>
                                                    {filmData.description} </p>
@@ -198,7 +206,10 @@ function Service({ isMobile }) {
                                                 style={{
                                                     filter: whichCard !== '' && whichCard !== 'design' ? "blur(3px)" : "blur(0px)",
                                                 }}
-                                                className={`${whichCard === 'design' ? style.newStyle : whichCard === 'film' || whichCard === 'tech' ? style.newStyle1 : style.newStyle2} ${style.imgCont} serviceCard2`}> <img className={style.imgItem} src='/images/services/img2.webp' />
+                                                className={`${whichCard === 'design' ? style.newStyle : 
+                                                whichCard === 'film' || whichCard === 'tech' ? style.newStyle1 :
+                                                 style.newStyle2} ${style.imgCont} serviceCard2`}> <img 
+                                                 className={style.imgItem} src={designData.bgImage}  />
                                                 <h2 className={`${style.imgText} serviceDesignText`}>Design</h2>
                                                 <p className={style.imglowerText}>
                                                    {designData.description}</p>
@@ -215,7 +226,10 @@ function Service({ isMobile }) {
                                                 style={{
                                                     filter: whichCard !== '' && whichCard !== 'tech' ? "blur(3px)" : "blur(0px)",
                                                 }}
-                                                className={`${whichCard === 'tech' ? style.newStyle : whichCard === 'film' || whichCard === 'design' ? style.newStyle1 : style.newStyle2} ${style.imgCont} serviceCard3`}> <img className={style.imgItem} src='/images/services/img3.webp' />
+                                                className={`${whichCard === 'tech' ? style.newStyle : whichCard === 'film'
+                                                 || whichCard === 'design' ? style.newStyle1 : style.newStyle2} 
+                                                 ${style.imgCont} serviceCard3`}> <img className={style.imgItem}
+                                                  src={techData.bgImage}  />
                                                 <h2 className={style.imgText}>Tech</h2>
                                                 <p className={style.imglowerText}>
                                                     {techData.description} </p>
