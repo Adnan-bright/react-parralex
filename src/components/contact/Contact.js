@@ -1,11 +1,15 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import * as style from '../../styles/components/contact.module.css'
 import ReviewContainer from '../reviewContainer/ReviewContainer'
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import UseContactMouseGesture from './useContactMouseGesture';
+import UseContact from './useContact';
 function Contact({ id, isMobile }) {
+    const {socialData} = UseContact()
+    console.log('socialData',socialData )
     const [ref, isVisible] = useInView({ threshold: 0.7 });
+    const [whichIndex, setWhichIndex] = useState('')
     const myRef = useRef()
     const data = [
         {
@@ -191,6 +195,7 @@ function Contact({ id, isMobile }) {
                                         classes.map((item, index) => {
                                             return <motion.div
                                                 key={index}
+                                               
                                                 className={`${style.bgContainerLeftLarge} ${item.class}`}
                                             >
                                                 <img
@@ -303,18 +308,22 @@ function Contact({ id, isMobile }) {
                         <div className={style.followContainer}>
                             <p className={style.follow}>FOLLOW</p><br />
                             <div className={style.tabs}>
-                                <a className={style.tab1}>
-                                </a>
-                                <a className={style.tab2}>
-                                </a>
-                                <a className={style.tab3}>
-                                </a>
-                                <a className={style.tab4}>
-                                </a>
-                                <a className={style.tab5}>
-                                </a>
-                                <a className={style.tab6}>
-                                </a>
+                                {
+                                    socialData.map((item, index) => {
+                                        return  <a 
+                                        href={item.link}
+                                        target='_blank'
+                                        key={index}
+                                        onMouseLeave={()=> setWhichIndex('')}
+                                        onMouseEnter={()=> setWhichIndex(item.linkTitle)}
+                                        style={{
+                                            backgroundImage:whichIndex === item.linkTitle ?`url(${item.hoverIcon})` :`url(${item.icon})`
+                                        }}
+                                        className={style.tab}>
+                                        </a>
+                                    })
+                                }
+                               
                             </div>
                         </div>
                     </div>
