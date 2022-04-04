@@ -39,7 +39,7 @@ function Process({ isMobile }) {
         },
     ]
 
-    
+    items?.reverse()
     return (
         <div>
             {

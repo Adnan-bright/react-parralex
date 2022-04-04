@@ -9,6 +9,7 @@ import UseHeroVer from './useHeroVer'
 
 function HeroVer({ isMobile }) {
     const { videoTitle, coverVideo, bgVideo } = UseHeroVer();
+    const [loading, setLoading] = useState(true)
     const ref = useRef(null)
     const myRef = useRef()
     const [video, setVideo] = useState(false)
@@ -26,46 +27,54 @@ function HeroVer({ isMobile }) {
                             className={style.mblVideoBody}>
                             <div className={style.mblVideoContainer}>
                                 <div
-                                onContextMenu={e => e.preventDefault()}
+                                    onContextMenu={e => e.preventDefault()}
                                     className={style.mblVideoBox}
                                 >
-                                    <img onClick={() => setVideo(false)}
+                                  {!loading &&  <img onClick={() => setVideo(false)}
                                         className={style.mblVideoCloseIcon}
-                                        src={VideoCloseIcon} alt='VideoCloseIcon' />
+                                        src={VideoCloseIcon} alt='VideoCloseIcon' />}
                                     <ReactPlayer
+                                     onStart={() => setLoading(false)}
                                         ref={ref}
                                         playing={video}
                                         loop={false}
                                         height='100%'
                                         width={'100%'}
                                         className={style.mblVideo}
-                                        url={Video}
-                                        title={Video}
-                                        controls={false}
+                                        url={coverVideo}
+                                        title={videoTitle}
+                                        controls={true}
                                     />
+                                     {loading && <center>
+                                    <div
+                                        className={style.loading}
+                                    ><div className={style.dotTyping}></div></div>
+                                </center>}
                                 </div>
                             </div>
                         </div>
                         <div
                             className={style.mblBody}
                         >
-                            <div
-                                className={style.mblHeadingsContainer}
-                            >
-                                <p className={style.mblTopHeading}>
-                                    Creative support
-                                </p>
-                                <p className={style.mblMidHeading}>
-                                    for your business
-                                </p>
-                                <p className={style.mblBtmHeading}>
-                                    at an affordable cost.
-                                </p>
+                            <div className={style.midContainer}>
+                                <div
+                                    className={style.mblHeadingsContainer}
+                                >
+                                    <p className={style.mblTopHeading}>
+                                        Creative support
+                                    </p>
+                                    <p className={style.mblMidHeading}>
+                                        for your business
+                                    </p>
+                                    <p className={style.mblBtmHeading}>
+                                        at an affordable cost.
+                                    </p>
+                                </div>
+                               <center> <img
+                                    onClick={() => setVideo(true)}
+                                    className={style.mblPlayIcon}
+                                    src='/images/home/playIcon.png' /></center>
                             </div>
-                            <img
-                                onClick={() => setVideo(true)}
-                                className={style.mblPlayIcon}
-                                src='/images/home/playIcon.png' />
 
                             <div
                                 className={style.mblScrollTxtCont}
@@ -82,24 +91,26 @@ function HeroVer({ isMobile }) {
                     :
                     <div>
                         <div
-                            className={!video? style.videoBodyHide :style.videoBody}>
+                            className={!video ? style.videoBodyHide : style.videoBody}>
                             <div className={style.videoContainer}>
                                 <div
-                                onContextMenu={e => e.preventDefault()}
+                                    onContextMenu={e => e.preventDefault()}
                                     className={style.videoBox}
                                 >
-                                    
+
                                     <img onClick={() => setVideo(false)}
                                         className={style.videoCloseIcon} src={VideoCloseIcon} alt='VideoCloseIcon' />
                                     <ReactPlayer
                                         ref={ref}
                                         playing={video}
                                         loop={false}
-                                        config={{ file: { 
-                                            attributes: {
-                                              controlsList: 'nodownload'  //<- this is the important bit
+                                        config={{
+                                            file: {
+                                                attributes: {
+                                                    controlsList: 'nodownload'  //<- this is the important bit
+                                                }
                                             }
-                                        }}}
+                                        }}
                                         height='100%'
                                         width={'100%'}
                                         className={style.video}
@@ -114,31 +125,31 @@ function HeroVer({ isMobile }) {
                             className={`${style.main} `}
 
                         >
-                           <div
-                           style={{
-                               width:"100vw",
-                               height:"100vh",
-                               display:"flex",
-                               alignItems:"center",
-                               justifyContent:"center",
-                               position: 'absolute'
-                           }}
-                           >
-                           <div className={video ? style.bgImgContainerHide : style.bgImgContainer}>
-                                <ReactPlayer
-                                 playing={true}
-                                 loop={true}
-                                 height='100%'
-                                 width={'100%'}
-                                 muted={true}
-                                 url={bgVideo}
-                                 title={videoTitle}
-                                 controls={false}
-                                className={`${style.bgImage} `}  />
-                            </div>
-                           </div>
                             <div
-                                className={`${video ? style.contentHide:style.content} hero1MainContent`}>
+                                style={{
+                                    width: "100vw",
+                                    height: "100vh",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    position: 'absolute'
+                                }}
+                            >
+                                <div className={video ? style.bgImgContainerHide : style.bgImgContainer}>
+                                    <ReactPlayer
+                                        playing={true}
+                                        loop={true}
+                                        height='100%'
+                                        width={'100%'}
+                                        muted={true}
+                                        url={bgVideo}
+                                        title={videoTitle}
+                                        controls={false}
+                                        className={`${style.bgImage} `} />
+                                </div>
+                            </div>
+                            <div
+                                className={`${video ? style.contentHide : style.content} hero1MainContent`}>
                                 <div
                                     className={style.headings}
                                 >
@@ -155,7 +166,7 @@ function HeroVer({ isMobile }) {
                                 }} className={style.playIconContainer}>
                                     <img
 
-                                        className={style.playIcon} 
+                                        className={style.playIcon}
                                         onClick={() => setVideo(true)} src={PlayIcon} alt='PlayIcon' />
                                 </div>
                                 <div

@@ -6,56 +6,63 @@ import { motion } from "framer-motion";
 import UseContactMouseGesture from './useContactMouseGesture';
 import UseContact from './useContact';
 function Contact({ id, isMobile }) {
-    const {socialData} = UseContact()
-    console.log('socialData',socialData )
+    const { socialData } = UseContact()
+    const handleEnter = (event) => {
+        if (event.key.toLowerCase() === "enter") {
+            const form = event.target.form;
+            const index = [...form].indexOf(event.target);
+            form.elements[index + 1]?.focus();
+            event.preventDefault();
+        }
+    };
     const [ref, isVisible] = useInView({ threshold: 0.7 });
     const [whichIndex, setWhichIndex] = useState('')
     const myRef = useRef()
     const data = [
         {
             className: 'leftMid',
-            xValue:-90,
+            xValue: -90,
             yValue: -20,
-            speedValue:10
+            speedValue: 10
         },
         {
             className: 'leftBtm',
-            xValue:90,
+            xValue: 90,
             yValue: -20,
-            speedValue:4
+            speedValue: 4
         },
         {
             className: 'leftLarge',
-            xValue:-100,
+            xValue: -100,
             yValue: -20,
-            speedValue:11
+            speedValue: 11
         },
         {
             className: 'leftSmall',
-            xValue:90,
+            xValue: 90,
             yValue: -10,
-            speedValue:5
+            speedValue: 5
         },
         {
             className: 'rightBox',
-            xValue:40,
+            xValue: 40,
             yValue: 20,
-            speedValue:8
+            speedValue: 8
         },
         {
             className: 'right2ndBtm',
-            xValue:-20,
+            xValue: -20,
             yValue: -10,
-            speedValue:7
+            speedValue: 7
         },
         {
             className: 'rightBtm',
-            xValue:190,
+            xValue: 190,
             yValue: 30,
-            speedValue:10
+            speedValue: 10
         },
     ]
-    const {bind} = UseContactMouseGesture(data, myRef)
+    const { bind } = UseContactMouseGesture(data, myRef)
     const classes = [
         {
             class: 'first'
@@ -85,39 +92,22 @@ function Contact({ id, isMobile }) {
                                 </p>
                             </center>
                             <div className={style.mblFormContainer}>
-                                <div className={style.mblTopRow}>
-                                    <input type={'text'} placeholder='First name' />
-                                    <input type={'text'} placeholder='Last name' />
-                                    <input type={'text'} placeholder='Email' />
-                                    <input type={'text'} placeholder='Phone' />
-                                    <input className={style.mblMessageTxt} type={'text'} placeholder='Message' />
-                                </div>
-
+                                <form>
+                                    <div className={style.mblTopRow}>
+                                        <input onKeyDown={(e) => handleEnter(e)} type={'text'} placeholder='First name' />
+                                        <input onKeyDown={(e) => handleEnter(e)} type={'text'} placeholder='Last name' />
+                                        <input onKeyDown={(e) => handleEnter(e)} type={'text'} placeholder='Email' />
+                                        <input onKeyDown={(e) => handleEnter(e)} type={'text'} placeholder='Phone' />
+                                        <input onKeyDown={(e) => handleEnter(e)} className={style.mblMessageTxt} type={'text'} placeholder='Message' />
+                                    </div>
+                                </form>
                                 <center >
                                     <div className={style.mblBtn}>submit</div></center>
                             </div>
                             <div
                                 className={style.singleBoxContainer}
                             >
-                                <center>
-                                    <img
-                                        className={style.mblSingleBox}
-                                        src='/images/contact/mblSingleBox.webp' />
-                                </center>
-                                <div className={style.mblRatingCont}>
-                                    <p className={style.mblRating}>
-                                        5.0
-                                    </p>
-                                    <img className={style.mblStar}
-                                        src='/images/contact/star.webp' />
-                                </div>
-                                <p className={style.mblDescriptionMain}>
-                                    “There are a lot of benefits to working with MAG-RAW, and
-                                    that’s why I’ll continue to go back to them.”
-                                </p>
-                                <p className={style.mblShortDesc}>
-                                    Solutions Advisor, IT Business & Solutions Firm
-                                </p>
+                                <ReviewContainer />
                             </div>
                             <img className={style.btmLeftBgImg}
                                 src='/images/contact/btmLeftBg.webp' />
@@ -128,24 +118,19 @@ function Contact({ id, isMobile }) {
                                     follow us
                                 </p>
                                 <div className={style.mblIconsContainer}>
-                                    <img className={style.mblSocialIcon}
-                                        src='/images/contact/insta.webp'
-                                    />
-                                    <img className={style.mblSocialIcon}
-                                        src='/images/contact/facebook.webp'
-                                    />
-                                    <img className={style.mblSocialIcon}
-                                        src='/images/contact/twitter.webp'
-                                    />
-                                    <img className={style.mblSocialIcon}
-                                        src='/images/contact/linkedin.webp'
-                                    />
-                                    <img className={style.mblSocialIcon}
-                                        src='/images/contact/youtube.webp'
-                                    />
-                                    <img className={style.mblSocialIcon}
-                                        src='/images/contact/vimeo.webp'
-                                    />
+                                    {
+                                        socialData?.map((item, index) => {
+                                            return <a 
+                                            key={index}
+                                            href={item.link}
+                                            target='_blank'>
+                                                <img className={style.mblSocialIcon}
+                                                    src={item.icon}
+                                                />
+                                            </a>
+                                        })
+                                    }
+
                                 </div>
                                 <p className={style.copyRight}>
                                     © 2022 MAG-RAW Creations, LLC all rights reserved
@@ -157,7 +142,7 @@ function Contact({ id, isMobile }) {
                     <div className={`${style.body} `}>
 
                         <div >
-                            <div  className='meinContainerAnimated'>
+                            <div className='meinContainerAnimated'>
                                 <div className='cube leftMid'>
                                     {
                                         classes.map((item, index) => {
@@ -173,7 +158,7 @@ function Contact({ id, isMobile }) {
                                     }
                                 </div>
                             </div>
-                            <div  className='meinContainerAnimated'>
+                            <div className='meinContainerAnimated'>
                                 <div className='cube leftBtm' >
                                     {
                                         classes.map((item, index) => {
@@ -189,13 +174,13 @@ function Contact({ id, isMobile }) {
                                     }
                                 </div>
                             </div>
-                            <div  className='meinContainerAnimated'>
+                            <div className='meinContainerAnimated'>
                                 <div className='cube leftLarge'>
                                     {
                                         classes.map((item, index) => {
                                             return <motion.div
                                                 key={index}
-                                               
+
                                                 className={`${style.bgContainerLeftLarge} ${item.class}`}
                                             >
                                                 <img
@@ -206,7 +191,7 @@ function Contact({ id, isMobile }) {
                                     }
                                 </div>
                             </div>
-                            <div  className='meinContainerAnimated'>
+                            <div className='meinContainerAnimated'>
                                 <div className='cube leftSmall'>
                                     {
                                         classes.map((item, index) => {
@@ -223,7 +208,7 @@ function Contact({ id, isMobile }) {
                                 </div>
                             </div>
                             <div className={style.rightBoxContainer}>
-                                <div  className='meinContainerAnimated'>
+                                <div className='meinContainerAnimated'>
                                     <div className='cube rightBox'>
                                         {
                                             classes.map((item, index) => {
@@ -241,7 +226,7 @@ function Contact({ id, isMobile }) {
                                 </div>
                             </div>
                             <div className={style.right2ndBtmContainer}>
-                                <div  className='meinContainerAnimated'>
+                                <div className='meinContainerAnimated'>
                                     <div className='cube right2ndBtm'>
                                         {
                                             classes.map((item, index) => {
@@ -276,7 +261,7 @@ function Contact({ id, isMobile }) {
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div id={id} className={style.main}>
                             <div className={style.reviewContainer}>
@@ -286,17 +271,19 @@ function Contact({ id, isMobile }) {
 
                                 <h1 className={style.heading}>CONTACT US</h1>
                                 <div className={style.formContainer}>
-                                    <div className={style.topRow}>
-                                        <input type={'text'} placeholder='First name' />
-                                        <input type={'text'} placeholder='Last name' />
-                                    </div>
-                                    <div className={style.midRow}>
-                                        <input type={'text'} placeholder='Email' />
-                                        <input type={'text'} placeholder='Phone' />
-                                    </div>
-                                    <div className={style.lowerRow}>
-                                        <input type={'text'} placeholder='Message' />
-                                    </div>
+                                    <form>
+                                        <div className={style.topRow}>
+                                            <input onKeyDown={(e) => handleEnter(e)} type={'text'} placeholder='First name' />
+                                            <input onKeyDown={(e) => handleEnter(e)} type={'text'} placeholder='Last name' />
+                                        </div>
+                                        <div className={style.midRow}>
+                                            <input onKeyDown={(e) => handleEnter(e)} type={'text'} placeholder='Email' />
+                                            <input onKeyDown={(e) => handleEnter(e)} type={'text'} placeholder='Phone' />
+                                        </div>
+                                        <div className={style.lowerRow}>
+                                            <input onKeyDown={(e) => handleEnter(e)} type={'text'} placeholder='Message' />
+                                        </div>
+                                    </form>
                                     <div className={style.btnContainer}> <div className={style.btn}>submit</div></div>
                                 </div>
                             </div>
@@ -310,20 +297,20 @@ function Contact({ id, isMobile }) {
                             <div className={style.tabs}>
                                 {
                                     socialData.map((item, index) => {
-                                        return  <a 
-                                        href={item.link}
-                                        target='_blank'
-                                        key={index}
-                                        onMouseLeave={()=> setWhichIndex('')}
-                                        onMouseEnter={()=> setWhichIndex(item.linkTitle)}
-                                        style={{
-                                            backgroundImage:whichIndex === item.linkTitle ?`url(${item.hoverIcon})` :`url(${item.icon})`
-                                        }}
-                                        className={style.tab}>
+                                        return <a
+                                            href={item.link}
+                                            target='_blank'
+                                            key={index}
+                                            onMouseLeave={() => setWhichIndex('')}
+                                            onMouseEnter={() => setWhichIndex(item.linkTitle)}
+                                            style={{
+                                                backgroundImage: whichIndex === item.linkTitle ? `url(${item.hoverIcon})` : `url(${item.icon})`
+                                            }}
+                                            className={style.tab}>
                                         </a>
                                     })
                                 }
-                               
+
                             </div>
                         </div>
                     </div>
