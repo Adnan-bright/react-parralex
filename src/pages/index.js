@@ -11,11 +11,9 @@ import HeroVer from "../components/heroVer/HeroVer";
 import Contact from "../components/contact/Contact";
 import Service from "../components/service/Service";
 import Stories from "../components/stories/Stories";
-import { graphql } from "gatsby"
 
-const IndexPage = ({data}) => {
-  // const response = data.allWpHeroSection.edges
-  // console.log('data', response)
+const IndexPage = () => {
+
   const [isResume, setIsResume] = useState(true)
   const { height, width } = UseWindowDimension();
   const [updateValue, setUpdateValue] = useState(0)
@@ -51,7 +49,7 @@ const IndexPage = ({data}) => {
 
     
 
-  }, [width]);
+  }, []);
 
   const handleClick = (id) => {
     gsap.to(window, {
@@ -121,23 +119,4 @@ const IndexPage = ({data}) => {
 
   )
 }
-// export const pageQuery = graphql`
-// query NewQuery {
-//     allWpHeroSection {
-//       edges {
-//         node {
-//           heroSection {
-//             fieldGroupName
-//             videoDescription
-//             videoTitle
-//             video {
-//               id
-//               link
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-//   `
 export default IndexPage
