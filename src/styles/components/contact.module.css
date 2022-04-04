@@ -15,10 +15,12 @@
     top: 2vh;
     left: 12vw;
 }
-.bgContainerLeftLarge img{
+
+.bgContainerLeftLarge img {
     height: 150px;
     width: 150px;
 }
+
 .leftMidBg {
     position: absolute;
     top: 30vh;
@@ -36,6 +38,16 @@
     left: 12vw;
 }
 
+@media only screen and (max-width: 1200px) {
+    .leftBtmBg {
+        left: 4vw;
+    }
+
+    .leftMidBg {
+        left: 15vw;
+    }
+}
+
 .leftBtmBg {
     width: 135px;
     height: 135px;
@@ -46,7 +58,8 @@
     bottom: 15%;
     right: 100%;
 }
-.right2ndBtmBg img{
+
+.right2ndBtmBg img {
     width: 110px;
     height: 110px;
 }
@@ -56,43 +69,56 @@
     bottom: 25%;
     right: 15%;
 }
-.rightBtmBg img{
+
+.rightBtmBg img {
     width: 60px;
     height: 60px;
 }
+
 .bgContainerLeftSmall {
     position: absolute;
     top: 160px;
     left: 10vw;
 }
-.bgContainerLeftSmall img{
+
+.bgContainerLeftSmall img {
     width: 80px;
     height: 80px;
 }
+
 .bgContainerRightBox {
     position: absolute;
     top: 22%;
-    right: 22%;
+    /* right: 22%; */
+}
+@media only screen and (max-width:1200px) {
+    .bgContainerRightBox {
+        right: 0%;
+    } 
 }
 
-.bgContainerRightBox img{
+.bgContainerRightBox img {
     width: 150px;
     height: 150px;
 }
-.rightBoxContainer{
+
+.rightBoxContainer {
     position: absolute;
     right: 14%;
 }
-.right2ndBtmContainer{
+
+.right2ndBtmContainer {
     position: absolute;
     right: 14%;
     bottom: 30%;
 }
-.right2ndBtmContainer{
+
+.right2ndBtmContainer {
     position: absolute;
     right: 15%;
     bottom: 25%;
 }
+
 .bgImage {
     width: 100%;
 }
@@ -115,7 +141,8 @@
     width: 300px;
     position: absolute;
 }
-@media only screen and (max-width:1500px){
+
+@media only screen and (max-width:1500px) {
     .reviewContainer {
         z-index: 1;
         right: 7%;
@@ -125,6 +152,13 @@
         position: absolute;
     }
 }
+
+@media only screen and (max-width:1200px) {
+    .reviewContainer {
+        right: 0%;
+    }
+}
+
 .body {
     position: relative;
     height: 90%;
@@ -289,30 +323,6 @@
     align-items: center;
 }
 
-.tab1 {
-    font-family: graphik-regular;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    margin-right: 20px;
-    margin-bottom: 15px;
-    line-height: 15px;
-    width: 26px;
-    height: 26px;
-    background-image: url(../../../static/images/contact/insta.png);
-    text-transform: uppercase;
-    background-size: contain;
-    color: #7A858D;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    transition: ease-in-out .4s;
-}
-
-.tab1:hover {
-    background-image: url(../../../static/images/contact/instaHv.png);
-    background-size: contain;
-    cursor: pointer;
-}
 
 .tab {
     font-family: graphik-regular;
@@ -324,7 +334,6 @@
     line-height: 15px;
     width: 26px;
     height: 26px;
-    background-image: url(../../../static/images/contact/insta.png);
     text-transform: uppercase;
     background-size: contain;
     color: #7A858D;
@@ -334,145 +343,10 @@
 }
 
 .tab:hover {
-    background-image: url(../../../static/images/contact/instaHv.png);
     background-size: contain;
     cursor: pointer;
 }
 
-.tab2 {
-    font-family: graphik-regular;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    margin-right: 10px;
-    margin-bottom: 15px;
-    line-height: 15px;
-    width: 26px;
-    height: 26px;
-    background-image: url(../../../static/images/contact/facebook.png);
-    text-transform: uppercase;
-    color: #7A858D;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    background-size: contain;
-
-    transition: ease-in-out .4s;
-}
-
-.tab2:hover {
-    background-image: url(../../../static/images/contact/facebookHv.png);
-    cursor: pointer;
-    background-size: contain;
-
-}
-
-.tab3 {
-    font-family: graphik-regular;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    margin-right: 20px;
-    margin-bottom: 15px;
-    line-height: 15px;
-    width: 26px;
-    height: 26px;
-    background-size: contain;
-
-    background-image: url(../../../static/images/contact/twitter.png);
-    text-transform: uppercase;
-    color: #7A858D;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    transition: ease-in-out .4s;
-}
-
-.tab3:hover {
-    background-image: url(../../../static/images/contact/twitterHv.png);
-    cursor: pointer;
-    background-size: contain;
-
-}
-
-.tab4 {
-    font-family: graphik-regular;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    margin-right: 20px;
-    margin-bottom: 15px;
-    line-height: 15px;
-    width: 26px;
-    height: 26px;
-    background-size: contain;
-
-    background-image: url(../../../static/images/contact/linkedin.png);
-    text-transform: uppercase;
-    color: #7A858D;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    transition: ease-in-out .4s;
-}
-
-.tab4:hover {
-    background-image: url(../../../static/images/contact/linkedinHv.png);
-    cursor: pointer;
-    background-size: contain;
-
-}
-
-.tab5 {
-    font-family: graphik-regular;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    margin-right: 20px;
-    margin-bottom: 15px;
-    line-height: 15px;
-    width: 26px;
-    background-size: contain;
-
-    height: 26px;
-    background-image: url(../../../static/images/contact/youtube.png);
-    text-transform: uppercase;
-    color: #7A858D;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    transition: ease-in-out .4s;
-}
-
-.tab5:hover {
-    background-image: url(../../../static/images/contact/youtubeHv.png);
-    cursor: pointer;
-    background-size: contain;
-
-}
-
-.tab6 {
-    font-family: graphik-regular;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    margin-right: 20px;
-    margin-bottom: 15px;
-    line-height: 15px;
-    width: 26px;
-    background-size: contain;
-
-    height: 26px;
-    background-image: url(../../../static/images/contact/vimeo.png);
-    text-transform: uppercase;
-    color: #7A858D;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    transition: ease-in-out .4s;
-}
-
-.tab6:hover {
-    background-image: url(../../../static/images/contact/vimeoHv.png);
-    cursor: pointer;
-    background-size: contain;
-
-}
 
 
 
@@ -594,6 +468,15 @@
 
 .singleBoxContainer {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.mblSocialIcon {
+    height: 30px;
+    width: auto;
 }
 
 .mblRatingCont {

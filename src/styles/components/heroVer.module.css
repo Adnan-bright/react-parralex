@@ -109,12 +109,12 @@
     z-index: -1;
     position: absolute;
 
-    -webkit-mask-image: url(../../../static/images/home/union.png);
+    -webkit-mask-image: url(../../../static/images/home/union.webp);
     -webkit-mask-position: center center;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: contain;
 
-    mask-image: url(../../../static/images/home/union.png);
+    mask-image: url(../../../static/images/home/union.webp);
     mask-position: center center;
     mask-repeat: no-repeat;
     mask-size: contain;
@@ -379,12 +379,17 @@
     background-image: url(../../../static/images/home/mblBg.webp);
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
     height: 100vh;
 }
-
+.midContainer{
+    margin-top: -70px;
+}
 .mblHeadingsContainer {
-    position: relative;
-    padding-top: 30vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -397,7 +402,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
-    line-height: 24px;
+    line-height: 4px;
     text-transform: uppercase;
     color: #FFFFFF;
 }
@@ -406,10 +411,9 @@
     font-family: graphik-regular;
     font-style: normal;
     font-weight: 400;
-    position: absolute;
-    left: 10px;
     font-size: 24px;
-    line-height: 24px;
+    line-height: 4px;
+    margin-left: -40%;
     text-transform: uppercase;
     color: #FFFFFF;
 }
@@ -419,20 +423,15 @@
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
-    line-height: 24px;
+    line-height: 4px;
     text-transform: uppercase;
     color: #FFFFFF;
 }
 
 .mblPlayIcon {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
     width: 70px;
     height: 70px;
-    bottom: 35vh;
+    margin-top: 120px;
 }
 
 .mblScrollTxtCont {
@@ -491,26 +490,103 @@
     height: 15px;
     width: 15px;
     right: 10px;
-    top: 28px;
+    top: -15px;
     z-index: 200;
+    border-radius: 50%;
     cursor: pointer;
+    border: 1px solid white;
+    padding: 5px;
 }
 
 .mblVideo {
     margin-top: 20px;
     z-index: 999;
 }
+@media only screen and (max-width: 350px) {
 
+.mblMidHeading {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 4px;
+    margin-left: 0%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+}
 @media only screen and (max-height: 650px) {
-    .mblHeadingsContainer {
-        padding-top: 20vh;
-    }
 
-    .mblPlayIcon {
-        bottom: 30vh;
+    .midContainer{
+        margin-top: 20px;
     }
 
     .mblScrollTxtCont {
-        bottom: 20px;
+        bottom: 10px;
+    }
+    .mblPlayIcon {
+        width: 70px;
+        height: 70px;
+        margin-top: 10px;
+    }
+}
+
+
+.loading {
+    color: white;
+    font-family: graphik-regular;
+    font-size: 22px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: -1;
+}
+
+/**
+ * ==============================================
+ * Dot Typing
+ * ==============================================
+ */
+.dotTyping {
+    position: relative;
+    left: -9999px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #ffffff;
+    box-shadow: 9984px 0 0 0 #ffffff, 9999px 0 0 0 #ffffff, 10014px 0 0 0 #ffffff;
+    animation: dotTyping 1.5s infinite linear;
+}
+
+@keyframes dotTyping {
+    0% {
+        box-shadow: 9984px 0 0 0 #ffffff, 9999px 0 0 0 #ffffff, 10014px 0 0 0 #ffffff;
+    }
+
+    16.667% {
+        box-shadow: 9984px -10px 0 0 #ffffff, 9999px 0 0 0 #ffffff, 10014px 0 0 0 #ffffff;
+    }
+
+    33.333% {
+        box-shadow: 9984px 0 0 0 #ffffff, 9999px 0 0 0 #ffffff, 10014px 0 0 0 #ffffff;
+    }
+
+    50% {
+        box-shadow: 9984px 0 0 0 #ffffff, 9999px -10px 0 0 #ffffff, 10014px 0 0 0 #ffffff;
+    }
+
+    66.667% {
+        box-shadow: 9984px 0 0 0 #ffffff, 9999px 0 0 0 #ffffff, 10014px 0 0 0 #ffffff;
+    }
+
+    83.333% {
+        box-shadow: 9984px 0 0 0 #ffffff, 9999px 0 0 0 #ffffff, 10014px -10px 0 0 #ffffff;
+    }
+
+    100% {
+        box-shadow: 9984px 0 0 0 #ffffff, 9999px 0 0 0 #ffffff, 10014px 0 0 0 #ffffff;
     }
 }

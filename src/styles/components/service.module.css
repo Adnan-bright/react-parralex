@@ -389,8 +389,11 @@
     height: 16px;
     width: 16px;
     right: 15px;
-    top: 30px;
+    top: -20px;
     z-index: 200;
+    border: 1px solid white ;
+    border-radius: 50%;
+    padding: 5px;
     cursor: pointer;
 }
 

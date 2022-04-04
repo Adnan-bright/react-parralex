@@ -51,7 +51,7 @@ const IndexPage = ({data}) => {
 
     
 
-  }, [width]);
+  }, []);
 
   const handleClick = (id) => {
     gsap.to(window, {

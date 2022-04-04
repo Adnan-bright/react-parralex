@@ -6,11 +6,14 @@ function ReviewContainer() {
     const {reviewsData} = UseReviewContainer()
     const settings = {
         dots: false,
-        infinite: false,
+        infinite: true,
         arrows: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-
+        autoplay: true,
+        speed: 2000,
+        autoplaySpeed: 3000,
+        pauseOnHover: true
     };
 
     return (
@@ -18,7 +21,7 @@ function ReviewContainer() {
             className={style.main}
         >
             <div className={style.mainSection}>
-                <img className={style.mainImg} src='/images/contact/singleBox.png' />
+                <img className={style.mainImg} src='/images/contact/singleBox.webp' />
                 <div className={style.sliderContainer}>
                     <Slider
                         {...settings}
