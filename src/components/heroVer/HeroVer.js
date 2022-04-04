@@ -1,30 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react'
-import * as style from '../../styles/components/heroVer1.module.css'
+import * as style from '../../styles/components/heroVer.module.css'
 import PlayIcon from '../../../static/icons/playIcon.png'
 import Video from '../../../static/videos/dummyVideo.mp4'
 import RightArrow from '../../../static/icons/rightArrow.webp'
 import VideoCloseIcon from '../../../static/icons/videoClose.webp'
 import ReactPlayer from 'react-player'
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
-function HeroVer1({ isMobile }) {
-    const ref = useRef(null)
-    // useEffect(() => {
-    //     const tl = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: ".",
-    //             scrub: 10,
-    //             markers: false,
-    //             start: "left right"
-    //         }
-    //     });
-    //     tl.to(".", { scale:1,    opacity:1, duration: 8,  ease: "none",})
-    //     tl.to(".", { scale:.5,   opacity:0, duration: 4,  ease: "none",})
+import UseHeroVer from './useHeroVer'
 
-    // }, [])
+function HeroVer({ isMobile }) {
+    const { videoTitle, coverVideo, bgVideo } = UseHeroVer();
+    const ref = useRef(null)
+    const myRef = useRef()
     const [video, setVideo] = useState(false)
     return (
-        <div>
+        <div ref={myRef}>
             {
                 isMobile ?
                     <div
@@ -114,8 +103,8 @@ function HeroVer1({ isMobile }) {
                                         height='100%'
                                         width={'100%'}
                                         className={style.video}
-                                        url={Video}
-                                        title={Video}
+                                        url={coverVideo}
+                                        title={videoTitle}
                                         controls={true}
                                     />
                                 </div>
@@ -142,8 +131,8 @@ function HeroVer1({ isMobile }) {
                                  height='100%'
                                  width={'100%'}
                                  muted={true}
-                                 url={'https://youtu.be/smIQmHvAXcQ'}
-                                 title={Video}
+                                 url={bgVideo}
+                                 title={videoTitle}
                                  controls={false}
                                 className={`${style.bgImage} `}  />
                             </div>
@@ -183,4 +172,4 @@ function HeroVer1({ isMobile }) {
     )
 }
 
-export default HeroVer1
+export default HeroVer

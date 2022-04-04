@@ -1,64 +1,68 @@
-import React, { useRef } from 'react'
-import * as style from '../../styles/components/contact1.module.css'
+import React, { useRef, useState } from 'react'
+import * as style from '../../styles/components/contact.module.css'
 import ReviewContainer from '../reviewContainer/ReviewContainer'
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import MouseTracker from '../hooks/MouseTracker';
-
-function Contact1({ id, isMobile }) {
+import UseContactMouseGesture from './useContactMouseGesture';
+import UseContact from './useContact';
+function Contact({ id, isMobile }) {
+    const {socialData} = UseContact()
+    console.log('socialData',socialData )
     const [ref, isVisible] = useInView({ threshold: 0.7 });
+    const [whichIndex, setWhichIndex] = useState('')
     const myRef = useRef()
-    const myRef2 = useRef()
-    const myRef3 = useRef()
-    const myRef4 = useRef()
-    const myRef5 = useRef()
-    const myRef6 = useRef()
-    const myRef7 = useRef()
-    MouseTracker('cube', myRef, 380, 170, 20)
-    MouseTracker('cube', myRef2, 200, 40, 20)
-    MouseTracker('cube', myRef3, 200, 40, 20)
-    MouseTracker('cube', myRef4, 200, 40, 20)
-    MouseTracker('cube', myRef5, 350, 40, 15)
-    MouseTracker('cube', myRef6, 280, -470, 40)
-    MouseTracker('cube', myRef7, 480, -470, 40)
-
-    const variants = {
-        visible: {
-            opacity: 1,
-            x: 0,
+    const data = [
+        {
+            className: 'leftMid',
+            xValue:-90,
+            yValue: -20,
+            speedValue:10
         },
-        hidden: {
-            opacity: 0,
-            x: 100,
+        {
+            className: 'leftBtm',
+            xValue:90,
+            yValue: -20,
+            speedValue:4
         },
-    };
-    const variants2 = {
-        visible: {
-            opacity: 1,
-            x: 0,
+        {
+            className: 'leftLarge',
+            xValue:-100,
+            yValue: -20,
+            speedValue:11
         },
-        hidden: {
-            opacity: 0,
-            x: -100,
+        {
+            className: 'leftSmall',
+            xValue:90,
+            yValue: -10,
+            speedValue:5
         },
-    };
-    const variants3 = {
-        visible: {
-            opacity: 1,
-            y: 0,
+        {
+            className: 'rightBox',
+            xValue:40,
+            yValue: 20,
+            speedValue:8
         },
-        hidden: {
-            opacity: 0,
-            y: -100,
+        {
+            className: 'right2ndBtm',
+            xValue:-20,
+            yValue: -10,
+            speedValue:7
         },
-    };
+        {
+            className: 'rightBtm',
+            xValue:190,
+            yValue: 30,
+            speedValue:10
+        },
+    ]
+    const {bind} = UseContactMouseGesture(data, myRef)
     const classes = [
         {
             class: 'first'
         }
     ]
     return (
-        <div >
+        <div ref={myRef} {...bind()}>
             {
                 isMobile ?
                     <div className={style.mblMain}>
@@ -153,100 +157,81 @@ function Contact1({ id, isMobile }) {
                     <div className={`${style.body} `}>
 
                         <div >
-                            <div ref={myRef} className='meinContainerAnimated'>
-                                <div id='cube'>
+                            <div  className='meinContainerAnimated'>
+                                <div className='cube leftMid'>
                                     {
                                         classes.map((item, index) => {
                                             return <motion.div
                                                 key={index}
-                                                // ref={ref}
-                                                // variants={variants2}
-                                                // animate={isVisible ? "visible" : "hidden"}
-                                                // transition={{ duration: 3, ease: "easeOut" }}
                                                 className={`${style.leftMidBg} ${item.class}`}
                                             >
                                                 <img
                                                     className={`${style.bgImage} `}
-                                                    src='/images/contact/leftMid.png' />
+                                                    src='/images/contact/leftMid.png' alt='leftMid' />
                                             </motion.div>
                                         })
                                     }
                                 </div>
                             </div>
-                            <div ref={myRef2} className='meinContainerAnimated'>
-                                <div id='cube'>
+                            <div  className='meinContainerAnimated'>
+                                <div className='cube leftBtm' >
                                     {
                                         classes.map((item, index) => {
                                             return <motion.div
                                                 key={index}
-                                                // ref={ref}
-                                                // variants={variants2}
-                                                // animate={isVisible ? "visible" : "hidden"}
-                                                // transition={{ duration: 3, ease: "easeOut" }}
                                                 className={`${style.leftBtmBg} ${item.class}`}
                                             >
                                                 <img
                                                     className={`${style.bgImage} `}
-                                                    src='/images/contact/leftBtm.png' />
+                                                    src='/images/contact/leftBtm.png' alt='leftBtm' />
                                             </motion.div>
                                         })
                                     }
                                 </div>
                             </div>
-                            <div ref={myRef4} className='meinContainerAnimated'>
-                                <div id='cube'>
+                            <div  className='meinContainerAnimated'>
+                                <div className='cube leftLarge'>
                                     {
                                         classes.map((item, index) => {
                                             return <motion.div
                                                 key={index}
-                                                // ref={ref}
-                                                // variants={variants2}
-                                                // animate={isVisible ? "visible" : "hidden"}
-                                                // transition={{ duration: 3, ease: "easeOut" }}
+                                               
                                                 className={`${style.bgContainerLeftLarge} ${item.class}`}
                                             >
                                                 <img
-                                                    className={`${style.bgImage} `}
+                                                    className={`${style.bgImage} `} alt='leftLarge'
                                                     src='/images/contact/leftLarge.png' />
                                             </motion.div>
                                         })
                                     }
                                 </div>
                             </div>
-                            <div ref={myRef3} className='meinContainerAnimated'>
-                                <div id='cube'>
+                            <div  className='meinContainerAnimated'>
+                                <div className='cube leftSmall'>
                                     {
                                         classes.map((item, index) => {
                                             return <motion.div
                                                 key={index}
-                                                // ref={ref}
-                                                // variants={variants2}
-                                                // animate={isVisible ? "visible" : "hidden"}
-                                                // transition={{ duration: 3, ease: "easeOut" }}
                                                 className={`${style.bgContainerLeftSmall} ${item.class}`}
                                             >
                                                 <img
                                                     className={`${style.bgImage} `}
-                                                    src='/images/contact/leftSmall.png' />
+                                                    src='/images/contact/leftSmall.png' alt='leftSmall' />
                                             </motion.div>
                                         })
                                     }
                                 </div>
                             </div>
                             <div className={style.rightBoxContainer}>
-                                <div ref={myRef5} className='meinContainerAnimated'>
-                                    <div id='cube'>
+                                <div  className='meinContainerAnimated'>
+                                    <div className='cube rightBox'>
                                         {
                                             classes.map((item, index) => {
                                                 return <motion.div
                                                     key={index}
-                                                    // ref={ref}
-                                                    // variants={variants2}
-                                                    // animate={isVisible ? "visible" : "hidden"}
-                                                    // transition={{ duration: 3, ease: "easeOut" }}
                                                     className={`${style.bgContainerRightBox} ${item.class}`}
                                                 >
-                                                    <img
+                                                    <img alt='rightBox'
                                                         className={`${style.bgImage} `}
                                                         src='/images/contact/rightBox.png' />
                                                 </motion.div>
@@ -256,20 +241,16 @@ function Contact1({ id, isMobile }) {
                                 </div>
                             </div>
                             <div className={style.right2ndBtmContainer}>
-                                <div ref={myRef6} className='meinContainerAnimated'>
-                                    <div id='cube'>
+                                <div  className='meinContainerAnimated'>
+                                    <div className='cube right2ndBtm'>
                                         {
                                             classes.map((item, index) => {
                                                 return <motion.div
                                                     key={index}
-                                                    // ref={ref}
-                                                    // variants={variants2}
-                                                    // animate={isVisible ? "visible" : "hidden"}
-                                                    // transition={{ duration: 3, ease: "easeOut" }}
                                                     className={`${style.right2ndBtmBg} ${item.class}`}
                                                 >
                                                     <img
-                                                        className={`${style.bgImage} `}
+                                                        className={`${style.bgImage} `} alt='right2ndBtm'
                                                         src='/images/contact/right2ndBtm.png' />
                                                 </motion.div>
                                             })
@@ -278,21 +259,17 @@ function Contact1({ id, isMobile }) {
                                 </div>
                             </div>
                             <div className={style.right2ndBtmContainer}>
-                                <div ref={myRef7} className='meinContainerAnimated'>
-                                    <div id='cube'>
+                                <div className='meinContainerAnimated'>
+                                    <div className='cube rightBtm'>
                                         {
                                             classes.map((item, index) => {
                                                 return <motion.div
                                                     key={index}
-                                                    // ref={ref}
-                                                    // variants={variants2}
-                                                    // animate={isVisible ? "visible" : "hidden"}
-                                                    // transition={{ duration: 3, ease: "easeOut" }}
                                                     className={`${style.rightBtmBg} ${item.class}`}
                                                 >
                                                     <img
                                                         className={`${style.bgImage} `}
-                                                        src='/images/contact/rightBtm.png' />
+                                                        src='/images/contact/rightBtm.png' alt='rightBtm' />
                                                 </motion.div>
                                             })
                                         }
@@ -331,18 +308,22 @@ function Contact1({ id, isMobile }) {
                         <div className={style.followContainer}>
                             <p className={style.follow}>FOLLOW</p><br />
                             <div className={style.tabs}>
-                                <a className={style.tab1}>
-                                </a>
-                                <a className={style.tab2}>
-                                </a>
-                                <a className={style.tab3}>
-                                </a>
-                                <a className={style.tab4}>
-                                </a>
-                                <a className={style.tab5}>
-                                </a>
-                                <a className={style.tab6}>
-                                </a>
+                                {
+                                    socialData.map((item, index) => {
+                                        return  <a 
+                                        href={item.link}
+                                        target='_blank'
+                                        key={index}
+                                        onMouseLeave={()=> setWhichIndex('')}
+                                        onMouseEnter={()=> setWhichIndex(item.linkTitle)}
+                                        style={{
+                                            backgroundImage:whichIndex === item.linkTitle ?`url(${item.hoverIcon})` :`url(${item.icon})`
+                                        }}
+                                        className={style.tab}>
+                                        </a>
+                                    })
+                                }
+                               
                             </div>
                         </div>
                     </div>
@@ -351,4 +332,4 @@ function Contact1({ id, isMobile }) {
     )
 }
 
-export default Contact1
+export default Contact

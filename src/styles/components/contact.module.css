@@ -314,6 +314,31 @@
     cursor: pointer;
 }
 
+.tab {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    line-height: 15px;
+    width: 26px;
+    height: 26px;
+    background-image: url(../../../static/images/contact/insta.png);
+    text-transform: uppercase;
+    background-size: contain;
+    color: #7A858D;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
+
+.tab:hover {
+    background-image: url(../../../static/images/contact/instaHv.png);
+    background-size: contain;
+    cursor: pointer;
+}
+
 .tab2 {
     font-family: graphik-regular;
     font-style: normal;
@@ -477,7 +502,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 100px;
+    padding-top: 130px;
 }
 
 .mblMainHeading {

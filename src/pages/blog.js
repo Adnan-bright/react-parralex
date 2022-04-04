@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { graphql } from "gatsby"
 
 function Blog({ data }) {
-    // console.log('data', data?.allWpStories?.edges)
+
+    // const response = data.allWpHeroSection.edges
+    // console.log('data', response)
     // const posts = data?.allWpStories?.edges
     // function createMarkup(post) {
     //     return {__html: post};
@@ -44,25 +46,22 @@ function Blog({ data }) {
 }
 
 // export const pageQuery = graphql`
-//   query {
-//     allWpStories {
-//         edges {
-//           node {
-//             storiesfields {
-//               fieldGroupName
-//               storyDescription
-//               storyIcon {
-//                 id
-//                 mediaItemUrl
-//               }
-//               storyCover {
-//                 id
-//                 mediaItemUrl
-//               }
+// query NewQuery {
+//     allWpHeroSection {
+//       edges {
+//         node {
+//           heroSection {
+//             fieldGroupName
+//             videoDescription
+//             videoTitle
+//             video {
+//               id
+//               link
 //             }
-//             title
 //           }
 //         }
 //       }
-//   }`
+//     }
+//   }
+//   `
 export default Blog

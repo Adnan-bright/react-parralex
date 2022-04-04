@@ -1,22 +1,28 @@
 import React, { useRef, useEffect, useState } from "react";
 import '../styles/index.css'
-import HeroVer1 from "../components/heroVer1/HeroVer1"
 import Layout from "../components/layout/Layout";
 import AboutUS from "../components/aboutUs/AboutUs";
-import Service1 from "../components/service1/Service1";
-import Stories1 from "../components/stories1/Stories1";
-import Contact1 from "../components/contact/Contact1";
 import Process from "../components/process/Process";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
-import useWindowDimensions from "../components/hooks/getWindowDimension";
-const IndexPage = () => {
+import UseWindowDimension from "../components/hooks/useWindowDimension";
+import HeroVer from "../components/heroVer/HeroVer";
+import Contact from "../components/contact/Contact";
+import Service from "../components/service/Service";
+import Stories from "../components/stories/Stories";
+import { graphql } from "gatsby"
+
+const IndexPage = ({data}) => {
+  // const response = data.allWpHeroSection.edges
+  // console.log('data', response)
   const [isResume, setIsResume] = useState(true)
-  const { height, width } = useWindowDimensions();
+  const { height, width } = UseWindowDimension();
   const [updateValue, setUpdateValue] = useState(0)
   const [detectChange, setDetectChange] = useState([])
   const [isSmall, setIsSmall] = useState(true)
+   
+
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
   const ref = useRef(null);
@@ -69,44 +75,44 @@ const IndexPage = () => {
           id='newId'
             className="container">
             <div id={'panel-1'} className="panel">
-              <HeroVer1 isMobile={width < 600} />
+              <HeroVer isMobile={width < 600} />
             </div>
             <div id={'panel-2'} className="panel">
               <AboutUS isMobile={width < 600} />
             </div>
             <div id={'panel-3'} className="panel">
-              <Service1 isMobile={width < 600} />
+              <Service isMobile={width < 600} />
             </div>
             <div id={'panel-4'} className="panel">
-              <Stories1 setIsResume={setIsResume} isMobile={width < 600} />
+              <Stories setIsResume={setIsResume} isMobile={width < 600} />
             </div>
             <div id={'panel-5'} className="panel">
               <Process isMobile={width < 600} />
             </div>
             <div id={'panel-6'} className="panel">
-              <Contact1 isMobile={width < 600} />
+              <Contact isMobile={width < 600} />
             </div>
           </div>
           :
           <div
             className="verticalContainer">
             <div id={'verticalPanel-1'} className="verticalPanel">
-              <HeroVer1 isMobile={width < 600} />
+              <HeroVer isMobile={width < 600} />
             </div>
             <div id={'verticalPanel-2'} className="verticalPanel">
               <AboutUS isMobile={width < 600} />
             </div>
             <div id={'verticalPanel-3'} className="verticalPanel">
-              <Service1 isMobile={width < 600} />
+              <Service isMobile={width < 600} />
             </div>
              <div id={'verticalPanel-4'} className="verticalPanel">
-              <Stories1 isMobile={width < 600 } />
+              <Stories isMobile={width < 600 } />
             </div>
            <div id={'verticalPanel-5'} className="verticalPanel">
               <Process isMobile={width < 600 } />
             </div>
             <div id={'verticalPanel-6'} className="verticalPanel">
-              <Contact1 isMobile={width < 600 } />
+              <Contact isMobile={width < 600 } />
             </div>
           </div>
         }
@@ -115,5 +121,23 @@ const IndexPage = () => {
 
   )
 }
-
+// export const pageQuery = graphql`
+// query NewQuery {
+//     allWpHeroSection {
+//       edges {
+//         node {
+//           heroSection {
+//             fieldGroupName
+//             videoDescription
+//             videoTitle
+//             video {
+//               id
+//               link
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+//   `
 export default IndexPage

@@ -1,9 +1,9 @@
 import React from 'react'
 import * as style from "../../styles/components/reviewContainer.module.css"
 import Slider from "react-slick";
-
+import UseReviewContainer from './useReviewContainer';
 function ReviewContainer() {
-
+    const {reviewsData} = UseReviewContainer()
     const settings = {
         dots: false,
         infinite: false,
@@ -12,18 +12,6 @@ function ReviewContainer() {
         slidesToScroll: 1,
 
     };
-    const items = [
-        {
-            ratings: '4.7',
-            feedback: "“There are a lot of benefits to working with MAG-RAW, and that’s why I’ll continue to go back to them.”",
-            reference: "Solutions Advisor, IT Business &#38; Solutions Firm"
-        },
-        {
-            ratings: '5.0',
-            feedback: "“There are a lot of benefits to working with MAG-RAW, and that’s why I’ll continue to go back to them.”",
-            reference: "lorem ipsum"
-        },
-    ]
 
     return (
         <div
@@ -37,10 +25,10 @@ function ReviewContainer() {
                         className={style.slider}
                     >
                         {
-                            items.map((item, index) => {
+                            reviewsData.map((item, index) => {
                                 return <div key={index} className={style.dataContainer}>
                                     <div className={style.revCont}>
-                                        <p className={style.revText}>{item.ratings}</p>
+                                        <p className={style.revText}>{item.rating}</p>
                                         <img
                                             className={style.starIcon}
                                             src='/images/contact/star.webp' />
