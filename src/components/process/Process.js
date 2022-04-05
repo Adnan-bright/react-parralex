@@ -94,7 +94,6 @@ function Process({ isMobile }) {
                                     className={`${style.bgContainer} `}>
                                     <div className={`${style.dataContainer} processDataContainer`}>
                                         <img
-
                                             className={style.imgItem}
                                             src={newData?.fifthStep?.icon?.mediaItemUrl} />
                                         <p

@@ -10,7 +10,7 @@ function ReviewContainer() {
         arrows: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         speed: 2000,
         autoplaySpeed: 3000,
         pauseOnHover: true

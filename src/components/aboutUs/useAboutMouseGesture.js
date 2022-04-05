@@ -9,7 +9,6 @@ function UseAboutMouseGesture(className, ref) {
         rotY = -20;
 
     const bind = useMove(({xy}) => {
-        console.log('initial', xy)
         if (width >= 600) {
             mouseMoved(xy[0], xy[1])
         }

@@ -42,6 +42,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-left: 0px;
+    margin-top: 0px ;
 }
 
 .bgContainer {
@@ -205,15 +207,6 @@
     bottom: 150px;
 }
 
-.midRow:hover {
-    display: flex;
-    width: 100%;
-    position: absolute;
-    left: 220px;
-    bottom: 150px;
-    z-index: 22;
-}
-
 .imageContainer3 {
     background-image: url(../../../static/images/process/planning.webp);
     background-size: contain;
@@ -311,14 +304,7 @@
     bottom: 332px;
 }
 
-.topRow:hover {
-    display: flex;
-    width: 100%;
-    position: absolute;
-    left: 757px;
-    bottom: 332px;
-    z-index: 22;
-}
+
 
 .imgItem {
     z-index: 300;
@@ -436,7 +422,250 @@
     text-transform: uppercase;
     color: #FFFFFF;
 }
+@media only screen and (max-width: 1100px) {
+    .boxDetailsHide {
+        font-size: 9px;
+        top: 60px;
+        line-height: 14px;
+    }
+    
+    .boxDetails {
+        font-size: 9px;
+        width: 170%;
+        top: 60px;
+        line-height: 14px;
+    }
+    .dataContainer {
+      margin-top: -50px;
+      margin-left: -50px;
+    }
+    .imgItem{
+        width: auto;
+        height: 30px;
+    }
+    .imageText {
+        font-size: 14px;
+        margin-top: 17px;
+    }
+    .topRow {
+        left: 557px;
+        bottom: 252px;
+    }
+    .midRow {
+        left: 170px;
+        bottom: 110px;
+    }
+    .heading {
+        font-size: 40px;
+    }
+    .imageContainer5 {
+        width: 250px;
+        height: 250px;
+        margin-left: 30px;
+    }
+    
+    .imageContainer5Active {
+        width: 250px;
+        height: 250px;
+        margin-left: 30px;
+    }
+    
+    .imageContainer5Blur {
+        width: 250px;
+        height: 250px;
+        margin-left: 30px;
+    }
+/* 4 */
+    .imageContainer4 {
+        width: 250px;
+        height: 250px;
+        margin-left: 30px;
+    }
+    
+    .imageContainer4Active {
+        width: 250px;
+        height: 250px;
+        margin-left: 30px;
+    }
+    
+    .imageContainer4Blur {
+        width: 250px;
+        height: 250px;
+        margin-left: 30px;
+    }
 
+    /* 3 */
+    .imageContainer3 {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .imageContainer3Active {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .imageContainer3Blur {
+        width: 250px;
+        height: 250px;
+    }
+     /* 2 */
+     .imageContainer2 {
+        width: 250px;
+        margin-left: 30px;
+        height: 250px;
+    }
+    
+    .imageContainer2Active {
+        width: 250px;
+        margin-left: 30px;
+        height: 250px;
+    }
+    
+    .imageContainer2Blur {
+        width: 250px;
+        margin-left: 30px;
+        height: 250px;
+    }
+         /* 1 */
+         .imageContainer1 {
+            width: 250px;
+            height: 250px;
+        }
+        
+        .imageContainer1Active {
+            width: 250px;
+            height: 250px;
+        }
+        
+        .imageContainer1Blur {
+            width: 250px;
+            height: 250px;
+        }
+
+}
+@media only screen and (max-width: 800px) {
+    .boxDetailsHide {
+        font-size: 8px;
+        top: 50px;
+        line-height: 14px;
+    }
+    
+    .boxDetails {
+        font-size: 8px;
+        width: 170%;
+        top: 50px;
+        line-height: 14px;
+    }
+    .dataContainer {
+      margin-top: -30px;
+      margin-left: -30px;
+    }
+    .imgItem{
+        width: auto;
+        height: 25px;
+    }
+    .imageText {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    .topRow {
+        left: 457px;
+        bottom: 192px;
+    }
+    .midRow {
+        left: 145px;
+        bottom: 80px;
+    }
+    .heading {
+        font-size: 40px;
+    }
+    .imageContainer5 {
+        width: 200px;
+        height: 200px;
+        margin-left: 30px;
+    }
+    
+    .imageContainer5Active {
+        width: 200px;
+        height: 200px;
+        margin-left: 30px;
+    }
+    
+    .imageContainer5Blur {
+        width: 200px;
+        height: 200px;
+        margin-left: 30px;
+    }
+/* 4 */
+    .imageContainer4 {
+        width: 200px;
+        height: 200px;
+        margin-left: 30px;
+    }
+    
+    .imageContainer4Active {
+        width: 200px;
+        height: 200px;
+        margin-left: 30px;
+    }
+    
+    .imageContainer4Blur {
+        width: 200px;
+        height: 200px;
+        margin-left: 30px;
+    }
+
+    /* 3 */
+    .imageContainer3 {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .imageContainer3Active {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .imageContainer3Blur {
+        width: 200px;
+        height: 200px;
+    }
+     /* 2 */
+     .imageContainer2 {
+        width: 200px;
+        margin-left: 30px;
+        height: 200px;
+    }
+    
+    .imageContainer2Active {
+        width: 200px;
+        margin-left: 30px;
+        height: 200px;
+    }
+    
+    .imageContainer2Blur {
+        width: 200px;
+        margin-left: 30px;
+        height: 200px;
+    }
+         /* 1 */
+         .imageContainer1 {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .imageContainer1Active {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .imageContainer1Blur {
+            width: 200px;
+            height: 200px;
+        }
+
+}
 @media only screen and (max-height: 650px) {
     .mblTitle {
         font-size: 18px;

@@ -284,7 +284,7 @@ function Contact({ id, isMobile }) {
                                             <input onKeyDown={(e) => handleEnter(e)} type={'text'} placeholder='Message' />
                                         </div>
                                     </form>
-                                    <div className={style.btnContainer}> <div className={style.btn}>submit</div></div>
+                                    <div className={style.btnContainer}> <div className={style.btn}><p>submit</p></div></div>
                                 </div>
                             </div>
 

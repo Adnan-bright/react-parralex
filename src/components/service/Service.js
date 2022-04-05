@@ -147,10 +147,8 @@ function Service({ isMobile }) {
                             >
                                 <div
 
-                                    className={style.videoBox}
-                                >
+                                    className={style.videoBox} >
                                     <img
-
                                         onClick={() => setVideo('')}
 
                                         className={style.videoCloseIcon} src={VideoCloseIcon} alt='VideoCloseIcon' />
