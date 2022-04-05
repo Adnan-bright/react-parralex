@@ -42,6 +42,15 @@
     display: flex;
     position: relative;
     transition: ease-in-out .3s;
+    -webkit-mask-image: url(../../../static/images/services/img1.webp);
+    -webkit-mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size:cover;
+
+    mask-image: url(../../../static/images/services/img1.webp);
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    mask-size:cover;
 }
 
 @media only screen and (max-width:1440px) {

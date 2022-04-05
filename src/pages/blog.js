@@ -23,7 +23,7 @@ function Blog({ data }) {
                     return <div
                     style={{
                         marginTop:"50px",
-                        fontFamily: "graphik-regular"
+                        fontFamily: "7graphik-regular"
                     }}
                     key={index}>
                         <img src={item.node.storiesfields.storyIcon.mediaItemUrl} />
