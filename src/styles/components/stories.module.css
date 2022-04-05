@@ -58,9 +58,8 @@
 }
 
 .topContainer {
-    width: 91vw;
+    width: 100vw;
     height: 300px;
-    padding-left: 8%;
     margin-top: -70px;
 }
 .customDotsContainer{
@@ -285,9 +284,149 @@
     margin-right: auto;
   }
 
+  @media only screen and (max-width:1450px) {
+  .singleImgContainerBlur {
+    margin-left: 90px;
+    width: 170px !important;
+    height: 170px !important;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    transform: rotateZ(45deg);
+    overflow: hidden;
+    transition: ease-in-out .4s;
+    position: relative;
+    filter: blur(3px);
+}
 
+.singleImgContainer {
+    margin-left: 90px;
+    width: 170px !important;
+    height: 170px !important;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    transform: rotateZ(45deg);
+    overflow: hidden;
+    transition: ease-in-out .4s;
+    position: relative;
+}
+}
+@media only screen and (max-width:1250px) {
+    .singleImgContainerBlur {
+      margin-left: 90px;
+      width: 150px !important;
+      height: 150px !important;
+      margin-top: 90px;
+      margin-bottom: 90px;
+      transform: rotateZ(45deg);
+      overflow: hidden;
+      transition: ease-in-out .4s;
+      position: relative;
+      filter: blur(3px);
+  }
+  
+  .singleImgContainer {
+      margin-left: 90px;
+      width: 150px !important;
+      height: 150px !important;
+      margin-top: 90px;
+      margin-bottom: 90px;
+      transform: rotateZ(45deg);
+      overflow: hidden;
+      transition: ease-in-out .4s;
+      position: relative;
+  }
+  }
+  @media only screen and (max-width:1100px) {
+    .btmRowInSlider{
+        margin-left: 0px;
+        margin-top: 240px;
+    }
+    .singleImgContainerBlur {
+      margin-left: 90px;
+      width: 180px !important;
+      height: 180px !important;
+      margin-top: 90px;
+      margin-bottom: 90px;
+      transform: rotateZ(45deg);
+      overflow: hidden;
+      transition: ease-in-out .4s;
+      position: relative;
+      filter: blur(3px);
+  }
+  
+  .singleImgContainer {
+      margin-left: 90px;
+      width: 180px !important;
+      height: 180px !important;
+      margin-top: 90px;
+      margin-bottom: 90px;
+      transform: rotateZ(45deg);
+      overflow: hidden;
+      transition: ease-in-out .4s;
+      position: relative;
+  }
+  }
+  @media only screen and (max-width:1100px) {
+    .btmRowInSlider{
+        margin-left: 0px;
+        margin-top: 220px;
+    }
+    .singleImgContainerBlur {
+      margin-left: 90px;
+      width: 160px !important;
+      height: 160px !important;
+      margin-top: 90px;
+      margin-bottom: 90px;
+      transform: rotateZ(45deg);
+      overflow: hidden;
+      transition: ease-in-out .4s;
+      position: relative;
+      filter: blur(3px);
+  }
+  
+  .singleImgContainer {
+      margin-left: 90px;
+      width: 160px !important;
+      height: 160px !important;
+      margin-top: 90px;
+      margin-bottom: 90px;
+      transform: rotateZ(45deg);
+      overflow: hidden;
+      transition: ease-in-out .4s;
+      position: relative;
+  }
+  }
 
-
+  @media only screen and (max-width:900px) {
+    .btmRowInSlider{
+        margin-left: 0px;
+        margin-top: 250px;
+    }
+    .singleImgContainerBlur {
+      margin-left: 90px;
+      width: 200px !important;
+      height: 200px !important;
+      margin-top: 90px;
+      margin-bottom: 90px;
+      transform: rotateZ(45deg);
+      overflow: hidden;
+      transition: ease-in-out .4s;
+      position: relative;
+      filter: blur(3px);
+  }
+  
+  .singleImgContainer {
+      margin-left: 90px;
+      width: 200px !important;
+      height: 200px !important;
+      margin-top: 90px;
+      margin-bottom: 90px;
+      transform: rotateZ(45deg);
+      overflow: hidden;
+      transition: ease-in-out .4s;
+      position: relative;
+  }
+  }
 @media only screen and (max-width:1300px) {
 
     .description {

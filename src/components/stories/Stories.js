@@ -169,7 +169,24 @@ function Stories({ isMobile }) {
         autoplay: false,
         autoplaySpeed: 3000,
         dotsClass: "button__bar",
-        arrows: false
+        arrows: false,
+        responsive: [
+            {
+              breakpoint: 1100,
+              settings: {
+                slidesToShow: 6,
+                slidesToScroll: 6,
+              }
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                  slidesToShow: 4,
+                  slidesToScroll: 4,
+                }
+              },
+            
+          ]
     };
 
 
