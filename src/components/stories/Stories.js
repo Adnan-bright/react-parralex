@@ -4,9 +4,9 @@ import Slider from "react-slick";
 import { motion } from "framer-motion";
 import UseStoriesMouseGesture from './useStoriesMouseGesture';
 import UseStories from './useStories';
-
+import { Link } from 'gatsby';
 function Stories({ isMobile }) {
-    const {storiesData}=UseStories()
+    const { storiesData } = UseStories()
     const data = [
         {
             className: 'greenCross',
@@ -172,21 +172,21 @@ function Stories({ isMobile }) {
         arrows: false,
         responsive: [
             {
-              breakpoint: 1100,
-              settings: {
-                slidesToShow: 6,
-                slidesToScroll: 6,
-              }
+                breakpoint: 1100,
+                settings: {
+                    slidesToShow: 6,
+                    slidesToScroll: 6,
+                }
             },
             {
                 breakpoint: 900,
                 settings: {
-                  slidesToShow: 4,
-                  slidesToScroll: 4,
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
                 }
-              },
-            
-          ]
+            },
+
+        ]
     };
 
 
@@ -198,7 +198,7 @@ function Stories({ isMobile }) {
     storiesData.push(storiesData[0])
     return (
         <div {...bind()} ref={pageRef}>
-    
+
             {
                 isMobile ?
                     <div className={style.mblMain}>
@@ -394,18 +394,20 @@ function Stories({ isMobile }) {
                                                     onMouseEnter={() => setWhichCard('active')}
                                                     onMouseLeave={() => setWhichCard('')}
                                                     key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
-                                                    <img
-                                                        className={style.icon}
-                                                        src={'/images/stories/icon.webp'} />
-                                                    <div className={style.txtContainer}>
-                                                        <h5 className={style.title}>
-                                                            {item.title}
-                                                        </h5>
-                                                        <p className={style.description}>
-                                                            {item.description}
-                                                        </p>
-                                                    </div>
-                                                    <img draggable={false} className={style.imgTop} src={item.coverImage} />
+                                                    <Link to={item.slug}>
+                                                        <img
+                                                            className={style.icon}
+                                                            src={'/images/stories/icon.webp'} />
+                                                        <div className={style.txtContainer}>
+                                                            <h5 className={style.title}>
+                                                                {item.title}
+                                                            </h5>
+                                                            <p className={style.description}>
+                                                                {item.description}
+                                                            </p>
+                                                        </div>
+                                                        <img draggable={false} className={style.imgTop} src={item.coverImage} />
+                                                    </Link>
                                                 </div> :
                                                     <div
                                                         style={{
@@ -417,18 +419,20 @@ function Stories({ isMobile }) {
                                                             onMouseEnter={() => setWhichCard('active')}
                                                             onMouseLeave={() => setWhichCard('')}
                                                             key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
-                                                            <img
-                                                                className={style.icon}
-                                                                src={'/images/stories/icon.webp'} />
-                                                            <div className={style.txtContainer}>
-                                                                <h5 className={style.title}>
-                                                                    {item.title}
-                                                                </h5>
-                                                                <p className={style.description}>
-                                                                    {item.description}
-                                                                </p>
-                                                            </div>
-                                                            <img draggable={false} className={style.imgTop} src={item.coverImage} />
+                                                            <Link to={item.slug}>
+                                                                <img
+                                                                    className={style.icon}
+                                                                    src={'/images/stories/icon.webp'} />
+                                                                <div className={style.txtContainer}>
+                                                                    <h5 className={style.title}>
+                                                                        {item.title}
+                                                                    </h5>
+                                                                    <p className={style.description}>
+                                                                        {item.description}
+                                                                    </p>
+                                                                </div>
+                                                                <img draggable={false} className={style.imgTop} src={item.coverImage} />
+                                                            </Link>
                                                         </div>
                                                     </div>}
                                             </div>

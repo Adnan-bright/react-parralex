@@ -6,19 +6,25 @@ function UseStories() {
               query StoriesData {
               allWpStories {
                 edges {
-                    node {
-                      stories {
-                        description
-                        storyTitle
-                        coverImage {
-                          mediaItemUrl
-                        }
-                        coverImageLink {
-                            url
-                          }
+                  node {
+                    stories {
+                      client
+                      coverImage {
+                        mediaItemUrl
                       }
+                      coverImageLink {
+                        url
+                      }
+                      description
+                      story
+                      storyTitle
+                      storyType
+                      team
+                      year
+                      slug
                     }
                   }
+                }
                   }
               }
             `
@@ -30,9 +36,11 @@ function UseStories() {
             coverImage: item.node.stories.coverImageLink ? item.node.stories.coverImageLink.url :
                 item.node.stories.coverImage.mediaItemUrl,
                 description: item.node.stories.description,
-                title: item.node.stories.storyTitle
+                title: item.node.stories.storyTitle,
+                slug: item.node.stories.slug
         })
     })
+    console.log('storiesData', storiesData)
     return { storiesData }
 }
 
