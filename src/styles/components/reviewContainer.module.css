@@ -79,3 +79,210 @@
     color: #FFFFFF;
 }
 
+
+@media only screen and (max-width:1250px){
+    .revCont {
+        margin-top: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .starIcon {
+        width: 24px;
+        height: 24px;
+        padding-bottom: 5px;
+    }
+    .main {
+        position: relative;
+        width: 250px;
+        height: 250px;
+    }
+    
+    .mainImg {
+        width: 250px;
+        height: 250px;
+        z-index: -2;
+    }
+    .sliderContainer{
+        top: 38px;
+        left: 38px;
+        width: 175px;
+        height: 175px;
+        display: flex;
+        transform: rotate(-45deg);
+    }
+    .slider{
+        top: -70px;
+        left: -70px;
+        transform: rotate(45deg);
+        position: absolute;
+    }
+    .starIcon {
+        width: 18px;
+        height: 18px;
+        padding-bottom: 5px;
+    }
+    .recDesc {
+        margin-top: 15px;
+        width: 62%;
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .lowerText {
+        margin-top: 25px;
+        width: 30%;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 11px;
+    }
+    .revText {
+        font-size: 16px;
+    }
+    
+}
+
+@media only screen and (max-width:750px){
+    .revCont {
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .starIcon {
+        width: 24px;
+        height: 24px;
+        padding-bottom: 5px;
+    }
+    .main {
+        position: relative;
+        width: 210px;
+        height: 210px;
+    }
+    
+    .mainImg {
+        width: 210px;
+        height: 210px;
+        z-index: -2;
+    }
+    .sliderContainer{
+        top: 32px;
+        left: 32px;
+        width: 147px;
+        height: 147px;
+        display: flex;
+        transform: rotate(-45deg);
+    }
+    .slider{
+        top: -83px;
+        left: -83px;
+        transform: rotate(45deg);
+        position: absolute;
+    }
+    .starIcon {
+        width: 18px;
+        height: 18px;
+        padding-bottom: 5px;
+    }
+    .recDesc {
+        margin-top: 15px;
+        width: 50%;
+        font-size: 11px;
+        line-height: 14px;
+    }
+    .lowerText {
+        margin-top: 1px;
+        width: 29%;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 11px;
+    }
+    .revText {
+        font-size: 16px;
+    }
+    
+}
+
+@media only screen and (max-width:600px){
+    .main {
+        position: relative;
+        width: 320px;
+        height: 320px;
+    }
+    
+    .mainImg {
+        width: 320px;
+        height: 320px;
+        z-index: -2;
+    }
+    .dataContainer {
+        z-index: 200;
+    }
+    .sliderContainer{
+        top: 48px;
+        left: 48px;
+        position: absolute;
+        width: 225px;
+        overflow: hidden;
+        height: 225px;
+        display: flex;
+        justify-content: right;
+        transform: rotate(-45deg);
+    }
+    .slider{
+        top: -44px;
+        left: -44px;
+        transform: rotate(45deg);
+        position: absolute;
+        width: 314px;
+        height: 314px;
+    }
+    .revCont {
+        margin-top: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .starIcon {
+        width: 24px;
+        height: 24px;
+        padding-bottom: 5px;
+    }
+    
+    .recDesc {
+        margin-top: 20px;
+        width: 80%;
+        font-family: graphik-regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    
+    .lowerText {
+        margin-top: 40px;
+        width: 40%;
+        font-family: graphik-regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 13px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    
+    .revText {
+        margin-right: 7px;
+        font-family: graphik-regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 22px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+}

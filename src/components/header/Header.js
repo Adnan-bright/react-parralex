@@ -6,7 +6,6 @@ import { Link } from 'gatsby'
 function Header({ navClick, hoverValue }) {
   const [nav, setNav] = useState('')
   const [value, setValue] = useState('')
-  console.log('hoverValue', hoverValue)
   useEffect(() => {
     // setTimeout(() => {
     hoverValue === 0.2 ?

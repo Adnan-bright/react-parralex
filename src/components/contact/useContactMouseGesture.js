@@ -6,7 +6,6 @@ function UseContactMouseGesture(data, ref) {
     const bind = useMove(({ xy}) => {
         if (width >= 600) {
             mouseMoved(xy[0], xy[1])
-            console.log(" 'X'", xy[0], "Movement 'Y'", xy[1]);
         }
     })
 
