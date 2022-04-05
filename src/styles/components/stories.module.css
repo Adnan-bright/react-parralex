@@ -311,6 +311,9 @@
 }
 }
 @media only screen and (max-width:1250px) {
+    .heading {
+        font-size: 40px;
+    }
     .singleImgContainerBlur {
       margin-left: 90px;
       width: 150px !important;
@@ -398,6 +401,9 @@
   }
 
   @media only screen and (max-width:900px) {
+    .heading {
+        font-size: 30px;
+    }
     .btmRowInSlider{
         margin-left: 0px;
         margin-top: 250px;
