@@ -3,8 +3,14 @@
     background: linear-gradient(142.72deg, #FF5156 -2.74%, #8439EA 70.64%);
     width: 100%;
     margin-top: 55px;
+    position: relative;
 }
-
+.leftArrow{
+    cursor: pointer;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
 .bannerHeader {
     display: flex;
     padding-top: 20px;

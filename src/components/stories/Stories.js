@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import { motion } from "framer-motion";
 import UseStoriesMouseGesture from './useStoriesMouseGesture';
 import UseStories from './useStories';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 function Stories({ isMobile }) {
     const { storiesData } = UseStories()
     const data = [
@@ -159,6 +159,9 @@ function Stories({ isMobile }) {
     //     },
 
     // ]
+
+    const [isDragging, setIsDragging] = useState  (false);
+
 
     const settings = {
         dots: true,
@@ -378,9 +381,11 @@ function Stories({ isMobile }) {
                         </div>
                         <div className={style.imagesContainer}>
 
-                            <div className={style.topContainer}>
+                            <div
+                            className={style.topContainer}>
                                 <Slider
                                     ref={myRef}
+                                    onSwipe={()=> setIsDragging(true)}
                                     {...settings}
                                     className={`${style.slider} sliderComponent`}
                                 >
@@ -391,10 +396,11 @@ function Stories({ isMobile }) {
                                                     style={{
                                                         opacity: index + 1 === storiesData.length && 0
                                                     }}
+                                                    onMouseUp={()=> setIsDragging(false)}
+                                                    onClick={()=> !isDragging && navigate(item.slug, 'ahmad')}
                                                     onMouseEnter={() => setWhichCard('active')}
                                                     onMouseLeave={() => setWhichCard('')}
                                                     key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
-                                                    <Link to={item.slug}>
                                                         <img
                                                             className={style.icon}
                                                             src={'/images/stories/icon.webp'} />
@@ -407,7 +413,6 @@ function Stories({ isMobile }) {
                                                             </p>
                                                         </div>
                                                         <img draggable={false} className={style.imgTop} src={item.coverImage} />
-                                                    </Link>
                                                 </div> :
                                                     <div
                                                         style={{
@@ -416,10 +421,11 @@ function Stories({ isMobile }) {
                                                         className={style.btmRowInSlider}
                                                     >
                                                         <div
+                                                           onMouseUp={()=> setIsDragging(false)}
+                                                           onClick={()=> !isDragging && navigate(item.slug)}
                                                             onMouseEnter={() => setWhichCard('active')}
                                                             onMouseLeave={() => setWhichCard('')}
                                                             key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
-                                                            <Link to={item.slug}>
                                                                 <img
                                                                     className={style.icon}
                                                                     src={'/images/stories/icon.webp'} />
@@ -432,7 +438,6 @@ function Stories({ isMobile }) {
                                                                     </p>
                                                                 </div>
                                                                 <img draggable={false} className={style.imgTop} src={item.coverImage} />
-                                                            </Link>
                                                         </div>
                                                     </div>}
                                             </div>

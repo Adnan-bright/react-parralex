@@ -5,8 +5,12 @@
 }
 
 .headings {
-    margin-left: -11%;
-    margin-top: 0%;
+    width: 80%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .magic {
@@ -42,6 +46,7 @@
         transform: scale(1);
     }
 }
+
 @keyframes scaleDown {
     from {
         transform: scale(1);
@@ -137,26 +142,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transform:  scale(1);
+    transform: scale(1);
     opacity: 1;
     transition: ease-in-out .5s;
 }
-.contentHide{
+
+.contentHide {
     height: 100%;
     display: flex;
     flex-direction: column;
-    transform:  scale(0.8);
+    transform: scale(0.8);
     opacity: 0;
     transition: ease-in-out .5s;
     justify-content: center;
 }
+
 .mainHeading1 {
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
     font-size: 85px;
     line-height: 90px;
-    margin-left: -3%;
     text-transform: uppercase;
     text-align: center;
     color: #FFFFFF;
@@ -168,8 +174,7 @@
     font-weight: normal;
     font-size: 85px;
     line-height: 90px;
-    text-align: center;
-    margin-left: -23%;
+    text-align: left;
     margin-top: 20px;
     /* identical to box height */
     text-transform: uppercase;
@@ -188,7 +193,16 @@
     text-transform: uppercase;
     color: #FFFFFF;
 }
-
+@media only screen and (max-width:1500px) {
+.headings {
+    width: 90%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
 @media only screen and (max-width:768px) {
     .mainHeading1 {
         font-size: 35px;
@@ -259,19 +273,7 @@
     cursor: pointer;
 }
 
-@media only screen and (max-width:1550px) {
-    .mainHeading1 {
-        margin-left: 2%;
-    }
 
-    .mainHeading2 {
-        margin-left: -13%;
-    }
-
-    .mainHeading3 {
-        margin-left: 4%;
-    }
-}
 
 @media only screen and (max-width:1350px) {
     .videoBox {
@@ -279,17 +281,6 @@
         width: 70vw;
     }
 
-    .mainHeading1 {
-        margin-left: 3%;
-    }
-
-    .mainHeading2 {
-        margin-left: -10%;
-    }
-
-    .mainHeading3 {
-        margin-left: 9%;
-    }
 }
 
 @media only screen and (max-width:1250px) {
@@ -298,17 +289,6 @@
         width: 80vw;
     }
 
-    .mainHeading1 {
-        margin-left: 12%;
-    }
-
-    .mainHeading2 {
-        margin-left: -3%;
-    }
-
-    .mainHeading3 {
-        margin-left: 13%;
-    }
 }
 
 @media only screen and (max-width:1050px) {
@@ -317,17 +297,6 @@
         width: 90vw;
     }
 
-    .mainHeading1 {
-        margin-left: 0%;
-    }
-
-    .mainHeading2 {
-        margin-left: 0%;
-    }
-
-    .mainHeading3 {
-        margin-left: 0%;
-    }
 }
 
 @media only screen and (max-width:768px) {
@@ -373,52 +342,57 @@
         font-size: 45px;
         line-height: 50px;
     }
-    
+
     .mainHeading2 {
         font-size: 45px;
         line-height: 50px;
     }
-    
+
     .mainHeading3 {
         font-size: 45px;
         line-height: 50px;
     }
+
     .bgImgContainer {
         width: 70vw;
         min-height: 70vh;
-       
+
     }
+
     .bgImgContainerHide {
         width: 40vw;
         height: 40vh;
     }
-   
+
 }
+
 @media only screen and (max-width: 650px) {
     .mainHeading1 {
         font-size: 35px;
         line-height: 50px;
     }
-    
+
     .mainHeading2 {
         font-size: 35px;
         line-height: 50px;
     }
-    
+
     .mainHeading3 {
         font-size: 35px;
         line-height: 50px;
     }
+
     .bgImgContainer {
         width: 70vw;
         min-height: 70vh;
-       
+
     }
+
     .bgImgContainerHide {
         width: 40vw;
         height: 40vh;
     }
-   
+
 }
 
 
@@ -440,9 +414,11 @@
     width: 100%;
     height: 100vh;
 }
-.midContainer{
+
+.midContainer {
     margin-top: -70px;
 }
+
 .mblHeadingsContainer {
     display: flex;
     align-items: center;
@@ -556,28 +532,31 @@
     margin-top: 20px;
     z-index: 999;
 }
+
 @media only screen and (max-width: 350px) {
 
-.mblMidHeading {
-    font-family: graphik-regular;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 4px;
-    margin-left: 0%;
-    text-transform: uppercase;
-    color: #FFFFFF;
+    .mblMidHeading {
+        font-family: graphik-regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 4px;
+        margin-left: 0%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
 }
-}
+
 @media only screen and (max-height: 650px) {
 
-    .midContainer{
+    .midContainer {
         margin-top: 20px;
     }
 
     .mblScrollTxtCont {
         bottom: 10px;
     }
+
     .mblPlayIcon {
         width: 70px;
         height: 70px;

@@ -6,6 +6,17 @@
 
 }
 
+.rowsContainer {
+    width: 1100px;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0px;
+}
+
 .boxDetailsHide {
     position: absolute;
     font-family: graphik-regular;
@@ -43,7 +54,7 @@
     align-items: center;
     flex-direction: column;
     margin-left: 0px;
-    margin-top: 0px ;
+    margin-top: 0px;
 }
 
 .bgContainer {
@@ -56,7 +67,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: black;
+}
+
+.bgContainer:hover {
+    z-index: 999;
 }
 
 .imageContainer5:hover~.imageContainer3 {
@@ -89,19 +103,9 @@
 
 .bottomRow {
     display: flex;
-    width: 100%;
     position: absolute;
-    bottom: -30px;
-    left: 30px;
-}
-
-.bottomRow:hover {
-    display: flex;
-    width: 100%;
-    position: absolute;
-    bottom: -30px;
-    left: 30px;
-    z-index: 22;
+    bottom: 0px;
+    right: 370px;
 }
 
 .imageContainer1 {
@@ -128,6 +132,7 @@
     align-items: center;
     flex-direction: column;
     transform: scale(1.2);
+    z-index: 200;
     transition: ease-in-out .3s;
 }
 
@@ -175,6 +180,7 @@
     flex-direction: column;
     margin-left: 30px;
     transform: scale(1.2);
+    z-index: 200;
     transition: ease-in-out .3s;
 
 }
@@ -201,10 +207,9 @@
 
 .midRow {
     display: flex;
-    width: 100%;
     position: absolute;
-    left: 220px;
-    bottom: 150px;
+    right: 180px;
+    top: 180px;
 }
 
 .imageContainer3 {
@@ -248,6 +253,7 @@
     flex-direction: column;
     transform: scale(1.2);
     transition: ease-in-out .3s;
+    z-index: 200;
 }
 
 .imageContainer4 {
@@ -277,6 +283,7 @@
     flex-direction: column;
     margin-left: 30px;
     transition: ease-in-out .3s;
+    z-index: 200;
     transform: scale(1.2);
 }
 
@@ -298,10 +305,8 @@
 
 .topRow {
     display: flex;
-    width: 100%;
     position: absolute;
-    left: 757px;
-    bottom: 332px;
+    right: 0px;
 }
 
 
@@ -339,6 +344,7 @@
     flex-direction: column;
     margin-left: 30px;
     transition: ease-in-out .3s;
+    z-index: 200;
     transform: scale(1.2);
 }
 
@@ -422,72 +428,100 @@
     text-transform: uppercase;
     color: #FFFFFF;
 }
+
 @media only screen and (max-width: 1100px) {
+    .topRow {
+        display: flex;
+        position: absolute;
+        right: 5px;
+        top: 11.5%;
+    }
+    .bottomRow {
+        display: flex;
+        position: absolute;
+        bottom: 17%;
+        right: 34%;
+    }
+    .midRow {
+        display: flex;
+        position: absolute;
+        right: 17%;
+        top: 30%;
+    }
+    .rowsContainer {
+        width: 800px;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        top: 0px;
+    }
     .boxDetailsHide {
         font-size: 9px;
         top: 60px;
         line-height: 14px;
     }
-    
+
     .boxDetails {
         font-size: 9px;
         width: 170%;
         top: 60px;
         line-height: 14px;
     }
+
     .dataContainer {
-      margin-top: -50px;
-      margin-left: -50px;
+        margin-top: -50px;
+        margin-left: -50px;
     }
-    .imgItem{
+
+    .imgItem {
         width: auto;
         height: 30px;
     }
+
     .imageText {
         font-size: 14px;
         margin-top: 17px;
     }
-    .topRow {
-        left: 557px;
-        bottom: 252px;
-    }
-    .midRow {
-        left: 170px;
-        bottom: 110px;
-    }
+
+
     .heading {
         font-size: 40px;
     }
+
     .imageContainer5 {
         width: 250px;
         height: 250px;
         margin-left: 30px;
     }
-    
+
     .imageContainer5Active {
         width: 250px;
         height: 250px;
         margin-left: 30px;
     }
-    
+
     .imageContainer5Blur {
         width: 250px;
         height: 250px;
         margin-left: 30px;
     }
-/* 4 */
+
+    /* 4 */
     .imageContainer4 {
         width: 250px;
         height: 250px;
         margin-left: 30px;
     }
-    
+
     .imageContainer4Active {
         width: 250px;
         height: 250px;
         margin-left: 30px;
     }
-    
+
     .imageContainer4Blur {
         width: 250px;
         height: 250px;
@@ -499,117 +533,150 @@
         width: 250px;
         height: 250px;
     }
-    
+
     .imageContainer3Active {
         width: 250px;
         height: 250px;
     }
-    
+
     .imageContainer3Blur {
         width: 250px;
         height: 250px;
     }
-     /* 2 */
-     .imageContainer2 {
+
+    /* 2 */
+    .imageContainer2 {
         width: 250px;
         margin-left: 30px;
         height: 250px;
     }
-    
+
     .imageContainer2Active {
         width: 250px;
         margin-left: 30px;
         height: 250px;
     }
-    
+
     .imageContainer2Blur {
         width: 250px;
         margin-left: 30px;
         height: 250px;
     }
-         /* 1 */
-         .imageContainer1 {
-            width: 250px;
-            height: 250px;
-        }
-        
-        .imageContainer1Active {
-            width: 250px;
-            height: 250px;
-        }
-        
-        .imageContainer1Blur {
-            width: 250px;
-            height: 250px;
-        }
+
+    /* 1 */
+    .imageContainer1 {
+        width: 250px;
+        height: 250px;
+    }
+
+    .imageContainer1Active {
+        width: 250px;
+        height: 250px;
+    }
+
+    .imageContainer1Blur {
+        width: 250px;
+        height: 250px;
+    }
 
 }
+
 @media only screen and (max-width: 800px) {
+    .topRow {
+        display: flex;
+        position: absolute;
+        right: 5px;
+        top: 15.5%;
+    }
+    .bottomRow {
+        display: flex;
+        position: absolute;
+        bottom: 27%;
+        right: 34%;
+    }
+    .midRow {
+        display: flex;
+        position: absolute;
+        right: 17%;
+        top: 30%;
+    }
+    .rowsContainer {
+        width: 650px;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        top: 0px;
+    }
     .boxDetailsHide {
         font-size: 8px;
         top: 50px;
         line-height: 14px;
     }
-    
+
     .boxDetails {
         font-size: 8px;
         width: 170%;
         top: 50px;
         line-height: 14px;
     }
+
     .dataContainer {
-      margin-top: -30px;
-      margin-left: -30px;
+        margin-top: -30px;
+        margin-left: -30px;
     }
-    .imgItem{
+
+    .imgItem {
         width: auto;
         height: 25px;
     }
+
     .imageText {
         font-size: 12px;
         margin-top: 10px;
     }
-    .topRow {
-        left: 457px;
-        bottom: 192px;
-    }
-    .midRow {
-        left: 145px;
-        bottom: 80px;
-    }
+
+
+
+
+
     .heading {
         font-size: 40px;
     }
+
     .imageContainer5 {
         width: 200px;
         height: 200px;
         margin-left: 30px;
     }
-    
+
     .imageContainer5Active {
         width: 200px;
         height: 200px;
         margin-left: 30px;
     }
-    
+
     .imageContainer5Blur {
         width: 200px;
         height: 200px;
         margin-left: 30px;
     }
-/* 4 */
+
+    /* 4 */
     .imageContainer4 {
         width: 200px;
         height: 200px;
         margin-left: 30px;
     }
-    
+
     .imageContainer4Active {
         width: 200px;
         height: 200px;
         margin-left: 30px;
     }
-    
+
     .imageContainer4Blur {
         width: 200px;
         height: 200px;
@@ -621,51 +688,54 @@
         width: 200px;
         height: 200px;
     }
-    
+
     .imageContainer3Active {
         width: 200px;
         height: 200px;
     }
-    
+
     .imageContainer3Blur {
         width: 200px;
         height: 200px;
     }
-     /* 2 */
-     .imageContainer2 {
+
+    /* 2 */
+    .imageContainer2 {
         width: 200px;
         margin-left: 30px;
         height: 200px;
     }
-    
+
     .imageContainer2Active {
         width: 200px;
         margin-left: 30px;
         height: 200px;
     }
-    
+
     .imageContainer2Blur {
         width: 200px;
         margin-left: 30px;
         height: 200px;
     }
-         /* 1 */
-         .imageContainer1 {
-            width: 200px;
-            height: 200px;
-        }
-        
-        .imageContainer1Active {
-            width: 200px;
-            height: 200px;
-        }
-        
-        .imageContainer1Blur {
-            width: 200px;
-            height: 200px;
-        }
+
+    /* 1 */
+    .imageContainer1 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .imageContainer1Active {
+        width: 200px;
+        height: 200px;
+    }
+
+    .imageContainer1Blur {
+        width: 200px;
+        height: 200px;
+    }
 
 }
+
 @media only screen and (max-height: 650px) {
     .mblTitle {
         font-size: 18px;

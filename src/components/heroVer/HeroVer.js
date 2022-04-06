@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import * as style from '../../styles/components/heroVer.module.css'
 import PlayIcon from '../../../static/icons/playIcon.webp'
 import Video from '../../../static/videos/dummyVideo.mp4'
@@ -7,7 +7,7 @@ import VideoCloseIcon from '../../../static/icons/videoClose.webp'
 import ReactPlayer from 'react-player'
 import UseHeroVer from './useHeroVer'
 
-function HeroVer({ isMobile }) {
+function HeroVer({ context, isMobile }) {
     const { videoTitle, coverVideo, bgVideo, titleText } = UseHeroVer();
     const [loading, setLoading] = useState(true)
     const ref = useRef(null)
@@ -30,11 +30,11 @@ function HeroVer({ isMobile }) {
                                     onContextMenu={e => e.preventDefault()}
                                     className={style.mblVideoBox}
                                 >
-                                  {!loading &&  <img onClick={() => setVideo(false)}
+                                    {!loading && <img onClick={() => setVideo(false)}
                                         className={style.mblVideoCloseIcon}
                                         src={VideoCloseIcon} alt='VideoCloseIcon' />}
                                     <ReactPlayer
-                                     onStart={() => setLoading(false)}
+                                        onStart={() => setLoading(false)}
                                         ref={ref}
                                         playing={video}
                                         loop={false}
@@ -45,11 +45,11 @@ function HeroVer({ isMobile }) {
                                         title={videoTitle}
                                         controls={true}
                                     />
-                                     {loading && <center>
-                                    <div
-                                        className={style.loading}
-                                    ><div className={style.dotTyping}></div></div>
-                                </center>}
+                                    {loading && <center>
+                                        <div
+                                            className={style.loading}
+                                        ><div className={style.dotTyping}></div></div>
+                                    </center>}
                                 </div>
                             </div>
                         </div>
@@ -70,7 +70,7 @@ function HeroVer({ isMobile }) {
                                         at an affordable cost.
                                     </p>
                                 </div>
-                               <center> <img
+                                <center> <img
                                     onClick={() => setVideo(true)}
                                     className={style.mblPlayIcon}
                                     src='/images/home/playIcon.webp' /></center>
@@ -154,13 +154,13 @@ function HeroVer({ isMobile }) {
                                     className={style.headings}
                                 >
                                     <div
-                                        className={`${style.mainHeading1}`}  >{titleText?.firstLine }</div>
+                                        className={`${style.mainHeading1}`}  >{titleText?.firstLine}</div>
                                     <div
                                         className={style.mainHeading2} >
-                                        { titleText?.secondLine}</div>
+                                        {titleText?.secondLine}</div>
 
                                     <div
-                                        className={style.mainHeading3}>{titleText?.thirdLine }</div>
+                                        className={style.mainHeading3}>{titleText?.thirdLine}</div>
                                 </div>
                                 <div style={{
                                 }} className={style.playIconContainer}>

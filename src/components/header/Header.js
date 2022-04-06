@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import * as style from '../../styles/components/header.module.css'
 import { Link } from 'gatsby'
-// import { StaticImage } from "gatsby-plugin-image"
 
 function Header({ navClick, hoverValue }) {
   const [nav, setNav] = useState('')
   const [value, setValue] = useState('')
   useEffect(() => {
-    // setTimeout(() => {
     hoverValue === 0.2 ?
       setNav('#panel-2') :
       hoverValue === 0.4 ?
@@ -21,7 +19,6 @@ function Header({ navClick, hoverValue }) {
               hoverValue === 0 ?
                 setNav('') :
                 setValue('')
-    // }, 1000);
 
 
   }, [hoverValue])

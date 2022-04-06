@@ -1,43 +1,56 @@
 import React from 'react'
 import Layout from '../layout/Layout'
 import * as style from '../../styles/components/storyLayout.module.css'
-import { graphql } from "gatsby"
-
+import { graphql, navigate } from "gatsby"
+import { useDispatch } from 'react-redux'
+import { shareData } from '../../store/actions/action'
+import gsap from 'gsap'
 function StoryLayout( {pageContext, data}) {
+    const dispatch = useDispatch();
+    
     function createMarkup(story) {
         return {__html: story};
       }
       const storyData = data?.allWpStories?.edges?.[0]?.node?.stories
-    console.log('Props', storyData)
-
+      const handleClick = async(id) => {
+         await navigate('/')
+        gsap.to(window, {
+          scrollTo: 700 * id,
+          duration: .5,
+        })
+    
+      }
     return (
-        <Layout>
+        <Layout onNavClick={handleClick}>
             <div
                 className={style.main}
             >
                 <div className={style.bannerContainer}>
+                    <img onClick={()=> {dispatch(shareData(true)); navigate('/')}} 
+                    className={style.leftArrow} src='/icons/leftArrow.png'
+                     alt='arrow' />
                     <div className={style.bannerHeader}>
                         <div className={style.childHeader}>
                             <div className={style.headerBannerItem}>
                                 <p className={style.headerTitle}>Work</p>
-                                <p className={style.headerValue}>Film</p>
+                                <p className={style.headerValue}>{storyData.storyType}</p>
                             </div>
                             <div className={style.headerBannerItem}>
                                 <p className={style.headerTitle}>client</p>
-                                <p className={style.headerValue}>Lorem ipsum</p>
+                                <p className={style.headerValue}>{storyData.client}</p>
                             </div>
                             <div className={style.headerBannerItem}>
                                 <p className={style.headerTitle}>team</p>
-                                <p className={style.headerValue}>Mag-raw</p>
+                                <p className={style.headerValue}>{storyData.team}</p>
                             </div>
                             <div className={style.headerBannerItem}>
                                 <p className={style.headerTitle}>year</p>
-                                <p className={style.headerValue}>2021</p>
+                                <p className={style.headerValue}>{storyData.year}</p>
                             </div>
                         </div>
                     </div>
                     <h1 className={style.bannerHeading}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        {storyData.storyTitle}
                     </h1>
                     <center>
                         <div className={style.bannerImageContainer}>
