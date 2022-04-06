@@ -12,16 +12,16 @@ function StoryLayout({ pageContext, data }) {
         return { __html: story };
     }
     const storyData = data?.allWpStories?.edges?.[0]?.node?.stories
-    const handleClick =  (id) => {
-         navigate('/')
-        gsap.to(window, {
-            scrollTo: 700 * id,
-            duration: .5,
-        })
+    // const handleClick =  (id) => {
+    //      navigate('/')
+    //     gsap.to(window, {
+    //         scrollTo: 700 * id,
+    //         duration: .5,
+    //     })
 
-    }
+    // }
     return (
-        <Layout onNavClick={handleClick}>
+        <Layout >
             <div
                 className={style.main}
             >
