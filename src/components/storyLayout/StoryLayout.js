@@ -20,24 +20,24 @@ function StoryLayout( {pageContext, data}) {
                         <div className={style.childHeader}>
                             <div className={style.headerBannerItem}>
                                 <p className={style.headerTitle}>Work</p>
-                                <p className={style.headerValue}>Film</p>
+                                <p className={style.headerValue}>{storyData.storyType}</p>
                             </div>
                             <div className={style.headerBannerItem}>
                                 <p className={style.headerTitle}>client</p>
-                                <p className={style.headerValue}>Lorem ipsum</p>
+                                <p className={style.headerValue}>{storyData.client}</p>
                             </div>
                             <div className={style.headerBannerItem}>
                                 <p className={style.headerTitle}>team</p>
-                                <p className={style.headerValue}>Mag-raw</p>
+                                <p className={style.headerValue}>{storyData.team}</p>
                             </div>
                             <div className={style.headerBannerItem}>
                                 <p className={style.headerTitle}>year</p>
-                                <p className={style.headerValue}>2021</p>
+                                <p className={style.headerValue}>{storyData.year}</p>
                             </div>
                         </div>
                     </div>
                     <h1 className={style.bannerHeading}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        {storyData.storyTitle}
                     </h1>
                     <center>
                         <div className={style.bannerImageContainer}>
