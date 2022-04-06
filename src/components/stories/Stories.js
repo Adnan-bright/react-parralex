@@ -104,9 +104,9 @@ function Stories({ isMobile }) {
         },
     ]
     storiesData.push(storiesData[0])
-    storiesData.map((item, index) => {
-        ( index+1 )%divideValue ===0 && storiesData.push(item)
-    })
+    // storiesData.map((item, index) => {
+    //     ( index+1 )%divideValue ===0 && storiesData.push(item)
+    // })
     return (
         <div {...bind()} ref={pageRef}>
 
@@ -325,8 +325,7 @@ function Stories({ isMobile }) {
                                                 </div> :
                                                     <div
                                                         style={{
-                                                            opacity: index + 1 === storiesData.length ? 0 :
-                                                           ( index+1 )%divideValue ===0 ? 0 :1
+                                                            opacity: index + 1 === storiesData.length ? 0 :1
                                                         }}
                                                         className={style.btmRowInSlider}
                                                     >
