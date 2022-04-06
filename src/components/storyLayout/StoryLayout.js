@@ -5,30 +5,30 @@ import { graphql, navigate } from "gatsby"
 import { useDispatch } from 'react-redux'
 import { shareData } from '../../store/actions/action'
 import gsap from 'gsap'
-function StoryLayout( {pageContext, data}) {
+function StoryLayout({ pageContext, data }) {
     const dispatch = useDispatch();
-    
+
     function createMarkup(story) {
-        return {__html: story};
-      }
-      const storyData = data?.allWpStories?.edges?.[0]?.node?.stories
-      const handleClick = async(id) => {
-         await navigate('/')
+        return { __html: story };
+    }
+    const storyData = data?.allWpStories?.edges?.[0]?.node?.stories
+    const handleClick =  (id) => {
+         navigate('/')
         gsap.to(window, {
-          scrollTo: 700 * id,
-          duration: .5,
+            scrollTo: 700 * id,
+            duration: .5,
         })
-    
-      }
+
+    }
     return (
         <Layout onNavClick={handleClick}>
             <div
                 className={style.main}
             >
                 <div className={style.bannerContainer}>
-                    <img onClick={()=> {dispatch(shareData(true)); navigate('/')}} 
-                    className={style.leftArrow} src='/icons/leftArrow.png'
-                     alt='arrow' />
+                    <img onClick={() => { dispatch(shareData(true)); navigate('/') }}
+                        className={style.leftArrow} src='/icons/leftArrow.png'
+                        alt='arrow' />
                     <div className={style.bannerHeader}>
                         <div className={style.childHeader}>
                             <div className={style.headerBannerItem}>
@@ -58,11 +58,11 @@ function StoryLayout( {pageContext, data}) {
                             <img className={style.playIcon} src='/images/home/playIcon.webp' alt='playIcon' />
                         </div>
                     </center>
-                    
+
                 </div>
                 <div className={style.body}>
                     <div className={style.story}>
-                   <div dangerouslySetInnerHTML={createMarkup(storyData.story)} />
+                        <div dangerouslySetInnerHTML={createMarkup(storyData.story)} />
 
                     </div>
                 </div>
