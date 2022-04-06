@@ -11,7 +11,7 @@ import HeroVer from "../components/heroVer/HeroVer";
 import Contact from "../components/contact/Contact";
 import Service from "../components/service/Service";
 import Stories from "../components/stories/Stories";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 const IndexPage = () => {
   const [isResume, setIsResume] = useState(true)
