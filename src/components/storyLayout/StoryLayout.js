@@ -1,21 +1,34 @@
 import React from 'react'
 import Layout from '../layout/Layout'
 import * as style from '../../styles/components/storyLayout.module.css'
-import { graphql } from "gatsby"
-
+import { graphql, navigate } from "gatsby"
+import { useDispatch } from 'react-redux'
+import { shareData } from '../../store/actions/action'
+import gsap from 'gsap'
 function StoryLayout( {pageContext, data}) {
+    const dispatch = useDispatch();
+    
     function createMarkup(story) {
         return {__html: story};
       }
       const storyData = data?.allWpStories?.edges?.[0]?.node?.stories
-    console.log('Props', storyData)
-
+      const handleClick = async(id) => {
+         await navigate('/')
+        gsap.to(window, {
+          scrollTo: 700 * id,
+          duration: .5,
+        })
+    
+      }
     return (
-        <Layout>
+        <Layout onNavClick={handleClick}>
             <div
                 className={style.main}
             >
                 <div className={style.bannerContainer}>
+                    <img onClick={()=> {dispatch(shareData(true)); navigate('/')}} 
+                    className={style.leftArrow} src='/icons/leftArrow.png'
+                     alt='arrow' />
                     <div className={style.bannerHeader}>
                         <div className={style.childHeader}>
                             <div className={style.headerBannerItem}>

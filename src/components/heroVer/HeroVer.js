@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import * as style from '../../styles/components/heroVer.module.css'
 import PlayIcon from '../../../static/icons/playIcon.webp'
 import Video from '../../../static/videos/dummyVideo.mp4'
@@ -7,7 +7,7 @@ import VideoCloseIcon from '../../../static/icons/videoClose.webp'
 import ReactPlayer from 'react-player'
 import UseHeroVer from './useHeroVer'
 
-function HeroVer({ isMobile }) {
+function HeroVer({ context, isMobile }) {
     const { videoTitle, coverVideo, bgVideo, titleText } = UseHeroVer();
     const [loading, setLoading] = useState(true)
     const ref = useRef(null)

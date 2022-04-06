@@ -40,7 +40,6 @@ function UseStories() {
                 slug: item.node.stories.slug
         })
     })
-    console.log('storiesData', storiesData)
     return { storiesData }
 }
 

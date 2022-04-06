@@ -1,10 +1,12 @@
 
-import React from "react";
-import { ParallaxProvider } from "react-scroll-parallax";
+import React, { useState } from "react";
+import { Provider } from 'react-redux'
 import './src/styles/global.css'
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import store from "./Store";
 export const wrapPageElement = ({ element, props }) => {
-  return <ParallaxProvider scrollAxis="vertical">{element}</ParallaxProvider>
+  return <Provider store={store}>
+    <div>{element}</div>
+  </Provider>
 };
