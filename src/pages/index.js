@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useContext, createContext } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import '../styles/index.css'
 import Layout from "../components/layout/Layout";
 import AboutUS from "../components/aboutUs/AboutUs";
@@ -11,17 +11,16 @@ import HeroVer from "../components/heroVer/HeroVer";
 import Contact from "../components/contact/Contact";
 import Service from "../components/service/Service";
 import Stories from "../components/stories/Stories";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 const IndexPage = () => {
   const [isResume, setIsResume] = useState(true)
   const { height, width } = UseWindowDimension();
   const [updateValue, setUpdateValue] = useState(0)
   const [detectChange, setDetectChange] = useState([])
-  const state = useSelector(state => state.reducer.data)
-  const [story, setStory] = useState(state)
+  // const state = useSelector(state => state.reducer.data)
+  const [story, setStory] = useState(false)
 
-  console.log('state', state)
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
   const ref = useRef(null);
@@ -46,13 +45,13 @@ const IndexPage = () => {
         },
       });
 
-      if (story) {
-        gsap.to(window, {
-          scrollTo: 700 * 3,
-          duration: .5,
-        })
+      // if (story) {
+      //   gsap.to(window, {
+      //     scrollTo: 700 * 3,
+      //     duration: .5,
+      //   })
     
-      }
+      // }
     }
 
 

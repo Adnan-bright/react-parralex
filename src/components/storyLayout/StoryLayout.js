@@ -2,11 +2,11 @@ import React from 'react'
 import Layout from '../layout/Layout'
 import * as style from '../../styles/components/storyLayout.module.css'
 import { graphql, navigate } from "gatsby"
-import { useDispatch } from 'react-redux'
+// import { useDispatch } from 'react-redux'
 import { shareData } from '../../store/actions/action'
 import gsap from 'gsap'
 function StoryLayout({ pageContext, data }) {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     function createMarkup(story) {
         return { __html: story };
@@ -26,7 +26,7 @@ function StoryLayout({ pageContext, data }) {
                 className={style.main}
             >
                 <div className={style.bannerContainer}>
-                    <img onClick={() => { dispatch(shareData(true)); navigate('/') }}
+                    <img onClick={() => { navigate('/') }}
                         className={style.leftArrow} src='/icons/leftArrow.png'
                         alt='arrow' />
                     <div className={style.bannerHeader}>
