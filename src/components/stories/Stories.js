@@ -5,8 +5,11 @@ import { motion } from "framer-motion";
 import UseStoriesMouseGesture from './useStoriesMouseGesture';
 import UseStories from './useStories';
 import { Link, navigate } from 'gatsby';
+import UseWindowDimension from '../hooks/useWindowDimension';
 function Stories({ isMobile }) {
-    const { storiesData } = UseStories()
+    const {width} = UseWindowDimension()
+    const { storiesData} = UseStories()
+    console.log(storiesData)
     const data = [
         {
             className: 'greenCross',
@@ -59,106 +62,8 @@ function Stories({ isMobile }) {
     const [check, setcCheck] = useState(false)
     const [whichCard, setWhichCard] = useState('')
 
-    // const storiesData = [
-
-    //     {
-    //         img: '/images/stories/2.webp',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod. Lorem ipsum ',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-    //     {
-    //         img: '/images/stories/2.webp',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-    //     {
-    //         img: '/images/stories/4.webp',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-    //     {
-    //         img: '/images/stories/5.webp',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-    //     {
-    //         img: '/images/stories/6.webp',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-    //     {
-    //         img: '/images/stories/7.webp',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-    //     {
-    //         img: '/images/stories/8.webp',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-    //     {
-    //         img: 'https://picsum.photos/id/13/200/300',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-    //     {
-    //         img: 'https://picsum.photos/id/1/200/300',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-    //     {
-    //         img: 'https://picsum.photos/id/2/200/300',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-    //     {
-    //         img: 'https://picsum.photos/id/3/200/300',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-    //     {
-    //         img: 'https://picsum.photos/id/4/200/300',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-    //     {
-    //         img: 'https://picsum.photos/id/5/200/300',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-    //     {
-    //         img: 'https://picsum.photos/id/6/200/300',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-    //     {
-    //         img: 'https://picsum.photos/id/7/200/300',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-    //     {
-    //         img: 'https://picsum.photos/id/8/200/300',
-    //         title: 'Henry Miner Artist Spotlight',
-    //         description: 'Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do eiusmod.',
-    //         icon: '/images/stories/icon.webp'
-    //     },
-
-    // ]
+    
+    var divideValue = width >= 1100 ? 8:width >= 900 ? 6:4
 
     const [isDragging, setIsDragging] = useState  (false);
 
@@ -199,6 +104,9 @@ function Stories({ isMobile }) {
         },
     ]
     storiesData.push(storiesData[0])
+    storiesData.map((item, index) => {
+        ( index+1 )%divideValue ===0 && storiesData.push(item)
+    })
     return (
         <div {...bind()} ref={pageRef}>
 
@@ -391,6 +299,7 @@ function Stories({ isMobile }) {
                                 >
                                     {
                                         storiesData?.map((item, index) => {
+                                            
                                             return <div>
                                                 {index % 2 === 0 ? <div
                                                     style={{
@@ -416,7 +325,8 @@ function Stories({ isMobile }) {
                                                 </div> :
                                                     <div
                                                         style={{
-                                                            opacity: index + 1 === storiesData.length && 0
+                                                            opacity: index + 1 === storiesData.length ? 0 :
+                                                           ( index+1 )%divideValue ===0 ? 0 :1
                                                         }}
                                                         className={style.btmRowInSlider}
                                                     >
@@ -445,11 +355,7 @@ function Stories({ isMobile }) {
                                     }
                                 </Slider>
                             </div>
-                            {/* <center>
-                                <div className={style.customDotsContainer}>
-                                    <CustomDots onDotClick={onDotsClick} dots={storiesData} activeIndex={activeIndex} />
-                                </div>
-                            </center> */}
+               
                         </div>
 
                     </div>
