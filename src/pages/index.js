@@ -18,10 +18,9 @@ const IndexPage = () => {
   const { height, width } = UseWindowDimension();
   const [updateValue, setUpdateValue] = useState(0)
   const [detectChange, setDetectChange] = useState([])
-  const state = useSelector(state => state.reducer.data)
-  const [story, setStory] = useState(state)
+  // const state = useSelector(state => state.reducer.data)
+  const [story, setStory] = useState(false)
 
-  console.log('state', state)
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
   const ref = useRef(null);
@@ -46,13 +45,13 @@ const IndexPage = () => {
         },
       });
 
-      if (story) {
-        gsap.to(window, {
-          scrollTo: 700 * 3,
-          duration: .5,
-        })
+      // if (story) {
+      //   gsap.to(window, {
+      //     scrollTo: 700 * 3,
+      //     duration: .5,
+      //   })
     
-      }
+      // }
     }
 
 
