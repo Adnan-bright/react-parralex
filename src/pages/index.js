@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useContext, createContext } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import '../styles/index.css'
 import Layout from "../components/layout/Layout";
 import AboutUS from "../components/aboutUs/AboutUs";
