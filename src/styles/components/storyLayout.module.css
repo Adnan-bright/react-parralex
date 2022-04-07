@@ -98,3 +98,29 @@
     font-family: graphik-regular;
     width: 80%;
 }
+.tabs {
+    display: flex;
+    align-items: center;
+}
+.tab {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    line-height: 15px;
+    width: 26px;
+    height: 26px;
+    text-transform: uppercase;
+    background-size: contain;
+    color: #7A858D;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
+
+.tab:hover {
+    background-size: contain;
+    cursor: pointer;
+}
