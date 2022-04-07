@@ -6,7 +6,7 @@ import gsap from 'gsap'
 import { DataContext } from '../Provider/Provider'
 function StoryLayout({ pageContext, data }) {
     
-    // const {setStory} = useContext(DataContext)
+    const {setStory} = useContext(DataContext)
     function createMarkup(story) {
         return { __html: story };
     }
@@ -25,7 +25,7 @@ function StoryLayout({ pageContext, data }) {
                 className={style.main}
             >
                 <div className={style.bannerContainer}>
-                    <img onClick={() => { navigate('/') }}
+                    <img onClick={() => { navigate('/'); setStory(true) }}
                         className={style.leftArrow} src='/icons/leftArrow.png'
                         alt='arrow' />
                     <div className={style.bannerHeader}>
