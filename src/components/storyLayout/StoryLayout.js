@@ -25,7 +25,7 @@ function StoryLayout({ pageContext, data }) {
                 className={style.main}
             >
                 <div className={style.bannerContainer}>
-                    <img onClick={() => { navigate('/'); setStory(true) }}
+                    <img onClick={() => { navigate('/') }}
                         className={style.leftArrow} src='/icons/leftArrow.png'
                         alt='arrow' />
                     <div className={style.bannerHeader}>
