@@ -6,7 +6,7 @@ import gsap from 'gsap'
 import { DataContext } from '../Provider/Provider'
 function StoryLayout({ pageContext, data }) {
     
-    const {setStory} = useContext(DataContext)
+    // const {setStory} = useContext(DataContext)
     function createMarkup(story) {
         return { __html: story };
     }
