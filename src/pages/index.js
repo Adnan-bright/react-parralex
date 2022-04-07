@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useContext } from "react";
 import '../styles/index.css'
 import Layout from "../components/layout/Layout";
 import AboutUS from "../components/aboutUs/AboutUs";
@@ -11,22 +11,24 @@ import HeroVer from "../components/heroVer/HeroVer";
 import Contact from "../components/contact/Contact";
 import Service from "../components/service/Service";
 import Stories from "../components/stories/Stories";
-// import { useSelector } from "react-redux";
+import { DataContext } from "../components/Provider/Provider";
 
 const IndexPage = () => {
   const [isResume, setIsResume] = useState(true)
   const { height, width } = UseWindowDimension();
   const [updateValue, setUpdateValue] = useState(0)
   const [detectChange, setDetectChange] = useState([])
-  // const state = useSelector(state => state.reducer.data)
-  const [story, setStory] = useState(false)
+
+  const {story} = useContext(DataContext)
+  console.log('story', story)
 
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
   const ref = useRef(null);
+  
   useEffect(() => {
-      let sections = gsap.utils.toArray(".panel");
-    if (width >= 600  ) {
+    let sections = gsap.utils.toArray(".panel");
+    if (width >= 600) {
       gsap.to(sections, {
         xPercent: -100 * (sections.length - 1),
         ease: "none",
@@ -45,13 +47,13 @@ const IndexPage = () => {
         },
       });
 
-      // if (story) {
-      //   gsap.to(window, {
-      //     scrollTo: 700 * 3,
-      //     duration: .5,
-      //   })
-    
-      // }
+      if (story) {
+        gsap.to(window, {
+          scrollTo: 700 * 3,
+          duration: .5,
+        })
+
+      }
     }
 
 
@@ -59,7 +61,6 @@ const IndexPage = () => {
   }, []);
 
 
-  
   const handleClick = (id) => {
     gsap.to(window, {
       scrollTo: 700 * id,
@@ -67,63 +68,63 @@ const IndexPage = () => {
     })
 
   }
-// For  Getsby intial rendering 
+  // For  Getsby intial rendering 
   if (typeof window === `undefined`) {
-    return(<></>);
-}
+    return (<></>);
+  }
   return (
     <Layout isMobile={width >= 800 ? false : true} hoverValue={updateValue} onNavClick={handleClick}>
 
-      <div
-        ref={ref}
-      >
-        {width >= 600 ?
-          <div
-          id='newId'
-            className="container">
-            <div id={'panel-1'} className="panel">
-              <HeroVer isMobile={width < 600} />
+        <div
+          ref={ref}
+        >
+          {width >= 600 ?
+            <div
+              id='newId'
+              className="container">
+              <div id={'panel-1'} className="panel">
+                <HeroVer isMobile={width < 600} />
+              </div>
+              <div id={'panel-2'} className="panel">
+                <AboutUS isMobile={width < 600} />
+              </div>
+              <div id={'panel-3'} className="panel">
+                <Service isMobile={width < 600} />
+              </div>
+              <div id={'panel-4'} className="panel">
+                <Stories setIsResume={setIsResume} isMobile={width < 600} />
+              </div>
+              <div id={'panel-5'} className="panel">
+                <Process isMobile={width < 600} />
+              </div>
+              <div id={'panel-6'} className="panel">
+                <Contact isMobile={width < 600} />
+              </div>
             </div>
-            <div id={'panel-2'} className="panel">
-              <AboutUS isMobile={width < 600} />
+            :
+            <div
+              className="verticalContainer">
+              <div id={'verticalPanel-1'} className="verticalPanel">
+                <HeroVer isMobile={width < 600} />
+              </div>
+              <div id={'verticalPanel-2'} className="verticalPanel">
+                <AboutUS isMobile={width < 600} />
+              </div>
+              <div id={'verticalPanel-3'} className="verticalPanel">
+                <Service isMobile={width < 600} />
+              </div>
+              <div id={'verticalPanel-4'} className="verticalPanel">
+                <Stories isMobile={width < 600} />
+              </div>
+              <div id={'verticalPanel-5'} className="verticalPanel">
+                <Process isMobile={width < 600} />
+              </div>
+              <div id={'verticalPanel-6'} className="verticalPanel">
+                <Contact isMobile={width < 600} />
+              </div>
             </div>
-            <div id={'panel-3'} className="panel">
-              <Service isMobile={width < 600} />
-            </div>
-            <div id={'panel-4'} className="panel">
-              <Stories setIsResume={setIsResume} isMobile={width < 600} />
-            </div>
-            <div id={'panel-5'} className="panel">
-              <Process isMobile={width < 600} />
-            </div>
-            <div id={'panel-6'} className="panel">
-              <Contact isMobile={width < 600} />
-            </div>
-          </div>
-          :
-          <div
-            className="verticalContainer">
-            <div id={'verticalPanel-1'} className="verticalPanel">
-              <HeroVer isMobile={width < 600} />
-            </div>
-            <div id={'verticalPanel-2'} className="verticalPanel">
-              <AboutUS isMobile={width < 600} />
-            </div>
-            <div id={'verticalPanel-3'} className="verticalPanel">
-              <Service isMobile={width < 600} />
-            </div>
-             <div id={'verticalPanel-4'} className="verticalPanel">
-              <Stories isMobile={width < 600 } />
-            </div>
-           <div id={'verticalPanel-5'} className="verticalPanel">
-              <Process isMobile={width < 600 } />
-            </div>
-            <div id={'verticalPanel-6'} className="verticalPanel">
-              <Contact isMobile={width < 600 } />
-            </div>
-          </div>
-        }
-      </div>
+          }
+        </div>
     </Layout>
 
   )
