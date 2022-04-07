@@ -15,6 +15,8 @@
 }
 .slider{
     display: flex;
+    height: 100%;
+    width: 100%;
 }
 .heading {
     font-family: graphik-regular;
@@ -59,7 +61,6 @@
 
 .topContainer {
     width: 100vw;
-    height: 300px;
     margin-top: -70px;
 }
 .customDotsContainer{

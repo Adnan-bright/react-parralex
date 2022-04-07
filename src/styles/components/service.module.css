@@ -27,8 +27,9 @@
     margin-left: 7%;
     margin-right: 7%;
     display: flex;
-    align-items: baseline;
+    align-items: flex-end;
     justify-content: space-between;
+    height: 61vh;
 }
 
 .imgItem {
