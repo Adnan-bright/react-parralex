@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Layout from '../layout/Layout'
 import * as style from '../../styles/components/storyLayout.module.css'
 import { graphql, navigate } from "gatsby"
-// import { useDispatch } from 'react-redux'
-import { shareData } from '../../store/actions/action'
 import gsap from 'gsap'
+import { DataContext } from '../Provider/Provider'
 function StoryLayout({ pageContext, data }) {
-    // const dispatch = useDispatch();
-
+    
+    const {setStory} = useContext(DataContext)
     function createMarkup(story) {
         return { __html: story };
     }
@@ -26,7 +25,7 @@ function StoryLayout({ pageContext, data }) {
                 className={style.main}
             >
                 <div className={style.bannerContainer}>
-                    <img onClick={() => { navigate('/') }}
+                    <img onClick={() => { navigate('/'); setStory(true) }}
                         className={style.leftArrow} src='/icons/leftArrow.png'
                         alt='arrow' />
                     <div className={style.bannerHeader}>

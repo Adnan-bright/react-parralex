@@ -9,7 +9,6 @@ import UseWindowDimension from '../hooks/useWindowDimension';
 function Stories({ isMobile }) {
     const {width} = UseWindowDimension()
     const { storiesData} = UseStories()
-    console.log(storiesData)
     const data = [
         {
             className: 'greenCross',

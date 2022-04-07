@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef} from 'react'
 import * as style from '../../styles/components/heroVer.module.css'
 import PlayIcon from '../../../static/icons/playIcon.webp'
 import Video from '../../../static/videos/dummyVideo.mp4'
@@ -13,6 +13,7 @@ function HeroVer({ context, isMobile }) {
     const ref = useRef(null)
     const myRef = useRef()
     const [video, setVideo] = useState(false)
+    
     return (
         <div ref={myRef}>
             {
