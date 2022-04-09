@@ -55,10 +55,20 @@ function Contact({ id, isMobile }) {
             yValue: -10,
             speedValue: 7
         },
+
+
+        
         {
             className: 'rightBtm',
             xValue: 190,
             yValue: 30,
+            speedValue: 10
+        },
+
+        {
+            className: 'ratingBox',
+            xValue: 90,
+            yValue: 60,
             speedValue: 10
         },
     ]
@@ -120,10 +130,10 @@ function Contact({ id, isMobile }) {
                                 <div className={style.mblIconsContainer}>
                                     {
                                         socialData?.map((item, index) => {
-                                            return <a 
-                                            key={index}
-                                            href={item.link}
-                                            target='_blank'>
+                                            return <a
+                                                key={index}
+                                                href={item.link}
+                                                target='_blank'>
                                                 <img className={style.mblSocialIcon}
                                                     src={item.icon}
                                                 />
@@ -140,7 +150,6 @@ function Contact({ id, isMobile }) {
                     </div>
                     :
                     <div className={`${style.body} `}>
-
                         <div >
                             <div className='meinContainerAnimated'>
                                 <div className='cube leftMid'>
@@ -265,7 +274,23 @@ function Contact({ id, isMobile }) {
                         </div>
                         <div id={id} className={style.main}>
                             <div className={style.reviewContainer}>
-                                <ReviewContainer />
+                                {/* <div className='meinContainerAnimated'>
+                                <div className='cube leftMid'>
+                                    {
+                                        classes.map((item, index) => {
+                                            return <motion.div
+                                                key={index}
+                                                className={`${style.leftMidBg} ${item.class}`}
+                                            > */}
+                                <div className='ratingBox'>
+                                    <ReviewContainer />
+                                </div>
+                                {/* </motion.div>
+                                        })
+                                    }
+                                </div>
+                            </div> */}
+
                             </div>
                             <div className={style.midContainer}>
 

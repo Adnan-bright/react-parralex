@@ -91,8 +91,9 @@
 }
 
 .body {
-    min-height: 100px;
     color: white;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 .story {
@@ -214,6 +215,63 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signUpInput {
+    width: 260px;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.121);
+    outline: none;
+    border: #713ADB 2.2px solid;
+    padding-left: 20px;
+    border-image: url(../../../static/images/common/btnBg.webp) 10;
+
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.signUpInput::placeholder {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.button {
+    width: 168px;
+    height: 54px;
+    background: url(../../../static/images/common/btnBg.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -15px;
+
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
 .signUpHeading {
@@ -225,4 +283,10 @@
     text-align: center;
     text-transform: uppercase;
     color: #FFFFFF;
+}
+.ContactBannerContainer{
+    padding-top: 60px;
+}
+.footerContainer{
+    margin-top: 250px;
 }

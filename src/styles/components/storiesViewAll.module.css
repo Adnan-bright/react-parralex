@@ -1,0 +1,252 @@
+.backArrow {
+    margin-top: 60px;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.contantContainer {
+    padding-left: 135px;
+    padding-right: 135px;
+}
+
+.title {
+    color: #fff;
+    font-family: graphik-regular;
+    font-size: 60px;
+    text-transform: uppercase;
+
+}
+
+.tabsContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.selectTab {
+    font-family: graphik-regular;
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.tabs {
+    display: flex;
+}
+
+.tab {
+    font-family: graphik-regular;
+    font-size: 20px;
+    color: #fff;
+    opacity: .7;
+    text-transform: uppercase;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.downtab {
+    font-family: graphik-regular;
+    font-size: 20px;
+    color: #fff;
+    opacity: .7;
+    text-transform: uppercase;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.downArrowContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+.downArrow {
+    cursor: pointer;
+}
+
+.sortImage {
+    padding-top: 20px;
+    background-image: url('../../../static/images/storiesViewAll/sortImage.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 140px;
+    max-height: 300px;
+    top: 50px;
+    right: 30px;
+    position: absolute;
+    overflow: hidden;
+    transition: ease-in-out .3s;
+    opacity: 1;
+}
+.sortImageHide{
+    padding-top: 20px;
+    background-image: url('../../../static/images/storiesViewAll/sortImage.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 140px;
+    max-height: 0px;
+    top: 50px;
+    right: 30px;
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    transition: ease-in-out .3s;
+}
+.sortText {
+    font-family: graphik-regular;
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    padding-left: 0px;
+    padding-left: 15px;
+    margin-right: 15px;
+    margin-top: -10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+.sortText:hover {
+    font-family: graphik-regular;
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    padding-left: 0px;
+    padding-left: 15px;
+    margin-right: 15px;
+    margin-top: -10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    cursor: pointer;
+    background-color: rgba(81, 81, 81, 0.788);
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #78858E;
+    margin-top: 20px;
+}
+
+.postContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.postList {
+    transition: ease-in-out 1s;
+}
+
+.postTitle {
+    font-family: graphik-regular;
+    font-size: 16;
+    color: #fff;
+    text-transform: uppercase;
+    /* Linear */
+    background: -webkit-linear-gradient(270deg, #E6F29B 40.02%, #8439EA 83.2%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 50px;
+}
+.rowItem{
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+.rowItem:hover{
+    padding-top: 10px;
+    background-color: rgba(69, 69, 69, 0.331);
+}
+.postTitleColorBlog {
+    font-family: graphik-regular;
+    font-size: 16;
+    color: #fff;
+    text-transform: uppercase;
+    /* Linear */
+    background: -webkit-linear-gradient(270deg, #E6F29B 40.02%, #8439EA 83.2%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 50px;
+}
+.postTitleColorStories {
+    font-family: graphik-regular;
+    font-size: 16;
+    color: #fff;
+    text-transform: uppercase;
+    /* Linear */
+    background: linear-gradient(176.45deg, #63E6B9 54.02%, #E6F29B 83.2%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 50px;
+}
+.postTitleColorCase {
+    font-family: graphik-regular;
+    font-size: 16;
+    color: #fff;
+    text-transform: uppercase;
+    /* Linear */
+    background: linear-gradient(142.72deg, #FF5156 -2.74%, #8439EA 10.64%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 50px;
+}
+
+.postSubTitle {
+    font-family: graphik-regular;
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.postHeading {
+    font-family: graphik-regular;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.postDate {
+    font-family: graphik-regular;
+    font-size: 16px;
+    color: #78858E;
+    text-transform: uppercase;
+}
+
+.seeAllBtn {
+    margin-top: 50px;
+    height: 54px;
+    width: 168px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../../../static/images/common/btnBgHover.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    font-family: graphik-medium;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    transition: ease-in-out .4s;
+}
+
+.seeAllBtn:hover {
+    background: url(../../../static/images/common/btnBg.webp);
+    transition: ease-in-out .4s;
+}
+.bannerContainer{
+    margin-top: 100px;
+}
+.footerContainer{
+    margin-top: 220px;
+}

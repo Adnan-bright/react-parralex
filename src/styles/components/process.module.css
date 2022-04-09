@@ -14,7 +14,7 @@
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    bottom:  0px;
+    bottom: 0px;
 }
 
 .boxDetailsHide {
@@ -85,7 +85,7 @@
     line-height: 66px;
     text-transform: uppercase;
     color: #FFFFFF;
-    padding-left: 40px;
+    padding-left: 135px;
     margin-top: 60px;
 }
 
@@ -240,6 +240,7 @@
     transform: scale(0.8);
 
 }
+
 
 .imageContainer3Active {
     background-image: url(../../../static/images/process/planning.webp);
@@ -437,17 +438,20 @@
         right: 3px;
         bottom: 265px;
     }
+
     .bottomRow {
         display: flex;
         position: absolute;
         right: 34.2%;
     }
+
     .midRow {
         display: flex;
         position: absolute;
         right: 17%;
         bottom: 130px;
     }
+
     .rowsContainer {
         width: 800px;
         height: 100vh;
@@ -457,6 +461,7 @@
         margin-left: auto;
         margin-right: auto;
     }
+
     .boxDetailsHide {
         font-size: 9px;
         top: 60px;
@@ -587,17 +592,20 @@
         right: 5px;
         bottom: 215px;
     }
+
     .bottomRow {
         display: flex;
         position: absolute;
         right: 34.5%;
     }
+
     .midRow {
         display: flex;
         position: absolute;
         right: 17%;
-        bottom:105px ;
+        bottom: 105px;
     }
+
     .rowsContainer {
         width: 650px;
         height: 100vh;
@@ -607,6 +615,7 @@
         margin-left: auto;
         margin-right: auto;
     }
+
     .boxDetailsHide {
         font-size: 8px;
         top: 50px;
@@ -750,4 +759,192 @@
         width: auto;
         margin-left: -7.5%;
     }
+}
+
+
+/* /cross icons left/ */
+.closeIconContainer {
+    width: 400px;
+}
+.closeIconContainerBlur {
+    filter: blur(3px);
+}
+
+.closeIconContainerBlur .closeRow1 {
+    position: absolute;
+    margin-top: -165px;
+}
+
+.closeRow1 {
+    position: absolute;
+    top: 60px
+}
+
+.closeRow2 {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.closeRow3 {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 100px;
+}
+
+.closeRow4 {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 0px;
+}
+
+.closeRow5 {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    margin-top: 180px;
+    margin-left: 100px;
+
+}
+
+.closeIcon {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    left: 20px;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+}
+
+.close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 40px;
+    width: 2px;
+    background: linear-gradient(151.96deg, #7B2EE4 13.06%, #29E2B4 93.33%);
+
+
+
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
+}
+
+/* /cross icons right/ */
+.closeIconContainerRight {
+    width: 400px;
+    height: 450px;
+    position: absolute;
+    right:0px
+    
+}
+.closeIconContainerBlurRight {
+    width: 400px;
+    height: 450px;
+    position: absolute;
+    right: 0px;
+    filter: blur(3px);
+}
+
+.rightCloseIcon {
+    position: relative;
+}
+
+.rightClose {
+    position: absolute;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+}
+
+.rightClose:before, .rightClose:after {
+    position: absolute;
+    right: 15px;
+    content: ' ';
+    height: 40px;
+    width: 2px;
+    background: linear-gradient(151.96deg, #7B2EE4 13.06%, #29E2B4 93.33%);
+}
+
+.rightClose:before {
+    transform: rotate(45deg);
+}
+
+.rightClose:after {
+    transform: rotate(-45deg);
+}
+
+.rightCloseRow1 {
+    position: absolute;
+    top: 30%;
+    right: 30px
+}
+
+.rightCloseRow2 {
+    position: absolute;
+    top: 44%;
+    right: 80px
+}
+
+
+.rightCloseRow3 {
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 58%;
+    right: 0;
+}
+
+.rightCloseRow4 {
+    width: 110px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 72%;
+    right: 75px;
+}
+
+.rightCloseRow5 {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 86%;
+    right: 0px;
+}
+
+.rightCloseRow6 {
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 100%;
+    right: 12px;
+}
+
+.rightCloseRow7 {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 112%;
+    right: 125px;
 }
