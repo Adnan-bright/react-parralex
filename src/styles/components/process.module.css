@@ -832,7 +832,10 @@
     content: ' ';
     height: 40px;
     width: 2px;
-    background-color: rgb(102, 0, 221);
+    background: linear-gradient(151.96deg, #7B2EE4 13.06%, #29E2B4 93.33%);
+
+
+
 }
 
 .close:before {
@@ -877,7 +880,7 @@
     content: ' ';
     height: 40px;
     width: 2px;
-    background-color: rgb(102, 0, 221);
+    background: linear-gradient(151.96deg, #7B2EE4 13.06%, #29E2B4 93.33%);
 }
 
 .rightClose:before {

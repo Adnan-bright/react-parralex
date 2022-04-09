@@ -61,6 +61,12 @@ function Contact({ id, isMobile }) {
             yValue: 30,
             speedValue: 10
         },
+        {
+            className: 'ratingBox',
+            xValue: 90,
+            yValue: 60,
+            speedValue: 10
+        },
     ]
     const { bind } = UseContactMouseGesture(data, myRef)
     const classes = [
@@ -120,10 +126,10 @@ function Contact({ id, isMobile }) {
                                 <div className={style.mblIconsContainer}>
                                     {
                                         socialData?.map((item, index) => {
-                                            return <a 
-                                            key={index}
-                                            href={item.link}
-                                            target='_blank'>
+                                            return <a
+                                                key={index}
+                                                href={item.link}
+                                                target='_blank'>
                                                 <img className={style.mblSocialIcon}
                                                     src={item.icon}
                                                 />
@@ -264,7 +270,7 @@ function Contact({ id, isMobile }) {
                         </div>
                         <div id={id} className={style.main}>
                             <div className={style.reviewContainer}>
-                            {/* <div className='meinContainerAnimated'>
+                                {/* <div className='meinContainerAnimated'>
                                 <div className='cube leftMid'>
                                     {
                                         classes.map((item, index) => {
@@ -272,13 +278,15 @@ function Contact({ id, isMobile }) {
                                                 key={index}
                                                 className={`${style.leftMidBg} ${item.class}`}
                                             > */}
-                                                  <ReviewContainer />
-                                            {/* </motion.div>
+                                <div className='ratingBox'>
+                                    <ReviewContainer />
+                                </div>
+                                {/* </motion.div>
                                         })
                                     }
                                 </div>
                             </div> */}
-                             
+
                             </div>
                             <div className={style.midContainer}>
 
