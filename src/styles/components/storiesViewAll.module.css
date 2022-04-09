@@ -53,11 +53,13 @@
     opacity: .7;
     text-transform: uppercase;
     padding-right: 10px;
+    cursor: pointer;
 }
 
 .downArrowContainer {
     display: flex;
     align-items: center;
+    position: relative;
 
 }
 
@@ -66,21 +68,59 @@
 }
 
 .sortImage {
+    padding-top: 20px;
     background-image: url('../../../static/images/storiesViewAll/sortImage.png');
     background-repeat: no-repeat;
-    width: 100%;
-    height: 200px;
+    background-size: contain;
+    width: 140px;
+    max-height: 300px;
+    top: 50px;
+    right: 30px;
     position: absolute;
-    margin-top: 340px;
+    overflow: hidden;
+    transition: ease-in-out .3s;
+    opacity: 1;
 }
-
+.sortImageHide{
+    padding-top: 20px;
+    background-image: url('../../../static/images/storiesViewAll/sortImage.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 140px;
+    max-height: 0px;
+    top: 50px;
+    right: 30px;
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    transition: ease-in-out .3s;
+}
 .sortText {
     font-family: graphik-regular;
     font-size: 20px;
     color: #fff;
     text-transform: uppercase;
-    margin-left: 20px;
+    padding-left: 0px;
+    padding-left: 15px;
+    margin-right: 15px;
+    margin-top: -10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     cursor: pointer;
+}
+.sortText:hover {
+    font-family: graphik-regular;
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    padding-left: 0px;
+    padding-left: 15px;
+    margin-right: 15px;
+    margin-top: -10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    cursor: pointer;
+    background-color: rgba(81, 81, 81, 0.788);
 }
 
 .line {
@@ -112,13 +152,36 @@
     margin-top: 50px;
 }
 
-.postTitleColor {
+.postTitleColorBlog {
     font-family: graphik-regular;
     font-size: 16;
     color: #fff;
     text-transform: uppercase;
     /* Linear */
-    background: -webkit-linear-gradient(270deg, #63E5B9 40.02%, #E6F29B 83.2%);
+    background: -webkit-linear-gradient(270deg, #E6F29B 40.02%, #8439EA 83.2%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 50px;
+}
+.postTitleColorStories {
+    font-family: graphik-regular;
+    font-size: 16;
+    color: #fff;
+    text-transform: uppercase;
+    /* Linear */
+    background: linear-gradient(176.45deg, #63E6B9 54.02%, #E6F29B 83.2%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 50px;
+}
+.postTitleColorCase {
+    font-family: graphik-regular;
+    font-size: 16;
+    color: #fff;
+    text-transform: uppercase;
+    /* Linear */
+    background: linear-gradient(142.72deg, #FF5156 -2.74%, #8439EA 10.64%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 50px;

@@ -1,32 +1,20 @@
-export const all=[
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-]
-export const blogPosts=[
-    {title:'stories',subTitle:'Innovated interactions that speaks volumes',date:'Mar 1 . 4 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-]
-export const stories=[
-    {title:'Case studies',subTitle:'Rubric',heading:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore...',date:'Feb 24 . 5 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-]
-export const caseStudies=[
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
-    {title:'blog posts',subTitle:'DALLAS LEADERS',heading:'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021',date:'Mar 8 . 6 min read',},
+export const data = [
+    { title: 'blog posts', subTitle: 'Innovated interactions that speaks volumes', date: 'Mar 1 . 4 min read', },
+    { title: 'blog posts', subTitle: 'aDALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
+    { title: 'blog posts', subTitle: 'hDALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
+    { title: 'blog posts', subTitle: 'zDALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
+    { title: 'blog posts', subTitle: 'bDALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
+    { title: 'blog posts', subTitle: 'DALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
+    { title: 'stories', subTitle: 'IRubric', heading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore...', date: 'Feb 24 . 5 min read', },
+    { title: 'stories', subTitle: 'gDALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
+    { title: 'stories', subTitle: 'gDALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
+    { title: 'stories', subTitle: 'hDALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
+    { title: 'stories', subTitle: 'kDALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
+    { title: 'stories', subTitle: 'qDALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
+    { title: 'Case studies', subTitle: 'aDALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
+    { title: 'Case studies', subTitle: 'bDALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
+    { title: 'Case studies', subTitle: 'hDALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
+    { title: 'Case studies', subTitle: 'kDALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
+    { title: 'Case studies', subTitle: 'tDALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
+    { title: 'Case studies', subTitle: 'gsdDALLAS LEADERS', heading: 'MAG-RAW Creations Awarded by Clutch as One of the Top Explainer Video Companies in Dallas 2021', date: 'Mar 8 . 6 min read', },
 ]
