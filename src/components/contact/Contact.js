@@ -61,6 +61,7 @@ function Contact({ id, isMobile }) {
             yValue: 30,
             speedValue: 10
         },
+        
         {
             className: 'ratingBox',
             xValue: 90,
