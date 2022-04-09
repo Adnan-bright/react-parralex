@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import * as style from '../../styles/components/stories.module.css'
 import Slider from "react-slick";
 import { motion } from "framer-motion";
@@ -6,7 +6,9 @@ import UseStoriesMouseGesture from './useStoriesMouseGesture';
 import UseStories from './useStories';
 import { Link, navigate } from 'gatsby';
 import UseWindowDimension from '../hooks/useWindowDimension';
+import { DataContext } from '../Provider/Provider';
 function Stories({ isMobile }) {
+    const {setSelectedType, setPreviousRoute} =useContext(DataContext)
     const {width} = UseWindowDimension()
     const { storiesData} = UseStories()
     const data = [
@@ -60,7 +62,11 @@ function Stories({ isMobile }) {
     const [activeIndex, setActiveIndex] = useState(0)
     const [check, setcCheck] = useState(false)
     const [whichCard, setWhichCard] = useState('')
-
+    
+    const onClick = (slug)=>{
+        setPreviousRoute('/')
+        navigate(slug)
+    }
     
     var divideValue = width >= 1100 ? 8:width >= 900 ? 6:4
 
@@ -176,7 +182,7 @@ function Stories({ isMobile }) {
 
                         </div>
                         <center >
-                            <p onClick={()=> navigate('/allStories')}
+                            <p onClick={()=> {setSelectedType('stories') ;navigate('/allStories')}}
                                 className={style.mblBtnText}
                             >see all work</p>
                         </center>
@@ -292,10 +298,8 @@ function Stories({ isMobile }) {
                                 our best stories
                             </h1>
                           
-                            <div onClick={()=> navigate('/allStories')}  className={style.btn}>
-                         
+                            <div onClick={()=>{setSelectedType('stories'); navigate('/allStories')}}  className={style.btn}>
                                 see all work
-                            
                             </div>
                         </div>
                         <div className={style.imagesContainer}>
@@ -317,7 +321,7 @@ function Stories({ isMobile }) {
                                                         opacity: index + 1 === storiesData.length && 0
                                                     }}
                                                     onMouseUp={()=> setIsDragging(false)}
-                                                    onClick={()=> !isDragging && navigate(item.slug, 'ahmad')}
+                                                    onClick={()=> !isDragging && onClick(item.slug)}
                                                     onMouseEnter={() => setWhichCard('active')}
                                                     onMouseLeave={() => setWhichCard('')}
                                                     key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>

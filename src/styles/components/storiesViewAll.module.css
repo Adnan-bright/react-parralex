@@ -151,7 +151,16 @@
     -webkit-text-fill-color: transparent;
     margin-top: 50px;
 }
-
+.rowItem{
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+.rowItem:hover{
+    padding-top: 10px;
+    background-color: rgba(69, 69, 69, 0.331);
+}
 .postTitleColorBlog {
     font-family: graphik-regular;
     font-size: 16;

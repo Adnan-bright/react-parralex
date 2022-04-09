@@ -284,3 +284,9 @@
     text-transform: uppercase;
     color: #FFFFFF;
 }
+.ContactBannerContainer{
+    padding-top: 60px;
+}
+.footerContainer{
+    margin-top: 250px;
+}

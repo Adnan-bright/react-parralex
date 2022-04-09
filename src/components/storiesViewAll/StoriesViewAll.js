@@ -1,15 +1,22 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import * as style from '../../styles/components/storiesViewAll.module.css'
 import { data } from '../../../src/components/constant/Constant'
 import ContactBanner from '../contactBanner/ContactBanner'
 import Footer from '../footer/Footer'
 import gsap from 'gsap'
 import { navigate } from 'gatsby'
+import UseStories from '../stories/useStories'
+import { DataContext } from '../Provider/Provider'
 export default function StoriesViewAll() {
-    const [tab, setTab] = useState('all')
+    const {selectedType, setPreviousRoute, previousRoute} = useContext(DataContext)
+
+   const {storiesData} = UseStories()
+    const [tab, setTab] = useState(selectedType)
     const [sort, setSort] = useState(false)
     const [sortKey, setSortKey] = useState('new')
     const [num, setNum] = useState(10)
+
+
     const handleClick = (id) => {
         navigate('/')
         gsap.to(window, {
@@ -17,7 +24,18 @@ export default function StoriesViewAll() {
             duration: .5,
         })
     }
-    const selectedData = tab === 'all' ? data : data.filter(item => item.title === tab)
+
+    const onClick = (slug) => {
+        navigate(slug)
+        setPreviousRoute('/allStories')
+    }
+
+    storiesData.forEach(object => {
+        object.category = 'stories';
+      });
+     const nData =  data.concat(storiesData)
+    console.log('selectedType', selectedType)
+    const selectedData = tab === 'all' ? nData : nData.filter(item => item.category === tab)
     const dataArr = sortKey === 'new' ? selectedData: sortKey ==='up' ?
      selectedData.sort((a, b) => a.subTitle.localeCompare(b.subTitle)) : sortKey ==='down' ?
      selectedData.sort((a, b) => b.subTitle.localeCompare(a.subTitle)): selectedData
@@ -58,21 +76,21 @@ export default function StoriesViewAll() {
                 <div>
                     {dataArr?.slice(0, num).map((item, index) => {
                         return (
-                            <div>
-                                <p className={item.title === 'blog posts' ? style.postTitleColorBlog :
-                                    item.title === 'stories' ? style.postTitleColorStories :
-                                        item.title === 'Case studies' ? style.postTitleColorCase : style.postTitle}>{item.title}</p>
+                            <div  onClick={()=> item.category === 'stories' && onClick(`/${item.slug}`)} className={style.rowItem}>
+                                <p className={item.category === 'blog posts' ? style.postTitleColorBlog :
+                                    item.category === 'stories' ? style.postTitleColorStories :
+                                        item.category === 'Case studies' ? style.postTitleColorCase : style.postTitle}>{item.category}</p>
                                 <div className={style.postContainer}>
                                     <div>
-                                        <p className={style.postSubTitle}>{item.subTitle}</p>
-                                        <p className={style.postHeading}>{item.heading}</p>
-                                        <p className={style.postDate}>{item.date}</p>
+                                        <p className={style.postSubTitle}>{item.title}</p>
+                                        <p className={style.postHeading}>{item.description}</p>
+                                        <p className={style.postDate}>Mar 1 . 3 MIN read</p>
                                     </div>
                                     <div>
                                         <img className={style.downArrow} src='../../images/storiesViewAll/book.png' />
                                     </div>
                                 </div>
-                                <div className={style.line} />
+                                <div  className={style.line} />
                             </div>
                         )
                     })}
