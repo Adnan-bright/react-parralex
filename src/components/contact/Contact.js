@@ -56,6 +56,8 @@ function Contact({ id, isMobile }) {
             speedValue: 7
         },
 
+
+        
         {
             className: 'rightBtm',
             xValue: 190,
