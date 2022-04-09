@@ -55,13 +55,14 @@ function Contact({ id, isMobile }) {
             yValue: -10,
             speedValue: 7
         },
+
         {
             className: 'rightBtm',
             xValue: 190,
             yValue: 30,
             speedValue: 10
         },
-        
+
         {
             className: 'ratingBox',
             xValue: 90,
