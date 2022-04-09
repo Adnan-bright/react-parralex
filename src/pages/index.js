@@ -100,7 +100,9 @@ const IndexPage = () => {
               <div id={'panel-6'} className="panel">
                 <Contact isMobile={width < 600} />
               </div>
+             
             </div>
+            
             :
             <div
               className="verticalContainer">

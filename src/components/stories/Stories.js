@@ -176,7 +176,7 @@ function Stories({ isMobile }) {
 
                         </div>
                         <center >
-                            <p
+                            <p onClick={()=> navigate('/allStories')}
                                 className={style.mblBtnText}
                             >see all work</p>
                         </center>
@@ -291,8 +291,11 @@ function Stories({ isMobile }) {
                             <h1 className={style.heading}>
                                 our best stories
                             </h1>
-                            <div className={style.btn}>
+                          
+                            <div onClick={()=> navigate('/allStories')}  className={style.btn}>
+                         
                                 see all work
+                            
                             </div>
                         </div>
                         <div className={style.imagesContainer}>

@@ -81,8 +81,49 @@ function Process({ isMobile }) {
                             OUR PROCESS
                         </h1>
                         <div className={style.MainContainer}>
+                            <div className={hover ? style.closeIconContainerBlur : style.closeIconContainer}>
+                                <div className={style.closeRow1}>
+                                    <div className={style.closeIcon}>
+                                        <p className={style.close} />
+                                    </div>
+                                </div>
+                                <div className={style.closeRow2}>
+                                    <div className={style.closeIcon}>
+                                        <p className={style.close} />
+                                    </div>
+                                    <div className={style.closeIcon}>
+                                        <p className={style.close} />
+                                    </div>
+                                    <div className={style.closeIcon}>
+                                        <p className={style.close} />
+                                    </div>
+                                </div>
+                                <div className={style.closeRow3}>
+                                    <div className={style.closeIcon}>
+                                        <p className={style.close} />
+                                    </div>
+                                    <div className={style.closeIcon}>
+                                        <p className={style.close} />
+                                    </div>
+                                </div>
+                                <div className={style.closeRow4}>
+                                    <div className={style.closeIcon}>
+                                        <p className={style.close} />
+                                    </div>
+                                    <div className={style.closeIcon}>
+                                        <p className={style.close} />
+                                    </div>
+                                </div>
+                                <div className={style.closeRow5}>
+                                    <div className={style.closeIcon}>
+                                        <p className={style.close} />
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <div className={style.rowsContainer}>
-                     
+
                                 <div
 
                                     className={`${style.topRow} processTopRow`}>
@@ -159,7 +200,7 @@ function Process({ isMobile }) {
                                     </div>
                                 </div>
                                 <div
-                    
+
                                     className={`${style.bottomRow} processBtmRow`}>
                                     <div
 
@@ -209,6 +250,59 @@ function Process({ isMobile }) {
 
                                     </div>
                                 </div>
+                            </div>
+                            <div className={hover ? style.closeIconContainerBlurRight : style.closeIconContainerRight}>
+                                <div className={style.rightCloseRow1}>
+                                    <div className={style.rightCloseIcon}>
+                                        <p className={style.rightClose} />
+                                    </div>
+                                </div>
+                                <div className={style.rightCloseRow2}>
+                                    <div className={style.rightCloseIcon}>
+                                        <p className={style.rightClose} />
+                                    </div>
+                                </div>
+                                <div className={style.rightCloseRow3}>
+                                    <div className={style.rightCloseIcon}>
+                                        <p className={style.rightClose} />
+                                    </div>
+                                    <div className={style.rightCloseIcon}>
+                                        <p className={style.rightClose} />
+                                    </div>
+                                </div>
+                                <div className={style.rightCloseRow4}>
+                                    <div className={style.rightCloseIcon}>
+                                        <p className={style.rightClose} />
+                                    </div>
+                                    <div className={style.rightCloseIcon}>
+                                        <p className={style.rightClose} />
+                                    </div>
+                                </div>
+                                <div className={style.rightCloseRow5}>
+                                    <div className={style.rightCloseIcon}>
+                                        <p className={style.rightClose} />
+                                    </div>
+                                    <div className={style.rightCloseIcon}>
+                                        <p className={style.rightClose} />
+                                    </div>
+                                    <div className={style.rightCloseIcon}>
+                                        <p className={style.rightClose} />
+                                    </div>
+                                </div>
+                                <div className={style.rightCloseRow6}>
+                                    <div className={style.rightCloseIcon}>
+                                        <p className={style.rightClose} />
+                                    </div>
+                                </div>
+                                <div className={style.rightCloseRow7}>
+                                    <div className={style.rightCloseIcon}>
+                                        <p className={style.rightClose} />
+                                    </div>
+                                    <div className={style.rightCloseIcon}>
+                                        <p className={style.rightClose} />
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>

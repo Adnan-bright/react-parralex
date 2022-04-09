@@ -140,7 +140,6 @@ function Contact({ id, isMobile }) {
                     </div>
                     :
                     <div className={`${style.body} `}>
-
                         <div >
                             <div className='meinContainerAnimated'>
                                 <div className='cube leftMid'>
@@ -265,7 +264,21 @@ function Contact({ id, isMobile }) {
                         </div>
                         <div id={id} className={style.main}>
                             <div className={style.reviewContainer}>
-                                <ReviewContainer />
+                            {/* <div className='meinContainerAnimated'>
+                                <div className='cube leftMid'>
+                                    {
+                                        classes.map((item, index) => {
+                                            return <motion.div
+                                                key={index}
+                                                className={`${style.leftMidBg} ${item.class}`}
+                                            > */}
+                                                  <ReviewContainer />
+                                            {/* </motion.div>
+                                        })
+                                    }
+                                </div>
+                            </div> */}
+                             
                             </div>
                             <div className={style.midContainer}>
 

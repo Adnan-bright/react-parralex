@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useRef } from 'react'
 import Layout from '../layout/Layout'
 import * as style from '../../styles/components/storyLayout.module.css'
 import { graphql, navigate } from "gatsby"
@@ -6,7 +6,8 @@ import gsap from 'gsap'
 import { DataContext } from '../Provider/Provider'
 import RelatedCases from '../relatedCases/RelatedCases'
 function StoryLayout({ pageContext, data }) {
-
+    const ref = useRef(null)
+    console.log('ref', ref.current)
     const [whichIndex, setWhichIndex] = useState('')
     const { setStory } = useContext(DataContext)
     function createMarkup(story) {
@@ -70,7 +71,7 @@ function StoryLayout({ pageContext, data }) {
                 </div>
                 <div className={style.body}>
                     <div className={style.story}>
-                        <div dangerouslySetInnerHTML={createMarkup(storyData.story)} />
+                        <div ref={ref} dangerouslySetInnerHTML={createMarkup(storyData.story)} />
 
                     </div>
                     <div className={style.shareContainer}>
@@ -94,6 +95,12 @@ function StoryLayout({ pageContext, data }) {
                     </div>
                     <div className={style.signUpContainer}>
                             <h1 className={style.signUpHeading}>sign up for new stories</h1>
+                            <div className={style.inputContainer}>
+                                    <input className={style.signUpInput}
+                                    placeholder='Email'
+                                    type={'text'} />
+                                    <div className={style.button}>sign up</div>
+                            </div>
                     </div>
                 </div>
             </div>
