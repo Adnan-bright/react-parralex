@@ -4,6 +4,7 @@ import * as style from '../../styles/components/storyLayout.module.css'
 import { graphql, navigate } from "gatsby"
 import gsap from 'gsap'
 import { DataContext } from '../Provider/Provider'
+import RelatedCases from '../relatedCases/RelatedCases'
 function StoryLayout({ pageContext, data }) {
 
     const [whichIndex, setWhichIndex] = useState('')
@@ -22,9 +23,9 @@ function StoryLayout({ pageContext, data }) {
     }
     const shareIconsData = [
         {
-            linkTitle:"instagram",
-            icon:"/icons/fb.png",
-            hoverIcon:"/icons/fbHv.png",
+            linkTitle: "instagram",
+            icon: "/icons/insta.png",
+            hoverIcon: "/icons/instaHv.png",
         },
     ]
     return (
@@ -73,22 +74,26 @@ function StoryLayout({ pageContext, data }) {
 
                     </div>
                     <div className={style.shareContainer}>
-                        <p>SHARE</p>
+                        <p className={style.shareText}>SHARE</p>
                         <div className={style.tabs}>
-                        {
-                                    shareIconsData.map((item, index) => {
-                                        return <a
-                                            key={index}
-                                            onMouseLeave={() => setWhichIndex('')}
-                                            onMouseEnter={() => setWhichIndex(item.linkTitle)}
-                                            style={{
-                                                backgroundImage: whichIndex === item.linkTitle ? `url(${item.hoverIcon})` : `url(${item.icon})`
-                                            }}
-                                            className={style.tab}>
-                                        </a>
-                                    })
-                                }
+                            <a className={style.tab1}>
+                            </a>
+                            <a className={style.tab2}>
+                            </a>
+                            <a className={style.tab3}>
+                            </a>
+                            <a className={style.tab4}>
+                            </a>
                         </div>
+                    </div>
+                    <div className={style.casesContainer}>
+                        <h1 className={style.relatedCsHd}>Related cases</h1>
+                        <div className={style.casesCompContainer}>
+                            <RelatedCases />
+                        </div>
+                    </div>
+                    <div className={style.signUpContainer}>
+                            <h1 className={style.signUpHeading}>sign up for new stories</h1>
                     </div>
                 </div>
             </div>
