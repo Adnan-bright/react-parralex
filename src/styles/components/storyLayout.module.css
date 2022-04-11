@@ -12,13 +12,14 @@
     top: 40px;
     left: 40px;
 }
+.bannerHeading source, .bannerHeading img{
+    width: 100px;
+    width: 100px;
+}
+.story source, .story img{
+    width: 90% ;
+}
 
-.story img {
-    width: 90% ;
-}
-.story source {
-    width: 90% ;
-}
 
 
 .bannerHeader {
