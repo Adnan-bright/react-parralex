@@ -15,8 +15,11 @@
 /* .story img {
     width: 90% !important;
 } */
-.story figure div{
-    width: 100% !important;
+.story figure > div{
+    width: 100% ;
+}
+.story figure > div > div{
+    width: 100% ;
     background-color: red;
 }
 .story picture {
