@@ -67,7 +67,7 @@ function StoryLayout({ pageContext, data }) {
 
                 </div>
                 <div className={style.body}>
-                    <div ref={ref}  className={style.story}>
+                    <div ref={ref} className={style.story}>
                         <div dangerouslySetInnerHTML={createMarkup(content)} />
 
                     </div>
@@ -91,13 +91,13 @@ function StoryLayout({ pageContext, data }) {
                         </div>
                     </div>
                     <div className={style.signUpContainer}>
-                            <h1 className={style.signUpHeading}>sign up for new stories</h1>
-                            <div className={style.inputContainer}>
-                                    <input className={style.signUpInput}
-                                    placeholder='Email'
-                                    type={'text'} />
-                                    <div className={style.button}>sign up</div>
-                            </div>
+                        <h1 className={style.signUpHeading}>sign up for new stories</h1>
+                        <div className={style.inputContainer}>
+                            <input className={style.signUpInput}
+                                placeholder='Email'
+                                type={'text'} />
+                            <div className={style.button}>sign up</div>
+                        </div>
                     </div>
                 </div>
                 <div className={style.ContactBannerContainer}>
@@ -113,31 +113,31 @@ function StoryLayout({ pageContext, data }) {
     )
 }
 export const query = graphql`
-query ($slug: String) {
-    allWpStories(filter:{ stories:{ slug: { eq : $slug} } }) {
-        edges {
-            node {
-              stories {
-                client
+                    query ($slug: String) {
+                        allWpStories(filter:{stories:{slug: {eq : $slug} } }) {
+                        edges {
+                        node {
+                        stories {
+                        client
                 coverImage {
-                  mediaItemUrl
-                }
-                coverImageLink {
-                  url
-                }
-                description
-                story
-                storyTitle
-                storyType
-                team
-                year
-                slug
+                        mediaItemUrl
+                    }
+                    coverImageLink {
+                        url
+                    }
+                    description
+                    story
+                    storyTitle
+                    storyType
+                    team
+                    year
+                    slug
               }
-              content
+                    content
               
             }
           }
         }
     }
-`
+                    `
 export default StoryLayout
