@@ -13,6 +13,11 @@
     left: 40px;
 }
 
+
+.story img {
+    width: 100%;
+}
+
 .bannerHeader {
     display: flex;
     padding-top: 20px;
@@ -223,6 +228,19 @@
     align-items: center;
     justify-content: center;
 }
+.story ul {
+  list-style: none;
+
+}
+.story ul li{
+    margin-top: 20px;
+    margin-left: -40px;
+}
+  .story ul li::before{
+    content: url(../../../static/images/common/dotActive.png);
+    vertical-align:middle;
+    margin-right: 10px;
+  }
 
 .signUpInput {
     width: 260px;
@@ -284,9 +302,11 @@
     text-transform: uppercase;
     color: #FFFFFF;
 }
-.ContactBannerContainer{
+
+.ContactBannerContainer {
     padding-top: 60px;
 }
-.footerContainer{
+
+.footerContainer {
     margin-top: 250px;
 }

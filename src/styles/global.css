@@ -8,6 +8,7 @@
     font-family: graphik-black-italic;
     src: url(../../static/fonts/Graphik/GraphikBlackItalic.otf);
 }
+
 @font-face {
     font-family: graphik-bold;
     src: url(../../static/fonts/Graphik/GraphikBold.otf);
@@ -86,6 +87,19 @@
 @font-face {
     font-family: graphik-thin-italic;
     src: url(../../static/fonts/Graphik/GraphikThinItalic.otf);
+}
+.wp-block-columns img, .wp-block-columns p{
+    width: 90% !important;
+}
+.border-left{
+    border-left: 5px solid red;
+    padding-left: 20px;
+    border-image: url(../../static/images/common/vertical-border.png) 10 ;
+}
+.border-right{
+    border-right: 5px solid red;
+    padding-right: 20px;
+    border-image: url(../../static/images/common/vertical-border.png) 10 ;
 }
 html, 
 body {
