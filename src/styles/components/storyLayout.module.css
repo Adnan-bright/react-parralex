@@ -13,6 +13,19 @@
     left: 40px;
 }
 
+.story picture {
+    width: 100%;
+}
+.story figure > div{
+    width: 100% ;
+}
+.story figure > div > div{
+    width: 100% ;
+}
+
+.story picture > *{
+    width: 90% !important;
+}
 
 
 .bannerHeader {
