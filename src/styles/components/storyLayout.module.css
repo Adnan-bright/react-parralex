@@ -12,9 +12,9 @@
     top: 40px;
     left: 40px;
 }
-.story img {
+/* .story img {
     width: 90% !important;
-}
+} */
 .story picture > *{
     width: 90% !important;
 }
