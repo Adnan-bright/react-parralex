@@ -13,6 +13,9 @@
     left: 40px;
 }
 
+.story img {
+    width: 100%;
+}
 
 .bannerHeader {
     display: flex;
