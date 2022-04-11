@@ -12,20 +12,18 @@
     top: 40px;
     left: 40px;
 }
-/* .story img {
-    width: 90% !important;
-} */
+
+.story picture {
+    width: 100%;
+   opacity: 0.4;
+}
 .story figure > div{
     width: 100% ;
 }
 .story figure > div > div{
     width: 100% ;
-    background-color: red;
 }
-.story picture {
-    width: 100%;
-   opacity: 0.4;
-}
+
 .story picture > *{
     width: 90% !important;
 }
