@@ -15,9 +15,12 @@
 /* .story img {
     width: 90% !important;
 } */
+.story figure div{
+    width: 100% !important;
+    background-color: red;
+}
 .story picture {
-   background-color: red;
-   width: 100%;
+    width: 100%;
    opacity: 0.4;
 }
 .story picture > *{
