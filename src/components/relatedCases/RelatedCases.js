@@ -21,7 +21,7 @@ function RelatedCases() {
         },
     ]
     return (
-        <div className={style.mai}>
+        <div className={style.main}>
             <div className={style.casesContainer}>
                 <div
 
@@ -29,9 +29,7 @@ function RelatedCases() {
                     <div>
                         <div className={style.menuItemCont}>
                             <p
-                                style={{
-                                    marginTop: '5px',
-                                }}
+               
                                 onClick={() => setActive('film')}
                                 className={active === 'film' ? style.menuItemActive : style.menuItem}>Film</p>
                             <div className={active === 'film' ? style.brdrDiv : style.brdrDivHide}></div>
