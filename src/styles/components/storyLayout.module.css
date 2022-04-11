@@ -13,9 +13,6 @@
     left: 40px;
 }
 
-.story img {
-    width: 100%;
-}
 
 .bannerHeader {
     display: flex;
@@ -366,6 +363,15 @@
     margin-top: 250px;
 }
 @media only screen and (max-width:600px) {
+    .relatedCsHd {
+        font-family: graphik-regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
     .signUpHeading {
         font-size: 30px;
         line-height: 34px;
