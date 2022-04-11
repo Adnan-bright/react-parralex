@@ -18,6 +18,7 @@
 .story picture {
    background-color: red;
    width: 100%;
+   opacity: 0.4;
 }
 .story picture > *{
     width: 90% !important;
