@@ -57,10 +57,6 @@ function StoryLayout({ pageContext, data }) {
                     </div>
                     <h1 className={style.bannerHeading}>
                         {storyData.storyTitle}
-                        <picture >
-                            <source srcset="/images/common/dummy.png" media="(min-width: 800px)" />
-                                <img src="/images/common/film.png" alt="" />
-                        </picture>
                     </h1>
                     <center>
                         <div className={style.bannerImageContainer}>
