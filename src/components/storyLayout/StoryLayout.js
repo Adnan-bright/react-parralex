@@ -25,13 +25,7 @@ function StoryLayout({ pageContext, data }) {
         })
 
     }
-    const shareIconsData = [
-        {
-            linkTitle: "instagram",
-            icon: "/icons/insta.png",
-            hoverIcon: "/icons/instaHv.png",
-        },
-    ]
+    console.log('storyData', storyData)
     return (
         <Layout onNavClick={handleClick}>
             <div

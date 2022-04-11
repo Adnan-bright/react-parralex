@@ -68,6 +68,8 @@
 @media only screen and (max-width:1260px) {
     .heading {
         width: 50%;
+        font-size: 32px;
+        line-height: 36px;
     }
     .headingContainer{
         margin-top: 20px;
@@ -79,5 +81,12 @@
     }
     .headingContainer{
         margin-top: 0px;
+    }
+}
+@media only screen and (max-width:1260px) {
+    .heading {
+        width: 90%;
+        font-size: 27px;
+        line-height: 31px;
     }
 }

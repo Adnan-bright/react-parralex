@@ -67,3 +67,28 @@
     background-size: contain;
     cursor: pointer;
 }
+@media only screen and (max-width:780px){
+    .followContainer {
+        position: absolute;
+        bottom: 0px;
+        left: 20px;
+    }
+    .copyrightContainer {
+        position: absolute;
+        bottom: 0px;
+        right: 20px;
+    }
+}
+@media only screen and (max-width:650px){
+    .followContainer {
+        position: absolute;
+        bottom: 50px;
+        left: 20px;
+    }
+    .copyrightContainer {
+        position: absolute;
+        bottom: 0px;
+        right: 20px;
+        left: 20px;
+    }
+}

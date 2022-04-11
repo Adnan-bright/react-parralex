@@ -57,7 +57,7 @@ function Contact({ id, isMobile }) {
         },
 
 
-        
+
         {
             className: 'rightBtm',
             xValue: 190,
@@ -65,6 +65,8 @@ function Contact({ id, isMobile }) {
             speedValue: 10
         },
 
+
+        
         {
             className: 'ratingBox',
             xValue: 90,

@@ -8,6 +8,7 @@
     font-family: graphik-black-italic;
     src: url(../../static/fonts/Graphik/GraphikBlackItalic.otf);
 }
+
 @font-face {
     font-family: graphik-bold;
     src: url(../../static/fonts/Graphik/GraphikBold.otf);
@@ -86,6 +87,45 @@
 @font-face {
     font-family: graphik-thin-italic;
     src: url(../../static/fonts/Graphik/GraphikThinItalic.otf);
+}
+.wp-block-columns img{
+    width: 90% !important;
+}
+.wp-block-columns p{
+    margin-top: -5px;
+    width: 90% !important;
+}
+
+.border-left{
+    border-left: 8px solid transparent;
+    padding-left: 20px;
+    border-image: url(../../static/images/common/vertical-border.png) 10 ;
+}
+.border-right{
+    border-right: 8px solid transparent;
+    padding-right: 20px;
+    border-image: url(../../static/images/common/vertical-border.png) 10 ;
+}
+
+.vertical-center{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -8px;
+}
+@media only screen and (max-width:780px){
+    .wp-block-columns img, .wp-block-columns p{
+        width: 100% !important;
+    }
+    .border-left{
+    padding-left: 0px;
+    border: none;
+    }
+    .border-right{
+    padding-right: 0px;
+    border: none;
+    }
 }
 html, 
 body {

@@ -1,5 +1,5 @@
 .casesContainer {
-    height: 320px;
+    height: auto;
     width: 100%;
     display: flex;
 }
@@ -12,6 +12,7 @@
     width: 75%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .menuItem {
@@ -71,6 +72,7 @@
 
 .caseCard {
     width: 270px;
+    margin-bottom: 40px;
 }
 
 .cardImgContainer {
