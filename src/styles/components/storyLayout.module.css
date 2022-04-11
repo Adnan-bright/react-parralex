@@ -228,19 +228,22 @@
     align-items: center;
     justify-content: center;
 }
+
 .story ul {
-  list-style: none;
+    list-style: none;
 
 }
-.story ul li{
+
+.story ul li {
     margin-top: 20px;
     margin-left: -40px;
+    display: flex;
 }
-  .story ul li::before{
+
+.story ul li::before {
     content: url(../../../static/images/common/dotActive.png);
-    vertical-align:middle;
     margin-right: 10px;
-  }
+}
 
 .signUpInput {
     width: 260px;
