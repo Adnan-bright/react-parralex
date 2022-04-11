@@ -91,15 +91,34 @@
 .wp-block-columns img, .wp-block-columns p{
     width: 90% !important;
 }
+
 .border-left{
-    border-left: 5px solid red;
+    border-left: 8px solid transparent;
     padding-left: 20px;
     border-image: url(../../static/images/common/vertical-border.png) 10 ;
 }
 .border-right{
-    border-right: 5px solid red;
+    border-right: 8px solid transparent;
     padding-right: 20px;
     border-image: url(../../static/images/common/vertical-border.png) 10 ;
+}
+.vertical-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen and (max-width:780px){
+    .wp-block-columns img, .wp-block-columns p{
+        width: 100% !important;
+    }
+    .border-left{
+    padding-left: 0px;
+    border: none;
+    }
+    .border-right{
+    padding-right: 0px;
+    border: none;
+    }
 }
 html, 
 body {

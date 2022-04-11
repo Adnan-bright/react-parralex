@@ -107,7 +107,30 @@
     padding-left: 20%;
     padding-right: 20%;
 }
-
+@media only screen and (max-width:1350px){
+    .story {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}
+@media only screen and (max-width:1170px){
+    .story {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+@media only screen and (max-width:1050px){
+    .story {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+@media only screen and (max-width:950px){
+    .story {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
 .tabs {
     display: flex;
     align-items: center;
@@ -243,6 +266,34 @@
 .story ul li::before {
     content: url(../../../static/images/common/dotActive.png);
     margin-right: 10px;
+}
+
+.story p {
+    font-family: graphik-light;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFF;
+}
+
+.story h3 {
+    font-family: graphik-medium;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.story h1 {
+    font-family: graphik-light;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 44px;
+    text-transform: uppercase;
+    color: #FFFFFF;
 }
 
 .signUpInput {
