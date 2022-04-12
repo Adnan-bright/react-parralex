@@ -95,6 +95,11 @@
     margin-top: -5px;
     width: 90% ;
 }
+/* Deployed */
+
+.wp-block-columns picture > *{
+    width: 90% ;
+}
 
 .border-left{
     border-left: 8px solid transparent;
