@@ -14,7 +14,6 @@ exports.createPages = async function ({ actions, graphql }) {
                       url
                     }
                     description
-                    story
                     storyTitle
                     storyType
                     team

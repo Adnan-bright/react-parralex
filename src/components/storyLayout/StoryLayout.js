@@ -7,7 +7,14 @@ import { DataContext } from '../Provider/Provider'
 import RelatedCases from '../relatedCases/RelatedCases'
 import ContactBanner from '../contactBanner/ContactBanner'
 import Footer from '../footer/Footer'
+import ScrollTrigger from "gsap/ScrollTrigger";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
+
 function StoryLayout({ pageContext, data }) {
+
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollToPlugin);
+
     const ref = useRef(null)
     const [whichIndex, setWhichIndex] = useState('')
     const { setStory, previousRoute } = useContext(DataContext)
@@ -16,16 +23,20 @@ function StoryLayout({ pageContext, data }) {
     }
     const storyData = data?.allWpStories?.edges?.[0]?.node?.stories
     const content = data?.allWpStories?.edges?.[0]?.node?.content
-    console.log('content', data?.allWpStories?.edges?.[0])
+
     const handleClick = (id) => {
+        const value= id * 700
+       if (value) {
         navigate('/')
         gsap.to(window, {
-            scrollTo: 700 * id,
+            scrollTo:  value,
             duration: .5,
         })
+       }else{
+        navigate('/')
+       }
 
     }
-    console.log('storyData', storyData)
     return (
         <Layout onNavClick={handleClick}>
             <div
@@ -126,7 +137,6 @@ export const query = graphql`
                         url
                     }
                     description
-                    story
                     storyTitle
                     storyType
                     team
