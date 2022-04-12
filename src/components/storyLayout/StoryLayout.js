@@ -9,11 +9,13 @@ import ContactBanner from '../contactBanner/ContactBanner'
 import Footer from '../footer/Footer'
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
-
+import UseWindowDimension from '../hooks/useWindowDimension'
 function StoryLayout({ pageContext, data }) {
 
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.registerPlugin(ScrollToPlugin);
+    const { width } = UseWindowDimension()
+
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollToPlugin);
 
     const ref = useRef(null)
     const [whichIndex, setWhichIndex] = useState('')
@@ -25,20 +27,20 @@ function StoryLayout({ pageContext, data }) {
     const content = data?.allWpStories?.edges?.[0]?.node?.content
 
     const handleClick = (id) => {
-        const value= id * 700
-       if (value) {
-        navigate('/')
-        gsap.to(window, {
-            scrollTo:  value,
-            duration: .5,
-        })
-       }else{
-        navigate('/')
-       }
+        const value = id * 700
+        if (value) {
+            navigate('/')
+            gsap.to(window, {
+                scrollTo: value,
+                duration: .5,
+            })
+        } else {
+            navigate('/')
+        }
 
     }
     return (
-        <Layout onNavClick={handleClick}>
+        <Layout isMobile={width >= 800 ? false : true}  isVertical={true} onNavClick={handleClick}>
             <div
                 className={style.main}
             >

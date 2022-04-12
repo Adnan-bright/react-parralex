@@ -1,12 +1,29 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import * as style from '../../styles/components/mobileHeader.module.css'
 function MobileHeader() {
     const [toggle, setToggle] = useState(false)
     const [checkActive, setCheckActive] = useState('')
-
+    const [scrollValue, setScrollValue] = useState(0)
+// get scroll Y Value runTime
+    const scrollY = useRef(0)
+    const handleScroll = () => {
+        scrollY.current = window.scrollY
+        setScrollValue(scrollY.current)
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
     return (
-        <div className={style.top}>
-            <div className={style.header}>
+        <div ref={scrollY}
+        style={{
+            backgroundColor: scrollValue > 60 ? 'black' : 'transparent',
+        }}
+        className={style.top}
+        >
+            <div className={style.header} >
                 <div className={style.topBar}>
                    <a href='#verticalPanel-1'>
                    <img
