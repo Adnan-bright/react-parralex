@@ -7,6 +7,7 @@ import UseStories from './useStories';
 import { Link, navigate } from 'gatsby';
 import UseWindowDimension from '../hooks/useWindowDimension';
 import { DataContext } from '../Provider/Provider';
+
 function Stories({ isMobile }) {
     const {setSelectedType, setPreviousRoute} =useContext(DataContext)
     const {width} = UseWindowDimension()
@@ -146,7 +147,7 @@ function Stories({ isMobile }) {
                                         key={index}
                                         onMouseEnter={() => setcCheck(false)}
                                         onMouseLeave={() => setcCheck(true)}
-                                        onClick={() => setWhichCard(index)}
+                                        onClick={() => {setWhichCard(index);onClick(item.slug)}}
                                         className={index === whichCard ?
                                             style.mblSingleImgContainerActive :
                                             style.mblSingleImgContainer
@@ -347,7 +348,7 @@ function Stories({ isMobile }) {
                                                     >
                                                         <div
                                                            onMouseUp={()=> setIsDragging(false)}
-                                                           onClick={()=> !isDragging && navigate(item.slug)}
+                                                           onClick={()=> !isDragging && onClick(item.slug)}
                                                             onMouseEnter={() => setWhichCard('active')}
                                                             onMouseLeave={() => setWhichCard('')}
                                                             key={index} className={whichCard === "active" ? style.singleImgContainerBlur : style.singleImgContainer}>
