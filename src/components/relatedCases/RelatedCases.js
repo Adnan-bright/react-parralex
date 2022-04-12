@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import * as style from '../../styles/components/relatedCases.module.css'
+import UseStories from '../stories/useStories'
+import { motion, AnimatePresence } from "framer-motion";
 function RelatedCases() {
+    const {storiesData} = UseStories()
+    console.log('storiesData', storiesData)
     const [active, setActive] = useState('film')
+    const filteredData = storiesData?.filter((item) => item?.storyType?.toLowerCase() === active.toLowerCase())
+    console.log('filteredData', filteredData)
     const data = [
         {
             description: " Lorem ipsum dolor sit amet, con ec tetur adipiscing elit",
@@ -54,18 +60,26 @@ function RelatedCases() {
 
                 </div>
                 <div className={style.content}>
+                    <AnimatePresence exitBeforeEnter>
                     {
-                        data.map((item, index) => {
-                            return <div key={index} className={style.caseCard}>
+                        filteredData.map((item, index) => {
+                            return <motion.div 
+                            key={active}
+                            animate={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.15 }}
+                            className={style.caseCard}>
                                 <div className={style.cardImgContainer}>
                                     <img className={style.cardImage}
-                                        draggable={false} src={item.img} alt='Image' />
+                                        draggable={false} src={item.coverImage} alt='Image' />
                                 </div>
-                                <p className={style.cardTitle}>Film</p>
+                                <p className={style.cardTitle}>{item.title}</p>
                                 <p className={style.cardDescription}>{item.description }</p>
-                            </div>
+                            </motion.div>
                         })
                     }
+                    </AnimatePresence>
 
                 </div>
             </div>

@@ -16,7 +16,7 @@ function StoryLayout({ pageContext, data }) {
     }
     const storyData = data?.allWpStories?.edges?.[0]?.node?.stories
     const content = data?.allWpStories?.edges?.[0]?.node?.content
-    console.log('content', data?.allWpStories?.edges?.[0])
+
     const handleClick = (id) => {
         navigate('/')
         gsap.to(window, {
@@ -25,7 +25,6 @@ function StoryLayout({ pageContext, data }) {
         })
 
     }
-    console.log('storyData', storyData)
     return (
         <Layout onNavClick={handleClick}>
             <div
@@ -126,7 +125,6 @@ export const query = graphql`
                         url
                     }
                     description
-                    story
                     storyTitle
                     storyType
                     team

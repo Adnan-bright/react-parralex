@@ -34,8 +34,8 @@ export default function StoriesViewAll() {
         object.category = 'stories';
       });
      const nData =  data.concat(storiesData)
-    console.log('selectedType', selectedType)
-    const selectedData = tab === 'all' ? nData : nData.filter(item => item.category === tab)
+
+     const selectedData = tab === 'all' ? nData : nData.filter(item => item.category === tab)
     const dataArr = sortKey === 'new' ? selectedData: sortKey ==='up' ?
      selectedData.sort((a, b) => a.subTitle.localeCompare(b.subTitle)) : sortKey ==='down' ?
      selectedData.sort((a, b) => b.subTitle.localeCompare(a.subTitle)): selectedData

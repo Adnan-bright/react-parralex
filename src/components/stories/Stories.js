@@ -109,7 +109,7 @@ function Stories({ isMobile }) {
         },
     ]
     storiesData.push(storiesData[0])
-    console.log('storiesData', storiesData)
+
     var indexValue = 1
     storiesData.map(() => {
         if ((storiesData.length -1) %( divideValue-1) !==0) {

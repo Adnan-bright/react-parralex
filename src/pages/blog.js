@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 function Blog({ data }) {
 
     // const response = data.allWpHeroSection.edges
-    // console.log('data', response)
     // const posts = data?.allWpStories?.edges
     // function createMarkup(post) {
     //     return {__html: post};

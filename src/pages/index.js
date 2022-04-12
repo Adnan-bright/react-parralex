@@ -20,7 +20,6 @@ const IndexPage = () => {
   const [detectChange, setDetectChange] = useState([])
 
   const {story} = useContext(DataContext)
-  console.log('story', story)
 
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
