@@ -13,7 +13,7 @@
     left: 40px;
 }
 
-.story picture {
+/* .story picture {
     width: 100%;
 }
 .story figure > div{
@@ -22,7 +22,9 @@
 .story figure > div > div{
     width: 100% ;
 }
-
+ .wp-block-columns img{
+    opacity: 0.5;
+} */
 /* .story picture > *{
     width: 90% ;
 } */

@@ -67,7 +67,7 @@ function StoryLayout({ pageContext, data }) {
 
                 </div>
                 <div className={style.body}>
-                    <div ref={ref} className={style.story}>
+                    <div ref={ref} className={`${style.story} storyLayout`}>
                         <div dangerouslySetInnerHTML={createMarkup(content)} />
 
                     </div>
