@@ -24,9 +24,13 @@
 }
 
 .story picture > *{
-    width: 90% !important;
+    width: 90% ;
 }
-
+@media only screen and (max-width:780px){
+    .story picture > *{
+        width: 100% ;
+    }
+}
 
 .bannerHeader {
     display: flex;
