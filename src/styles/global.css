@@ -136,6 +136,9 @@
     margin-top: -8px;
 }
 @media only screen and (max-width:780px){
+    .wp-block-columns img{
+        width: 100% !important;
+    }
     .wp-block-columns img, .wp-block-columns p{
         width: 100% ;
     }
