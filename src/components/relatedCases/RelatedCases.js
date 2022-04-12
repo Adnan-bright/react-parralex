@@ -4,28 +4,10 @@ import UseStories from '../stories/useStories'
 import { motion, AnimatePresence } from "framer-motion";
 function RelatedCases() {
     const {storiesData} = UseStories()
-    console.log('storiesData', storiesData)
+    
     const [active, setActive] = useState('film')
     const filteredData = storiesData?.filter((item) => item?.storyType?.toLowerCase() === active.toLowerCase())
-    console.log('filteredData', filteredData)
-    const data = [
-        {
-            description: " Lorem ipsum dolor sit amet, con ec tetur adipiscing elit",
-            img: "/images/common/dummy.png"
-        },
-        {
-            description: " Lorem ipsum dolor sit amet, con ec tetur adipiscing elit",
-            img: "/images/common/dummy.png"
-        },
-        {
-            description: " Lorem ipsum dolor sit amet, con ec tetur adipiscing elit",
-            img: "/images/common/dummy.png"
-        },
-        {
-            description: " Lorem ipsum dolor sit amet, con ec tetur adipiscing elit",
-            img: "/images/common/dummy.png"
-        },
-    ]
+
     return (
         <div className={style.main}>
             <div className={style.casesContainer}>
