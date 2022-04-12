@@ -89,12 +89,33 @@
     src: url(../../static/fonts/Graphik/GraphikThinItalic.otf);
 }
 .wp-block-columns img{
-    width: 90% ;
+    width: 90% !important;
+}
+.storyLayout img{
+    width: 100% ;
 }
 .wp-block-columns p{
     margin-top: -5px;
     width: 90% ;
 }
+/* Deployed */
+.storyLayout picture {
+    width: 100%;
+}
+.storyLayout figure > div{
+    width: 100% ;
+}
+.storyLayout figure > div > div{
+    width: 100% ;
+}
+.wp-block-columns picture > *{
+    width: 90% !important;
+}
+.storyLayout picture > *{
+    width: 100% ;
+}
+
+
 
 .border-left{
     border-left: 8px solid transparent;
@@ -115,6 +136,9 @@
     margin-top: -8px;
 }
 @media only screen and (max-width:780px){
+    .wp-block-columns img{
+        width: 100% !important;
+    }
     .wp-block-columns img, .wp-block-columns p{
         width: 100% ;
     }
