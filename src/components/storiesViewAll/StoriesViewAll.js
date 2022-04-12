@@ -37,8 +37,8 @@ export default function StoriesViewAll() {
 
      const selectedData = tab === 'all' ? nData : nData.filter(item => item.category === tab)
     const dataArr = sortKey === 'new' ? selectedData: sortKey ==='up' ?
-     selectedData.sort((a, b) => a.subTitle.localeCompare(b.subTitle)) : sortKey ==='down' ?
-     selectedData.sort((a, b) => b.subTitle.localeCompare(a.subTitle)): selectedData
+     selectedData?.sort((a, b) => a?.category?.localeCompare(b?.category)) : sortKey ==='down' ?
+     selectedData?.sort((a, b) => b?.category?.localeCompare(a?.category)): selectedData
     return (
         <div>
             <img onClick={() => handleClick(3)} className={style.backArrow} src='../../images/storiesViewAll/back.png' />
