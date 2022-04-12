@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import * as style from '../../styles/components/header.module.css'
 import { Link } from 'gatsby'
 
-function Header({ navClick, hoverValue }) {
+function Header({ navClick, hoverValue, isVertical }) {
   const [nav, setNav] = useState('')
   const [value, setValue] = useState('')
   useEffect(() => {
@@ -25,7 +25,11 @@ function Header({ navClick, hoverValue }) {
 
 
   return (
-    <div className={style.main}>
+    <div className={style.main}
+    style={{
+      backgroundColor: isVertical ? 'black' : 'transparent'
+    }}
+    >
       <div className={style.headerBar}>
         <div className={style.logoContainer}>
           <Link > <img onClick={() => { setNav(''); navClick(0) }} className={style.logo} src="/images/common/logo.png" alt="Logo" /></Link>

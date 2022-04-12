@@ -72,7 +72,7 @@ const IndexPage = () => {
     return (<></>);
   }
   return (
-    <Layout isMobile={width >= 800 ? false : true} hoverValue={updateValue} onNavClick={handleClick}>
+    <Layout isVertical={false} isMobile={width >= 800 ? false : true} hoverValue={updateValue} onNavClick={handleClick}>
 
         <div
           ref={ref}
