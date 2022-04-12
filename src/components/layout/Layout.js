@@ -4,7 +4,6 @@ import Header from "../header/Header";
 import MobileHeader from "../mobileHeader/MobileHeader";
 export default function Layout({ children, onNavClick, hoverValue, isMobile }) {
 
-
     return (
         <div className={style.main}>
             <div className={style.headerContainer}>
