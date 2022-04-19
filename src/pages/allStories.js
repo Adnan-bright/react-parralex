@@ -4,6 +4,7 @@ import Layout from '../components/layout/Layout';
 import StoriesViewAll from "../components/storiesViewAll/StoriesViewAll";
 import UseWindowDimension from '../components/hooks/useWindowDimension';
 import { navigate } from 'gatsby';
+
 function AllStories() {
 
   const { width } = UseWindowDimension()

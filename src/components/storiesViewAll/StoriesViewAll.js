@@ -7,9 +7,10 @@ import gsap from 'gsap'
 import { navigate } from 'gatsby'
 import UseStories from '../stories/useStories'
 import { DataContext } from '../Provider/Provider'
+import moment from 'moment'
 export default function StoriesViewAll() {
-    const { selectedType, setPreviousRoute, previousRoute } = useContext(DataContext)
 
+    const { selectedType, setPreviousRoute, previousRoute } = useContext(DataContext)
     const { storiesData } = UseStories()
     const [tab, setTab] = useState(selectedType)
     const [sort, setSort] = useState(false)
@@ -85,7 +86,9 @@ export default function StoriesViewAll() {
                                     <div>
                                         <p className={style.postSubTitle}>{item.title}</p>
                                         <p className={style.postHeading}>{item.description}</p>
-                                        <p className={style.postDate}>Mar 1 . 3 MIN read</p>
+                                        <p className={style.postDate}>
+                                            {moment(item?.publishDate).format("MMM")} - 
+                                             {storiesData?.readTime ? storiesData?.readTime :  ' 1'} MIN read</p>
                                     </div>
                                     <div>
                                         <img className={style.downArrow} src='../../images/storiesViewAll/book.png' />
