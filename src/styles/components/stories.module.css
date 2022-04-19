@@ -8,16 +8,19 @@
     background-position-x: left;
     position: relative;
 }
+
 .upperContainer {
     margin-top: 80px;
     margin-bottom: 50px;
     margin-left: 10%;
 }
-.slider{
+
+.slider {
     display: flex;
     height: 100%;
     width: 100%;
 }
+
 .heading {
     font-family: graphik-regular;
     font-style: normal;
@@ -56,21 +59,23 @@
 .imagesContainer {
     width: 100%;
     transition: ease-in-out .4s;
-    height: 100%;
+    position: absolute;
+    bottom: -10px;
 }
 
 .topContainer {
     width: 100vw;
-    margin-top: -70px;
+    margin-top: -80px;
 }
-.customDotsContainer{
+
+.customDotsContainer {
     transform: translateY(0px);
     position: absolute;
     margin-left: auto;
     left: 0px;
     margin-right: auto;
     right: 0px;
-    bottom: 10px;
+    bottom: 15px;
 }
 
 .bottomContainer {
@@ -79,10 +84,12 @@
     padding-left: 18%;
     margin-top: -120px;
 }
-.btmRowInSlider{
+
+.btmRowInSlider {
     margin-left: 0px;
     margin-top: 235px;
 }
+
 .singleImgContainerBlur {
     margin-left: 90px;
     width: 200px !important;
@@ -165,38 +172,46 @@
     right: 209px;
     top: 100px;
 }
-.bgImgLarge img{
+
+.bgImgLarge img {
     height: 143px;
     width: 143px;
 }
-.bgImgLeft{
+
+.bgImgLeft {
     position: absolute;
     right: 310px;
     top: 240px;
 }
-.bgImgLeft img{
+
+.bgImgLeft img {
     width: 78px;
     height: 78px;
 }
-.bgImgRight{
+
+.bgImgRight {
     position: absolute;
     right: 130px;
     top: 170px;
 }
-.bgImgLeftContainer{
+
+.bgImgLeftContainer {
     position: absolute;
     right: -60px;
     top: 0px;
 }
-.rightBoxContainer{
+
+.rightBoxContainer {
     position: absolute;
     right: -60px;
     top: 0px;
 }
-.bgImgRight img{
+
+.bgImgRight img {
     width: 78px;
     height: 78px;
 }
+
 .txtContainer {
     position: absolute;
     overflow: hidden;
@@ -242,40 +257,48 @@
     left: 25px;
     bottom: 0px;
 }
-.bgImgBtmGr{
+
+.bgImgBtmGr {
     position: absolute;
     left: 25px;
     bottom: 25px;
 }
-.boxesContainer{
-  position: absolute;
+
+.boxesContainer {
+    position: absolute;
     right: 125px;
     top: 25px;
 }
-.crossesContainer{
+
+.crossesContainer {
     position: absolute;
     left: 25px;
     bottom: 125px;
 }
-.bgImgBtmGr img{
+
+.bgImgBtmGr img {
     height: 144px;
     width: 144px;
 }
-.bgImgBtmGlr{
+
+.bgImgBtmGlr {
     position: absolute;
     left: 230px;
     bottom: 140px;
 }
-.bgImgBtmPlr{
+
+.bgImgBtmPlr {
     position: absolute;
     bottom: 550px;
     left: 20px;
 }
-.bgImgBtmRed{
+
+.bgImgBtmRed {
     position: absolute;
     bottom: 510px;
     left: 350px;
 }
+
 .box {
     width: 150px;
     height: 150px;
@@ -283,157 +306,166 @@
     background-color: #f9f07e;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  @media only screen and (max-width:1450px) {
-  .singleImgContainerBlur {
-    margin-left: 90px;
-    width: 170px !important;
-    height: 170px !important;
-    margin-top: 90px;
-    margin-bottom: 90px;
-    transform: rotateZ(45deg);
-    overflow: hidden;
-    transition: ease-in-out .4s;
-    position: relative;
-    filter: blur(3px);
 }
 
-.singleImgContainer {
-    margin-left: 90px;
-    width: 170px !important;
-    height: 170px !important;
-    margin-top: 90px;
-    margin-bottom: 90px;
-    transform: rotateZ(45deg);
-    overflow: hidden;
-    transition: ease-in-out .4s;
-    position: relative;
+@media only screen and (max-width:1450px) {
+    .singleImgContainerBlur {
+        margin-left: 90px;
+        width: 170px !important;
+        height: 170px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+        filter: blur(3px);
+    }
+
+    .singleImgContainer {
+        margin-left: 90px;
+        width: 170px !important;
+        height: 170px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+    }
 }
-}
+
 @media only screen and (max-width:1250px) {
     .heading {
         font-size: 40px;
     }
+
     .singleImgContainerBlur {
-      margin-left: 90px;
-      width: 150px !important;
-      height: 150px !important;
-      margin-top: 90px;
-      margin-bottom: 90px;
-      transform: rotateZ(45deg);
-      overflow: hidden;
-      transition: ease-in-out .4s;
-      position: relative;
-      filter: blur(3px);
-  }
-  
-  .singleImgContainer {
-      margin-left: 90px;
-      width: 150px !important;
-      height: 150px !important;
-      margin-top: 90px;
-      margin-bottom: 90px;
-      transform: rotateZ(45deg);
-      overflow: hidden;
-      transition: ease-in-out .4s;
-      position: relative;
-  }
-  }
-  @media only screen and (max-width:1100px) {
-    .btmRowInSlider{
+        margin-left: 90px;
+        width: 150px !important;
+        height: 150px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+        filter: blur(3px);
+    }
+
+    .singleImgContainer {
+        margin-left: 90px;
+        width: 150px !important;
+        height: 150px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    .btmRowInSlider {
         margin-left: 0px;
         margin-top: 240px;
     }
+
     .singleImgContainerBlur {
-      margin-left: 90px;
-      width: 180px !important;
-      height: 180px !important;
-      margin-top: 90px;
-      margin-bottom: 90px;
-      transform: rotateZ(45deg);
-      overflow: hidden;
-      transition: ease-in-out .4s;
-      position: relative;
-      filter: blur(3px);
-  }
-  
-  .singleImgContainer {
-      margin-left: 90px;
-      width: 180px !important;
-      height: 180px !important;
-      margin-top: 90px;
-      margin-bottom: 90px;
-      transform: rotateZ(45deg);
-      overflow: hidden;
-      transition: ease-in-out .4s;
-      position: relative;
-  }
-  }
-  @media only screen and (max-width:1100px) {
-    .btmRowInSlider{
+        margin-left: 90px;
+        width: 180px !important;
+        height: 180px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+        filter: blur(3px);
+    }
+
+    .singleImgContainer {
+        margin-left: 90px;
+        width: 180px !important;
+        height: 180px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    .btmRowInSlider {
         margin-left: 0px;
         margin-top: 220px;
     }
-    .singleImgContainerBlur {
-      margin-left: 90px;
-      width: 160px !important;
-      height: 160px !important;
-      margin-top: 90px;
-      margin-bottom: 90px;
-      transform: rotateZ(45deg);
-      overflow: hidden;
-      transition: ease-in-out .4s;
-      position: relative;
-      filter: blur(3px);
-  }
-  
-  .singleImgContainer {
-      margin-left: 90px;
-      width: 160px !important;
-      height: 160px !important;
-      margin-top: 90px;
-      margin-bottom: 90px;
-      transform: rotateZ(45deg);
-      overflow: hidden;
-      transition: ease-in-out .4s;
-      position: relative;
-  }
-  }
 
-  @media only screen and (max-width:900px) {
+    .singleImgContainerBlur {
+        margin-left: 90px;
+        width: 160px !important;
+        height: 160px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+        filter: blur(3px);
+    }
+
+    .singleImgContainer {
+        margin-left: 90px;
+        width: 160px !important;
+        height: 160px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width:900px) {
     .heading {
         font-size: 30px;
     }
-    .btmRowInSlider{
+
+    .btmRowInSlider {
         margin-left: 0px;
         margin-top: 250px;
     }
+
     .singleImgContainerBlur {
-      margin-left: 90px;
-      width: 200px !important;
-      height: 200px !important;
-      margin-top: 90px;
-      margin-bottom: 90px;
-      transform: rotateZ(45deg);
-      overflow: hidden;
-      transition: ease-in-out .4s;
-      position: relative;
-      filter: blur(3px);
-  }
-  
-  .singleImgContainer {
-      margin-left: 90px;
-      width: 200px !important;
-      height: 200px !important;
-      margin-top: 90px;
-      margin-bottom: 90px;
-      transform: rotateZ(45deg);
-      overflow: hidden;
-      transition: ease-in-out .4s;
-      position: relative;
-  }
-  }
+        margin-left: 90px;
+        width: 200px !important;
+        height: 200px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+        filter: blur(3px);
+    }
+
+    .singleImgContainer {
+        margin-left: 90px;
+        width: 200px !important;
+        height: 200px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+    }
+}
+
 @media only screen and (max-width:1300px) {
 
     .description {
@@ -610,13 +642,15 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-.mblBtnContainer{
+
+.mblBtnContainer {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-@media only screen and (max-height: 650px){
+
+@media only screen and (max-height: 650px) {
     .mblImagesContainer {
         padding-left: 30px;
         padding-right: 30px;

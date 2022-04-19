@@ -7,10 +7,11 @@ import gsap from 'gsap'
 import { navigate } from 'gatsby'
 import UseStories from '../stories/useStories'
 import { DataContext } from '../Provider/Provider'
+import moment from 'moment'
 export default function StoriesViewAll() {
-    const {selectedType, setPreviousRoute, previousRoute} = useContext(DataContext)
 
-   const {storiesData} = UseStories()
+    const { selectedType, setPreviousRoute, previousRoute } = useContext(DataContext)
+    const { storiesData } = UseStories()
     const [tab, setTab] = useState(selectedType)
     const [sort, setSort] = useState(false)
     const [sortKey, setSortKey] = useState('new')
@@ -32,13 +33,14 @@ export default function StoriesViewAll() {
 
     storiesData.forEach(object => {
         object.category = 'stories';
-      });
-     const nData =  data.concat(storiesData)
+    });
+    const nData = data.concat(storiesData)
 
-     const selectedData = tab === 'all' ? nData : nData.filter(item => item.category === tab)
-    const dataArr = sortKey === 'new' ? selectedData: sortKey ==='up' ?
-     selectedData?.sort((a, b) => a?.category?.localeCompare(b?.category)) : sortKey ==='down' ?
-     selectedData?.sort((a, b) => b?.category?.localeCompare(a?.category)): selectedData
+    const selectedData = tab === 'all' ? nData : nData.filter(item => item.category === tab)
+    const dataArr = sortKey === 'new' ? selectedData : sortKey === 'up' ?
+        selectedData?.sort((a, b) => a?.category?.localeCompare(b?.category)) : sortKey === 'down' ?
+            selectedData?.sort((a, b) => b?.category?.localeCompare(a?.category)) : selectedData
+
     return (
         <div>
             <img onClick={() => handleClick(3)} className={style.backArrow} src='../../images/storiesViewAll/back.png' />
@@ -58,13 +60,13 @@ export default function StoriesViewAll() {
                                 src={sort ? '../../images/storiesViewAll/down.png' : '../../images/storiesViewAll/up.png'} />
                             <div className={`${sort ? style.sortImage : style.sortImageHide}`}>
                                 <p className={style.sortText}
-                                    onClick={() => {setSort(false); setSortKey('new') }}
+                                    onClick={() => { setSort(false); setSortKey('new') }}
                                 >newest</p>
                                 <p className={style.sortText}
-                                     onClick={() => {setSort(false); setSortKey('up') }}
+                                    onClick={() => { setSort(false); setSortKey('up') }}
                                 >A-Z</p>
                                 <p className={style.sortText}
-                                     onClick={() => {setSort(false); setSortKey('down') }}
+                                    onClick={() => { setSort(false); setSortKey('down') }}
                                 >Z-A</p>
                             </div>
                         </div>
@@ -76,7 +78,7 @@ export default function StoriesViewAll() {
                 <div>
                     {dataArr?.slice(0, num).map((item, index) => {
                         return (
-                            <div  onClick={()=> item.category === 'stories' && onClick(`/${item.slug}`)} className={style.rowItem}>
+                            <div onClick={() => item.category === 'stories' && onClick(`/${item.slug}`)} className={style.rowItem}>
                                 <p className={item.category === 'blog posts' ? style.postTitleColorBlog :
                                     item.category === 'stories' ? style.postTitleColorStories :
                                         item.category === 'Case studies' ? style.postTitleColorCase : style.postTitle}>{item.category}</p>
@@ -84,13 +86,15 @@ export default function StoriesViewAll() {
                                     <div>
                                         <p className={style.postSubTitle}>{item.title}</p>
                                         <p className={style.postHeading}>{item.description}</p>
-                                        <p className={style.postDate}>Mar 1 . 3 MIN read</p>
+                                        <p className={style.postDate}>
+                                            {moment(item?.publishDate).format("MMM")} - 
+                                             {storiesData?.readTime ? storiesData?.readTime :  ' 1'} MIN read</p>
                                     </div>
                                     <div>
                                         <img className={style.downArrow} src='../../images/storiesViewAll/book.png' />
                                     </div>
                                 </div>
-                                <div  className={style.line} />
+                                <div className={style.line} />
                             </div>
                         )
                     })}

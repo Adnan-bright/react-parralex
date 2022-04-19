@@ -331,7 +331,8 @@ function Contact({ id, isMobile }) {
                                             onMouseLeave={() => setWhichIndex('')}
                                             onMouseEnter={() => setWhichIndex(item.linkTitle)}
                                             style={{
-                                                backgroundImage: whichIndex === item.linkTitle ? `url(${item.hoverIcon})` : `url(${item.icon})`
+                                                backgroundImage: whichIndex === item.linkTitle ? `url(${item.hoverIcon})` : `url(${item.icon})`,
+                                                marginTop: index === 2 ? '8px' : index === 5 ? '8px' : '0px'
                                             }}
                                             className={style.tab}>
                                         </a>

@@ -6,26 +6,27 @@ function UseStories() {
               query StoriesData {
               allWpStories {
                 edges {
-                  node {
-                  stories {
-                  client
-          coverImage {
-                  mediaItemUrl
-              }
-              coverImageLink {
-                  url
-              }
-              description
-              storyTitle
-              storyType
-              team
-              year
-              slug
-        }
-              content
-        
-      }
-    }
+                    node {
+                      stories {
+                        client
+                        coverImage {
+                          mediaItemUrl
+                        }
+                        coverImageLink {
+                          url
+                        }
+                        description
+                        storyTitle
+                        storyType
+                        team
+                        year
+                        slug
+                        readTime
+                      }
+                      content
+                      date
+                    }
+                  }
                   }
               }
             `
@@ -44,6 +45,9 @@ function UseStories() {
                 storyType: item?.node?.stories?.storyType,
                 team: item?.node?.stories?.team,
                 year: item?.node?.stories?.year,
+                readTime: item?.node?.stories?.readTime,
+                publishDate: item?.node?.date,
+
 
         })
     })

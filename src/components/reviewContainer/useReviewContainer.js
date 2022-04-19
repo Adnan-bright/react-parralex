@@ -6,14 +6,17 @@ function UseReviewContainer() {
               query ReviewsData {
               allWpReviews {
                 edges {
-                    node {
-                      reviews {
-                        feedback
-                        rating
-                        reference
+                  node {
+                    reviews {
+                      feedback
+                      rating
+                      reference {
+                        title
+                        url
                       }
                     }
                   }
+                }
                   }
               }
             `

@@ -192,7 +192,7 @@
     color: #fff;
     text-transform: uppercase;
     /* Linear */
-    background: linear-gradient(176.45deg, #63E6B9 54.02%, #E6F29B 83.2%);
+    background: linear-gradient(180deg, #63E6B9 30%, #E6F29B 83.2%);
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

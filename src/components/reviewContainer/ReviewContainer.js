@@ -2,6 +2,7 @@ import React from 'react'
 import * as style from "../../styles/components/reviewContainer.module.css"
 import Slider from "react-slick";
 import UseReviewContainer from './useReviewContainer';
+
 function ReviewContainer() {
     const {reviewsData} = UseReviewContainer()
     const settings = {
@@ -40,7 +41,13 @@ function ReviewContainer() {
                                         <p className={style.recDesc}>{item.feedback}</p>
                                     </center>
                                     <center>
-                                        <p className={style.lowerText}>{item.reference}</p>
+                                        <p className={style.lowerText}><a
+                                        style={{
+                                            textDecoration: 'none',
+                                            color: 'white'
+                                        }}
+                                        target='_blank'
+                                        href={item.reference.url}>{item.reference.title}</a></p>
                                     </center>
                                 </div>
                             })

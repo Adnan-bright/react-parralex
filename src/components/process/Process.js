@@ -5,7 +5,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import UseProcess from './useProcess';
 import UseProcessMouseGesture from './useProcessMouseGesture';
 function Process({ isMobile }) {
-    
+
     const [hover, setHover] = useState('')
     gsap.registerPlugin(ScrollTrigger);
     const items = [
@@ -169,7 +169,7 @@ function Process({ isMobile }) {
             yValue: -40,
             speedValue: 2
         },
-        
+
 
     ]
     const { bind } = UseProcessMouseGesture(data, myRef)
@@ -214,9 +214,9 @@ function Process({ isMobile }) {
                             OUR PROCESS
                         </h1>
                         <div className={style.MainContainer}>
-                            <div className={hover ? style.closeIconContainerBlur : style.closeIconContainer}>
+                            <div className={style.closeIconContainer}>
                                 <div className={style.closeRow1}>
-                                    <div  className={`${style.closeIcon} `}>
+                                    <div className={`${style.closeIcon} `}>
                                         <p className={`${style.close} close1`} />
                                     </div>
                                 </div>
@@ -255,136 +255,136 @@ function Process({ isMobile }) {
                             </div>
 
 
-                            <div className={style.rowsContainer}>
-
-                                <div
-
-                                    className={`${style.topRow} processTopRow`}>
+                            <div className={style.centerContainer}>
+                                <div className={style.rowsContainer}>
                                     <div
-
-                                        className={hover === '' ? `${style.imageContainer5} processContainer1` : hover === 'expansion' ? `${style.imageContainer5Active} ` : `${style.imageContainer5Blur} `}
-
-                                    >
+                                        className={`${style.topRow} processTopRow`}>
                                         <div
-                                            onMouseEnter={() => setHover('expansion')}
-                                            onMouseLeave={() => setHover('')}
-                                            className={`${style.bgContainer} `}>
-                                            <div className={`${style.dataContainer} processDataContainer`}>
-                                                <img
-                                                    className={style.imgItem}
-                                                    src={newData?.fifthStep?.icon?.mediaItemUrl} />
-                                                <p
-                                                    className={style.imageText}
-                                                >{newData?.fifthStep?.title}</p>
-                                                <p className={hover === 'expansion' ? style.boxDetails : style.boxDetailsHide}>
-                                                    {newData?.fifthStep?.description}</p>
+
+                                            className={hover === '' ? `${style.imageContainer5} processContainer1` : hover === 'expansion' ? `${style.imageContainer5Active} ` : `${style.imageContainer5Blur} `}
+
+                                        >
+                                            <div
+                                                onMouseEnter={() => setHover('expansion')}
+                                                onMouseLeave={() => setHover('')}
+                                                className={`${style.bgContainer} `}>
+                                                <div className={`${style.dataContainer} processDataContainer`}>
+                                                    <img
+                                                        className={style.imgItem}
+                                                        src={newData?.fifthStep?.icon?.mediaItemUrl} />
+                                                    <p
+                                                        className={style.imageText}
+                                                    >{newData?.fifthStep?.title}</p>
+                                                    <p className={hover === 'expansion' ? style.boxDetails : style.boxDetailsHide}>
+                                                        {newData?.fifthStep?.description}</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div
-
-                                    className={`${style.midRow} processMidRow`}>
                                     <div
 
-                                        className={hover === '' ? `${style.imageContainer3} ` : hover === 'planning' ? style.imageContainer3Active : style.imageContainer3Blur}>
-
+                                        className={`${style.midRow} processMidRow`}>
                                         <div
-                                            onMouseEnter={() => setHover('planning')}
-                                            onMouseLeave={() => setHover('')}
-                                            className={style.bgContainer}>
-                                            <div className={style.dataContainer}>
-                                                <img
-                                                    className={style.imgItem}
 
-                                                    src={newData?.secondStep?.icon?.mediaItemUrl} />
-                                                <p
+                                            className={hover === '' ? `${style.imageContainer3} ` : hover === 'planning' ? style.imageContainer3Active : style.imageContainer3Blur}>
 
-                                                    className={style.imageText}>{newData?.secondStep?.title}</p>
-                                                <p className={hover === 'planning' ? style.boxDetails : style.boxDetailsHide}>
-                                                    {newData?.secondStep?.description}</p>
+                                            <div
+                                                onMouseEnter={() => setHover('planning')}
+                                                onMouseLeave={() => setHover('')}
+                                                className={style.bgContainer}>
+                                                <div className={style.dataContainer}>
+                                                    <img
+                                                        className={style.imgItem}
+
+                                                        src={newData?.secondStep?.icon?.mediaItemUrl} />
+                                                    <p
+
+                                                        className={style.imageText}>{newData?.secondStep?.title}</p>
+                                                    <p className={hover === 'planning' ? style.boxDetails : style.boxDetailsHide}>
+                                                        {newData?.secondStep?.description}</p>
+                                                </div>
+
                                             </div>
 
                                         </div>
+                                        <div
 
+                                            className={hover === '' ? style.imageContainer4 : hover === 'deployment' ? style.imageContainer4Active : style.imageContainer4Blur}
+                                        >
+                                            <div
+                                                onMouseEnter={() => setHover('deployment')}
+                                                onMouseLeave={() => setHover('')}
+                                                className={style.bgContainer}>
+                                                <div className={style.dataContainer}>
+                                                    <img
+                                                        className={style.imgItem}
+
+                                                        src={newData?.fourthStep?.icon?.mediaItemUrl} />
+                                                    <p
+
+                                                        className={style.imageText}>{newData?.fourthStep?.title}</p>
+                                                    <p className={hover === 'deployment' ? style.boxDetails : style.boxDetailsHide}>
+                                                        {newData?.fourthStep?.description}
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
                                     <div
 
-                                        className={hover === '' ? style.imageContainer4 : hover === 'deployment' ? style.imageContainer4Active : style.imageContainer4Blur}
-                                    >
+                                        className={`${style.bottomRow} processBtmRow`}>
                                         <div
-                                            onMouseEnter={() => setHover('deployment')}
-                                            onMouseLeave={() => setHover('')}
-                                            className={style.bgContainer}>
-                                            <div className={style.dataContainer}>
-                                                <img
-                                                    className={style.imgItem}
 
-                                                    src={newData?.fourthStep?.icon?.mediaItemUrl} />
-                                                <p
+                                            className={hover === '' ? style.imageContainer1 : hover === 'ideation' ? style.imageContainer1Active : style.imageContainer1Blur}
+                                        >
+                                            <div
+                                                onMouseEnter={() => setHover('ideation')}
+                                                onMouseLeave={() => setHover('')}
+                                                className={style.bgContainer}>
+                                                <div className={style.dataContainer}>
+                                                    <img
+                                                        className={style.imgItem}
 
-                                                    className={style.imageText}>{newData?.fourthStep?.title}</p>
-                                                <p className={hover === 'deployment' ? style.boxDetails : style.boxDetailsHide}>
-                                                    {newData?.fourthStep?.description}
-                                                </p>
-                                            </div>
-                                        </div>
+                                                        src={newData?.firstStep?.icon?.mediaItemUrl} />
+                                                    <p
 
-                                    </div>
-                                </div>
-                                <div
+                                                        className={style.imageText}>{newData?.firstStep?.title}</p>
+                                                    <p className={hover === 'ideation' ? style.boxDetails : style.boxDetailsHide}>
+                                                        {newData?.firstStep?.description}</p>
+                                                </div>
 
-                                    className={`${style.bottomRow} processBtmRow`}>
-                                    <div
-
-                                        className={hover === '' ? style.imageContainer1 : hover === 'ideation' ? style.imageContainer1Active : style.imageContainer1Blur}
-                                    >
-                                        <div
-                                            onMouseEnter={() => setHover('ideation')}
-                                            onMouseLeave={() => setHover('')}
-                                            className={style.bgContainer}>
-                                            <div className={style.dataContainer}>
-                                                <img
-                                                    className={style.imgItem}
-
-                                                    src={newData?.firstStep?.icon?.mediaItemUrl} />
-                                                <p
-
-                                                    className={style.imageText}>{newData?.firstStep?.title}</p>
-                                                <p className={hover === 'ideation' ? style.boxDetails : style.boxDetailsHide}>
-                                                    {newData?.firstStep?.description}</p>
                                             </div>
 
                                         </div>
-
-                                    </div>
-                                    <div
-
-                                        className={hover === '' ? style.imageContainer2 : hover === 'creation' ? style.imageContainer2Active : style.imageContainer2Blur}>
-
                                         <div
-                                            onMouseEnter={() => setHover('creation')}
-                                            onMouseLeave={() => setHover('')}
-                                            className={style.bgContainer}>
-                                            <div className={style.dataContainer}>
-                                                <img
-                                                    className={style.imgItem}
 
-                                                    src={newData?.thirdStep?.icon?.mediaItemUrl} />
-                                                <p
+                                            className={hover === '' ? style.imageContainer2 : hover === 'creation' ? style.imageContainer2Active : style.imageContainer2Blur}>
 
-                                                    className={style.imageText}>{newData?.thirdStep?.title}</p>
-                                                <p className={hover === 'creation' ? style.boxDetails : style.boxDetailsHide}>
-                                                    {newData?.thirdStep?.description}
-                                                </p>
+                                            <div
+                                                onMouseEnter={() => setHover('creation')}
+                                                onMouseLeave={() => setHover('')}
+                                                className={style.bgContainer}>
+                                                <div className={style.dataContainer}>
+                                                    <img
+                                                        className={style.imgItem}
+
+                                                        src={newData?.thirdStep?.icon?.mediaItemUrl} />
+                                                    <p
+
+                                                        className={style.imageText}>{newData?.thirdStep?.title}</p>
+                                                    <p className={hover === 'creation' ? style.boxDetails : style.boxDetailsHide}>
+                                                        {newData?.thirdStep?.description}
+                                                    </p>
+                                                </div>
+
                                             </div>
 
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-                            <div className={hover ? style.closeIconContainerBlurRight : style.closeIconContainerRight}>
+                            <div className={ style.closeIconContainerRight}>
                                 <div className={style.rightCloseRow1}>
                                     <div className={style.rightCloseIcon}>
                                         <p className={`${style.rightClose} close10`} />
