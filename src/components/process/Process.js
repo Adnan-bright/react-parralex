@@ -214,7 +214,7 @@ function Process({ isMobile }) {
                             OUR PROCESS
                         </h1>
                         <div className={style.MainContainer}>
-                            <div className={hover ? style.closeIconContainerBlur : style.closeIconContainer}>
+                            <div className={style.closeIconContainer}>
                                 <div className={style.closeRow1}>
                                     <div  className={`${style.closeIcon} `}>
                                         <p className={`${style.close} close1`} />

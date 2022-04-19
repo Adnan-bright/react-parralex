@@ -766,9 +766,9 @@
 .closeIconContainer {
     width: 400px;
 }
-.closeIconContainerBlur {
+/* .closeIconContainerBlur {
     filter: blur(3px);
-}
+} */
 
 .closeIconContainerBlur .closeRow1 {
     position: absolute;
@@ -859,7 +859,7 @@
     height: 450px;
     position: absolute;
     right: 0px;
-    filter: blur(3px);
+    /* filter: blur(3px); */
 }
 
 .rightCloseIcon {
