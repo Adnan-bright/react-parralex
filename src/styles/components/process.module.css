@@ -5,15 +5,20 @@
     position: relative;
 
 }
-
+.centerContainer{
+    
+}
 .rowsContainer {
     width: 1100px;
-    height: 100vh;
+    height: 710px;
     position: absolute;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
     bottom: 0px;
 }
 
@@ -454,7 +459,7 @@
 
     .rowsContainer {
         width: 800px;
-        height: 100vh;
+        height: 520px;
         position: absolute;
         left: 0;
         right: 0;
@@ -608,7 +613,7 @@
 
     .rowsContainer {
         width: 650px;
-        height: 100vh;
+        height: 420px;
         position: absolute;
         left: 0;
         right: 0;
@@ -765,6 +770,14 @@
 /* /cross icons left/ */
 .closeIconContainer {
     width: 400px;
+}
+@media screen and (max-width:1000px) {
+    .closeIconContainer {
+        display: none;
+    }
+    .closeIconContainerRight{
+        display: none;
+    }
 }
 /* .closeIconContainerBlur {
     filter: blur(3px);
