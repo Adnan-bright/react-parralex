@@ -81,6 +81,8 @@
     padding-left: 10%;
     padding-right: 10%;
     transition: ease-in-out .7s;
+    padding-bottom: 20px;
+
 }
 .bannerImage {
     width: 80%;

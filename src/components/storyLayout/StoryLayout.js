@@ -69,17 +69,22 @@ function StoryLayout({ pageContext, data }) {
                         </div>
                     </div>
                     <h1 className={style.bannerHeading}>
-                        {storyData.storyTitle}
+                        {/* {storyData.storyTitle} */}
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
                     </h1>
-                    <center>
+                 
+
+                </div>
+                <div className={style.body}>
+
+                <center>
                         <div className={style.bannerImageContainer}>
                             <img className={style.bannerImage} src='/images/common/film.png' alt='film' />
                             <img className={style.playIcon} src='/images/home/playIcon.webp' alt='playIcon' />
                         </div>
                     </center>
 
-                </div>
-                <div className={style.body}>
+
                     <div ref={ref} className={`${style.story} storyLayout`}>
                         <div dangerouslySetInnerHTML={createMarkup(content)} />
 
