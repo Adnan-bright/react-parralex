@@ -10,15 +10,28 @@
     position: relative;
 }
 
+.contactDesc {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
 .bgContainerLeftLarge {
     position: absolute;
     top: 2vh;
     left: 12vw;
 }
-.bgContainerLeftLarge img{
+
+.bgContainerLeftLarge img {
     height: 150px;
     width: 150px;
 }
+
 .leftMidBg {
     position: absolute;
     top: 30vh;
@@ -36,7 +49,7 @@
     left: 12vw;
 }
 
-.leftBtmBg img{
+.leftBtmBg img {
     width: 135px;
     height: 135px;
 }
@@ -46,7 +59,8 @@
     bottom: 15%;
     right: 100%;
 }
-.right2ndBtmBg img{
+
+.right2ndBtmBg img {
     width: 110px;
     height: 110px;
 }
@@ -56,42 +70,50 @@
     bottom: 25%;
     right: 15%;
 }
-.rightBtmBg img{
+
+.rightBtmBg img {
     width: 60px;
     height: 60px;
 }
+
 .bgContainerLeftSmall {
     position: absolute;
     top: 160px;
     left: 10vw;
 }
-.bgContainerLeftSmall img{
+
+.bgContainerLeftSmall img {
     width: 80px;
     height: 80px;
 }
+
 .bgContainerRightBox {
     position: absolute;
     top: 22%;
     right: 22%;
 }
 
-.bgContainerRightBox img{
+.bgContainerRightBox img {
     width: 150px;
     height: 150px;
 }
-.rightBoxContainer{
+
+.rightBoxContainer {
     position: absolute;
     right: 14%;
 }
-.right2ndBtmContainer{
+
+.right2ndBtmContainer {
     position: absolute;
     right: 14%;
     bottom: 30%;
 }
-.right2ndBtmContainer img{
-  height: 60px;
-  width: 60px;
+
+.right2ndBtmContainer img {
+    height: 60px;
+    width: 60px;
 }
+
 .bgImage {
     width: 100%;
 }
@@ -114,7 +136,8 @@
     width: 300px;
     position: absolute;
 }
-@media only screen and (max-width:1500px){
+
+@media only screen and (max-width:1500px) {
     .reviewContainer {
         z-index: 1;
         right: 7%;
@@ -124,6 +147,7 @@
         position: absolute;
     }
 }
+
 .body {
     position: relative;
     height: 90%;
@@ -311,7 +335,8 @@
     background-size: contain;
     cursor: pointer;
 }
-@media only screen and (max-width:1250px){
+
+@media only screen and (max-width:1250px) {
     .reviewContainer {
         z-index: 1;
         right: 5%;
@@ -320,6 +345,7 @@
         width: 300px;
         position: absolute;
     }
+
     .btn {
         width: 148px;
         height: 44px;
@@ -328,149 +354,168 @@
         background-size: contain;
         background-repeat: no-repeat;
     }
-    
+
     .btn:hover {
         background: url(../../../static/images/common/btnBg.webp);
         background-size: contain;
         background-repeat: no-repeat;
     }
+
     .copyRight {
         font-size: 12px !important;
         line-height: 10%;
     }
+
     .copyrightContainer {
         position: absolute;
         bottom: -20px;
         right: 40px;
     }
+
     .tab {
         margin-right: 10px;
         width: 20px;
         height: 20px;
     }
-    
+
     .tab:hover {
         background-size: contain;
         cursor: pointer;
     }
+
     .followContainer {
         position: absolute;
         bottom: 0px;
         left: 40px;
     }
+
     .follow {
         font-size: 17px;
     }
-    .right2ndBtmContainer{
+
+    .right2ndBtmContainer {
         position: absolute;
         right: 8%;
         bottom: 30%;
     }
-    .right2ndBtmContainer img{
-      height: 50px;
-      width: 50px;
+
+    .right2ndBtmContainer img {
+        height: 50px;
+        width: 50px;
     }
+
     .right2ndBtmBg {
         position: absolute;
         bottom: 15%;
         right: 50%;
     }
-    .right2ndBtmBg img{
+
+    .right2ndBtmBg img {
         width: 70px;
         height: 70px;
     }
+
     .bgContainerRightBox {
         position: absolute;
         top: 22%;
         right: 0%;
     }
-    
-    .bgContainerRightBox img{
+
+    .bgContainerRightBox img {
         width: 110px;
         height: 110px;
     }
+
     .bgContainerLeftSmall {
         position: absolute;
         top: 120px;
         left: 4vw;
     }
-    .bgContainerLeftSmall img{
+
+    .bgContainerLeftSmall img {
         width: 60px;
         height: 60px;
     }
+
     .bgContainerLeftLarge {
         position: absolute;
         top: 2vh;
         left: 10vw;
     }
-    .bgContainerLeftLarge img{
+
+    .bgContainerLeftLarge img {
         height: 120px;
         width: 120px;
     }
+
     .leftMidBg {
         position: absolute;
         top: 30vh;
         left: 8vw;
     }
-    
+
     .leftMidBg img {
         width: 70px;
         height: 70px;
     }
+
     .leftBtmBg {
         position: absolute;
         top: 45vh;
         left: 10vw;
     }
-    
-    .leftBtmBg img{
+
+    .leftBtmBg img {
         width: 115px;
         height: 115px;
     }
+
     .heading {
         font-size: 35px;
     }
-.topRow {
-    margin-top: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+    .topRow {
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .topRow>input {
+        height: 45px;
+        width: 60%;
+        font-size: 13px;
+    }
+
+    .midRow {
+        margin-top: 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .midRow>input {
+        height: 45px;
+        width: 60%;
+        font-size: 13px;
+    }
+
+    .lowerRow {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .lowerRow>input {
+        height: 45px;
+        width: 60%;
+        font-size: 13px;
+    }
+
 }
 
-.topRow>input {
-    height: 45px;
-    width: 60%;
-    font-size: 13px;
-}
-
-.midRow {
-    margin-top: 0px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.midRow>input {
-    height: 45px;
-    width: 60%;
-    font-size: 13px;
-}
-
-.lowerRow {
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.lowerRow>input {
-    height: 45px;
-    width: 60%;
-    font-size: 13px;
-}
-
-}
-@media only screen and (max-width:1050px){
+@media only screen and (max-width:1050px) {
     .reviewContainer {
         z-index: 1;
         right: 0%;
@@ -478,44 +523,54 @@
         height: 400px;
         width: 300px;
         position: absolute;
-    }}
-    @media only screen and (max-width:920px){
-        .reviewContainer {
-            z-index: 1;
-            right: -3%;
-            top: 20%;
-            height: 400px;
-            width: 300px;
-            position: absolute;
-        }}
-        @media only screen and (max-width:840px){
-            .reviewContainer {
-                z-index: 1;
-                right: -5%;
-                top: 20%;
-                height: 400px;
-                width: 300px;
-                position: absolute;
-            }}
-            @media only screen and (max-width:780px){
-                .reviewContainer {
-                    z-index: 1;
-                    right: -7%;
-                    top: 20%;
-                    height: 400px;
-                    width: 300px;
-                    position: absolute;
-                }}
-                @media only screen and (max-width:750px){
-                    .reviewContainer {
-                        z-index: 1;
-                        right: -12%;
-                        top: 20%;
-                        height: 400px;
-                        width: 300px;
-                        position: absolute;
-                    }}
-@media only screen and (max-width:1200px){
+    }
+}
+
+@media only screen and (max-width:920px) {
+    .reviewContainer {
+        z-index: 1;
+        right: -3%;
+        top: 20%;
+        height: 400px;
+        width: 300px;
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width:840px) {
+    .reviewContainer {
+        z-index: 1;
+        right: -5%;
+        top: 20%;
+        height: 400px;
+        width: 300px;
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width:780px) {
+    .reviewContainer {
+        z-index: 1;
+        right: -7%;
+        top: 20%;
+        height: 400px;
+        width: 300px;
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width:750px) {
+    .reviewContainer {
+        z-index: 1;
+        right: -12%;
+        top: 20%;
+        height: 400px;
+        width: 300px;
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width:1200px) {
     .btn {
         width: 128px;
         height: 34px;
@@ -524,127 +579,137 @@
         background-size: contain;
         background-repeat: no-repeat;
     }
-    .btn p{
+
+    .btn p {
         margin-left: -20px;
     }
+
     .btn:hover {
         background: url(../../../static/images/common/btnBg.webp);
         background-size: contain;
         background-repeat: no-repeat;
     }
-   
+
     .heading {
         font-size: 25px;
     }
-.topRow {
-    margin-top: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+    .topRow {
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .topRow>input {
+        height: 45px;
+        width: 80%;
+        font-size: 13px;
+    }
+
+    .midRow {
+        margin-top: 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .midRow>input {
+        height: 45px;
+        width: 80%;
+        font-size: 13px;
+    }
+
+    .lowerRow {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .lowerRow>input {
+        height: 45px;
+        width: 80%;
+        font-size: 13px;
+    }
+
 }
 
-.topRow>input {
-    height: 45px;
-    width: 80%;
-    font-size: 13px;
-}
-
-.midRow {
-    margin-top: 0px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.midRow>input {
-    height: 45px;
-    width: 80%;
-    font-size: 13px;
-}
-
-.lowerRow {
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.lowerRow>input {
-    height: 45px;
-    width: 80%;
-    font-size: 13px;
-}
-
-}
-@media only screen and (max-width:750px){
+@media only screen and (max-width:750px) {
     .copyRight {
         font-size: 10px !important;
         line-height: 10%;
     }
+
     .copyrightContainer {
         position: absolute;
         bottom: -20px;
         right: 10px;
     }
+
     .tab {
         margin-right: 10px;
         width: 17px;
         height: 17px;
     }
-    
+
     .tab:hover {
         background-size: contain;
         cursor: pointer;
     }
+
     .followContainer {
         position: absolute;
         bottom: 0px;
         left: 10px;
     }
+
     .follow {
         font-size: 17px;
     }
+
     .heading {
         font-size: 25px;
     }
-.topRow {
-    margin-top: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.topRow>input {
-    height: 45px;
-    width: 80%;
-    font-size: 13px;
-}
+    .topRow {
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.midRow {
-    margin-top: 0px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
+    .topRow>input {
+        height: 45px;
+        width: 80%;
+        font-size: 13px;
+    }
 
-.midRow>input {
-    height: 45px;
-    width: 80%;
-    font-size: 13px;
-}
+    .midRow {
+        margin-top: 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
 
-.lowerRow {
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
+    .midRow>input {
+        height: 45px;
+        width: 80%;
+        font-size: 13px;
+    }
 
-.lowerRow>input {
-    height: 45px;
-    width: 80%;
-    font-size: 13px;
-}
+    .lowerRow {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .lowerRow>input {
+        height: 45px;
+        width: 80%;
+        font-size: 13px;
+    }
 
 }
 
@@ -773,10 +838,12 @@
     justify-content: center;
     margin-top: 30px;
 }
-.mblSocialIcon{
+
+.mblSocialIcon {
     height: 30px;
     width: auto;
 }
+
 .mblRatingCont {
     position: absolute;
     top: 75px;

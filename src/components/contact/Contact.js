@@ -5,7 +5,9 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import UseContactMouseGesture from './useContactMouseGesture';
 import UseContact from './useContact';
+
 function Contact({ id, isMobile }) {
+
     const { socialData } = UseContact()
     const handleEnter = (event) => {
         if (event.key.toLowerCase() === "enter") {
@@ -15,6 +17,7 @@ function Contact({ id, isMobile }) {
             event.preventDefault();
         }
     };
+
     const [ref, isVisible] = useInView({ threshold: 0.7 });
     const [whichIndex, setWhichIndex] = useState('')
     const myRef = useRef()
@@ -99,8 +102,7 @@ function Contact({ id, isMobile }) {
                             </div>
                             <center>
                                 <p className={style.mblMainDesc}>
-                                    Lorem ipsum dolor sit amet,
-                                    consectetur adipiscing elit, sed do eiusmod.
+                                Want to create something unique? Let’s chat!
                                 </p>
                             </center>
                             <div className={style.mblFormContainer}>
@@ -297,6 +299,7 @@ function Contact({ id, isMobile }) {
                             <div className={style.midContainer}>
 
                                 <h1 className={style.heading}>CONTACT US</h1>
+                                <p className={style.contactDesc}>Want to create something unique? Let’s chat!</p>
                                 <div className={style.formContainer}>
                                     <form>
                                         <div className={style.topRow}>
