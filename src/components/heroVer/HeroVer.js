@@ -62,13 +62,13 @@ function HeroVer({ context, isMobile }) {
                                     className={style.mblHeadingsContainer}
                                 >
                                     <p className={style.mblTopHeading}>
-                                        Creative support
+                                    {titleText?.firstLine}
                                     </p>
                                     <p className={style.mblMidHeading}>
-                                        for your business
+                                        {titleText?.secondLine}
                                     </p>
                                     <p className={style.mblBtmHeading}>
-                                        at an affordable cost.
+                                       {titleText?.thirdLine}
                                     </p>
                                 </div>
                                 <center> <img

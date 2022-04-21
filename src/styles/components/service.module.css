@@ -98,28 +98,28 @@
 .imglowerText {
     position: absolute;
     top: 50px;
-    left: 25px;
+    left: 20px;
     opacity: 0;
     transition: ease-in-out .5s;
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 22px;
     color: #FFFFFF;
 }
 
 .imgCont:hover>.imglowerText {
     position: absolute;
     top: 80px;
-    left: 25px;
+    left: 20px;
     opacity: 1;
     transition: ease-in-out .5s;
     font-family: graphik-regular;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 22px;
     color: #FFFFFF;
 }
 

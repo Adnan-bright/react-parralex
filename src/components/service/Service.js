@@ -27,26 +27,15 @@ function Service({ isMobile }) {
     const [whichCard, setWhichCard] = useState('')
     const [video, setVideo] = useState('')
     const ref = useRef(null)
+    
+    filmData.title = 'film'
+    techData.title = 'tech'
+    designData.title = 'design'
 
     const items = [
-        {
-            title: "Film",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-            videoUrl: "/videos/dummyVideo.mp4",
-            coverImg: "/images/services/img1.webp"
-        },
-        {
-            title: "Design",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-            videoUrl: "/videos/dummyVideo.mp4",
-            coverImg: "/images/services/img2.webp"
-        },
-        {
-            title: "Tech",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-            videoUrl: "/videos/dummyVideo.mp4",
-            coverImg: "/images/services/img3.webp"
-        }
+    filmData,
+    designData,
+    techData
     ]
     return (
         <div>
@@ -122,7 +111,7 @@ function Service({ isMobile }) {
                                                             {item.description} </p>
                                                     </div>
                                                     <img className={style.mblPlayIcon}
-                                                        onClick={() => setVideo(item.videoUrl)}
+                                                        onClick={() => setVideo(item.video)}
                                                         src='/icons/playIcon.webp' />
                                                 </div>
                                             </center>
