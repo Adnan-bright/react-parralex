@@ -8,7 +8,8 @@ import { Link, navigate } from 'gatsby';
 import UseWindowDimension from '../hooks/useWindowDimension';
 import { DataContext } from '../Provider/Provider';
 
-function Stories({ isMobile }) {
+function Stories({ isMobile, onTweenKill }) {
+
     const {setSelectedType, setPreviousRoute} =useContext(DataContext)
     const {width} = UseWindowDimension()
     const { storiesData} = UseStories()
@@ -65,6 +66,7 @@ function Stories({ isMobile }) {
     const [whichCard, setWhichCard] = useState('')
     
     const onClick = (slug)=>{
+        onTweenKill()
         setPreviousRoute('/')
         navigate(slug)
     }
@@ -183,7 +185,7 @@ function Stories({ isMobile }) {
 
                         </div>
                         <center >
-                            <p onClick={()=> {setSelectedType('stories') ;navigate('/allStories')}}
+                            <p onClick={()=> {setSelectedType('stories') ;navigate('/allStories'); onTweenKill()}}
                                 className={style.mblBtnText}
                             >see all work</p>
                         </center>
@@ -299,7 +301,7 @@ function Stories({ isMobile }) {
                                 our best stories
                             </h1>
                           
-                            <div onClick={()=>{setSelectedType('stories'); navigate('/allStories')}}  className={style.btn}>
+                            <div onClick={()=>{setSelectedType('stories'); navigate('/allStories'); onTweenKill()}}  className={style.btn}>
                                 see all work
                             </div>
                         </div>

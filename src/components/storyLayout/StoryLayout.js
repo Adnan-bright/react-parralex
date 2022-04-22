@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 import Layout from '../layout/Layout'
 import * as style from '../../styles/components/storyLayout.module.css'
 import { graphql, navigate } from "gatsby"
@@ -10,12 +10,10 @@ import Footer from '../footer/Footer'
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
 import UseWindowDimension from '../hooks/useWindowDimension'
+
 function StoryLayout({ pageContext, data }) {
 
     const { width } = UseWindowDimension()
-
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(ScrollToPlugin);
 
     const ref = useRef(null)
     const [whichIndex, setWhichIndex] = useState('')
@@ -39,8 +37,10 @@ function StoryLayout({ pageContext, data }) {
         }
 
     }
+
+
     return (
-        <Layout isMobile={width >= 800 ? false : true}  isVertical={true} onNavClick={handleClick}>
+        <Layout isMobile={width >= 800 ? false : true} isVertical={true} onNavClick={handleClick}>
             <div
                 className={style.main}
             >
@@ -72,12 +72,12 @@ function StoryLayout({ pageContext, data }) {
                         {/* {storyData.storyTitle} */}
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit
                     </h1>
-                 
+
 
                 </div>
                 <div className={style.body}>
 
-                <center>
+                    <center>
                         <div className={style.bannerImageContainer}>
                             <img className={style.bannerImage} src='/images/common/film.png' alt='film' />
                             <img className={style.playIcon} src='/images/home/playIcon.webp' alt='playIcon' />
