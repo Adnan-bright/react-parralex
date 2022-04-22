@@ -1,6 +1,19 @@
+import { navigate } from 'gatsby'
+import gsap from 'gsap'
 import React from 'react'
-import * as style from '../../styles/components/contactBanner.module.css'
+import * as style from '../../styles/components/contactBanner.module.css';
+
 function ContactBanner() {
+
+
+
+    const onClick = () => {
+        navigate('/')
+        gsap.to(window, {
+            scrollTo: 5*700,
+            duration: .5,
+        })
+    }
     return (
         <div className={style.main}>
             <div className={style.bgImageContainer}>
@@ -11,7 +24,7 @@ function ContactBanner() {
                     Getting to contacting us in a way
                 </p>
                 <center>
-                    <div className={style.seeAllBtn}>
+                    <div onClick={onClick} className={style.seeAllBtn}>
                         <p>contact us</p>
                     </div></center>
             </div>

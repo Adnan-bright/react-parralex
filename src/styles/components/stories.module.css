@@ -47,6 +47,8 @@
     text-align: center;
     text-transform: uppercase;
     background: url(../../../static/images/common/btnBgHover.webp);
+    z-index: 0;
+    position: relative;
     transition: ease-in-out .4s;
 }
 
@@ -54,6 +56,7 @@
     background: url(../../../static/images/common/btnBg.webp);
     transition: ease-in-out .4s;
     cursor: pointer;
+    z-index: 1;
 }
 
 .imagesContainer {
