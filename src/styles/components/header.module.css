@@ -1,0 +1,106 @@
+.main {
+    font-family: graphik-thin;
+    color: white;
+    font-size: 30px;
+}
+
+.tabContainer{
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dot{
+    margin-top: -10px;
+}
+.headerBar {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    padding-right: 20px;
+}
+
+.tabsContainer {
+    display: flex;
+    cursor: pointer;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    filter: grayscale(1) invert(1);
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    display: none;
+}
+
+@media only screen and (max-width:768px) {
+    .icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        filter: grayscale(1) invert(1);
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+
+    .tabsContainer {
+        display: block;
+        margin-top: 40px;
+        margin-right: 10px;
+        max-height: 10px;
+        overflow: hidden;
+
+        transition: ease-in-out .5s;
+    }
+
+    .tabsContainerHide {
+        display: block;
+        margin-top: 40px;
+        margin-right: 10px;
+        max-height: 300px;
+        overflow: hidden;
+        transition: ease-in-out .5s;
+    }
+}
+
+.logo {
+    margin-left: 40px;
+    cursor: pointer;
+    width: 142px;
+    height: 28px;
+}
+
+.tab {
+    /* margin-right: 30px; */
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    text-align: right;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: ease-in-out .3s;
+}
+
+.tabFill {
+    /* margin-right: 30px; */
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: right;
+    text-transform: uppercase;
+    transition: ease-in-out .3s;
+    
+    /* Linear */
+    background: -webkit-linear-gradient(270deg, #63E6B9 40.02%, #E6F29B 83.2%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}

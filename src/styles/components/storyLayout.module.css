@@ -1,0 +1,481 @@
+.bannerContainer {
+    height: auto;
+    background: linear-gradient(142.72deg, #FF5156 -2.74%, #8439EA 70.64%);
+    width: 100%;
+    margin-top: 55px;
+    position: relative;
+}
+
+.leftArrow {
+    cursor: pointer;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+/* .story picture {
+    width: 100%;
+}
+.story figure > div{
+    width: 100% ;
+}
+.story figure > div > div{
+    width: 100% ;
+}
+ .wp-block-columns img{
+    opacity: 0.5;
+} */
+/* .story picture > *{
+    width: 90% ;
+} */
+
+
+.bannerHeader {
+    display: flex;
+    padding-top: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.childHeader {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.headerBannerItem {
+    text-align: center;
+}
+
+.headerTitle {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+.headerValue {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 12px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.bannerHeading {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 85px;
+    line-height: 94px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding-left: 10%;
+    padding-right: 10%;
+    transition: ease-in-out .7s;
+    padding-bottom: 20px;
+
+}
+.bannerImage {
+    width: 80%;
+}
+@media only screen and (max-width:600px) {
+    .bannerHeading {
+        font-size: 45px;
+        transition: ease-in-out .7s;
+    }
+    .bannerImage {
+        width: 95%;
+    }
+}
+
+
+
+.bannerImageContainer {
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.playIcon {
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.body {
+    color: white;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.story {
+    padding-top: 60px;
+    font-family: graphik-regular;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+
+
+.tabs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 140px;
+}
+
+.tab1 {
+    background-image: url(../../../static/icons/insta.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 26px;
+    height: 26px;
+    transition: ease-in-out .4s;
+}
+
+.tab1:hover {
+    background-image: url(../../../static/icons/instaHv.png);
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
+
+.tab2 {
+    background-image: url(../../../static/icons/fb.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 26px;
+    height: 26px;
+    transition: ease-in-out .4s;
+}
+
+.tab2:hover {
+    background-image: url(../../../static/icons/fbHv.png);
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
+
+.tab3 {
+    background-image: url(../../../static/icons/twitter.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 26px;
+    height: 26px;
+    transition: ease-in-out .4s;
+    margin-bottom: -5px;
+    margin-left: -5px;
+}
+
+.tab3:hover {
+    background-image: url(../../../static/icons/twitterHv.png);
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
+
+.tab4 {
+    background-image: url(../../../static/icons/linkedIn.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 26px;
+    height: 26px;
+    transition: ease-in-out .4s;
+}
+
+.tab4:hover {
+    background-image: url(../../../static/icons/linledinHv.png);
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
+
+.shareContainer {
+    margin-left: 20%;
+    margin-top: 80px;
+    padding-bottom: 80px;
+}
+
+.shareText {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.relatedCsHd {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 66px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.casesContainer {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 140px;
+}
+@media screen and (max-width:1400px) {
+    .casesContainer {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+@media screen and (max-width:1215px) {
+    .casesContainer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+.casesCompContainer {
+    margin-top: 40px;
+}
+
+.signUpContainer {
+    height: 372px;
+    width: 100%;
+    background: linear-gradient(134.42deg, #713ADB 25.25%, #FFCC99 69.55%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story ul {
+    list-style: none;
+
+}
+
+.story ul li {
+    margin-top: 20px;
+    margin-left: -40px;
+    display: flex;
+}
+
+.story ul li::before {
+    content: url(../../../static/images/common/dotActive.png);
+    margin-right: 10px;
+}
+
+.story p {
+    font-family: graphik-light;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFF;
+}
+
+.story h3 {
+    font-family: graphik-medium;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.story h1 {
+    font-family: graphik-light;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 44px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.signUpInput {
+    width: 260px;
+    height: 48px;
+    margin-top: .5px;
+    background-color: rgba(255, 255, 255, 0.121);
+    outline: none;
+    border: #713ADB 2.2px solid;
+    padding-left: 20px;
+    border-image: url(../../../static/images/common/btnBg.webp) 10;
+
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.signUpInput::placeholder {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.button {
+    width: 168px;
+    height: 54px;
+    background: url(../../../static/images/common/btnBg.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -15px;
+
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.signUpHeading {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 44px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.ContactBannerContainer {
+    padding-top: 60px;
+}
+
+.footerContainer {
+    margin-top: 250px;
+}
+@media only screen and (max-width:600px) {
+    .relatedCsHd {
+        font-family: graphik-regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+    .signUpHeading {
+        font-size: 30px;
+        line-height: 34px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .signUpInput {
+        width: 200px;
+        height: 38px;
+        padding-left: 10px;
+        margin-top: .6px;
+    }
+    
+    .signUpInput::placeholder {
+        font-size: 12px;
+    }
+    
+    .button {
+        width: 138px;
+        height: 44px;
+        background: url(../../../static/images/common/btnBg.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -15px;
+    
+        font-family: graphik-regular;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+
+    .leftArrow {
+        top: 10px;
+        left: 10px;
+    }
+    .story h1 {
+        font-size: 26px;
+        line-height: 32px;
+    }
+}
+
+
+@media only screen and (max-width:1350px) {
+    .story {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .shareContainer {
+        margin-left: 15% ;
+    }
+}
+
+@media only screen and (max-width:1170px) {
+    .story {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .shareContainer {
+        margin-left: 10% ;
+    }
+}
+
+@media only screen and (max-width:1050px) {
+    .story {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .shareContainer {
+        margin-left: 5% ;
+    }
+}
+
+@media only screen and (max-width:950px) {
+    .story {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .shareContainer {
+        margin-left: 20px ;
+    }
+}

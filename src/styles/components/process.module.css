@@ -1,0 +1,986 @@
+.main {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+}
+.centerContainer{
+    
+}
+.rowsContainer {
+    width: 1100px;
+    height: 710px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    bottom: 0px;
+}
+
+.boxDetailsHide {
+    position: absolute;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    width: 170%;
+    top: 60px;
+    line-height: 18px;
+    opacity: 0;
+    text-align: center;
+    color: #FFFFFF;
+    transition: ease-in-out .4s;
+}
+
+.boxDetails {
+    transition: ease-in-out .4s;
+    opacity: 1;
+    position: absolute;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    width: 170%;
+    top: 80px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.dataContainer {
+    transform: rotate(-45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.bgContainer {
+    position: relative;
+    z-index: 500;
+    width: 70%;
+    height: 70%;
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bgContainer:hover {
+    z-index: 999;
+}
+
+.imageContainer5:hover~.imageContainer3 {
+    display: none;
+}
+
+.heading {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 66px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding-left: 135px;
+    margin-top: 60px;
+}
+
+.imageText {
+    font-family: graphik-regular;
+    font-weight: 600;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-top: 17px;
+    z-index: 300;
+}
+
+.bottomRow {
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    right: 368px;
+}
+
+
+.imageContainer1 {
+    background-image: url(../../../static/images/process/1.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: ease-in-out .3s;
+}
+
+.imageContainer1Active {
+    background-image: url(../../../static/images/process/1.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: scale(1.2);
+    z-index: 200;
+    transition: ease-in-out .3s;
+}
+
+.imageContainer1Blur {
+    background-image: url(../../../static/images/process/1.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    filter: blur(3px);
+    transition: ease-in-out .3s;
+    transform: scale(0.8);
+
+}
+
+
+.imageContainer2 {
+    background-image: url(../../../static/images/process/2.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 30px;
+    transition: ease-in-out .3s;
+
+}
+
+.imageContainer2Active {
+    background-image: url(../../../static/images/process/2.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 30px;
+    transform: scale(1.2);
+    z-index: 200;
+    transition: ease-in-out .3s;
+
+}
+
+.imageContainer2Blur {
+    background-image: url(../../../static/images/process/2.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 30px;
+    filter: blur(3px);
+    transition: ease-in-out .3s;
+    transform: scale(0.8);
+
+
+}
+
+
+
+.midRow {
+    display: flex;
+    position: absolute;
+    right: 180px;
+    bottom: 180px;
+}
+
+
+.imageContainer3 {
+    background-image: url(../../../static/images/process/planning.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: ease-in-out .3s;
+}
+
+.imageContainer3Blur {
+    background-image: url(../../../static/images/process/planning.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    filter: blur(3px);
+    transition: ease-in-out .3s;
+    transform: scale(0.8);
+
+}
+
+
+.imageContainer3Active {
+    background-image: url(../../../static/images/process/planning.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: scale(1.2);
+    transition: ease-in-out .3s;
+    z-index: 200;
+}
+
+.imageContainer4 {
+    background-image: url(../../../static/images/process/4.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 30px;
+    transition: ease-in-out .3s;
+
+}
+
+.imageContainer4Active {
+    background-image: url(../../../static/images/process/4.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 30px;
+    transition: ease-in-out .3s;
+    z-index: 200;
+    transform: scale(1.2);
+}
+
+.imageContainer4Blur {
+    transform: scale(0.8);
+    background-image: url(../../../static/images/process/4.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 30px;
+    transition: ease-in-out .3s;
+    filter: blur(3px);
+}
+
+.topRow {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    bottom: 365px;
+}
+
+
+
+
+.imgItem {
+    z-index: 300;
+    /* transform: rotate(-45deg); */
+
+}
+
+.imageContainer5 {
+    background-image: url(../../../static/images/process/5.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 30px;
+    transition: ease-in-out .3s;
+    /* pointer-events: none; */
+}
+
+.imageContainer5Active {
+    background-image: url(../../../static/images/process/5.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 30px;
+    transition: ease-in-out .3s;
+    z-index: 200;
+    transform: scale(1.2);
+}
+
+.imageContainer5Blur {
+    filter: blur(3px);
+    background-image: url(../../../static/images/process/5.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 30px;
+    transform: scale(0.8);
+    transition: ease-in-out .3s;
+}
+
+
+/* ================================================================================================================ */
+
+/* ___________________________________________________Mobile Style_________________________________________________ */
+
+/* ================================================================================================================ */
+
+.mblMainContainer {
+    margin-top: 30px;
+    position: relative;
+    width: auto;
+    height: 85vw;
+    margin-left: 7.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.mblIcon {
+    margin-top: -40px;
+    height: 35px;
+    width: auto;
+    margin-left: -7.5%;
+}
+
+.mblTitle {
+    margin-left: -7.5%;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF
+}
+
+.mblDescription {
+    margin-top: -5px;
+    margin-left: -7.5%;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    width: 64%;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.mblHeading {
+    margin-top: 50px;
+    font-family: graphik-regular;
+    margin-left: 24px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+@media only screen and (max-width: 1100px) {
+    .topRow {
+        display: flex;
+        position: absolute;
+        right: 3px;
+        bottom: 265px;
+    }
+
+    .bottomRow {
+        display: flex;
+        position: absolute;
+        right: 34.2%;
+    }
+
+    .midRow {
+        display: flex;
+        position: absolute;
+        right: 17%;
+        bottom: 130px;
+    }
+
+    .rowsContainer {
+        width: 800px;
+        height: 520px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .boxDetailsHide {
+        font-size: 9px;
+        top: 60px;
+        line-height: 14px;
+    }
+
+    .boxDetails {
+        font-size: 9px;
+        width: 170%;
+        top: 60px;
+        line-height: 14px;
+    }
+
+    .dataContainer {
+        margin-top: -50px;
+        margin-left: -50px;
+    }
+
+    .imgItem {
+        width: auto;
+        height: 30px;
+    }
+
+    .imageText {
+        font-size: 14px;
+        margin-top: 17px;
+    }
+
+
+    .heading {
+        font-size: 40px;
+    }
+
+    .imageContainer5 {
+        width: 250px;
+        height: 250px;
+        margin-left: 30px;
+    }
+
+    .imageContainer5Active {
+        width: 250px;
+        height: 250px;
+        margin-left: 30px;
+    }
+
+    .imageContainer5Blur {
+        width: 250px;
+        height: 250px;
+        margin-left: 30px;
+    }
+
+    /* 4 */
+    .imageContainer4 {
+        width: 250px;
+        height: 250px;
+        margin-left: 30px;
+    }
+
+    .imageContainer4Active {
+        width: 250px;
+        height: 250px;
+        margin-left: 30px;
+    }
+
+    .imageContainer4Blur {
+        width: 250px;
+        height: 250px;
+        margin-left: 30px;
+    }
+
+    /* 3 */
+    .imageContainer3 {
+        width: 250px;
+        height: 250px;
+    }
+
+    .imageContainer3Active {
+        width: 250px;
+        height: 250px;
+    }
+
+    .imageContainer3Blur {
+        width: 250px;
+        height: 250px;
+    }
+
+    /* 2 */
+    .imageContainer2 {
+        width: 250px;
+        margin-left: 30px;
+        height: 250px;
+    }
+
+    .imageContainer2Active {
+        width: 250px;
+        margin-left: 30px;
+        height: 250px;
+    }
+
+    .imageContainer2Blur {
+        width: 250px;
+        margin-left: 30px;
+        height: 250px;
+    }
+
+    /* 1 */
+    .imageContainer1 {
+        width: 250px;
+        height: 250px;
+    }
+
+    .imageContainer1Active {
+        width: 250px;
+        height: 250px;
+    }
+
+    .imageContainer1Blur {
+        width: 250px;
+        height: 250px;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    .topRow {
+        display: flex;
+        position: absolute;
+        right: 5px;
+        bottom: 215px;
+    }
+
+    .bottomRow {
+        display: flex;
+        position: absolute;
+        right: 34.5%;
+    }
+
+    .midRow {
+        display: flex;
+        position: absolute;
+        right: 17%;
+        bottom: 105px;
+    }
+
+    .rowsContainer {
+        width: 650px;
+        height: 420px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .boxDetailsHide {
+        font-size: 8px;
+        top: 50px;
+        line-height: 14px;
+    }
+
+    .boxDetails {
+        font-size: 8px;
+        width: 170%;
+        top: 50px;
+        line-height: 14px;
+    }
+
+    .dataContainer {
+        margin-top: -30px;
+        margin-left: -30px;
+    }
+
+    .imgItem {
+        width: auto;
+        height: 25px;
+    }
+
+    .imageText {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+
+
+
+
+    .heading {
+        font-size: 40px;
+    }
+
+    .imageContainer5 {
+        width: 200px;
+        height: 200px;
+        margin-left: 30px;
+    }
+
+    .imageContainer5Active {
+        width: 200px;
+        height: 200px;
+        margin-left: 30px;
+    }
+
+    .imageContainer5Blur {
+        width: 200px;
+        height: 200px;
+        margin-left: 30px;
+    }
+
+    /* 4 */
+    .imageContainer4 {
+        width: 200px;
+        height: 200px;
+        margin-left: 30px;
+    }
+
+    .imageContainer4Active {
+        width: 200px;
+        height: 200px;
+        margin-left: 30px;
+    }
+
+    .imageContainer4Blur {
+        width: 200px;
+        height: 200px;
+        margin-left: 30px;
+    }
+
+    /* 3 */
+    .imageContainer3 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .imageContainer3Active {
+        width: 200px;
+        height: 200px;
+    }
+
+    .imageContainer3Blur {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* 2 */
+    .imageContainer2 {
+        width: 200px;
+        margin-left: 30px;
+        height: 200px;
+    }
+
+    .imageContainer2Active {
+        width: 200px;
+        margin-left: 30px;
+        height: 200px;
+    }
+
+    .imageContainer2Blur {
+        width: 200px;
+        margin-left: 30px;
+        height: 200px;
+    }
+
+    /* 1 */
+    .imageContainer1 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .imageContainer1Active {
+        width: 200px;
+        height: 200px;
+    }
+
+    .imageContainer1Blur {
+        width: 200px;
+        height: 200px;
+    }
+
+}
+
+@media only screen and (max-height: 650px) {
+    .mblTitle {
+        font-size: 18px;
+    }
+
+    .mblDescription {
+        width: 60%;
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .mblIcon {
+        margin-top: -30px;
+        height: 35px;
+        width: auto;
+        margin-left: -7.5%;
+    }
+}
+
+
+/* /cross icons left/ */
+.closeIconContainer {
+    width: 400px;
+}
+@media screen and (max-width:1000px) {
+    .closeIconContainer {
+        display: none;
+    }
+    .closeIconContainerRight{
+        display: none;
+    }
+}
+/* .closeIconContainerBlur {
+    filter: blur(3px);
+} */
+
+.closeIconContainerBlur .closeRow1 {
+    position: absolute;
+    margin-top: -165px;
+}
+
+.closeRow1 {
+    position: absolute;
+    top: 60px
+}
+
+.closeRow2 {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.closeRow3 {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 100px;
+}
+
+.closeRow4 {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 0px;
+}
+
+.closeRow5 {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    margin-top: 180px;
+    margin-left: 100px;
+
+}
+
+.closeIcon {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    left: 20px;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+}
+
+.close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 40px;
+    width: 2px;
+    background: linear-gradient(151.96deg, #7B2EE4 13.06%, #29E2B4 93.33%);
+
+
+
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
+}
+
+/* /cross icons right/ */
+.closeIconContainerRight {
+    width: 400px;
+    height: 450px;
+    position: absolute;
+    right:0px
+    
+}
+.closeIconContainerBlurRight {
+    width: 400px;
+    height: 450px;
+    position: absolute;
+    right: 0px;
+    /* filter: blur(3px); */
+}
+
+.rightCloseIcon {
+    position: relative;
+}
+
+.rightClose {
+    position: absolute;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+}
+
+.rightClose:before, .rightClose:after {
+    position: absolute;
+    right: 15px;
+    content: ' ';
+    height: 40px;
+    width: 2px;
+    background: linear-gradient(151.96deg, #7B2EE4 13.06%, #29E2B4 93.33%);
+}
+
+.rightClose:before {
+    transform: rotate(45deg);
+}
+
+.rightClose:after {
+    transform: rotate(-45deg);
+}
+
+.rightCloseRow1 {
+    position: absolute;
+    top: 30%;
+    right: 30px
+}
+
+.rightCloseRow2 {
+    position: absolute;
+    top: 44%;
+    right: 80px
+}
+
+
+.rightCloseRow3 {
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 58%;
+    right: 0;
+}
+
+.rightCloseRow4 {
+    width: 110px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 72%;
+    right: 75px;
+}
+
+.rightCloseRow5 {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 86%;
+    right: 0px;
+}
+
+.rightCloseRow6 {
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 100%;
+    right: 12px;
+}
+
+.rightCloseRow7 {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 112%;
+    right: 125px;
+}
+@media only screen and (min-width:1700px) {
+    .bottomRow {
+        display: flex;
+        position: absolute;
+        bottom: -200px;
+        right: 480px;
+    }
+    .topRow {
+        display: flex;
+        position: absolute;
+        right: -120px;
+        bottom: 395px;
+    }
+    .midRow {
+        display: flex;
+        position: absolute;
+        right: 180px;
+        bottom: 100px;
+    }
+}

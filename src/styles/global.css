@@ -1,0 +1,168 @@
+
+
+@font-face {
+    font-family: graphik-black;
+    src: url(../../static/fonts/Graphik/GraphikBlack.otf);
+}
+@font-face {
+    font-family: graphik-black-italic;
+    src: url(../../static/fonts/Graphik/GraphikBlackItalic.otf);
+}
+
+@font-face {
+    font-family: graphik-bold;
+    src: url(../../static/fonts/Graphik/GraphikBold.otf);
+}
+
+@font-face {
+    font-family: graphik-bold-italic;
+    src: url(../../static/fonts/Graphik/GraphikBoldItalic.otf);
+}
+
+@font-face {
+    font-family: graphik-extraLight;
+    src: url(../../static/fonts/Graphik/GraphikExtralight.otf);
+}
+
+@font-face {
+    font-family: graphik-extraLight-italic;
+    src: url(../../static/fonts/Graphik/GraphikExtralightItalic.otf);
+}
+
+@font-face {
+    font-family: graphik-light;
+    src: url(../../static/fonts/Graphik/GraphikLight.otf);
+}
+
+@font-face {
+    font-family: graphik-light-italic;
+    src: url(../../static/fonts/Graphik/GraphikLightItalic.otf);
+}
+
+@font-face {
+    font-family: graphik-medium;
+    src: url(../../static/fonts/Graphik/GraphikMedium.otf);
+}
+
+@font-face {
+    font-family: graphik-medium-italic;
+    src: url(../../static/fonts/Graphik/GraphikMediumItalic.otf);
+}
+
+@font-face {
+    font-family: graphik-regular;
+    src: url(../../static/fonts/Graphik/GraphikRegular.otf);
+}
+
+@font-face {
+    font-family: graphik-regular-italic;
+    src: url(../../static/fonts/Graphik/GraphikRegularItalic.otf);
+}
+
+@font-face {
+    font-family: graphik-semi-bold;
+    src: url(../../static/fonts/Graphik/GraphikSemibold.otf);
+}
+
+@font-face {
+    font-family: graphik-semi-bold-italic;
+    src: url(../../static/fonts/Graphik/GraphikSemiboldItalic.otf);
+}
+
+@font-face {
+    font-family: graphik-super;
+    src: url(../../static/fonts/Graphik/GraphikSuper.otf);
+}
+
+@font-face {
+    font-family: graphik-super-italic;
+    src: url(../../static/fonts/Graphik/GraphikSuperItalic.otf);
+}
+
+@font-face {
+    font-family: graphik-thin;
+    src: url(../../static/fonts/Graphik/GraphikThin.otf);
+}
+
+@font-face {
+    font-family: graphik-thin-italic;
+    src: url(../../static/fonts/Graphik/GraphikThinItalic.otf);
+}
+.wp-block-columns img{
+    width: 90% !important;
+}
+.storyLayout img{
+    width: 100% ;
+}
+.wp-block-columns p{
+    margin-top: -5px;
+    width: 90% ;
+}
+/* Deployed */
+.storyLayout picture {
+    width: 100%;
+}
+.storyLayout figure > div{
+    width: 100% ;
+}
+.storyLayout figure > div > div{
+    width: 100% ;
+}
+.wp-block-columns picture > *{
+    width: 90% !important;
+}
+.storyLayout picture > *{
+    width: 100% ;
+}
+
+
+
+.border-left{
+    border-left: 8px solid transparent;
+    padding-left: 20px;
+    border-image: url(../../static/images/common/vertical-border.png) 10 ;
+}
+.border-right{
+    border-right: 8px solid transparent;
+    padding-right: 20px;
+    border-image: url(../../static/images/common/vertical-border.png) 10 ;
+}
+
+.vertical-center{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -8px;
+}
+@media only screen and (max-width:780px){
+    .wp-block-columns img{
+        width: 100% !important;
+    }
+    .wp-block-columns img, .wp-block-columns p{
+        width: 100% ;
+    }
+    .border-left{
+    padding-left: 0px;
+    border: none;
+    }
+    .border-right{
+    padding-right: 0px;
+    border: none;
+    }
+}
+html, 
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #0E0E0F;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+    
+    /* overflow-y: hidden;  */
+}
+body::-webkit-scrollbar {
+    display: none;
+  }

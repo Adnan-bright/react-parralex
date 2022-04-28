@@ -1,0 +1,92 @@
+.main {
+    color: white;
+    height: auto;
+    width: 100%;
+    position: relative;
+}
+
+.bgImage {
+    top: 0px;
+    width: 90%;
+    height: auto;
+    position: absolute;
+    z-index: -1;
+}
+
+.bgImageContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headingContainer{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 200;
+}
+.heading {
+    width: 40%;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 44px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+.seeAllBtn {
+    height: 54px;
+    width: 168px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../../../static/images/common/btnBgHover.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    font-family: graphik-medium;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    transition: ease-in-out .4s;
+}
+
+.seeAllBtn:hover {
+    background: url(../../../static/images/common/btnBg.webp);
+    transition: ease-in-out .4s;
+}
+@media only screen and (max-width:1260px) {
+    .heading {
+        width: 50%;
+        font-size: 32px;
+        line-height: 36px;
+    }
+    .headingContainer{
+        margin-top: 20px;
+    }
+}
+@media only screen and (max-width:1010px) {
+    .heading {
+        width: 60%;
+    }
+    .headingContainer{
+        margin-top: 0px;
+    }
+}
+@media only screen and (max-width:1260px) {
+    .heading {
+        width: 90%;
+        font-size: 27px;
+        line-height: 31px;
+    }
+}

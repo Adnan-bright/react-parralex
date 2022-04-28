@@ -1,0 +1,985 @@
+.main {
+    margin-top: 10vh;
+    height: 90vh;
+    overflow: hidden;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.contactDesc {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.bgContainerLeftLarge {
+    position: absolute;
+    top: 2vh;
+    left: 12vw;
+}
+
+.bgContainerLeftLarge img {
+    height: 150px;
+    width: 150px;
+}
+
+.leftMidBg {
+    position: absolute;
+    top: 30vh;
+    left: 20vw;
+}
+
+.leftMidBg img {
+    width: 110px;
+    height: 110px;
+}
+
+.leftBtmBg {
+    position: absolute;
+    top: 50vh;
+    left: 12vw;
+}
+
+.leftBtmBg img {
+    width: 135px;
+    height: 135px;
+}
+
+.right2ndBtmBg {
+    position: absolute;
+    bottom: 15%;
+    right: 100%;
+}
+
+.right2ndBtmBg img {
+    width: 110px;
+    height: 110px;
+}
+
+.rightBtmBg {
+    position: absolute;
+    bottom: 25%;
+    right: 15%;
+}
+
+.rightBtmBg img {
+    width: 60px;
+    height: 60px;
+}
+
+.bgContainerLeftSmall {
+    position: absolute;
+    top: 160px;
+    left: 10vw;
+}
+
+.bgContainerLeftSmall img {
+    width: 80px;
+    height: 80px;
+}
+
+.bgContainerRightBox {
+    position: absolute;
+    top: 22%;
+    right: 22%;
+}
+
+.bgContainerRightBox img {
+    width: 150px;
+    height: 150px;
+}
+
+.rightBoxContainer {
+    position: absolute;
+    right: 14%;
+}
+
+.right2ndBtmContainer {
+    position: absolute;
+    right: 14%;
+    bottom: 30%;
+}
+
+.right2ndBtmContainer img {
+    height: 60px;
+    width: 60px;
+}
+
+.bgImage {
+    width: 100%;
+}
+
+.bgContainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    bottom: 50px;
+}
+
+.reviewContainer {
+    z-index: 1;
+    right: 10%;
+    top: 20%;
+    height: 400px;
+    width: 300px;
+    position: absolute;
+}
+
+@media only screen and (max-width:1500px) {
+    .reviewContainer {
+        z-index: 1;
+        right: 7%;
+        top: 20%;
+        height: 400px;
+        width: 300px;
+        position: absolute;
+    }
+}
+
+.body {
+    position: relative;
+    height: 90%;
+    width: 100%;
+}
+
+.midContainer {
+    width: 100%;
+    margin-left: 30%;
+    margin-right: 30%;
+    z-index: 3;
+}
+
+.heading {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 44px;
+    /* identical to box height */
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.topRow {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topRow>input {
+    height: 35px;
+    width: 47%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #C0C0C0;
+    background-color: transparent;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    /* identical to box height, or 24px */
+    color: #808080;
+}
+
+.midRow {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.midRow>input {
+    height: 35px;
+    width: 47%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #C0C0C0;
+    background-color: transparent;
+
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    /* identical to box height, or 24px */
+    color: #808080;
+}
+
+.lowerRow {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lowerRow>input {
+    height: 100px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #C0C0C0;
+    background-color: transparent;
+
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    /* identical to box height, or 24px */
+    color: #808080;
+}
+
+.btn {
+    width: 168px;
+    height: 54px;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease-in-out .4s;
+    background: url(../../../static/images/common/btnBgHover.webp);
+}
+
+.btn:hover {
+    transition: ease-in-out .4s;
+    background: url(../../../static/images/common/btnBg.webp);
+}
+
+.btnContainer {
+    margin-top: 45px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.copyrightContainer {
+    position: absolute;
+    bottom: -20px;
+    right: 80px;
+}
+
+.copyRight {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+    /* identical to box height, or 21px */
+    color: #7A858D;
+}
+
+.followContainer {
+    position: absolute;
+    bottom: 0px;
+    left: 80px;
+}
+
+.follow {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 22px;
+    /* identical to box height */
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+}
+
+.tabs {
+    display: flex;
+    align-items: center;
+}
+
+
+.tab {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    line-height: 15px;
+    width: 26px;
+    height: 26px;
+    text-transform: uppercase;
+    background-size: contain;
+    color: #7A858D;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
+
+.tab:hover {
+    background-size: contain;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:1250px) {
+    .reviewContainer {
+        z-index: 1;
+        right: 5%;
+        top: 20%;
+        height: 400px;
+        width: 300px;
+        position: absolute;
+    }
+
+    .btn {
+        width: 148px;
+        height: 44px;
+        font-size: 12px;
+        background: url(../../../static/images/common/btnBgHover.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .btn:hover {
+        background: url(../../../static/images/common/btnBg.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .copyRight {
+        font-size: 12px !important;
+        line-height: 10%;
+    }
+
+    .copyrightContainer {
+        position: absolute;
+        bottom: -20px;
+        right: 40px;
+    }
+
+    .tab {
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .tab:hover {
+        background-size: contain;
+        cursor: pointer;
+    }
+
+    .followContainer {
+        position: absolute;
+        bottom: 0px;
+        left: 40px;
+    }
+
+    .follow {
+        font-size: 17px;
+    }
+
+    .right2ndBtmContainer {
+        position: absolute;
+        right: 8%;
+        bottom: 30%;
+    }
+
+    .right2ndBtmContainer img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .right2ndBtmBg {
+        position: absolute;
+        bottom: 15%;
+        right: 50%;
+    }
+
+    .right2ndBtmBg img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .bgContainerRightBox {
+        position: absolute;
+        top: 22%;
+        right: 0%;
+    }
+
+    .bgContainerRightBox img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .bgContainerLeftSmall {
+        position: absolute;
+        top: 120px;
+        left: 4vw;
+    }
+
+    .bgContainerLeftSmall img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .bgContainerLeftLarge {
+        position: absolute;
+        top: 2vh;
+        left: 10vw;
+    }
+
+    .bgContainerLeftLarge img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .leftMidBg {
+        position: absolute;
+        top: 30vh;
+        left: 8vw;
+    }
+
+    .leftMidBg img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .leftBtmBg {
+        position: absolute;
+        top: 45vh;
+        left: 10vw;
+    }
+
+    .leftBtmBg img {
+        width: 115px;
+        height: 115px;
+    }
+
+    .heading {
+        font-size: 35px;
+    }
+
+    .topRow {
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .topRow>input {
+        height: 45px;
+        width: 60%;
+        font-size: 13px;
+    }
+
+    .midRow {
+        margin-top: 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .midRow>input {
+        height: 45px;
+        width: 60%;
+        font-size: 13px;
+    }
+
+    .lowerRow {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .lowerRow>input {
+        height: 45px;
+        width: 60%;
+        font-size: 13px;
+    }
+
+}
+
+@media only screen and (max-width:1050px) {
+    .reviewContainer {
+        z-index: 1;
+        right: 0%;
+        top: 20%;
+        height: 400px;
+        width: 300px;
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width:920px) {
+    .reviewContainer {
+        z-index: 1;
+        right: -3%;
+        top: 20%;
+        height: 400px;
+        width: 300px;
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width:840px) {
+    .reviewContainer {
+        z-index: 1;
+        right: -5%;
+        top: 20%;
+        height: 400px;
+        width: 300px;
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width:780px) {
+    .reviewContainer {
+        z-index: 1;
+        right: -7%;
+        top: 20%;
+        height: 400px;
+        width: 300px;
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width:750px) {
+    .reviewContainer {
+        z-index: 1;
+        right: -12%;
+        top: 20%;
+        height: 400px;
+        width: 300px;
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    .btn {
+        width: 128px;
+        height: 34px;
+        font-size: 11px;
+        background: url(../../../static/images/common/btnBgHover.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .btn p {
+        margin-left: -20px;
+    }
+
+    .btn:hover {
+        background: url(../../../static/images/common/btnBg.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .heading {
+        font-size: 25px;
+    }
+
+    .topRow {
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .topRow>input {
+        height: 45px;
+        width: 80%;
+        font-size: 13px;
+    }
+
+    .midRow {
+        margin-top: 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .midRow>input {
+        height: 45px;
+        width: 80%;
+        font-size: 13px;
+    }
+
+    .lowerRow {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .lowerRow>input {
+        height: 45px;
+        width: 80%;
+        font-size: 13px;
+    }
+
+}
+
+@media only screen and (max-width:750px) {
+    .copyRight {
+        font-size: 10px !important;
+        line-height: 10%;
+    }
+
+    .copyrightContainer {
+        position: absolute;
+        bottom: -20px;
+        right: 10px;
+    }
+
+    .tab {
+        margin-right: 10px;
+        width: 17px;
+        height: 17px;
+    }
+
+    .tab:hover {
+        background-size: contain;
+        cursor: pointer;
+    }
+
+    .followContainer {
+        position: absolute;
+        bottom: 0px;
+        left: 10px;
+    }
+
+    .follow {
+        font-size: 17px;
+    }
+
+    .heading {
+        font-size: 25px;
+    }
+
+    .topRow {
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .topRow>input {
+        height: 45px;
+        width: 80%;
+        font-size: 13px;
+    }
+
+    .midRow {
+        margin-top: 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .midRow>input {
+        height: 45px;
+        width: 80%;
+        font-size: 13px;
+    }
+
+    .lowerRow {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .lowerRow>input {
+        height: 45px;
+        width: 80%;
+        font-size: 13px;
+    }
+
+}
+
+
+
+/* ================================================================================================================ */
+
+/* ___________________________________________________Mobile Style_________________________________________________ */
+
+/* ================================================================================================================ */
+
+.mblBody {
+    position: relative;
+    margin-top: 80px;
+}
+
+.rightBgImage {
+    position: absolute;
+    right: 0px;
+}
+
+.leftBgImage {
+    position: absolute;
+    left: 30px;
+    top: -30px;
+}
+
+.textContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.mblMainHeading {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.mblMainDesc {
+    margin-top: -0px;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    width: 80%;
+    line-height: 150%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.mblTopRow {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mblTopRow>input {
+    height: 50px;
+    width: 85%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #C0C0C0;
+    background-color: transparent;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #808080;
+}
+
+.mblTopRow .mblMessageTxt {
+    height: 100px;
+    width: 85%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #C0C0C0;
+    background-color: transparent;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #808080;
+}
+
+.mblBtn {
+    width: 80%;
+    height: 54px;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+    margin-top: 50px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease-in-out .4s;
+    background: url(../../../static/images/common/mblBtnBg.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.mblSingleBox {
+    width: 80%;
+    margin-top: 50px;
+}
+
+.singleBoxContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.mblSocialIcon {
+    height: 30px;
+    width: auto;
+}
+
+.mblRatingCont {
+    position: absolute;
+    top: 75px;
+    width: 60px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mblRating {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.mblStar {
+    width: 24px;
+    height: 24px;
+}
+
+.mblDescriptionMain {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 145px;
+    font-family: graphik-regular;
+    font-style: normal;
+    width: 65%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.mblShortDesc {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13px;
+    bottom: 38px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.btmLeftBgImg {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    left: 35px;
+    margin-top: 30px;
+}
+
+.btmRightBgImg {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    right: 25px;
+}
+
+.mblFolloeContainer {
+    padding-left: 24px;
+    margin-top: 230px;
+}
+
+.mblFollow {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.mblIconsContainer {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copyRight {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #7A858D;
+    margin-top: 20px;
+    padding-bottom: 15px;
+}
+
+@media only screen and (max-height: 650px) {
+    .mblRatingCont {
+        top: 65px;
+    }
+
+    .mblDescriptionMain {
+        top: 127px;
+        width: 65%;
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .mblShortDesc {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 38%;
+        font-family: graphik-regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 13px;
+        bottom: 40px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+}

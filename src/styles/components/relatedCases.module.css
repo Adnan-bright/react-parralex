@@ -1,0 +1,143 @@
+.casesContainer {
+    height: auto;
+    width: 100%;
+    display: flex;
+}
+
+.menu {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.menuItem {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 2px;
+    padding-bottom: 0px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    opacity: .7;
+    cursor: pointer;
+    width: min-content;
+    transition: ease-in-out .5s;
+}
+.menuItemActive {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 2px;
+    padding-bottom: 0px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    opacity: 1;
+    cursor: pointer;
+    transition: ease-in-out .5s;
+    width: min-content;
+}
+.menuItemCont{
+    display: inline-block;
+}
+.brdrDiv{
+    height: 2px;
+    background: url(../../../static/images/common/border.png);
+    margin-top: -18px;
+    margin-bottom: -3px;
+    padding: 0;
+    opacity: 1;
+    transition: ease-in-out .5s;
+    max-width: 100px;
+}
+.brdrDivHide{
+    height: 2px;
+    background: url(../../../static/images/common/border.png);
+    margin-top: -18px;
+    margin-bottom: -3px;
+    padding: 1;
+    transition: ease-in-out .5s;
+    max-width: 0px;
+    opacity: 1;
+}
+
+
+.caseCard {
+    width: 270px;
+    margin-bottom: 40px;
+}
+@media screen and (max-width:1140px) {
+    .caseCard {
+        width: 45%;
+        margin-bottom: 40px;
+    }
+}
+@media screen and (max-width:600px) {
+    .caseCard {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .menu {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    
+    .content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .casesContainer {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.cardImgContainer {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+    
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardTitle {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.cardDescription {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFF;
+
+}

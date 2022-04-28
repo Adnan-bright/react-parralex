@@ -1,0 +1,674 @@
+.main {
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    position: relative;
+}
+
+.upperContainer {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    margin-left: 10%;
+}
+
+.slider {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.heading {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 66px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.btn {
+    width: 168px;
+    height: 54px;
+    margin-top: -10px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    background: url(../../../static/images/common/btnBgHover.webp);
+    z-index: 0;
+    position: relative;
+    transition: ease-in-out .4s;
+}
+
+.btn:hover {
+    background: url(../../../static/images/common/btnBg.webp);
+    transition: ease-in-out .4s;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.imagesContainer {
+    width: 100%;
+    transition: ease-in-out .4s;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    bottom: -10px;
+}
+
+@media screen and (min-height:800px) {
+    .imagesContainer {
+        top: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.topContainer {
+    width: 100vw;
+    margin-top: -80px;
+}
+
+.customDotsContainer {
+    transform: translateY(0px);
+    position: absolute;
+    margin-left: auto;
+    left: 0px;
+    margin-right: auto;
+    right: 0px;
+    bottom: 15px;
+}
+
+.bottomContainer {
+    width: 91vw;
+    height: 300px;
+    padding-left: 18%;
+    margin-top: -120px;
+}
+
+.btmRowInSlider {
+    margin-left: 0px;
+    margin-top: 235px;
+}
+
+.singleImgContainerBlur {
+    margin-left: 90px;
+    width: 200px !important;
+    height: 200px !important;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    transform: rotateZ(45deg);
+    overflow: hidden;
+    transition: ease-in-out .4s;
+    position: relative;
+    filter: blur(3px);
+}
+
+.singleImgContainer {
+    margin-left: 90px;
+    width: 200px !important;
+    height: 200px !important;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    transform: rotateZ(45deg);
+    overflow: hidden;
+    transition: ease-in-out .4s;
+    position: relative;
+}
+
+.imgTop {
+    transform: rotateZ(-45deg) translateY(-20%);
+    object-fit: cover;
+    height: 140%;
+    width: 140%;
+    z-index: -1;
+}
+
+.imageCover {
+    width: 200px;
+    height: 200px;
+}
+
+.icon {
+    position: absolute;
+    left: 150px;
+    bottom: -9px;
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    z-index: 2;
+    transition: ease-in-out .4s;
+    transform: rotateZ(-45deg);
+}
+
+.singleImgContainerBlur:hover {
+    transform: scale(1.3) rotateZ(45deg);
+    transition: ease-in-out .4s;
+    filter: blur(0px);
+}
+
+.singleImgContainerBlur:hover .icon {
+    position: absolute;
+    left: 150px;
+    bottom: -9px;
+    width: 60px;
+    height: 60px;
+    opacity: 1;
+    z-index: 2;
+    transition: ease-in-out .4s;
+    transform: rotateZ(-45deg);
+}
+
+.singleImgContainerBlur:hover .txtContainer {
+    position: absolute;
+    overflow: hidden;
+    opacity: 1;
+    transform: rotateZ(-45deg);
+    transition: ease-in-out .4s;
+}
+
+
+.bgImgLarge {
+    position: absolute;
+    right: 209px;
+    top: 100px;
+}
+
+.bgImgLarge img {
+    height: 143px;
+    width: 143px;
+}
+
+.bgImgLeft {
+    position: absolute;
+    right: 310px;
+    top: 240px;
+}
+
+.bgImgLeft img {
+    width: 78px;
+    height: 78px;
+}
+
+.bgImgRight {
+    position: absolute;
+    right: 130px;
+    top: 170px;
+}
+
+.bgImgLeftContainer {
+    position: absolute;
+    right: -60px;
+    top: 0px;
+}
+
+.rightBoxContainer {
+    position: absolute;
+    right: -60px;
+    top: 0px;
+}
+
+.bgImgRight img {
+    width: 78px;
+    height: 78px;
+}
+
+.txtContainer {
+    position: absolute;
+    overflow: hidden;
+    width: 90%;
+    margin-top: 40px;
+    opacity: 0;
+    z-index: 2;
+    transform: rotateZ(-45deg);
+    transition: ease-in-out .4s;
+}
+
+.title {
+    z-index: 2;
+    font-family: graphik-regular;
+    text-align: left;
+    padding-left: 8px;
+    font-style: normal;
+    font-weight: 600;
+    padding-right: 0px;
+    font-size: 14px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    transition: ease-in-out .4s;
+}
+
+.description {
+    width: 100%;
+    text-align: left;
+    margin-left: 8px;
+    margin-right: 10px;
+    margin-top: -13px;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
+    color: #FFFFFF;
+}
+
+.bgImgBtm {
+    position: absolute;
+    left: 25px;
+    bottom: 0px;
+}
+
+.bgImgBtmGr {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+}
+
+.boxesContainer {
+    position: absolute;
+    right: 125px;
+    top: 25px;
+}
+
+.crossesContainer {
+    position: absolute;
+    left: 25px;
+    bottom: 125px;
+}
+
+.bgImgBtmGr img {
+    height: 144px;
+    width: 144px;
+}
+
+.bgImgBtmGlr {
+    position: absolute;
+    left: 230px;
+    bottom: 140px;
+}
+
+.bgImgBtmPlr {
+    position: absolute;
+    bottom: 550px;
+    left: 20px;
+}
+
+.bgImgBtmRed {
+    position: absolute;
+    bottom: 510px;
+    left: 350px;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    border-radius: 1em;
+    background-color: #f9f07e;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width:1450px) {
+    .singleImgContainerBlur {
+        margin-left: 90px;
+        width: 170px !important;
+        height: 170px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+        filter: blur(3px);
+    }
+
+    .singleImgContainer {
+        margin-left: 90px;
+        width: 170px !important;
+        height: 170px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width:1250px) {
+    .heading {
+        font-size: 40px;
+    }
+
+    .singleImgContainerBlur {
+        margin-left: 90px;
+        width: 150px !important;
+        height: 150px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+        filter: blur(3px);
+    }
+
+    .singleImgContainer {
+        margin-left: 90px;
+        width: 150px !important;
+        height: 150px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    .btmRowInSlider {
+        margin-left: 0px;
+        margin-top: 240px;
+    }
+
+    .singleImgContainerBlur {
+        margin-left: 90px;
+        width: 180px !important;
+        height: 180px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+        filter: blur(3px);
+    }
+
+    .singleImgContainer {
+        margin-left: 90px;
+        width: 180px !important;
+        height: 180px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    .btmRowInSlider {
+        margin-left: 0px;
+        margin-top: 220px;
+    }
+
+    .singleImgContainerBlur {
+        margin-left: 90px;
+        width: 160px !important;
+        height: 160px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+        filter: blur(3px);
+    }
+
+    .singleImgContainer {
+        margin-left: 90px;
+        width: 160px !important;
+        height: 160px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    .heading {
+        font-size: 30px;
+    }
+
+    .btmRowInSlider {
+        margin-left: 0px;
+        margin-top: 250px;
+    }
+
+    .singleImgContainerBlur {
+        margin-left: 90px;
+        width: 200px !important;
+        height: 200px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+        filter: blur(3px);
+    }
+
+    .singleImgContainer {
+        margin-left: 90px;
+        width: 200px !important;
+        height: 200px !important;
+        margin-top: 90px;
+        margin-bottom: 90px;
+        transform: rotateZ(45deg);
+        overflow: hidden;
+        transition: ease-in-out .4s;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width:1300px) {
+
+    .description {
+        margin-left: 15px;
+        margin-right: 10px;
+        margin-top: -13px;
+    }
+
+    .title {
+        margin-top: 34px;
+        margin-left: 7px;
+    }
+
+
+}
+
+@media only screen and (max-width:1100px) {
+
+    .imagesContainer {
+        margin-top: 10%;
+    }
+
+    .description {
+        margin-left: 20px;
+        margin-right: 10px;
+        margin-top: -13px;
+    }
+
+    .title {
+        margin-left: 20px;
+        font-size: 12px;
+    }
+
+}
+
+@media only screen and (max-width:1000px) {
+
+    .imagesContainer {
+        margin-top: 10%;
+    }
+}
+
+/* ================================================================================================================ */
+
+/* ___________________________________________________Mobile Style_________________________________________________ */
+
+/* ================================================================================================================ */
+
+.mblMain {
+    position: relative;
+}
+
+.mblHeading {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-left: 24px;
+    margin-top: 50px;
+}
+
+.mblSingleImgContainer {
+    width: 140px !important;
+    height: 140px !important;
+    margin-top: -90px;
+    margin-bottom: 90px;
+    transform: rotateZ(45deg);
+    overflow: hidden;
+    transition: ease-in-out .4s;
+    position: relative;
+    z-index: 0;
+}
+
+.mblSingleImgContainerActive {
+    width: 140px !important;
+    height: 140px !important;
+    margin-top: 0px;
+    margin-bottom: 190px;
+    transform: rotateZ(45deg) scale(1.6);
+    overflow: hidden;
+    transition: ease-in-out .4s;
+    position: relative;
+    z-index: 0;
+}
+
+.mblImagesContainer {
+    margin-top: 200px;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.mblImgTop {
+    transform: rotateZ(-45deg) translateY(-20%);
+    object-fit: cover;
+    height: 140%;
+    width: 140%;
+    z-index: 99;
+}
+
+.mblIcon {
+    position: absolute;
+    left: 98px;
+    bottom: -7px;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    transition: ease-in-out .4s;
+    transform: rotateZ(-45deg);
+}
+
+.mblTxtContainer {
+    position: absolute;
+    width: 100%;
+    margin-top: 40px;
+    left: 0px;
+    bottom: 20px;
+    opacity: 1;
+    z-index: 2;
+    transform: rotateZ(-45deg);
+    transition: ease-in-out .4s;
+}
+
+.mblTitle {
+    z-index: 999;
+    font-family: graphik-regular;
+    padding-left: 8px;
+    font-style: normal;
+    font-weight: 600;
+    padding-right: 0px;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    transition: ease-in-out .4s;
+}
+
+.mblDescription {
+    width: 100%;
+    text-align: left;
+    margin-left: 8px;
+    margin-right: 10px;
+    margin-top: -16px;
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
+    color: #FFFFFF;
+}
+
+.mblBtnText {
+    font-family: graphik-regular;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -10px;
+    width: 90%;
+    height: 54px;
+    background: url(../../../static/images/stories/mblBtnBg.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.mblBtnContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-height: 650px) {
+    .mblImagesContainer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
