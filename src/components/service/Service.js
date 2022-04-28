@@ -2,13 +2,11 @@ import React, { useState, useRef, useEffect } from "react";
 import ReactPlayer from "react-player";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-
 import * as style from "../../styles/components/service.module.css";
 import VideoCloseIcon from "../../../static/icons/videoClose.webp";
 import UseService from "./useService";
 
 function Service({ isMobile }) {
-    
   const { designData, filmData, techData } = UseService();
   gsap.registerPlugin(ScrollTrigger);
 

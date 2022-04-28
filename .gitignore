@@ -3,4 +3,5 @@ node_modules/
 public
 .git_rct
 .env.*
+.env
 .git_test

@@ -117,8 +117,8 @@
     background-image: url(../../../static/images/process/1.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 350px;
+    width: 22vw;
+    height: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,8 +130,8 @@
     background-image: url(../../../static/images/process/1.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 350px;
+    width: 22vw;
+    height: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,8 +145,8 @@
     background-image: url(../../../static/images/process/1.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 350px;
+    width: 22vw;
+    height: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,8 +162,8 @@
     background-image: url(../../../static/images/process/2.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 350px;
+    width: 22vw;
+    height: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,8 +177,8 @@
     background-image: url(../../../static/images/process/2.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 350px;
+    width: 22vw;
+    height: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -194,8 +194,8 @@
     background-image: url(../../../static/images/process/2.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 350px;
+    width: 22vw;
+    height: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,8 +221,8 @@
     background-image: url(../../../static/images/process/planning.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 350px;
+    width: 22vw;
+    height: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -234,8 +234,8 @@
     background-image: url(../../../static/images/process/planning.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 350px;
+    width: 22vw;
+    height: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -251,8 +251,8 @@
     background-image: url(../../../static/images/process/planning.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 350px;
+    width: 22vw;
+    height: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,8 +266,8 @@
     background-image: url(../../../static/images/process/4.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 350px;
+    width: 22vw;
+    height: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -281,8 +281,8 @@
     background-image: url(../../../static/images/process/4.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 350px;
+    width: 22vw;
+    height: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -298,8 +298,8 @@
     background-image: url(../../../static/images/process/4.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 350px;
+    width: 22vw;
+    height: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -328,8 +328,8 @@
     background-image: url(../../../static/images/process/5.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 350px;
+    width: 22vw;
+    height: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -343,8 +343,8 @@
     background-image: url(../../../static/images/process/5.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 350px;
+    width: 22vw;
+    height: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -360,8 +360,8 @@
     background-image: url(../../../static/images/process/5.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 350px;
-    height: 350px;
+    width: 22vw;
+    height: 22vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -960,4 +960,24 @@
     position: absolute;
     top: 112%;
     right: 125px;
+}
+@media only screen and (min-width:1700px) {
+    .bottomRow {
+        display: flex;
+        position: absolute;
+        bottom: -200px;
+        right: 480px;
+    }
+    .topRow {
+        display: flex;
+        position: absolute;
+        right: -120px;
+        bottom: 395px;
+    }
+    .midRow {
+        display: flex;
+        position: absolute;
+        right: 180px;
+        bottom: 100px;
+    }
 }
