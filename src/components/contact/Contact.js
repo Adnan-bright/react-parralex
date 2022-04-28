@@ -356,6 +356,7 @@ function Contact({ id, isMobile }) {
               © 2022 MAG-RAW Creations, LLC all rights reserved
             </p>
           </div>
+          
           <div className={style.followContainer}>
             <p className={style.follow}>FOLLOW</p>
             <br />
