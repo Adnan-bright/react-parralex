@@ -23,9 +23,11 @@ function UseStories() {
                 year
                 slug
                 readTime
+                sortKey
               }
               content
               date
+              modified
             }
           }
         }
@@ -49,7 +51,9 @@ function UseStories() {
       team: item?.node?.stories?.team,
       year: item?.node?.stories?.year,
       readTime: item?.node?.stories?.readTime,
+      sortKey: item?.node?.stories?.sortKey,
       publishDate: item?.node?.date,
+      modified: item?.node?.modified,
     });
   });
   return { storiesData };

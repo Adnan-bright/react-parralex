@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-
 import * as style from "../../styles/components/contact.module.css";
 import ReviewContainer from "../reviewContainer/ReviewContainer";
 import UseContactMouseGesture from "./useContactMouseGesture";
