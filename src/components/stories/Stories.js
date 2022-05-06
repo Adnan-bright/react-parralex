@@ -10,6 +10,7 @@ import UseWindowDimension from "../../hooks/useWindowDimension";
 import { DataContext } from "../Provider/Provider";
 
 function Stories({ isMobile }) {
+  
   const { setSelectedType, setPreviousRoute } = useContext(DataContext);
   const { width } = UseWindowDimension();
   const { storiesData: ndata } = UseStories();
