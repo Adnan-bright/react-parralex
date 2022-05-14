@@ -11,14 +11,8 @@ function UseHeroVer() {
                 backgroundVideo {
                   mediaItemUrl
                 }
-                backgroundVideoLink {
-                  url
-                }
                 video {
                   mediaItemUrl
-                }
-                videoLink {
-                  url
                 }
                 videoTitle
                 titleText {
@@ -37,16 +31,12 @@ function UseHeroVer() {
   const {
     videoTitle,
     video,
-    videoLink,
-    backgroundVideoLink,
     backgroundVideo,
     titleText,
   } = HeroData;
 
-  const coverVideo = videoLink ? videoLink.url : video?.mediaItemUrl;
-  const bgVideo = backgroundVideoLink
-    ? backgroundVideoLink.url
-    : backgroundVideo?.mediaItemUrl;
+  const coverVideo = video?.mediaItemUrl;
+  const bgVideo =  backgroundVideo?.mediaItemUrl;
   return { videoTitle, coverVideo, bgVideo, titleText };
 }
 
