@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
-
 import * as style from "../../styles/components/aboutUs.module.css";
 import UseAboutMouseGesture from "./useAboutMouseGesture";
 import useAboutUs from "./useAboutUs";
 
 function AboutUS({ isMobile }) {
+
+
   const myRef = useRef();
   const { bind } = UseAboutMouseGesture("aboutCrossBg", myRef);
   const { aboutText } = useAboutUs();
