@@ -9,10 +9,17 @@ import UseStories from "./useStories";
 import UseWindowDimension from "../../hooks/useWindowDimension";
 import { DataContext } from "../Provider/Provider";
 
-function Stories({ isMobile}) {
+function Stories({ isMobile }) {
   const { setSelectedType, setPreviousRoute } = useContext(DataContext);
   const { width } = UseWindowDimension();
-  const { storiesData } = UseStories();
+  const { storiesData: ndata } = UseStories();
+  let storiesData = [...ndata];
+  storiesData.sort((a, b) => {
+    return new Date(b.publishDate) - new Date(a.publishDate);
+  });
+  storiesData.sort((a, b) => {
+    return a.sortKey - b.sortKey;
+  });
 
   const data = [
     {
@@ -105,22 +112,20 @@ function Stories({ isMobile}) {
       class: "first",
     },
   ];
-
   storiesData.map((item, index) => {
     if (index + 1 === storiesData.length) {
-      storiesData.push(item)
+      storiesData.splice(index + 1, 0, item);
     }
     if ((index + 1) % divideValue === 0) {
-      storiesData.push(item)
+      storiesData.splice(index + 1, 0, item);
     }
-
-  })
-
-  const lengthTo = divideValue-(storiesData.length % divideValue)
-  storiesData.slice(0,lengthTo).map((item, index) => {
-    storiesData.push(item)
   });
-  
+
+  const lengthTo = divideValue - (storiesData.length % divideValue);
+  storiesData.slice(0, lengthTo).map((item, index) => {
+    storiesData?.push(item);
+  });
+
   return (
     <div {...bind()} ref={pageRef}>
       {isMobile ? (
@@ -383,7 +388,6 @@ function Stories({ isMobile}) {
                           }}
                           className={style.btmRowInSlider}
                         >
-               
                           <div
                             onMouseUp={() => setIsDragging(false)}
                             onClick={() => !isDragging && onClick(item.slug)}
