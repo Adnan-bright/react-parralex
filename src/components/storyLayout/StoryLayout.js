@@ -11,10 +11,17 @@ import UseWindowDimension from "../../hooks/useWindowDimension";
 import { ScrollTrigger } from "gsap/all";
 import ReactPlayer from "react-player";
 import VideoCloseIcon from "../../../static/icons/videoClose.webp";
-
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+} from "react-share";
 function StoryLayout({ data }) {
   const [video, setVideo] = useState(false);
-
+  const [fbIcon, setFbIcon] = useState("/icons/fb.png");
+  const [twIcon, setTwIcon] = useState("/icons/twitter.png");
+  const [lnIcon, setLnIcon] = useState("/icons/linkedIn.png");
+  var url = typeof window !== "undefined" ? window.location.href : "";
   useEffect(() => {
     const triggers = ScrollTrigger.getAll();
     if (triggers) {
@@ -149,10 +156,31 @@ function StoryLayout({ data }) {
           <div className={style.shareContainer}>
             <p className={style.shareText}>SHARE</p>
             <div className={style.tabs}>
-              <a className={style.tab1}></a>
-              <a className={style.tab2}></a>
-              <a className={style.tab3}></a>
-              <a className={style.tab4}></a>
+              {/* <a className={style.tab1}></a> */}
+              <FacebookShareButton url={url}>
+                <img
+                  onMouseEnter={() => setFbIcon("/icons/fbHv.png")}
+                  onMouseLeave={() => setFbIcon("/icons/fb.png")}
+                  src={fbIcon}
+                  className={style.tab}
+                />
+              </FacebookShareButton>
+              <TwitterShareButton url={url}>
+                <img
+                  onMouseEnter={() => setTwIcon("/icons/twitterHv.png")}
+                  onMouseLeave={() => setTwIcon("/icons/twitter.png")}
+                  src={twIcon}
+                  className={style.tab}
+                />
+              </TwitterShareButton>
+              <LinkedinShareButton url={url}>
+                <img
+                  onMouseEnter={() => setLnIcon("/icons/linledinHv.png")}
+                  onMouseLeave={() => setLnIcon("/icons/linkedIn.png")}
+                  src={lnIcon}
+                  className={style.tab}
+                />
+              </LinkedinShareButton>
             </div>
           </div>
           <div className={style.casesContainer}>

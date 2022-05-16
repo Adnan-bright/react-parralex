@@ -262,7 +262,11 @@
     cursor: pointer;
     transition: ease-in-out .4s;
 }
-
+.tab{
+    width: auto;
+    height: 26px;
+    transition: ease-in-out .4s;
+}
 .tab2 {
     background-image: url(../../../static/icons/fb.png);
     background-size: contain;
