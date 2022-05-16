@@ -10,9 +10,6 @@ exports.createPages = async function ({ actions, graphql }) {
               coverImage {
                 mediaItemUrl
               }
-              coverImageLink {
-                url
-              }
               description
               storyTitle
               storyType
@@ -29,9 +26,7 @@ exports.createPages = async function ({ actions, graphql }) {
   const storiesData = [];
   managedData?.map((item) => {
     storiesData.push({
-      coverImage: item.node.stories.coverImageLink
-        ? item.node.stories.coverImageLink.url
-        : item.node.stories.coverImage.mediaItemUrl,
+      coverImage: item.node.stories.coverImage.mediaItemUrl,
       description: item.node.stories.description,
       title: item.node.stories.storyTitle,
       slug: item.node.stories.slug,

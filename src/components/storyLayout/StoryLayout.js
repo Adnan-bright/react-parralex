@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Layout from "../layout/Layout";
 import * as style from "../../styles/components/storyLayout.module.css";
 import { graphql, navigate } from "gatsby";
@@ -9,8 +9,12 @@ import ContactBanner from "../contactBanner/ContactBanner";
 import Footer from "../footer/Footer";
 import UseWindowDimension from "../../hooks/useWindowDimension";
 import { ScrollTrigger } from "gsap/all";
+import ReactPlayer from "react-player";
+import VideoCloseIcon from "../../../static/icons/videoClose.webp";
 
 function StoryLayout({ data }) {
+  const [video, setVideo] = useState(false);
+
   useEffect(() => {
     const triggers = ScrollTrigger.getAll();
     if (triggers) {
@@ -22,12 +26,15 @@ function StoryLayout({ data }) {
 
   const { width } = UseWindowDimension();
   const ref = useRef(null);
+  const myRef = useRef(null);
   const { setStory, previousRoute } = useContext(DataContext);
   function createMarkup(story) {
     return { __html: story };
   }
   const storyData = data?.allWpStories?.edges?.[0]?.node?.stories;
   const content = data?.allWpStories?.edges?.[0]?.node?.content;
+  const videoUrl = storyData?.video?.mediaItemUrl;
+  console.log("data", storyData);
 
   const handleClick = (id) => {
     const value = id * 700;
@@ -49,6 +56,37 @@ function StoryLayout({ data }) {
       onNavClick={handleClick}
     >
       <div className={style.main}>
+        <div className={!video ? style.videoBodyHide : style.videoBody}>
+          <div
+            onContextMenu={(e) => e.preventDefault()}
+            className={style.videoBox}
+          >
+            <img
+              onClick={() => setVideo(false)}
+              className={style.videoCloseIcon}
+              src={VideoCloseIcon}
+              alt="VideoCloseIcon"
+            />
+            <ReactPlayer
+              ref={myRef}
+              playing={video}
+              loop={false}
+              config={{
+                file: {
+                  attributes: {
+                    controlsList: "nodownload", //<- this is the important bit
+                  },
+                },
+              }}
+              height="100%"
+              width={"100%"}
+              className={style.video}
+              url={videoUrl}
+              title={storyData?.storyTitle}
+              controls={true}
+            />
+          </div>
+        </div>
         <div className={style.bannerContainer}>
           <img
             onClick={() => {
@@ -81,22 +119,27 @@ function StoryLayout({ data }) {
           </div>
           <h1 className={style.bannerHeading}>
             {/* {storyData.storyTitle} */}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            {storyData.description}
           </h1>
         </div>
         <div className={style.body}>
           <center>
             <div className={style.bannerImageContainer}>
-              <img
-                className={style.bannerImage}
-                src="/images/common/film.png"
-                alt="film"
-              />
-              <img
-                className={style.playIcon}
-                src="/images/home/playIcon.webp"
-                alt="playIcon"
-              />
+              {storyData?.videCoverImage?.mediaItemUrl && (
+                <img
+                  className={style.bannerImage}
+                  src={storyData?.videCoverImage?.mediaItemUrl}
+                  alt="film"
+                />
+              )}
+              {videoUrl && (
+                <img
+                  onClick={() => setVideo(true)}
+                  className={style.playIcon}
+                  src="/images/home/playIcon.webp"
+                  alt="playIcon"
+                />
+              )}
             </div>
           </center>
 
@@ -150,17 +193,24 @@ export const query = graphql`
             coverImage {
               mediaItemUrl
             }
-            coverImageLink {
-              url
-            }
             description
             storyTitle
             storyType
             team
             year
             slug
+            readTime
+            sortKey
+            video {
+              mediaItemUrl
+            }
+            videCoverImage {
+              mediaItemUrl
+            }
           }
           content
+          date
+          modified
         }
       }
     }

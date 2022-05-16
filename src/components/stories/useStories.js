@@ -1,7 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby";
 
 function UseStories() {
-  
   const data = useStaticQuery(
     graphql`
       query StoriesData {
@@ -13,9 +12,6 @@ function UseStories() {
                 coverImage {
                   mediaItemUrl
                 }
-                coverImageLink {
-                  url
-                }
                 description
                 storyTitle
                 storyType
@@ -24,6 +20,12 @@ function UseStories() {
                 slug
                 readTime
                 sortKey
+                video {
+                  mediaItemUrl
+                }
+                videCoverImage {
+                  mediaItemUrl
+                }
               }
               content
               date
@@ -38,10 +40,8 @@ function UseStories() {
   const storiesData = [];
   managedData?.map((item, index) => {
     storiesData.push({
-      id : index+1,
-      coverImage: item?.node?.stories?.coverImageLink
-        ? item?.node?.stories?.coverImageLink?.url
-        : item?.node?.stories?.coverImage?.mediaItemUrl,
+      id: index + 1,
+      coverImage: item?.node?.stories?.coverImage?.mediaItemUrl,
       description: item?.node?.stories?.description,
       title: item?.node?.stories?.storyTitle,
       slug: item?.node?.stories?.slug,
