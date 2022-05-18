@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import * as style from '../../styles/components/relatedCases.module.css'
 import UseStories from '../stories/useStories'
 import { motion, AnimatePresence } from "framer-motion";
+import { navigate } from 'gatsby';
 function RelatedCases() {
     const {storiesData} = UseStories()
     
@@ -46,6 +47,10 @@ function RelatedCases() {
                     {
                         filteredData.map((item, index) => {
                             return <motion.div 
+                            style={{
+                                cursor:"pointer"
+                            }}
+                            onClick={()=> navigate(`/allStories/${item.slug}`)}
                             key={active}
                             animate={{ opacity: 1, y: 0 }}
                             initial={{ opacity: 0, y: 20 }}

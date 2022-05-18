@@ -34,7 +34,7 @@
 .btn {
     width: 168px;
     height: 54px;
-    margin-top: -10px;
+    margin-top: -20px;
     margin-left: 5px;
     display: flex;
     align-items: center;
@@ -47,7 +47,7 @@
     text-align: center;
     text-transform: uppercase;
     background: url(../../../static/images/common/btnBgHover.webp);
-    z-index: 0;
+    z-index: 999;
     position: relative;
     transition: ease-in-out .4s;
 }
