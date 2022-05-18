@@ -13,6 +13,7 @@ import Contact from "../components/contact/Contact";
 import Service from "../components/service/Service";
 import Stories from "../components/stories/Stories";
 import { DataContext } from "../components/Provider/Provider";
+import { Helmet } from "react-helmet";
 
 const IndexPage = () => {
   const [isChanged, setIsChanged] = useState(false)
@@ -76,6 +77,10 @@ const IndexPage = () => {
       hoverValue={updateValue}
       onNavClick={handleClick}
     >
+      <Helmet>
+        <title>Mag-Raw</title>
+        <meta name="description" content="mag-raw is creative support for your business at an affordable cost." />
+      </Helmet>
       <div ref={ref}>
         {width >= 600 ? (
           <div id="newId" className="container">
