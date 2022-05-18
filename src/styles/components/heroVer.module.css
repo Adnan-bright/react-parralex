@@ -406,7 +406,7 @@
 
 
 .mblBody {
-    background-image: url(../../../static/images/home/mblBg.webp);
+    /* background-image: url(../../../static/images/home/mblBg.webp); */
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;

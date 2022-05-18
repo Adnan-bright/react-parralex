@@ -20,6 +20,9 @@ function UseHeroVer() {
                   secondLine
                   thirdLine
                 }
+                mobileBackgroundImage {
+                  mediaItemUrl
+                }
               }
             }
           }
@@ -33,11 +36,13 @@ function UseHeroVer() {
     video,
     backgroundVideo,
     titleText,
+    mobileBackgroundImage
   } = HeroData;
 
   const coverVideo = video?.mediaItemUrl;
   const bgVideo =  backgroundVideo?.mediaItemUrl;
-  return { videoTitle, coverVideo, bgVideo, titleText };
+  const mblBgImg = mobileBackgroundImage?.mediaItemUrl;
+  return { videoTitle, coverVideo, bgVideo, titleText, mblBgImg };
 }
 
 export default UseHeroVer;
