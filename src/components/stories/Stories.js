@@ -21,7 +21,6 @@ function Stories({ isMobile }) {
     return a.sortKey - b.sortKey;
   });
 
-  console.log(storiesData)
   const data = [
     {
       className: "greenCross",

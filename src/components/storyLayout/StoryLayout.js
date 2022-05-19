@@ -41,7 +41,6 @@ function StoryLayout({ data }) {
   const storyData = data?.allWpStories?.edges?.[0]?.node?.stories;
   const content = data?.allWpStories?.edges?.[0]?.node?.content;
   const videoUrl = storyData?.video?.mediaItemUrl;
-  console.log("data", storyData);
 
   const handleClick = (id) => {
     const value = id * 700;

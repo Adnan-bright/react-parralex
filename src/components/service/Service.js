@@ -46,7 +46,6 @@ function Service({ isMobile }) {
   designData.title = "design";
 
   const items = [filmData, designData, techData];
-  console.log("designData",designData )
 
   return (
     <div>
