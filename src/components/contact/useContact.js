@@ -13,7 +13,6 @@ function UseContact() {
       setClassName(style.toast);
     }, 3000);
   }, [className]);
-  console.log(className);
   const [values, setValues] = useState({
     firstName: "",
     lastName: "",
@@ -91,7 +90,7 @@ function UseContact() {
         };
         try {
           const result = await fetch(
-            "https://wordpress-668504-2533396.cloudwaysapps.com/wp-json/contact-form-7/v1/contact-forms/726/feedback",
+            `https://wordpress-668504-2533396.cloudwaysapps.com/wp-json/contact-form-7/v1/contact-forms/726/feedback`,
             requestOptions
           );
           const res = await result.text();
