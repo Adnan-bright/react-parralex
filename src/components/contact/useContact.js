@@ -82,7 +82,6 @@ function UseContact() {
         formdata.append("your-email", values.email);
         formdata.append("your-phone", values.phone);
         formdata.append("your-message", values.message);
-
         var requestOptions = {
           method: "POST",
           body: formdata,
@@ -90,7 +89,7 @@ function UseContact() {
         };
         try {
           const result = await fetch(
-            `https://wordpress-668504-2533396.cloudwaysapps.com/wp-json/contact-form-7/v1/contact-forms/726/feedback`,
+            `${process.env.GATSBY_WORDPRESS_BASE_URL}/wp-json/contact-form-7/v1/contact-forms/726/feedback`,
             requestOptions
           );
           const res = await result.text();
