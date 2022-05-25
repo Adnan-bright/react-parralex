@@ -263,8 +263,94 @@
     transition: ease-in-out .4s;
     background: url(../../../static/images/common/btnBg.webp);
 }
+.toast{
+    width: 300px;
+    height: 60px;
+    position: fixed;
+    top: 90px;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+    padding-left: 10px;
+    padding-right: 10px;
+    right: 30px;
+    border-radius: 5px;
+    transition: ease-in-out .3s;
+    transform: translateX(400px);
+    opacity: 0;
+}
+.toast2{
+    transition: ease-in-out .3s;
+    width: 300px;
+    height: 60px;
+    position: fixed;
+    top: 90px;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+    padding-left: 10px;
+    padding-right: 10px;
+    right: 30px;
+    border-radius: 5px;
+    /* background-color: rgba(255, 0, 0, 0.518); */
+    /* background-color: rgba(0, 128, 0, 0.696); */
+    transform: translateX(0px);
+    opacity: 1;
+}
 
+.toast p{
+    font-family: graphik-regular;
+    color: rgb(204, 202, 202);
+}
+.toast2 p{
+    font-family: graphik-regular;
+    color: rgb(204, 202, 202);
+}
+@keyframes toast-in {
+    0% {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    5% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    95% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}
+
+
+.error {
+    font-family: graphik-regular;
+    font-size: 13px;
+    right: 45px;
+    position: absolute;
+    color: red;
+    top: -35px
+}
+.errCont{
+    position: relative;
+}
+.errorMbl{
+    font-family: graphik-regular;
+    color: red;
+    position: absolute;
+    top: -40px;
+    font-size: 13px;
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
 .btnContainer {
+    position: relative;
     margin-top: 45px;
     width: 100%;
     display: flex;

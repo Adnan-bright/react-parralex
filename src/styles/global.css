@@ -166,3 +166,35 @@ body {
 body::-webkit-scrollbar {
     display: none;
   }
+  .loader {
+    border: 5px solid #29E2B4; /* Blue */
+    border-top: 5px solid #7B2EE4; /* Light grey */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+  }
+@media only screen and (max-width:1200px){
+    .loader {
+        border: 5px solid #29E2B4; /* Blue */
+        border-top: 5px solid #7B2EE4; /* Light grey */
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+        animation: spin 1s linear infinite;
+      }
+}
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

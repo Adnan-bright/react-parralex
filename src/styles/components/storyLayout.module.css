@@ -29,7 +29,112 @@
     width: 90% ;
 } */
 
+/* ======================================Video css Start */
+.videoBodyHide {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    opacity: 0;
+    backdrop-filter: blur(5px);
+    display: none;
+    align-items: center;
+    transition: ease-in-out 2s;
+    justify-content: center;
+    animation-name: scaleDown;
+    animation-duration: 1s;
+    animation-timing-function: linear;
 
+}
+.videoBody {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    z-index: 3;
+    top: 10px;
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    animation-name: scale;
+    animation-duration: .3s;
+    animation-timing-function: linear;
+}
+.videoContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.videoBox {
+    position: relative;
+    width: 65vw;
+}
+
+.videoCloseIcon {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    right: 20px;
+    top: 35px;
+    z-index: 200;
+    cursor: pointer;
+}
+.video {
+    margin-top: 20px;
+    z-index: 999;
+}
+
+@media only screen and (max-width:1350px) {
+    .videoBox {
+        position: relative;
+        width: 70vw;
+    }
+
+}
+
+@media only screen and (max-width:1250px) {
+    .videoBox {
+        position: relative;
+        width: 80vw;
+    }
+
+}
+
+@media only screen and (max-width:1050px) {
+    .videoBox {
+        position: relative;
+        width: 90vw;
+    }
+
+}
+
+@media only screen and (max-width:768px) {
+    .videoBox {
+        position: relative;
+        width: 95vw;
+    }
+
+    .videoCloseIcon {
+        height: 20px;
+        width: 20px;
+        right: 0px;
+        top: 25px;
+        z-index: 200;
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+
+
+/* ======================================Video css End */
 .bannerHeader {
     display: flex;
     padding-top: 20px;
@@ -85,7 +190,7 @@
 
 }
 .bannerImage {
-    width: 80%;
+    height: 90vh
 }
 @media only screen and (max-width:600px) {
     .bannerHeading {
@@ -93,7 +198,8 @@
         transition: ease-in-out .7s;
     }
     .bannerImage {
-        width: 95%;
+    height: auto;
+    width: 95%;
     }
 }
 
@@ -156,7 +262,11 @@
     cursor: pointer;
     transition: ease-in-out .4s;
 }
-
+.tab{
+    width: auto;
+    height: 26px;
+    transition: ease-in-out .4s;
+}
 .tab2 {
     background-image: url(../../../static/icons/fb.png);
     background-size: contain;

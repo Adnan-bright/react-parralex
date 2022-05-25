@@ -2,6 +2,7 @@ node_modules/
 .cache/
 public
 .git_rct
-.env.*
 .env
 .git_test
+
+

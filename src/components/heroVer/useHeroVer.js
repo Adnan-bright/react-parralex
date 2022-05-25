@@ -11,20 +11,17 @@ function UseHeroVer() {
                 backgroundVideo {
                   mediaItemUrl
                 }
-                backgroundVideoLink {
-                  url
-                }
                 video {
                   mediaItemUrl
-                }
-                videoLink {
-                  url
                 }
                 videoTitle
                 titleText {
                   firstLine
                   secondLine
                   thirdLine
+                }
+                mobileBackgroundImage {
+                  mediaItemUrl
                 }
               }
             }
@@ -37,17 +34,15 @@ function UseHeroVer() {
   const {
     videoTitle,
     video,
-    videoLink,
-    backgroundVideoLink,
     backgroundVideo,
     titleText,
+    mobileBackgroundImage
   } = HeroData;
 
-  const coverVideo = videoLink ? videoLink.url : video?.mediaItemUrl;
-  const bgVideo = backgroundVideoLink
-    ? backgroundVideoLink.url
-    : backgroundVideo?.mediaItemUrl;
-  return { videoTitle, coverVideo, bgVideo, titleText };
+  const coverVideo = video?.mediaItemUrl;
+  const bgVideo =  backgroundVideo?.mediaItemUrl;
+  const mblBgImg = mobileBackgroundImage?.mediaItemUrl;
+  return { videoTitle, coverVideo, bgVideo, titleText, mblBgImg };
 }
 
 export default UseHeroVer;

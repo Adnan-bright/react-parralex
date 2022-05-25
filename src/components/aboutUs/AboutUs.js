@@ -4,8 +4,6 @@ import UseAboutMouseGesture from "./useAboutMouseGesture";
 import useAboutUs from "./useAboutUs";
 
 function AboutUS({ isMobile }) {
-
-
   const myRef = useRef();
   const { bind } = UseAboutMouseGesture("aboutCrossBg", myRef);
   const { aboutText } = useAboutUs();

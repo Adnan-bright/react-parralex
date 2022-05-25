@@ -8,7 +8,7 @@ import VideoCloseIcon from "../../../static/icons/videoClose.webp";
 import UseHeroVer from "./useHeroVer";
 
 function HeroVer({ isMobile }) {
-  const { videoTitle, coverVideo, bgVideo, titleText } = UseHeroVer();
+  const { videoTitle, coverVideo, bgVideo, titleText, mblBgImg } = UseHeroVer();
   const [loading, setLoading] = useState(true);
   const ref = useRef(null);
   const myRef = useRef();
@@ -59,7 +59,11 @@ function HeroVer({ isMobile }) {
               </div>
             </div>
           </div>
-          <div className={style.mblBody}>
+          <div
+          style={{
+            backgroundImage: `url(${mblBgImg})`,
+          }}
+          className={style.mblBody}>
             <div className={style.midContainer}>
               <div className={style.mblHeadingsContainer}>
                 <p className={style.mblTopHeading}>{titleText?.firstLine}</p>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import * as style from "../../styles/components/contact.module.css";
 import ReviewContainer from "../reviewContainer/ReviewContainer";
@@ -6,7 +6,20 @@ import UseContactMouseGesture from "./useContactMouseGesture";
 import UseContact from "./useContact";
 
 function Contact({ id, isMobile }) {
-  const { socialData } = UseContact();
+  const {
+    socialData,
+    values,
+    onFirstNameChange,
+    onLastNameChange,
+    onEmailChange,
+    onPhoneChange,
+    onMessageChange,
+    onSubmit,
+    error,
+    status,
+    className,
+    loading,
+  } = UseContact();
   const handleEnter = (event) => {
     if (event.key.toLowerCase() === "enter") {
       const form = event.target.form;
@@ -70,6 +83,7 @@ function Contact({ id, isMobile }) {
       speedValue: 10,
     },
   ];
+
   const { bind } = UseContactMouseGesture(data, myRef);
   const classes = [
     {
@@ -78,9 +92,32 @@ function Contact({ id, isMobile }) {
   ];
   return (
     <div ref={myRef} {...bind()}>
+      <div
+        style={{
+          backgroundColor:
+            status.status === "success"
+              ? "rgba(0, 128, 0, 0.696)"
+              : "rgba(255, 0, 0, 0.518)",
+        }}
+        className={className}
+      >
+        <p>{status.message}</p>
+      </div>
       {isMobile ? (
         <div className={style.mblMain}>
+     
           <div className={style.mblBody}>
+          <div
+            style={{
+              backgroundColor:
+                status.status === "success"
+                  ? "rgba(0, 128, 0, 0.696)"
+                  : "rgba(255, 0, 0, 0.518)",
+            }}
+            className={className}
+          >
+            <p>{status.message}</p>
+          </div>
             <img
               className={style.leftBgImage}
               src="/images/contact/mblRightBg.png"
@@ -101,27 +138,37 @@ function Contact({ id, isMobile }) {
               <form>
                 <div className={style.mblTopRow}>
                   <input
-                    onKeyDown={(e) => handleEnter(e)}
+                    onKeyDown={handleEnter}
+                    onChange={onFirstNameChange}
                     type={"text"}
+                    value={values.firstName}
                     placeholder="First name"
                   />
                   <input
-                    onKeyDown={(e) => handleEnter(e)}
+                    onChange={onLastNameChange}
+                    onKeyDown={handleEnter}
                     type={"text"}
+                    value={values.lastName}
                     placeholder="Last name"
                   />
                   <input
-                    onKeyDown={(e) => handleEnter(e)}
+                    onChange={onEmailChange}
+                    onKeyDown={handleEnter}
+                    value={values.email}
                     type={"text"}
                     placeholder="Email"
                   />
                   <input
-                    onKeyDown={(e) => handleEnter(e)}
-                    type={"text"}
+                    onChange={onPhoneChange}
+                    onKeyDown={handleEnter}
+                    value={values.phone}
+                    type={"number"}
                     placeholder="Phone"
                   />
                   <input
-                    onKeyDown={(e) => handleEnter(e)}
+                    onChange={onMessageChange}
+                    onKeyDown={handleEnter}
+                    value={values.message}
                     className={style.mblMessageTxt}
                     type={"text"}
                     placeholder="Message"
@@ -129,7 +176,12 @@ function Contact({ id, isMobile }) {
                 </div>
               </form>
               <center>
-                <div className={style.mblBtn}>submit</div>
+                <div className={style.errCont}>
+                  <div className={style.errorMbl}>{error.message}</div>
+                </div>
+                <div onClick={onSubmit} className={style.mblBtn}>
+                  {loading ? <div className="loader"></div> : "submit"}
+                </div>
               </center>
             </div>
             <div className={style.singleBoxContainer}>
@@ -311,31 +363,41 @@ function Contact({ id, isMobile }) {
                 <form>
                   <div className={style.topRow}>
                     <input
-                      onKeyDown={(e) => handleEnter(e)}
+                      onChange={onFirstNameChange}
+                      value={values.firstName}
+                      onKeyDown={handleEnter}
                       type={"text"}
                       placeholder="First name"
                     />
                     <input
-                      onKeyDown={(e) => handleEnter(e)}
+                      onChange={onLastNameChange}
+                      value={values.lastName}
+                      onKeyDown={handleEnter}
                       type={"text"}
                       placeholder="Last name"
                     />
                   </div>
                   <div className={style.midRow}>
                     <input
-                      onKeyDown={(e) => handleEnter(e)}
-                      type={"text"}
+                      onChange={onEmailChange}
+                      value={values.email}
+                      onKeyDown={handleEnter}
+                      type={"email"}
                       placeholder="Email"
                     />
                     <input
-                      onKeyDown={(e) => handleEnter(e)}
-                      type={"text"}
+                      onChange={onPhoneChange}
+                      value={values.phone}
+                      onKeyDown={handleEnter}
+                      type={"number"}
                       placeholder="Phone"
                     />
                   </div>
                   <div className={style.lowerRow}>
                     <input
-                      onKeyDown={(e) => handleEnter(e)}
+                      onChange={onMessageChange}
+                      value={values.message}
+                      onKeyDown={handleEnter}
                       type={"text"}
                       placeholder="Message"
                     />
@@ -343,8 +405,15 @@ function Contact({ id, isMobile }) {
                 </form>
                 <div className={style.btnContainer}>
                   {" "}
-                  <div className={style.btn}>
-                    <p>submit</p>
+                  <div className={style.error}>{error.message}</div>
+                  <div
+                    style={{
+                      pointerEvents: loading && "none",
+                    }}
+                    onClick={onSubmit}
+                    className={style.btn}
+                  >
+                    {loading ? <div className="loader"></div> : <p>submit</p>}
                   </div>
                 </div>
               </div>
@@ -355,7 +424,7 @@ function Contact({ id, isMobile }) {
               © 2022 MAG-RAW Creations, LLC all rights reserved
             </p>
           </div>
-          
+
           <div className={style.followContainer}>
             <p className={style.follow}>FOLLOW</p>
             <br />

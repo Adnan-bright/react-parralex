@@ -1,10 +1,18 @@
 .backArrow {
-    margin-top: 60px;
     margin-left: 40px;
+    position: fixed;
     cursor: pointer;
+    top: 60px;
+    z-index: 999;
+}
+@media screen and (max-width:650px) {
+    .backArrow {
+       top:20px
+    }
 }
 
 .contantContainer {
+    margin-top: 100px;
     padding-left: 135px;
     padding-right: 135px;
 }
