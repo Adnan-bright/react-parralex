@@ -2,8 +2,13 @@
     margin-left: 40px;
     position: fixed;
     cursor: pointer;
-    top: 20px;
+    top: 60px;
     z-index: 999;
+}
+@media screen and (max-width:650px) {
+    .backArrow {
+       top:20px
+    }
 }
 
 .contantContainer {
