@@ -46,5 +46,8 @@
     "react-share": "^4.4.0",
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "@wordpress/base-styles": "^4.5.0"
   }
 }

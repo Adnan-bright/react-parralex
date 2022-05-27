@@ -198,3 +198,27 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+/* wp */
+
+ .aligncenter{
+   text-align: center;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   width: 100%;
+}
+.aligncenter img{
+    width: min-content;
+}
+.wp-block-gallery-628dc3383d84f{
+    display: flex;
+    flex-wrap: wrap;
+}
+.wp-block-gallery-628dc3383d84f img{
+    width: 100% !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+.wp-block-video {
+    margin-top: 30px !important;
+}
