@@ -3253,6 +3253,11 @@
   dependencies:
     "@babel/runtime" "^7.16.0"
 
+"@wordpress/base-styles@^4.5.0":
+  "integrity" "sha512-iz2bDZSDWEgBNOXx3072avn/+zsI+9akhTF2DA/wDdRX0TpS4SSs/vrfhvWfruq5PPLRjJ7ogLKHMnN9VvB9yg=="
+  "resolved" "https://registry.npmjs.org/@wordpress/base-styles/-/base-styles-4.5.0.tgz"
+  "version" "4.5.0"
+
 "@wordpress/blob@^3.6.0":
   "integrity" "sha512-cbdjxXCfebS97hYXBnGzajM+CT83gV5Falx++cY5woVqPCPfpk6WagErjXbHMlM8HsYpbnhnYhQFs/oDuLhzTQ=="
   "resolved" "https://registry.npmjs.org/@wordpress/blob/-/blob-3.6.0.tgz"

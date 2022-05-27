@@ -5,7 +5,6 @@ import UseReviewContainer from './useReviewContainer';
 
 function ReviewContainer() {
     const {reviewsData} = UseReviewContainer()
-    console.log('reviewsData', reviewsData)
     const settings = {
         dots: false,
         infinite: true,

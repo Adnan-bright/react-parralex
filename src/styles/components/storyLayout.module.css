@@ -5,6 +5,14 @@
     margin-top: 55px;
     position: relative;
 }
+.main a{
+    width: max-content;
+    background: linear-gradient(109.57deg, #29E2B4 2.54%, #7B2EE4 29.98%, #29E2B4 100%, #7B2EE4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
 
 .leftArrow {
     cursor: pointer;
@@ -194,8 +202,18 @@
 }
 @media only screen and (max-width:600px) {
     .bannerHeading {
-        font-size: 45px;
+        font-family: graphik-regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 44px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        padding-left: 10px;
+        padding-right: 10px;
         transition: ease-in-out .7s;
+        padding-bottom: 20px;
     }
     .bannerImage {
     height: auto;
