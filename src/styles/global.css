@@ -161,7 +161,7 @@
 }
 
 /* Deployed */
-.storyLayout picture {
+/* .storyLayout picture {
     width: 100%;
 }
 
@@ -173,13 +173,13 @@
     width: 100%;
 }
 
-/* .wp-block-columns picture>* {
+.wp-block-columns picture>* {
     width: 90% !important;
-} */
+}
 
 .storyLayout picture>* {
     width: 100%;
-}
+} */
 
 
 
