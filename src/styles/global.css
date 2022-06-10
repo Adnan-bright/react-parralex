@@ -108,7 +108,6 @@
 
 .storyLayout .width-screen picture{
     width: 100vw;
-    margin-left: -20vw !important;
     margin-bottom: 40px;
     margin-top: 30px;
 }
@@ -124,9 +123,9 @@
 }
 .storyLayout .width-screen picture img{
     width: 100vw;
-    margin-left: -20vw;
     margin-bottom: 40px;
     margin-top: 30px;
+    opacity: 30;
 }
 /* Deployed */
 .storyLayout picture {
