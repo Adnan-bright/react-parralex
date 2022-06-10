@@ -106,62 +106,30 @@
     margin-top: 30px;
 }
 
-.width-screen>div>div>picture>source>img {
+.storyLayout .width-screen picture{
+    width: 100vw;
     margin-left: -20vw !important;
     margin-bottom: 40px;
     margin-top: 30px;
 }
-
-
-@media only screen and (max-width:1350px) {
-    .width-screen img {
-        margin-left: -15vw;
-    }
-
-    .width-screen>div>div>picture>source>img {
-        margin-left: -15vw !important;
-    }
+.storyLayout .width-screen figure>div{
+    width: 100vw;
 
 }
-
-@media only screen and (max-width:1170px) {
-    .width-screen img {
-        margin-left: -15vw;
-    }
-
-    .width-screen>div>div>picture>source>img {
-        margin-left: -15vw !important;
-    }
+.storyLayout .width-screen figure>div>div {
+    width: 100vw;
 }
-
-@media only screen and (max-width:1050px) {
-    .width-screen img {
-        margin-left: -5vw;
-    }
-
-    .width-screen>div>div>picture>source>img {
-        margin-left: -5vw !important;
-    }
+.storyLayout .width-screen picture {
+    width: 100vw;
 }
-
-@media only screen and (max-width:950px) {
-    .width-screen img {
-        margin-left: -20px;
-    }
-
-    .width-screen>div>div>picture>source>img {
-        margin-left: -20px !important;
-    }
-
+.storyLayout .width-screen picture img{
+    width: 100vw;
+    margin-left: -20vw;
+    margin-bottom: 40px;
+    margin-top: 30px;
 }
-
-.wp-block-columns p {
-    margin-top: -5px;
-    width: 90%;
-}
-
 /* Deployed */
-/* .storyLayout picture {
+.storyLayout picture {
     width: 100%;
 }
 
@@ -179,7 +147,38 @@
 
 .storyLayout picture>* {
     width: 100%;
+}
+
+/* @media only screen and (max-width:1350px) {
+    .width-screen img {
+        margin-left: -15vw;
+    }
+}
+
+@media only screen and (max-width:1170px) {
+    .width-screen img {
+        margin-left: -15vw;
+    }
+}
+
+@media only screen and (max-width:1050px) {
+    .width-screen img {
+        margin-left: -5vw;
+    }
+}
+
+@media only screen and (max-width:950px) {
+    .width-screen img {
+        margin-left: -20px;
+    }
 } */
+
+.wp-block-columns p {
+    margin-top: -5px;
+    width: 90%;
+}
+
+
 
 
 
