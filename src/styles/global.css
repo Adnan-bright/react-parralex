@@ -106,7 +106,7 @@
     margin-top: 30px;
 }
 
-.storyLayout .width-screen picture>source>img {
+.width-screen>div>div>picture>source>img {
     margin-left: -20vw !important;
     margin-bottom: 40px;
     margin-top: 30px;
@@ -118,7 +118,7 @@
         margin-left: -15vw;
     }
 
-    .storyLayout .width-screen picture>source>img {
+    .width-screen>div>div>picture>source>img {
         margin-left: -15vw !important;
     }
 
@@ -129,7 +129,7 @@
         margin-left: -15vw;
     }
 
-    .storyLayout .width-screen picture>source>img {
+    .width-screen>div>div>picture>source>img {
         margin-left: -15vw !important;
     }
 }
@@ -139,7 +139,7 @@
         margin-left: -5vw;
     }
 
-    .storyLayout .width-screen picture>source>img {
+    .width-screen>div>div>picture>source>img {
         margin-left: -5vw !important;
     }
 }
@@ -149,7 +149,7 @@
         margin-left: -20px;
     }
 
-    .storyLayout .width-screen picture>source>img {
+    .width-screen>div>div>picture>source>img {
         margin-left: -20px !important;
     }
 
