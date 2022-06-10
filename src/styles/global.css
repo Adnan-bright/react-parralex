@@ -106,7 +106,7 @@
     margin-top: 30px;
 }
 
-.width-screen picture {
+.width-screen picture>* {
     margin-left: -20vw;
     margin-bottom: 40px;
     margin-top: 30px;
@@ -118,7 +118,7 @@
         margin-left: -15vw;
     }
 
-    .width-screen picture {
+    .width-screen picture>* {
         margin-left: -15vw;
     }
 
@@ -129,7 +129,7 @@
         margin-left: -15vw;
     }
 
-    .width-screen picture {
+    .width-screen picture>* {
         margin-left: -15vw;
     }
 }
@@ -139,7 +139,7 @@
         margin-left: -5vw;
     }
 
-    .width-screen picture {
+    .width-screen picture>* {
         margin-left: -5vw;
     }
 }
@@ -149,7 +149,7 @@
         margin-left: -20px;
     }
 
-    .width-screen picture {
+    .width-screen picture>* {
         margin-left: -20px;
     }
 
