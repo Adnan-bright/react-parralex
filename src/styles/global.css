@@ -106,9 +106,19 @@
     margin-top: 30px;
 }
 
+.width-screen picture {
+    margin-left: -20vw;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+
 
 @media only screen and (max-width:1350px) {
     .width-screen img {
+        margin-left: -15vw;
+    }
+
+    .width-screen picture {
         margin-left: -15vw;
     }
 
@@ -118,10 +128,18 @@
     .width-screen img {
         margin-left: -15vw;
     }
+
+    .width-screen picture {
+        margin-left: -15vw;
+    }
 }
 
 @media only screen and (max-width:1050px) {
     .width-screen img {
+        margin-left: -5vw;
+    }
+
+    .width-screen picture {
         margin-left: -5vw;
     }
 }
@@ -130,7 +148,11 @@
     .width-screen img {
         margin-left: -20px;
     }
-  
+
+    .width-screen picture {
+        margin-left: -20px;
+    }
+
 }
 
 .wp-block-columns p {
