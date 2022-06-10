@@ -253,8 +253,10 @@
 .story {
     padding-top: 60px;
     font-family: graphik-regular;
-    padding-left: 20%;
-    padding-right: 20%;
+    max-width: 60%;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin: auto;
 }
 
 
@@ -570,8 +572,7 @@
 
 @media only screen and (max-width:1350px) {
     .story {
-        padding-left: 15%;
-        padding-right: 15%;
+        max-width: 70%;
     }
     .shareContainer {
         margin-left: 15% ;
@@ -580,8 +581,7 @@
 
 @media only screen and (max-width:1170px) {
     .story {
-        padding-left: 10%;
-        padding-right: 10%;
+        max-width: 80%;
     }
     .shareContainer {
         margin-left: 10% ;
@@ -590,8 +590,7 @@
 
 @media only screen and (max-width:1050px) {
     .story {
-        padding-left: 5%;
-        padding-right: 5%;
+        max-width: 90%;
     }
     .shareContainer {
         margin-left: 5% ;
@@ -600,8 +599,7 @@
 
 @media only screen and (max-width:950px) {
     .story {
-        padding-left: 20px;
-        padding-right: 20px;
+        max-width: calc(100% - 40px);
     }
     .shareContainer {
         margin-left: 20px ;
