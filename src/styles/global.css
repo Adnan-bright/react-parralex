@@ -106,7 +106,7 @@
     margin-top: 30px;
 }
 
-.width-screen picture> {
+.storyLayout .width-screen picture> {
     margin-left: -20vw !important;
     margin-bottom: 40px;
     margin-top: 30px;
@@ -118,7 +118,7 @@
         margin-left: -15vw;
     }
 
-    .width-screen picture> {
+    .storyLayout .width-screen picture> {
         margin-left: -15vw !important;
     }
 
@@ -129,7 +129,7 @@
         margin-left: -15vw;
     }
 
-    .width-screen picture> {
+    .storyLayout .width-screen picture> {
         margin-left: -15vw !important;
     }
 }
@@ -139,7 +139,7 @@
         margin-left: -5vw;
     }
 
-    .width-screen picture> {
+    .storyLayout .width-screen picture> {
         margin-left: -5vw !important;
     }
 }
@@ -149,7 +149,7 @@
         margin-left: -20px;
     }
 
-    .width-screen picture> {
+    .storyLayout .width-screen picture> {
         margin-left: -20px !important;
     }
 
@@ -173,9 +173,9 @@
     width: 100%;
 }
 
-.wp-block-columns picture>* {
+/* .wp-block-columns picture>* {
     width: 90% !important;
-}
+} */
 
 .storyLayout picture>* {
     width: 100%;
