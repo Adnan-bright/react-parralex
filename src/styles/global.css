@@ -122,7 +122,7 @@
 .storyLayout .width-screen picture {
     opacity: .3;
     width: 100vw;
-    margin-left: -20vw;
+    margin-left: -20vw !important;
 }
 .storyLayout .width-screen picture img{
     width: 100vw;
