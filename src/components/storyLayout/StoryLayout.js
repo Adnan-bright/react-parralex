@@ -29,8 +29,7 @@ function StoryLayout({ data }) {
   const ref = useRef(null);
   const myRef = useRef(null);
 
-  
-    useEffect(() => {
+  useEffect(() => {
     const triggers = ScrollTrigger.getAll();
     if (triggers) {
       triggers.forEach((trigger) => {
@@ -46,14 +45,14 @@ function StoryLayout({ data }) {
   }, [ref.current]);
   const sliderItems = [];
   sliderImages.forEach((image) => {
-    if (image?.src?.slice(0,4) === "http") {
+    if (true) {
       sliderItems.push({
         src: image.src,
       });
     }
   });
   const filteredItems = sliderItems.filter(
-    (item) => item?.src?.slice(0,4) === "http"
+    (item) => item?.src?.slice(0, 4) === "http"
   );
   console.log("sliderItems", filteredItems);
   const settings = {
