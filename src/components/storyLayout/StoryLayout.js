@@ -188,17 +188,18 @@ function StoryLayout({ data }) {
                 content?.slice(0, indexPoint)
               )}
             />
-            {indexPoint > 1 && (
-              <div className={style.sliderContainer}>
-                <Slider {...settings}>
-                  {sliderItems?.map((item, index) => (
-                    <div key={index}>
+
+            <div className={style.sliderContainer}>
+              <Slider {...settings}>
+                {sliderItems?.map((item, index) => (
+                  <div key={index}>
+                    {item.src?.slice(0, 4) === "http" && (
                       <img src={item.src} alt="slider" />
-                    </div>
-                  ))}
-                </Slider>
-              </div>
-            )}
+                    )}
+                  </div>
+                ))}
+              </Slider>
+            </div>
             <div
               className="mn-content"
               dangerouslySetInnerHTML={createMarkup(
