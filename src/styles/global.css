@@ -323,3 +323,6 @@ input[type=number] {
 .wp-block-video {
     margin-top: 30px !important;
 }
+.wp-slider-images-block{
+    display: none !important;
+}

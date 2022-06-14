@@ -16,12 +16,19 @@ import {
   LinkedinShareButton,
   TwitterShareButton,
 } from "react-share";
+import Slider from "react-slick";
+
 function StoryLayout({ data }) {
   const [video, setVideo] = useState(false);
   const [fbIcon, setFbIcon] = useState("/icons/fb.png");
   const [twIcon, setTwIcon] = useState("/icons/twitter.png");
   const [lnIcon, setLnIcon] = useState("/icons/linkedIn.png");
+  const [sliderImages, setSliderImages] = useState([]);
   var url = typeof window !== "undefined" ? window.location.href : "";
+  const { width } = UseWindowDimension();
+  const ref = useRef(null);
+  const myRef = useRef(null);
+
   useEffect(() => {
     const triggers = ScrollTrigger.getAll();
     if (triggers) {
@@ -29,17 +36,42 @@ function StoryLayout({ data }) {
         trigger.kill();
       });
     }
-  }, []);
+    const elem = ref.current;
+    if (elem) {
+      const sliderImages = elem.querySelectorAll(".wp-slider-images-block img");
 
-  const { width } = UseWindowDimension();
-  const ref = useRef(null);
-  const myRef = useRef(null);
+      setSliderImages(sliderImages);
+    }
+    // mn-content
+  }, []);
+  const sliderItems = [];
+  sliderImages.forEach((image) => {
+    sliderItems.push({
+      src: image.src,
+    });
+  });
+  console.log("sliderItems", sliderItems);
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 3000,
+    dotsClass: "button__bar2",
+    arrows: false,
+  };
   const { setStory, previousRoute } = useContext(DataContext);
   function createMarkup(story) {
     return { __html: story };
   }
   const storyData = data?.allWpStories?.edges?.[0]?.node?.stories;
   const content = data?.allWpStories?.edges?.[0]?.node?.content;
+  const indexPoint = content.indexOf(
+    '<div class="wp-container-7 wp-block-columns wp-slider-images-block">'
+  );
+  console.log("indexPoint", indexPoint);
   const videoUrl = storyData?.video?.mediaItemUrl;
 
   const handleClick = (id) => {
@@ -150,7 +182,29 @@ function StoryLayout({ data }) {
           </center>
 
           <div ref={ref} className={`${style.story} storyLayout`}>
-            <div dangerouslySetInnerHTML={createMarkup(content)} />
+            <div
+              className="mn-content"
+              dangerouslySetInnerHTML={createMarkup(
+                content.slice(0, indexPoint)
+              )}
+            />
+            {indexPoint > 1 && (
+              <div className={style.sliderContainer}>
+                <Slider {...settings}>
+                  {sliderItems.map((item, index) => (
+                    <div key={index}>
+                      <img src={item.src} alt="slider" />
+                    </div>
+                  ))}
+                </Slider>
+              </div>
+            )}
+            <div
+              className="mn-content"
+              dangerouslySetInnerHTML={createMarkup(
+                content.slice(indexPoint, content.length)
+              )}
+            />
           </div>
           <div className={style.shareContainer}>
             <p className={style.shareText}>SHARE</p>

@@ -15,6 +15,7 @@ body {
 .panel {
   min-width: 100vw;
 }
+
 .meinContainerAnimated {
   width: 200px;
   height: 200px;
@@ -48,28 +49,32 @@ body {
   transform: rotateX(0deg) translateZ(100px) scale(0.98);
   opacity: 0.9;
 }
+
 .cube .third {
   opacity: 0.8;
   transform: rotateX(0deg) translateZ(70px) scale(0.96);
 }
+
 .cube .fourth {
   opacity: 0.5;
   transform: rotateX(0deg) translateZ(40px) scale(0.94);
 }
+
 .cube .fifth {
   opacity: 0.4;
   transform: rotateX(0deg) translateZ(20px) scale(0.92);
 }
+
 .cube .sixth {
   opacity: 0.3;
   transform: rotateX(0deg) translateZ(0px) scale(0.90);
 }
 
-  /* ===================================================================================================================== */
-  
-  /* ========================================================Custom Dots================================================== */
-  
-  /* ===================================================================================================================== */
+/* ===================================================================================================================== */
+
+/* ========================================================Custom Dots================================================== */
+
+/* ===================================================================================================================== */
 
 
 .button__bar {
@@ -87,17 +92,20 @@ body {
   right: 7vw;
 
 }
-@media only screen and (max-width:1450px){
+
+@media only screen and (max-width:1450px) {
   .button__bar {
     bottom: 35px;
   }
 }
-@media only screen and (max-width:1100px){
+
+@media only screen and (max-width:1100px) {
   .button__bar {
     bottom: 35px;
   }
 }
-@media only screen and (max-width:900px){
+
+@media only screen and (max-width:900px) {
   .button__bar {
     bottom: 15px;
   }
@@ -141,9 +149,74 @@ body {
 
 
 
-  /* ===================================================================================================================== */
-  
-  /* ======================================================== End Custom Dots================================================== */
-  
-  /* ===================================================================================================================== */
+/* ===================================================================================================================== */
 
+/* ======================================================== End Custom Dots================================================== */
+
+/* ===================================================================================================================== */
+
+
+
+/* ===================================================================================================================== */
+
+/* ========================================================Custom Dots StoryLayout================================================== */
+
+/* ===================================================================================================================== */
+
+
+.button__bar2 {
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  transform: rotate(270deg);
+  bottom: -205px;
+  width: 0px;
+}
+
+.button__bar2 li {
+  list-style: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 3px;
+  padding: 0;
+}
+.button__bar2 li::before {
+ opacity: 0;
+}
+.button__bar2 li button {
+  border: none;
+  background: url(../../static/images/common/dot.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  height: 20px;
+  width: 20px;
+  border-radius: 7.5px;
+}
+
+.button__bar2 li.slick-active button {
+  border: none;
+  background: url(../../static/images/common/dotActive.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  height: 20px;
+  width: 20px;
+  border-radius: 7.5px;
+}
+
+
+
+
+
+/* ===================================================================================================================== */
+
+/* ======================================================== End Custom Dots================================================== */
+
+/* ===================================================================================================================== */
