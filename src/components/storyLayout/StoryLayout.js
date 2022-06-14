@@ -50,7 +50,10 @@ function StoryLayout({ data }) {
       src: image.src,
     });
   });
-  console.log("sliderItems", sliderItems);
+  const filteredItems = sliderItems.filter(
+    (item) => item?.src?.slice(0,4) === "http"
+  );
+  console.log("sliderItems", filteredItems);
   const settings = {
     dots: true,
     infinite: false,
@@ -191,11 +194,9 @@ function StoryLayout({ data }) {
 
             <div className={style.sliderContainer}>
               <Slider {...settings}>
-                {sliderItems?.map((item, index) => (
+                {filteredItems?.map((item, index) => (
                   <div key={index}>
-                    {item.src?.slice(0, 4) === "http" && (
-                      <img src={item.src} alt="slider" />
-                    )}
+                    <img src={item.src} alt="slider" />
                   </div>
                 ))}
               </Slider>
