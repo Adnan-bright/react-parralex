@@ -43,7 +43,7 @@ function StoryLayout({ data }) {
       setSliderImages(sliderImages);
     }
     // mn-content
-  }, []);
+  }, [ref.current]);
   const sliderItems = [];
   sliderImages.forEach((image) => {
     sliderItems.push({
