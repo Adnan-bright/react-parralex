@@ -68,7 +68,7 @@ function StoryLayout({ data }) {
   }
   const storyData = data?.allWpStories?.edges?.[0]?.node?.stories;
   const content = data?.allWpStories?.edges?.[0]?.node?.content;
-  const indexPoint = content.indexOf(
+  const indexPoint = content?.indexOf(
     '<div class="wp-container-7 wp-block-columns wp-slider-images-block">'
   );
   console.log("indexPoint", indexPoint);
