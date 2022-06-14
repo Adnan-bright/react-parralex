@@ -45,7 +45,7 @@ function StoryLayout({ data }) {
   }, [ref.current]);
   const sliderItems = [];
   sliderImages.forEach((image) => {
-    if (true) {
+    if (image?.src?.slice(0, 4) !== "data") {
       sliderItems.push({
         src: image.src,
       });
