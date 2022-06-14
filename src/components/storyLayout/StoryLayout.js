@@ -29,8 +29,7 @@ function StoryLayout({ data }) {
   const ref = useRef(null);
   const myRef = useRef(null);
 
-  const elem = ref.current;
-    console.log("elem", elem);
+  
     useEffect(() => {
     const triggers = ScrollTrigger.getAll();
     if (triggers) {
@@ -38,17 +37,20 @@ function StoryLayout({ data }) {
         trigger.kill();
       });
     }
+    const elem = ref.current;
     if (elem) {
       const sliderImages = elem.querySelectorAll(".wp-slider-images-block img");
       setSliderImages(sliderImages);
     }
     // mn-content
-  }, [elem]);
+  }, [ref.current]);
   const sliderItems = [];
   sliderImages.forEach((image) => {
-    sliderItems.push({
-      src: image.src,
-    });
+    if (image?.src?.slice(0,4) === "http") {
+      sliderItems.push({
+        src: image.src,
+      });
+    }
   });
   const filteredItems = sliderItems.filter(
     (item) => item?.src?.slice(0,4) === "http"
@@ -194,7 +196,7 @@ function StoryLayout({ data }) {
 
             <div className={style.sliderContainer}>
               <Slider {...settings}>
-                {filteredItems?.map((item, index) => (
+                {sliderItems?.map((item, index) => (
                   <div key={index}>
                     <img src={item.src} alt="slider" />
                   </div>
