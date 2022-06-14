@@ -185,13 +185,13 @@ function StoryLayout({ data }) {
             <div
               className="mn-content"
               dangerouslySetInnerHTML={createMarkup(
-                content.slice(0, indexPoint)
+                content?.slice(0, indexPoint)
               )}
             />
             {indexPoint > 1 && (
               <div className={style.sliderContainer}>
                 <Slider {...settings}>
-                  {sliderItems.map((item, index) => (
+                  {sliderItems?.map((item, index) => (
                     <div key={index}>
                       <img src={item.src} alt="slider" />
                     </div>
@@ -202,7 +202,7 @@ function StoryLayout({ data }) {
             <div
               className="mn-content"
               dangerouslySetInnerHTML={createMarkup(
-                content.slice(indexPoint, content.length)
+                content?.slice(indexPoint, content.length)
               )}
             />
           </div>
