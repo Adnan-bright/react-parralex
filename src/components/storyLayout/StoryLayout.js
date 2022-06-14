@@ -29,21 +29,21 @@ function StoryLayout({ data }) {
   const ref = useRef(null);
   const myRef = useRef(null);
 
-  useEffect(() => {
+  const elem = ref.current;
+    console.log("elem", elem);
+    useEffect(() => {
     const triggers = ScrollTrigger.getAll();
     if (triggers) {
       triggers.forEach((trigger) => {
         trigger.kill();
       });
     }
-    const elem = ref.current;
     if (elem) {
       const sliderImages = elem.querySelectorAll(".wp-slider-images-block img");
-
       setSliderImages(sliderImages);
     }
     // mn-content
-  }, [ref.current]);
+  }, [elem]);
   const sliderItems = [];
   sliderImages.forEach((image) => {
     sliderItems.push({
