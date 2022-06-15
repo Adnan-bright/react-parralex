@@ -73,7 +73,7 @@ function StoryLayout({ data }) {
     if (elem) {
       const allContainers = elem.querySelectorAll(".wp-slider-images-block");
       allContainers?.forEach((item, index) => {
-        allImagesNodes.push(allContainers[index]?.getElementsByTagName("img"));
+        // allImagesNodes.push(allContainers[index]?.getElementsByTagName("img"));
       });
       allImagesNodes.forEach((item, index) => {
         var tempArr = [];
@@ -93,7 +93,7 @@ function StoryLayout({ data }) {
       content.map((item, index) => {
         if (item === "slider") {
           count += 1;
-          // content.splice(index, 1, allImagesPaths[count-1]);
+          content.splice(index, 1, allImagesPaths[count-1]);
         }
       });
       setSliderImagesData(content);
