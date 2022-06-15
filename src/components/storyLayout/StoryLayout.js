@@ -57,7 +57,7 @@ function StoryLayout({ data }) {
     console.log("allIndexes", fullData);
     return fullData;
   };
-  const dummyData = []
+  const dummyData = ['as']
   useEffect(() => {
     const triggers = ScrollTrigger.getAll();
     if (triggers) {
@@ -84,14 +84,14 @@ function StoryLayout({ data }) {
         }
       });
       console.log("sliderImagesData", content);
-    dummyData.push(sliderImages)
     setSliderImagesData(content);
     }
-  }, [dummyData]);
+  }, [ref.current]);
+ 
 
-  if (dummyData[0]?.src?.slice(0, 4) !== "http" && dummyData?.length > 0) {
-    window.location.reload();
-  }
+  // if (dummyData[0]?.src?.slice(0, 4) !== "http" && dummyData?.length > 0) {
+  //   window.location.reload();
+  // }
   const settings = {
     dots: true,
     infinite: false,
