@@ -24,6 +24,7 @@ function StoryLayout({ data }) {
   const [twIcon, setTwIcon] = useState("/icons/twitter.png");
   const [lnIcon, setLnIcon] = useState("/icons/linkedIn.png");
   const [sliderImages, setSliderImages] = useState([]);
+  const [num, setNum] = useState(0);
   var url = typeof window !== "undefined" ? window.location.href : "";
   const { width } = UseWindowDimension();
   const ref = useRef(null);
@@ -42,7 +43,7 @@ function StoryLayout({ data }) {
       setSliderImages(sliderImages);
     }
     // mn-content
-  }, [ref, url]);
+  }, [num]);
   const sliderItems = [];
   sliderImages.forEach((image) => {
     if (image?.src?.slice(0, 4) !== "data") {
@@ -54,7 +55,7 @@ function StoryLayout({ data }) {
   const filteredItems = sliderItems.filter(
     (item) => item?.src?.slice(0, 4) === "http"
   );
-  console.log("sliderItems", filteredItems);
+  console.log("num", num);
   const settings = {
     dots: true,
     infinite: false,
@@ -97,7 +98,7 @@ function StoryLayout({ data }) {
       isVertical={true}
       onNavClick={handleClick}
     >
-      <div className={style.main}>
+      <div onClick={() => setNum(2)} className={style.main}>
         <div className={!video ? style.videoBodyHide : style.videoBody}>
           <div
             onContextMenu={(e) => e.preventDefault()}
