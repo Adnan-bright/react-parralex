@@ -235,8 +235,28 @@ console.log("sliderImagesData", sliderImagesData);
             <div dangerouslySetInnerHTML={createMarkup(content)} />
           </div>
           <div className={`${style.story} storyLayout`}>
-          <div dangerouslySetInnerHTML={createMarkup(content)} />
-         
+            {sliderImagesData.map((item, index) => {
+              return (
+                <div key={index}>
+                  {typeof item === "string" ? (
+                    <div
+                      className="mn-content"
+                      dangerouslySetInnerHTML={createMarkup(item)}
+                    />
+                  ) : (
+                    <div className={style.sliderContainer}>
+                      <Slider {...settings}>
+                        {item?.map((elem, index) => (
+                          <div key={index}>
+                            <img src={elem.src} alt="slider" />
+                          </div>
+                        ))}
+                      </Slider>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
           <div className={style.shareContainer}>
             <p className={style.shareText}>SHARE</p>
