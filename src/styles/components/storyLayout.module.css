@@ -398,16 +398,35 @@
 }
 
 .story ul {
-    list-style: none;
+    list-style: upper-alpha;
 
 }
 
 .story ul li {
     margin-top: 20px;
     margin-left: -40px;
-    display: flex;
-}
 
+}
+.sliderContainer ul{
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+.sliderContainer ul li {
+    position: relative !important;
+    margin: 10px;
+}
+@media only screen and (max-width:500px) {
+    .sliderContainer ul li {
+        position: relative !important;
+        margin: 0px;
+    }
+}
+.sliderContainer ul li::before {
+    content: "";
+    margin-right: 0px;
+}
 .story ul li::before {
     content: url(../../../static/images/common/dotActive.png);
     margin-right: 10px;

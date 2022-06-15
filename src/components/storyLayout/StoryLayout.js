@@ -64,33 +64,45 @@ function StoryLayout({ data }) {
         trigger.kill();
       });
     }
-    const sliderItems = [];
+    const allImagesNodes = [];
+    const allImagesPaths = [];
     const elem = ref.current;
     if (elem) {
-      const sliderImages = elem.querySelectorAll(".wp-slider-images-block img");
-      sliderImages.forEach((image) => {
-        if (image?.src?.slice(0, 4) !== "data") {
-          sliderItems.push({
-            src: image.src,
-          });
-        }
+      const allContainers = elem.querySelectorAll(".wp-slider-images-block");
+      allContainers?.forEach((item, index) => {
+        allImagesNodes.push(allContainers[index]?.getElementsByTagName("img"));
       });
-      slidesData.push(sliderImages);
+      allImagesNodes.forEach((item, index) => {
+        var tempArr = [];
+        for (let i = 0; i < item?.length; i++) {
+          if (item[i]?.src?.slice(0, 4) !== "data") {
+            tempArr.push({ src: item[i].src });
+          }
+        }
+        allImagesPaths.push(tempArr);
+        tempArr = [];
+      });
+
+      slidesData.push(allImagesPaths);
       const str = data?.allWpStories?.edges?.[0]?.node?.content;
       const content = getFullData(str);
+      var count = 0
       content.map((item, index) => {
         if (item === "slider") {
-          content.splice(index, 1, sliderItems);
+          count += 1;
+          content.splice(index, 1, allImagesPaths[count-1].slice(0,3));
         }
       });
       setSliderImagesData(content);
     }
   }, [ref.current]);
 
-  if (sliderImagesData?.[1]?.[0]?.src?.slice(0, 4) !== "http" && sliderImagesData?.length > 0) {
+  if (
+    sliderImagesData?.[1]?.[0]?.src?.slice(0, 4) !== "http" &&
+    sliderImagesData?.[1]?.length> 0
+  ) {
     window.location.reload();
   }
-  console.log("slidesData", sliderImagesData?.[1]?.[0]);
   const settings = {
     dots: true,
     infinite: false,
