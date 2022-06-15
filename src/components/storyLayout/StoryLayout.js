@@ -69,7 +69,7 @@ function StoryLayout({ data }) {
     if (elem) {
       const sliderImages = elem.querySelectorAll(".wp-slider-images-block img");
       sliderImages.forEach((image) => {
-        if (true) {
+        if (image?.src?.slice(0, 4) !== "data") {
           sliderItems.push({
             src: image.src,
           });
@@ -86,8 +86,8 @@ function StoryLayout({ data }) {
     setSliderImagesData(content);
     }
   }, [ref.current]);
+  console.log("slidesData", slidesData);
  
-  console.log("sliderImagesData", sliderImagesData);
 
   if (slidesData[0]?.src?.slice(0, 4) !== "http" && slidesData?.length > 0) {
     window.location.reload();
