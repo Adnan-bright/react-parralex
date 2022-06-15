@@ -46,18 +46,16 @@ function StoryLayout({ data }) {
   }, []);
   const sliderItems = [];
   sliderImages.forEach((image) => {
-    if (image?.src?.slice(0, 4) !== "http") {
-      window.location.reload()
-    }
+  
     if (image?.src?.slice(0, 4) !== "data") {
       sliderItems.push({
         src: image.src,
       });
     }
   });
-  const filteredItems = sliderItems.filter(
-    (item) => item?.src?.slice(0, 4) === "http"
-  );
+  if (sliderItems[0]?.src?.slice(0, 4) !== "http" && sliderItems?.length > 0) {
+    window.location.reload()
+  }
   const settings = {
     dots: true,
     infinite: false,
