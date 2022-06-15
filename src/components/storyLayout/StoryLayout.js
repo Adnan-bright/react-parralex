@@ -39,18 +39,23 @@ function StoryLayout({ data }) {
     const elem = ref.current;
     if (elem) {
       const sliderImages = elem.querySelectorAll(".wp-slider-images-block img");
-
       setSliderImages(sliderImages);
     }
+    
     // mn-content
   }, []);
   const sliderItems = [];
   sliderImages.forEach((image) => {
-    sliderItems.push({
-      src: image.src,
-    });
+  
+    if (image?.src?.slice(0, 4) !== "data") {
+      sliderItems.push({
+        src: image.src,
+      });
+    }
   });
-  console.log("sliderItems", sliderItems);
+  if (sliderItems[0]?.src?.slice(0, 4) !== "http" && sliderItems?.length > 0) {
+    window.location.reload()
+  }
   const settings = {
     dots: true,
     infinite: false,
@@ -188,17 +193,16 @@ function StoryLayout({ data }) {
                 content?.slice(0, indexPoint)
               )}
             />
-            {indexPoint > 1 && (
-              <div className={style.sliderContainer}>
-                <Slider {...settings}>
-                  {sliderItems?.map((item, index) => (
-                    <div key={index}>
-                      <img src={item.src} alt="slider" />
-                    </div>
-                  ))}
-                </Slider>
-              </div>
-            )}
+
+            <div className={style.sliderContainer}>
+              <Slider {...settings}>
+                {sliderItems?.map((item, index) => (
+                  <div key={index}>
+                    <img src={item.src} alt="slider" />
+                  </div>
+                ))}
+              </Slider>
+            </div>
             <div
               className="mn-content"
               dangerouslySetInnerHTML={createMarkup(
