@@ -24,7 +24,6 @@ function StoryLayout({ data }) {
   const [twIcon, setTwIcon] = useState("/icons/twitter.png");
   const [lnIcon, setLnIcon] = useState("/icons/linkedIn.png");
   const [sliderImages, setSliderImages] = useState([]);
-  const [num, setNum] = useState(0);
   var url = typeof window !== "undefined" ? window.location.href : "";
   const { width } = UseWindowDimension();
   const ref = useRef(null);
@@ -42,10 +41,14 @@ function StoryLayout({ data }) {
       const sliderImages = elem.querySelectorAll(".wp-slider-images-block img");
       setSliderImages(sliderImages);
     }
+    
     // mn-content
-  }, [num]);
+  }, []);
   const sliderItems = [];
   sliderImages.forEach((image) => {
+    if (image?.src?.slice(0, 4) !== "http") {
+      window.location.reload()
+    }
     if (image?.src?.slice(0, 4) !== "data") {
       sliderItems.push({
         src: image.src,
@@ -55,7 +58,6 @@ function StoryLayout({ data }) {
   const filteredItems = sliderItems.filter(
     (item) => item?.src?.slice(0, 4) === "http"
   );
-  console.log("num", num);
   const settings = {
     dots: true,
     infinite: false,
@@ -98,7 +100,7 @@ function StoryLayout({ data }) {
       isVertical={true}
       onNavClick={handleClick}
     >
-      <div onClick={() => setNum(2)} className={style.main}>
+      <div className={style.main}>
         <div className={!video ? style.videoBodyHide : style.videoBody}>
           <div
             onContextMenu={(e) => e.preventDefault()}
