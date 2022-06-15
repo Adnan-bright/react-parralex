@@ -32,7 +32,7 @@ function StoryLayout({ data }) {
   const findAllIndexesOf = (str, letter) => {
     var indexes = [],
       i = -1;
-    while ((i = str.indexOf(letter, i + 1)) !== -1) {
+    while ((i = str?.indexOf(letter, i + 1)) !== -1) {
       indexes.push(i);
     }
     return indexes;
@@ -71,12 +71,13 @@ function StoryLayout({ data }) {
       sliderImages.forEach((image) => {
         if (image?.src?.slice(0, 4) !== "data") {
           sliderItems.push({
-            src: image.src,
+            src: image.currentSrc,
           });
         }
       });
       slidesData.push(sliderImages);
-      console.log("sliderImages", sliderImages);
+      console.log("sliderItems[0].src", sliderItems[0]?.src);
+      console.log("sliderItems[0].currentSrc", sliderItems[0]?.currentSrc);
       console.log("sliderItems", sliderItems);
       const str = data?.allWpStories?.edges?.[0]?.node?.content;
       const content = getFullData(str);
