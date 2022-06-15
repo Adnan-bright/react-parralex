@@ -28,7 +28,8 @@ function StoryLayout({ data }) {
   const { width } = UseWindowDimension();
   const ref = useRef(null);
   const myRef = useRef(null);
-  // Find All indexes of Occurrences of the Letter in a string
+
+  
   const findAllIndexesOf = (str, letter) => {
     var indexes = [],
       i = -1;
@@ -37,7 +38,8 @@ function StoryLayout({ data }) {
     }
     return indexes;
   };
-  // remove full tage which class is remove
+
+
   const getFullData = (str) => {
     const fullIndexes = [];
     const fullData = [];
