@@ -29,34 +29,34 @@ function StoryLayout({ data }) {
   const ref = useRef(null);
   const myRef = useRef(null);
 
-  const findAllIndexesOf = (str, letter) => {
-    var indexes = [],
-      i = -1;
-    while ((i = str?.indexOf(letter, i + 1)) !== -1) {
-      indexes.push(i);
-    }
-    return indexes;
-  };
+  // const findAllIndexesOf = (str, letter) => {
+  //   var indexes = [],
+  //     i = -1;
+  //   while ((i = str?.indexOf(letter, i + 1)) !== -1) {
+  //     indexes.push(i);
+  //   }
+  //   return indexes;
+  // };
 
-  const getFullData = (str) => {
-    const fullIndexes = [];
-    const fullData = [];
+  // const getFullData = (str) => {
+  //   const fullIndexes = [];
+  //   const fullData = [];
 
-    const allIndexes = findAllIndexesOf(str, "wp-slider-images-block");
-    allIndexes.map((item, index) => {
-      const quotesStrIndex = str.slice(0, item).lastIndexOf("<div");
-      fullIndexes.push(quotesStrIndex);
-    });
+  //   const allIndexes = findAllIndexesOf(str, "wp-slider-images-block");
+  //   allIndexes.map((item, index) => {
+  //     const quotesStrIndex = str.slice(0, item).lastIndexOf("<div");
+  //     fullIndexes.push(quotesStrIndex);
+  //   });
 
-    fullIndexes.push(str.length);
-    fullIndexes.map((item, index) => {
-      fullData.push(str.slice(index === 0 ? 0 : fullIndexes[index - 1], item));
-      if (index !== fullIndexes.length - 1) {
-        fullData.push("slider");
-      }
-    });
-    return fullData;
-  };
+  //   fullIndexes.push(str.length);
+  //   fullIndexes.map((item, index) => {
+  //     fullData.push(str.slice(index === 0 ? 0 : fullIndexes[index - 1], item));
+  //     if (index !== fullIndexes.length - 1) {
+  //       fullData.push("slider");
+  //     }
+  //   });
+  //   return fullData;
+  // };
   const slidesData = [];
   useEffect(() => {
     const triggers = ScrollTrigger.getAll();
@@ -65,37 +65,37 @@ function StoryLayout({ data }) {
         trigger.kill();
       });
     }
-    const allImagesNodes = [];
-    const allImagesPaths = [];
-    const elem = ref.current;
-    if (elem) {
-      const allContainers = elem.querySelectorAll(".wp-slider-images-block");
-      allContainers?.forEach((item, index) => {
-        allImagesNodes.push(allContainers[index]?.getElementsByTagName("img"));
-      });
-      allImagesNodes.forEach((item, index) => {
-        var tempArr = [];
-        for (let i = 0; i < item?.length; i++) {
-          if (item[i]?.src?.slice(0, 4) !== "data") {
-            tempArr.push({ src: item[i].src });
-          }
-        }
-        allImagesPaths.push(tempArr);
-        tempArr = [];
-      });
+    // const allImagesNodes = [];
+    // const allImagesPaths = [];
+    // const elem = ref.current;
+    // if (elem) {
+    //   const allContainers = elem.querySelectorAll(".wp-slider-images-block");
+    //   allContainers?.forEach((item, index) => {
+    //     allImagesNodes.push(allContainers[index]?.getElementsByTagName("img"));
+    //   });
+    //   allImagesNodes.forEach((item, index) => {
+    //     var tempArr = [];
+    //     for (let i = 0; i < item?.length; i++) {
+    //       if (item[i]?.src?.slice(0, 4) !== "data") {
+    //         tempArr.push({ src: item[i].src });
+    //       }
+    //     }
+    //     allImagesPaths.push(tempArr);
+    //     tempArr = [];
+    //   });
 
-      slidesData.push(allImagesPaths);
-      const str = data?.allWpStories?.edges?.[0]?.node?.content;
-      const content = getFullData(str);
-      var count = 0;
-      content.map((item, index) => {
-        if (item === "slider") {
-          count += 1;
-          content.splice(index, 1, allImagesPaths[count - 1]);
-        }
-      });
-      setSliderImagesData(content);
-    }
+    //   slidesData.push(allImagesPaths);
+    //   const str = data?.allWpStories?.edges?.[0]?.node?.content;
+    //   const content = getFullData(str);
+    //   var count = 0;
+    //   content.map((item, index) => {
+    //     if (item === "slider") {
+    //       count += 1;
+    //       content.splice(index, 1, allImagesPaths[count - 1]);
+    //     }
+    //   });
+    //   setSliderImagesData(content);
+    // }
   }, [ref.current]);
 
   // if (
@@ -235,14 +235,8 @@ function StoryLayout({ data }) {
             <div dangerouslySetInnerHTML={createMarkup(content)} />
           </div>
           <div className={`${style.story} storyLayout`}>
-            {sliderImagesData.map((item, index) => {
-              return (
-                <div key={index}>
-            <div dangerouslySetInnerHTML={createMarkup(content)} />
-                
-                </div>
-              );
-            })}
+          <div dangerouslySetInnerHTML={createMarkup(content)} />
+           
           </div>
           <div className={style.shareContainer}>
             <p className={style.shareText}>SHARE</p>
