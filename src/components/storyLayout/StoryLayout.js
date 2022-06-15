@@ -57,7 +57,7 @@ function StoryLayout({ data }) {
     console.log("allIndexes", fullData);
     return fullData;
   };
-  const dummyData = ['as']
+  const slidesData = []
   useEffect(() => {
     const triggers = ScrollTrigger.getAll();
     if (triggers) {
@@ -76,6 +76,7 @@ function StoryLayout({ data }) {
           });
         }
       });
+      slidesData.push(sliderImages)
       const str = data?.allWpStories?.edges?.[0]?.node?.content;
       const content = getFullData(str);
       content.map((item, index) => {
@@ -89,9 +90,9 @@ function StoryLayout({ data }) {
   }, [ref.current]);
  
 
-  // if (dummyData[0]?.src?.slice(0, 4) !== "http" && dummyData?.length > 0) {
-  //   window.location.reload();
-  // }
+  if (slidesData[0]?.src?.slice(0, 4) !== "http" && slidesData?.length > 0) {
+    window.location.reload();
+  }
   const settings = {
     dots: true,
     infinite: false,
