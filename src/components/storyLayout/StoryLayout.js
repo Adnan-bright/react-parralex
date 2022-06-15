@@ -54,7 +54,6 @@ function StoryLayout({ data }) {
         fullData.push("slider");
       }
     });
-    console.log("allIndexes", fullData);
     return fullData;
   };
   const slidesData = []
@@ -70,7 +69,7 @@ function StoryLayout({ data }) {
     if (elem) {
       const sliderImages = elem.querySelectorAll(".wp-slider-images-block img");
       sliderImages.forEach((image) => {
-        if (image?.src?.slice(0, 4) !== "data") {
+        if (true) {
           sliderItems.push({
             src: image.src,
           });
@@ -84,11 +83,11 @@ function StoryLayout({ data }) {
           content.splice(index, 1, sliderItems);
         }
       });
-      console.log("sliderImagesData", content);
     setSliderImagesData(content);
     }
   }, [ref.current]);
  
+  console.log("sliderImagesData", sliderImagesData);
 
   if (slidesData[0]?.src?.slice(0, 4) !== "http" && slidesData?.length > 0) {
     window.location.reload();
