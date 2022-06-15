@@ -71,13 +71,12 @@ function StoryLayout({ data }) {
       sliderImages.forEach((image) => {
         if (image?.src?.slice(0, 4) !== "data") {
           sliderItems.push({
-            src: image.currentSrc,
+            src: image.src,
           });
         }
       });
       slidesData.push(sliderImages);
-      console.log("sliderItems[0].src", sliderItems[0]?.src);
-      console.log("sliderItems[0].currentSrc", sliderItems[0]?.currentSrc);
+      console.log("sliderItems[0].src", sliderItems[0]);
       console.log("sliderItems", sliderItems);
       const str = data?.allWpStories?.edges?.[0]?.node?.content;
       const content = getFullData(str);
