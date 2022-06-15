@@ -238,22 +238,8 @@ function StoryLayout({ data }) {
             {sliderImagesData.map((item, index) => {
               return (
                 <div key={index}>
-                  {typeof item === "string" ? (
-                    <div
-                      className="mn-content"
-                      dangerouslySetInnerHTML={createMarkup(item)}
-                    />
-                  ) : (
-                    <div className={style.sliderContainer}>
-                      <Slider {...settings}>
-                        {item?.map((elem, index) => (
-                          <div key={index}>
-                            <img src={elem.src} alt="slider" />
-                          </div>
-                        ))}
-                      </Slider>
-                    </div>
-                  )}
+            <div dangerouslySetInnerHTML={createMarkup(content)} />
+                
                 </div>
               );
             })}
