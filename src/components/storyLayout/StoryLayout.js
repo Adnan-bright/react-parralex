@@ -42,7 +42,7 @@ function StoryLayout({ data }) {
       setSliderImages(sliderImages);
     }
     // mn-content
-  }, [ref.current]);
+  }, [ref, url]);
   const sliderItems = [];
   sliderImages.forEach((image) => {
     if (image?.src?.slice(0, 4) !== "data") {
