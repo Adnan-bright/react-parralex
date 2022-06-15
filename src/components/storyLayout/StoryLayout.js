@@ -23,12 +23,41 @@ function StoryLayout({ data }) {
   const [fbIcon, setFbIcon] = useState("/icons/fb.png");
   const [twIcon, setTwIcon] = useState("/icons/twitter.png");
   const [lnIcon, setLnIcon] = useState("/icons/linkedIn.png");
-  const [sliderImages, setSliderImages] = useState([]);
+  const [sliderImagesData, setSliderImagesData] = useState([]);
   var url = typeof window !== "undefined" ? window.location.href : "";
   const { width } = UseWindowDimension();
   const ref = useRef(null);
   const myRef = useRef(null);
+  // Find All indexes of Occurrences of the Letter in a string
+  const findAllIndexesOf = (str, letter) => {
+    var indexes = [],
+      i = -1;
+    while ((i = str.indexOf(letter, i + 1)) !== -1) {
+      indexes.push(i);
+    }
+    return indexes;
+  };
+  // remove full tage which class is remove
+  const getFullData = (str) => {
+    const fullIndexes = [];
+    const fullData = [];
 
+    const allIndexes = findAllIndexesOf(str, "wp-slider-images-block");
+    allIndexes.map((item, index) => {
+      const quotesStrIndex = str.slice(0, item).lastIndexOf("<div");
+      fullIndexes.push(quotesStrIndex);
+    });
+    fullIndexes.push(str.length);
+    fullIndexes.map((item, index) => {
+      fullData.push(str.slice(index === 0 ? 0 : fullIndexes[index - 1], item));
+      if (index !== fullIndexes.length - 1) {
+        fullData.push("slider");
+      }
+    });
+    console.log("allIndexes", fullData);
+    return fullData;
+  };
+  const dummyData = []
   useEffect(() => {
     const triggers = ScrollTrigger.getAll();
     if (triggers) {
@@ -36,26 +65,33 @@ function StoryLayout({ data }) {
         trigger.kill();
       });
     }
+    const sliderItems = [];
     const elem = ref.current;
     if (elem) {
       const sliderImages = elem.querySelectorAll(".wp-slider-images-block img");
-      setSliderImages(sliderImages);
-    }
-    
-    // mn-content
-  }, []);
-  const sliderItems = [];
-  sliderImages.forEach((image) => {
-  
-    if (image?.src?.slice(0, 4) !== "data") {
-      sliderItems.push({
-        src: image.src,
+      sliderImages.forEach((image) => {
+        if (image?.src?.slice(0, 4) !== "data") {
+          sliderItems.push({
+            src: image.src,
+          });
+        }
       });
+      const str = data?.allWpStories?.edges?.[0]?.node?.content;
+      const content = getFullData(str);
+      content.map((item, index) => {
+        if (item === "slider") {
+          content.splice(index, 1, sliderItems);
+        }
+      });
+      console.log("sliderImagesData", content);
+    dummyData.push(content)
+    setSliderImagesData(content);
     }
-  });
-  if (sliderItems[0]?.src?.slice(0, 4) !== "http" && sliderItems?.length > 0) {
-    window.location.reload()
-  }
+  }, [dummyData]);
+
+  // if (sliderItems[0]?.src?.slice(0, 4) !== "http" && sliderItems?.length > 0) {
+  //   window.location.reload();
+  // }
   const settings = {
     dots: true,
     infinite: false,
@@ -72,11 +108,7 @@ function StoryLayout({ data }) {
     return { __html: story };
   }
   const storyData = data?.allWpStories?.edges?.[0]?.node?.stories;
-  const content = data?.allWpStories?.edges?.[0]?.node?.content;
-  const indexPoint = content?.indexOf(
-    '<div class="wp-container-7 wp-block-columns wp-slider-images-block">'
-  );
-  console.log("indexPoint", indexPoint);
+
   const videoUrl = storyData?.video?.mediaItemUrl;
 
   const handleClick = (id) => {
@@ -187,28 +219,28 @@ function StoryLayout({ data }) {
           </center>
 
           <div ref={ref} className={`${style.story} storyLayout`}>
-            <div
-              className="mn-content"
-              dangerouslySetInnerHTML={createMarkup(
-                content?.slice(0, indexPoint)
-              )}
-            />
-
-            <div className={style.sliderContainer}>
-              <Slider {...settings}>
-                {sliderItems?.map((item, index) => (
-                  <div key={index}>
-                    <img src={item.src} alt="slider" />
-                  </div>
-                ))}
-              </Slider>
-            </div>
-            <div
-              className="mn-content"
-              dangerouslySetInnerHTML={createMarkup(
-                content?.slice(indexPoint, content.length)
-              )}
-            />
+            {sliderImagesData.map((item, index) => {
+              return (
+                <div key={index}>
+                  {typeof item === "string" ? (
+                    <div
+                      className="mn-content"
+                      dangerouslySetInnerHTML={createMarkup(item)}
+                    />
+                  ) : (
+                    <div className={style.sliderContainer}>
+                      <Slider {...settings}>
+                        {item?.map((elem, index) => (
+                          <div key={index}>
+                            <img src={elem.src} alt="slider" />
+                          </div>
+                        ))}
+                      </Slider>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
           <div className={style.shareContainer}>
             <p className={style.shareText}>SHARE</p>
