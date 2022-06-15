@@ -108,7 +108,7 @@ function StoryLayout({ data }) {
     return { __html: story };
   }
   const storyData = data?.allWpStories?.edges?.[0]?.node?.stories;
-
+  const content = data?.allWpStories?.edges?.[0]?.node?.content;
   const videoUrl = storyData?.video?.mediaItemUrl;
 
   const handleClick = (id) => {
@@ -217,8 +217,12 @@ function StoryLayout({ data }) {
               )}
             </div>
           </center>
-
-          <div ref={ref} className={`${style.story} storyLayout`}>
+          <div ref={ref} className="myCustomClass">
+            <div
+              dangerouslySetInnerHTML={createMarkup(content)}
+            />
+          </div>
+          <div className={`${style.story} storyLayout`}>
             {sliderImagesData.map((item, index) => {
               return (
                 <div key={index}>
