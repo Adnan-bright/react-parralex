@@ -93,7 +93,7 @@ function StoryLayout({ data }) {
       content.map((item, index) => {
         if (item === "slider") {
           count += 1;
-          content.splice(index, 1, allImagesPaths[count-1]);
+          // content.splice(index, 1, allImagesPaths[count-1]);
         }
       });
       setSliderImagesData(content);
