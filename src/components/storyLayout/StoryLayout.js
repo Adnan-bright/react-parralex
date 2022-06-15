@@ -76,8 +76,6 @@ function StoryLayout({ data }) {
         }
       });
       slidesData.push(sliderImages);
-      console.log("sliderItems[0].src", sliderItems[0]);
-      console.log("sliderItems", sliderItems);
       const str = data?.allWpStories?.edges?.[0]?.node?.content;
       const content = getFullData(str);
       content.map((item, index) => {
@@ -89,9 +87,10 @@ function StoryLayout({ data }) {
     }
   }, [ref.current]);
 
-  if (slidesData[0]?.src?.slice(0, 4) !== "http" && slidesData?.length > 0) {
+  if (sliderImagesData?.[1]?.[0]?.src?.slice(0, 4) !== "http" && sliderImagesData?.length > 0) {
     window.location.reload();
   }
+  console.log("slidesData", sliderImagesData?.[1]?.[0]);
   const settings = {
     dots: true,
     infinite: false,
@@ -218,9 +217,7 @@ function StoryLayout({ data }) {
             </div>
           </center>
           <div ref={ref} className="myCustomClass">
-            <div
-              dangerouslySetInnerHTML={createMarkup(content)}
-            />
+            <div dangerouslySetInnerHTML={createMarkup(content)} />
           </div>
           <div className={`${style.story} storyLayout`}>
             {sliderImagesData.map((item, index) => {
