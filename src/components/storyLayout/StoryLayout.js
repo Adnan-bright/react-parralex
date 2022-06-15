@@ -84,14 +84,14 @@ function StoryLayout({ data }) {
         }
       });
       console.log("sliderImagesData", content);
-    dummyData.push(content)
+    dummyData.push(sliderImages)
     setSliderImagesData(content);
     }
   }, [dummyData]);
 
-  // if (sliderItems[0]?.src?.slice(0, 4) !== "http" && sliderItems?.length > 0) {
-  //   window.location.reload();
-  // }
+  if (dummyData[0]?.src?.slice(0, 4) !== "http" && dummyData?.length > 0) {
+    window.location.reload();
+  }
   const settings = {
     dots: true,
     infinite: false,
