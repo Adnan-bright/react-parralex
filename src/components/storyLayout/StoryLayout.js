@@ -29,7 +29,6 @@ function StoryLayout({ data }) {
   const ref = useRef(null);
   const myRef = useRef(null);
 
-
   const findAllIndexesOf = (str, letter) => {
     var indexes = [],
       i = -1;
@@ -38,7 +37,6 @@ function StoryLayout({ data }) {
     }
     return indexes;
   };
-
 
   const getFullData = (str) => {
     const fullIndexes = [];
@@ -73,7 +71,7 @@ function StoryLayout({ data }) {
     if (elem) {
       const allContainers = elem.querySelectorAll(".wp-slider-images-block");
       allContainers?.forEach((item, index) => {
-        // allImagesNodes.push(allContainers[index]?.getElementsByTagName("img"));
+        allImagesNodes.push(allContainers[index]?.getElementsByTagName("img"));
       });
       allImagesNodes.forEach((item, index) => {
         var tempArr = [];
@@ -89,11 +87,11 @@ function StoryLayout({ data }) {
       slidesData.push(allImagesPaths);
       const str = data?.allWpStories?.edges?.[0]?.node?.content;
       const content = getFullData(str);
-      var count = 0
+      var count = 0;
       content.map((item, index) => {
         if (item === "slider") {
           count += 1;
-          content.splice(index, 1, allImagesPaths[count-1]);
+          content.splice(index, 1, allImagesPaths[count - 1]);
         }
       });
       setSliderImagesData(content);
@@ -137,7 +135,9 @@ function StoryLayout({ data }) {
       navigate("/");
     }
   };
-console.log("sliderImagesData", sliderImagesData);
+  if (typeof window === "undefined") {
+    return <></>;
+  }
   return (
     <Layout
       isMobile={width >= 800 ? false : true}
