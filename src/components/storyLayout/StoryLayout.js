@@ -29,7 +29,7 @@ function StoryLayout({ data }) {
   const ref = useRef(null);
   const myRef = useRef(null);
 
-  
+
   const findAllIndexesOf = (str, letter) => {
     var indexes = [],
       i = -1;
@@ -99,12 +99,12 @@ function StoryLayout({ data }) {
     }
   }, [ref.current]);
 
-  if (
-    sliderImagesData?.[1]?.[0]?.src?.slice(0, 4) !== "http" &&
-    sliderImagesData?.[1]?.length> 0
-  ) {
-    window.location.reload();
-  }
+  // if (
+  //   sliderImagesData?.[1]?.[0]?.src?.slice(0, 4) !== "http" &&
+  //   sliderImagesData?.[1]?.length> 0
+  // ) {
+  //   window.location.reload();
+  // }
   const settings = {
     dots: true,
     infinite: false,
