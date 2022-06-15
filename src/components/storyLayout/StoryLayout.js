@@ -49,6 +49,7 @@ function StoryLayout({ data }) {
       const quotesStrIndex = str.slice(0, item).lastIndexOf("<div");
       fullIndexes.push(quotesStrIndex);
     });
+
     fullIndexes.push(str.length);
     fullIndexes.map((item, index) => {
       fullData.push(str.slice(index === 0 ? 0 : fullIndexes[index - 1], item));
@@ -136,7 +137,7 @@ function StoryLayout({ data }) {
       navigate("/");
     }
   };
-
+console.log("sliderImagesData", sliderImagesData);
   return (
     <Layout
       isMobile={width >= 800 ? false : true}
@@ -234,28 +235,8 @@ function StoryLayout({ data }) {
             <div dangerouslySetInnerHTML={createMarkup(content)} />
           </div>
           <div className={`${style.story} storyLayout`}>
-            {sliderImagesData.map((item, index) => {
-              return (
-                <div key={index}>
-                  {typeof item === "string" ? (
-                    <div
-                      className="mn-content"
-                      dangerouslySetInnerHTML={createMarkup(item)}
-                    />
-                  ) : (
-                    <div className={style.sliderContainer}>
-                      <Slider {...settings}>
-                        {item?.map((elem, index) => (
-                          <div key={index}>
-                            <img src={elem.src} alt="slider" />
-                          </div>
-                        ))}
-                      </Slider>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+          <div dangerouslySetInnerHTML={createMarkup(content)} />
+         
           </div>
           <div className={style.shareContainer}>
             <p className={style.shareText}>SHARE</p>
