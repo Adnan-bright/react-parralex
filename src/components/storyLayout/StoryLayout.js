@@ -56,7 +56,7 @@ function StoryLayout({ data }) {
     });
     return fullData;
   };
-  const slidesData = []
+  const slidesData = [];
   useEffect(() => {
     const triggers = ScrollTrigger.getAll();
     if (triggers) {
@@ -75,7 +75,9 @@ function StoryLayout({ data }) {
           });
         }
       });
-      slidesData.push(sliderImages)
+      slidesData.push(sliderImages);
+      console.log("sliderImages", sliderImages);
+      console.log("sliderItems", sliderItems);
       const str = data?.allWpStories?.edges?.[0]?.node?.content;
       const content = getFullData(str);
       content.map((item, index) => {
@@ -83,11 +85,9 @@ function StoryLayout({ data }) {
           content.splice(index, 1, sliderItems);
         }
       });
-    setSliderImagesData(content);
+      setSliderImagesData(content);
     }
   }, [ref.current]);
-  console.log("slidesData", slidesData);
- 
 
   if (slidesData[0]?.src?.slice(0, 4) !== "http" && slidesData?.length > 0) {
     window.location.reload();
