@@ -244,6 +244,7 @@ function StoryLayout({ data }) {
               )}
             </div>
           </center>
+         
           <div ref={ref} className="myCustomClass">
             <div dangerouslySetInnerHTML={createMarkup(content)} />
           </div>
