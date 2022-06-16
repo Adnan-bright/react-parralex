@@ -11,13 +11,15 @@ import UseWindowDimension from "../../hooks/useWindowDimension";
 import { ScrollTrigger } from "gsap/all";
 import ReactPlayer from "react-player";
 import VideoCloseIcon from "../../../static/icons/videoClose.webp";
+import ReactDOM from "react-dom";
 import {
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
 } from "react-share";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 import Slider from "react-slick";
+import { render } from "react-dom";
 
 function StoryLayout({ data }) {
   const [video, setVideo] = useState(false);
@@ -43,7 +45,7 @@ function StoryLayout({ data }) {
     const fullIndexes = [];
     const fullData = [];
 
-    const allIndexes = findAllIndexesOf(str, "wp-slider-images-block");
+    const allIndexes = findAllIndexesOf(str, "mag-raw-simple-slider");
     allIndexes.map((item, index) => {
       const quotesStrIndex = str.slice(0, item).lastIndexOf("<div");
       fullIndexes.push(quotesStrIndex);
@@ -70,20 +72,20 @@ function StoryLayout({ data }) {
     const allImagesPaths = [];
     const elem = ref.current;
     if (elem) {
-      const allContainers = elem.querySelectorAll(".wp-slider-images-block");
+      const allContainers = elem.querySelectorAll(".mag-raw-simple-slider");
       allContainers?.forEach((item, index) => {
-        allImagesNodes.push(allContainers[index]?.getElementsByTagName("img"));
+        allImagesNodes.push(
+          allContainers[index]?.getElementsByClassName("mag-raw-simple-slide")
+        );
       });
       allImagesNodes.forEach((item, index) => {
         var tempArr = [];
-        for (let i = 0; i < item?.length; i++) {
-          if (item[i]?.src?.slice(0, 4) !== "data") {
-            tempArr.push({ src: item[i].src });
-          }
-        }
+        tempArr.push(item);
+
         allImagesPaths.push(tempArr);
         tempArr = [];
       });
+      console.log("allImagesNodes", allImagesPaths);
 
       slidesData.push(allImagesPaths);
       const str = data?.allWpStories?.edges?.[0]?.node?.content;
@@ -92,19 +94,19 @@ function StoryLayout({ data }) {
       content.map((item, index) => {
         if (item === "slider") {
           count += 1;
-          content.splice(index, 1, allImagesPaths[count - 1]);
+          content.splice(index, 1, allImagesPaths[count - 1]?.[0]);
         }
       });
       setSliderImagesData(content);
     }
   }, [ref.current]);
 
-  if (
-    sliderImagesData?.[1]?.[0]?.src?.slice(0, 4) !== "http" &&
-    sliderImagesData?.[1]?.length> 0
-  ) {
-    window.location.reload();
-  }
+  // if (
+  //   sliderImagesData?.[1]?.[0]?.src?.slice(0, 4) !== "http" &&
+  //   sliderImagesData?.[1]?.length> 0
+  // ) {
+  //   window.location.reload();
+  // }
   const settings = {
     dots: true,
     infinite: false,
@@ -124,6 +126,14 @@ function StoryLayout({ data }) {
   const content = data?.allWpStories?.edges?.[0]?.node?.content;
   const videoUrl = storyData?.video?.mediaItemUrl;
 
+  const createSlides = (rawSlides) => {
+    const slides = [];
+    for (let index = 0; index < rawSlides?.length; index++) {
+      slides.push(`${index}`);
+    }
+    return slides;
+  };
+
   const handleClick = (id) => {
     const value = id * 700;
     if (value) {
@@ -136,9 +146,11 @@ function StoryLayout({ data }) {
       navigate("/");
     }
   };
+  console.log("sliderImagesData", sliderImagesData);
   if (typeof window === "undefined") {
     return <></>;
   }
+  const abc = <h1>testing</h1>;
   return (
     <Layout
       isMobile={width >= 800 ? false : true}
@@ -240,17 +252,20 @@ function StoryLayout({ data }) {
               return (
                 <div key={index}>
                   {typeof item === "string" ? (
-                    <div
-                      className="mn-content"
-                    >{parse(item)} </div>
+                    <div className="mn-content">{parse(item)} </div>
                   ) : (
                     <div className={style.sliderContainer}>
                       <Slider {...settings}>
-                        {item?.map((elem, index) => (
-                          <div key={index}>
-                            <img src={elem.src} alt="slider" />
-                          </div>
-                        ))}
+                        {createSlides(item).map((elem, index) => {
+                          return (
+                            <div
+                              className={style.mainSlide}
+                              dangerouslySetInnerHTML={createMarkup(
+                                item[index]?.innerHTML
+                              )}
+                            />
+                          );
+                        })}
                       </Slider>
                     </div>
                   )}

@@ -330,3 +330,13 @@ input[type=number] {
 .myCustomClass{
     display: none;
 }
+.mag-raw-simple-slider{
+    display: none;
+}
+.storyLayout .slick-track {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.storyLayout .slick-track .wp-block-column img{
+}
