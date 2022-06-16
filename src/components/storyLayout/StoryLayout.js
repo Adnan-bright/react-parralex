@@ -16,6 +16,7 @@ import {
   LinkedinShareButton,
   TwitterShareButton,
 } from "react-share";
+import parse from 'html-react-parser';
 import Slider from "react-slick";
 
 function StoryLayout({ data }) {
@@ -28,7 +29,7 @@ function StoryLayout({ data }) {
   const { width } = UseWindowDimension();
   const ref = useRef(null);
   const myRef = useRef(null);
-  // Find All indexes of Occurrences of the Letter in a string
+
   const findAllIndexesOf = (str, letter) => {
     var indexes = [],
       i = -1;
@@ -37,7 +38,7 @@ function StoryLayout({ data }) {
     }
     return indexes;
   };
-  // remove full tage which class is remove
+
   const getFullData = (str) => {
     const fullIndexes = [];
     const fullData = [];
@@ -47,6 +48,7 @@ function StoryLayout({ data }) {
       const quotesStrIndex = str.slice(0, item).lastIndexOf("<div");
       fullIndexes.push(quotesStrIndex);
     });
+
     fullIndexes.push(str.length);
     fullIndexes.map((item, index) => {
       fullData.push(str.slice(index === 0 ? 0 : fullIndexes[index - 1], item));
@@ -86,11 +88,11 @@ function StoryLayout({ data }) {
       slidesData.push(allImagesPaths);
       const str = data?.allWpStories?.edges?.[0]?.node?.content;
       const content = getFullData(str);
-      var count = 0
+      var count = 0;
       content.map((item, index) => {
         if (item === "slider") {
           count += 1;
-          content.splice(index, 1, allImagesPaths[count-1]);
+          content.splice(index, 1, allImagesPaths[count - 1]);
         }
       });
       setSliderImagesData(content);
@@ -134,7 +136,9 @@ function StoryLayout({ data }) {
       navigate("/");
     }
   };
-
+  if (typeof window === "undefined") {
+    return <></>;
+  }
   return (
     <Layout
       isMobile={width >= 800 ? false : true}
@@ -238,8 +242,7 @@ function StoryLayout({ data }) {
                   {typeof item === "string" ? (
                     <div
                       className="mn-content"
-                      dangerouslySetInnerHTML={createMarkup(item)}
-                    />
+                    >{parse(item)} </div>
                   ) : (
                     <div className={style.sliderContainer}>
                       <Slider {...settings}>
