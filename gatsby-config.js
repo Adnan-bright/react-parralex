@@ -29,9 +29,9 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         url: `${process.env.WORDPRESS_BASE_URL}/graphql`,
-        // html: {
-        //   useGatsbyImage: false,
-        // },
+        html: {
+          useGatsbyImage: false,
+        },
         // Specify which URL structures to fetch
         includedRoutes: [
           "**/posts",
