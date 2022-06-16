@@ -14,7 +14,6 @@ import Service from "../components/service/Service";
 import Stories from "../components/stories/Stories";
 import { DataContext } from "../components/Provider/Provider";
 import { Helmet } from "react-helmet";
-import { graphql } from "gatsby";
 
 const IndexPage = () => {
   const [isChanged, setIsChanged] = useState(false)
@@ -130,16 +129,4 @@ const IndexPage = () => {
     </Layout>
   );
 };
-export const query = graphql`
-    {
-      allFile(filter: { extension: { eq: "jpg" } }) {
-        edges {
-          node {
-            publicURL
-          }
-        }
-      }
-    }
-`;
-
 export default IndexPage;
