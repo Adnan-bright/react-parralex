@@ -382,14 +382,14 @@
 }
 
 .story ul {
-    list-style: upper-alpha;
+    list-style: none;
 
 }
 
 .story ul li {
     margin-top: 20px;
     margin-left: -40px;
-
+    display: flex;
 }
 .sliderContainer ul{
     display: flex !important;
@@ -398,6 +398,7 @@
     justify-content: center;
 }
 .sliderContainer ul li {
+    display: inline-block;
     position: relative !important;
     margin: 10px;
 }
