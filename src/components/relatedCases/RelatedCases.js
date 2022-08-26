@@ -50,7 +50,7 @@ function RelatedCases() {
                             style={{
                                 cursor:"pointer"
                             }}
-                            onClick={()=> navigate(`/allStories/${item.slug?.split(" ")?.join("-")}`)}
+                            onClick={()=> navigate(`/allStories/${item.slug}`)}
                             key={active}
                             animate={{ opacity: 1, y: 0 }}
                             initial={{ opacity: 0, y: 20 }}

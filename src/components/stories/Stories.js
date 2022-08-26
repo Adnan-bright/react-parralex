@@ -74,7 +74,7 @@ function Stories({ isMobile }) {
 
   const onClick = (slug) => {
     setPreviousRoute("/");
-    navigate(`allStories/${slug?.split(" ")?.join("-")}`);
+    navigate(`allStories/${slug}`);
   };
 
   var divideValue = width >= 1100 ? 8 : width >= 900 ? 6 : 4;

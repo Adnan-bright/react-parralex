@@ -28,7 +28,7 @@ exports.createPages = async function ({ actions, graphql }) {
       coverImage: item.node.stories.coverImage.mediaItemUrl,
       description: item.node.stories.description,
       title: item.node.stories.storyTitle,
-      slug: item.node.stories.slug.split(" ").join("-"),
+      slug: item.node.stories.slug,
     });
   });
   storiesData.forEach((item) => {
