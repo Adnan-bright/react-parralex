@@ -28,11 +28,11 @@ exports.createPages = async function ({ actions, graphql }) {
       coverImage: item.node.stories.coverImage.mediaItemUrl,
       description: item.node.stories.description,
       title: item.node.stories.storyTitle,
-      slug: item.node.stories.slug,
+      slug: item.node.stories.slug.split(" ").join("-"),
     });
   });
   storiesData.forEach((item) => {
-    const slug = item.slug?.split(" ")?.join("-");
+    const slug = item.slug;
     actions.createPage({
       path: `allStories/${slug}`,
       component: require.resolve(`./src/components/storyLayout/StoryLayout.js`),
