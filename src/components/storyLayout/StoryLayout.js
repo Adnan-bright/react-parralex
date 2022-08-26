@@ -86,7 +86,7 @@ function StoryLayout({ data }) {
       });
 
       slidesData.push(allImagesPaths);
-      const str = data?.allWpStories?.edges?.[0]?.node?.content;
+      const str = data?.allWpStories?.edges?.[0]?.node?.content || '';
       const content = getFullData(str);
       var count = 0;
       content.map((item, index) => {
