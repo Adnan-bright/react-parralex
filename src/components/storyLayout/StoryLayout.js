@@ -25,6 +25,7 @@ function StoryLayout({ data }) {
   const [twIcon, setTwIcon] = useState("/icons/twitter.png");
   const [lnIcon, setLnIcon] = useState("/icons/linkedIn.png");
   const [sliderImagesData, setSliderImagesData] = useState([]);
+
   var url = typeof window !== "undefined" ? window.location.href : "";
   const { width } = UseWindowDimension();
   const ref = useRef(null);
@@ -45,14 +46,14 @@ function StoryLayout({ data }) {
 
     const allIndexes = findAllIndexesOf(str, "mag-raw-simple-slider");
     allIndexes.map((item, index) => {
-      const quotesStrIndex = str.slice(0, item).lastIndexOf("<div");
+      const quotesStrIndex = str?.slice(0, item).lastIndexOf("<div");
       fullIndexes.push(quotesStrIndex);
     });
 
-    fullIndexes.push(str.length);
+    fullIndexes.push(str?.length);
     fullIndexes.map((item, index) => {
-      fullData.push(str.slice(index === 0 ? 0 : fullIndexes[index - 1], item));
-      if (index !== fullIndexes.length - 1) {
+      fullData.push(str?.slice(index === 0 ? 0 : fullIndexes?.[index - 1], item));
+      if (index !== fullIndexes?.length - 1) {
         fullData.push("slider");
       }
     });
@@ -73,7 +74,7 @@ function StoryLayout({ data }) {
       const allContainers = elem.querySelectorAll(".mag-raw-simple-slider");
       allContainers?.forEach((item, index) => {
         allImagesNodes.push(
-          allContainers[index]?.getElementsByClassName("mag-raw-simple-slide")
+          allContainers?.[index]?.getElementsByClassName("mag-raw-simple-slide")
         );
       });
       allImagesNodes.forEach((item, index) => {
@@ -91,7 +92,7 @@ function StoryLayout({ data }) {
       content.map((item, index) => {
         if (item === "slider") {
           count += 1;
-          content.splice(index, 1, allImagesPaths[count - 1]?.[0]);
+          content?.splice(index, 1, allImagesPaths?.[count - 1]?.[0]);
         }
       });
       setSliderImagesData(content);
