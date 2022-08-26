@@ -32,7 +32,7 @@ exports.createPages = async function ({ actions, graphql }) {
     });
   });
   storiesData.forEach((item) => {
-    const slug = item.slug?.replaceAll(" ", "-");
+    const slug = item.slug?.split(" ")?.join("-");
     actions.createPage({
       path: `allStories/${slug}`,
       component: require.resolve(`./src/components/storyLayout/StoryLayout.js`),
