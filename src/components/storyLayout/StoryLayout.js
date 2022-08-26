@@ -11,7 +11,6 @@ import UseWindowDimension from "../../hooks/useWindowDimension";
 import { ScrollTrigger } from "gsap/all";
 import ReactPlayer from "react-player";
 import VideoCloseIcon from "../../../static/icons/videoClose.webp";
-import ReactDOM from "react-dom";
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -19,7 +18,6 @@ import {
 } from "react-share";
 import parse from "html-react-parser";
 import Slider from "react-slick";
-import { render } from "react-dom";
 
 function StoryLayout({ data }) {
   const [video, setVideo] = useState(false);
@@ -27,6 +25,7 @@ function StoryLayout({ data }) {
   const [twIcon, setTwIcon] = useState("/icons/twitter.png");
   const [lnIcon, setLnIcon] = useState("/icons/linkedIn.png");
   const [sliderImagesData, setSliderImagesData] = useState([]);
+
   var url = typeof window !== "undefined" ? window.location.href : "";
   const { width } = UseWindowDimension();
   const ref = useRef(null);
@@ -47,14 +46,14 @@ function StoryLayout({ data }) {
 
     const allIndexes = findAllIndexesOf(str, "mag-raw-simple-slider");
     allIndexes.map((item, index) => {
-      const quotesStrIndex = str.slice(0, item).lastIndexOf("<div");
+      const quotesStrIndex = str?.slice(0, item).lastIndexOf("<div");
       fullIndexes.push(quotesStrIndex);
     });
 
-    fullIndexes.push(str.length);
+    fullIndexes.push(str?.length);
     fullIndexes.map((item, index) => {
-      fullData.push(str.slice(index === 0 ? 0 : fullIndexes[index - 1], item));
-      if (index !== fullIndexes.length - 1) {
+      fullData.push(str?.slice(index === 0 ? 0 : fullIndexes?.[index - 1], item));
+      if (index !== fullIndexes?.length - 1) {
         fullData.push("slider");
       }
     });
@@ -75,7 +74,7 @@ function StoryLayout({ data }) {
       const allContainers = elem.querySelectorAll(".mag-raw-simple-slider");
       allContainers?.forEach((item, index) => {
         allImagesNodes.push(
-          allContainers[index]?.getElementsByClassName("mag-raw-simple-slide")
+          allContainers?.[index]?.getElementsByClassName("mag-raw-simple-slide")
         );
       });
       allImagesNodes.forEach((item, index) => {
@@ -85,16 +84,15 @@ function StoryLayout({ data }) {
         allImagesPaths.push(tempArr);
         tempArr = [];
       });
-      console.log("allImagesNodes", allImagesPaths);
 
       slidesData.push(allImagesPaths);
-      const str = data?.allWpStories?.edges?.[0]?.node?.content;
+      const str = data?.allWpStories?.edges?.[0]?.node?.content || '';
       const content = getFullData(str);
       var count = 0;
       content.map((item, index) => {
         if (item === "slider") {
           count += 1;
-          content.splice(index, 1, allImagesPaths[count - 1]?.[0]);
+          content?.splice(index, 1, allImagesPaths?.[count - 1]?.[0]);
         }
       });
       setSliderImagesData(content);
@@ -220,7 +218,6 @@ function StoryLayout({ data }) {
             </div>
           </div>
           <h1 className={style.bannerHeading}>
-            {/* {storyData.storyTitle} */}
             {storyData.description}
           </h1>
         </div>
