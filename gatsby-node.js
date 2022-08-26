@@ -1,5 +1,4 @@
 exports.createPages = async function ({ actions, graphql }) {
-
   const { data } = await graphql(`
     query StoriesData {
       allWpStories {
@@ -33,7 +32,7 @@ exports.createPages = async function ({ actions, graphql }) {
     });
   });
   storiesData.forEach((item) => {
-    const slug = item.slug;
+    const slug = item.slug?.replaceAll(" ", "-");
     actions.createPage({
       path: `allStories/${slug}`,
       component: require.resolve(`./src/components/storyLayout/StoryLayout.js`),
