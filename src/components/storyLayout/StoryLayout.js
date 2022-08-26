@@ -11,7 +11,6 @@ import UseWindowDimension from "../../hooks/useWindowDimension";
 import { ScrollTrigger } from "gsap/all";
 import ReactPlayer from "react-player";
 import VideoCloseIcon from "../../../static/icons/videoClose.webp";
-import ReactDOM from "react-dom";
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -19,7 +18,6 @@ import {
 } from "react-share";
 import parse from "html-react-parser";
 import Slider from "react-slick";
-import { render } from "react-dom";
 
 function StoryLayout({ data }) {
   const [video, setVideo] = useState(false);
@@ -85,7 +83,6 @@ function StoryLayout({ data }) {
         allImagesPaths.push(tempArr);
         tempArr = [];
       });
-      console.log("allImagesNodes", allImagesPaths);
 
       slidesData.push(allImagesPaths);
       const str = data?.allWpStories?.edges?.[0]?.node?.content;
