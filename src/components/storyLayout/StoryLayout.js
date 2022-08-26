@@ -218,7 +218,6 @@ function StoryLayout({ data }) {
             </div>
           </div>
           <h1 className={style.bannerHeading}>
-            {/* {storyData.storyTitle} */}
             {storyData.description}
           </h1>
         </div>
